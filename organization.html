@@ -198,7 +198,7 @@
       border: 1px solid rgba(255, 250, 240, 0.18);
     }
 
-    .side-card, .section-card, .related-card {
+    .side-card, .section-card, .related-card, .source-card {
       border-radius: var(--radius-lg);
       background: var(--card);
       border: 1px solid rgba(20, 34, 26, 0.1);
@@ -211,10 +211,7 @@
       top: 92px;
     }
 
-    .facts {
-      display: grid;
-      gap: 14px;
-    }
+    .facts { display: grid; gap: 14px; }
 
     .fact {
       padding-bottom: 14px;
@@ -239,17 +236,21 @@
       font-weight: 700;
     }
 
-    .content-grid {
+    .section-stack {
       margin-top: 18px;
       display: grid;
       grid-template-columns: repeat(3, 1fr);
       gap: 16px;
+      align-items: stretch;
     }
 
     .section-card {
       min-height: 220px;
       padding: 24px;
     }
+
+    .section-card.wide { grid-column: span 2; }
+    .section-card.full { grid-column: 1 / -1; }
 
     .section-card h2 {
       margin: 0 0 12px;
@@ -265,14 +266,14 @@
       font-size: 15px;
     }
 
-    .chips {
+    .chips, .list-pills {
       margin-top: 18px;
       display: flex;
       flex-wrap: wrap;
       gap: 7px;
     }
 
-    .chip {
+    .chip, .pill-link {
       padding: 7px 9px;
       border-radius: 999px;
       background: rgba(20, 34, 26, 0.06);
@@ -281,9 +282,33 @@
       font-weight: 760;
     }
 
-    .related {
-      margin-top: 18px;
+    .pill-link:hover { background: rgba(18, 59, 42, 0.12); }
+
+    .source-list {
+      display: grid;
+      gap: 10px;
+      margin-top: 14px;
     }
+
+    .source-card {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 14px;
+      padding: 16px 18px;
+      box-shadow: none;
+      background: rgba(255, 250, 240, 0.55);
+      color: var(--green);
+      font-size: 14px;
+      font-weight: 820;
+    }
+
+    .source-card span:last-child {
+      color: var(--clay);
+      white-space: nowrap;
+    }
+
+    .related { margin-top: 18px; }
 
     .related-head {
       display: flex;
@@ -355,7 +380,9 @@
 
     @media (max-width: 980px) {
       .profile-shell,
-      .content-grid { grid-template-columns: 1fr; }
+      .section-stack { grid-template-columns: 1fr; }
+      .section-card.wide,
+      .section-card.full { grid-column: auto; }
       .side-card { position: static; }
       .related-grid { grid-template-columns: repeat(2, 1fr); }
     }
@@ -365,6 +392,7 @@
       .nav-links { display: none; }
       .hero-card { min-height: auto; padding: 26px; }
       .related-grid { grid-template-columns: 1fr; }
+      .source-card { align-items: flex-start; flex-direction: column; }
     }
   </style>
 </head>
@@ -375,7 +403,7 @@
         <span class="brand-mark" aria-hidden="true"></span>
         <span>Agroforestry Carbon Field Guide</span>
       </a>
-      <div class="nav-links" aria-label="Primary navigation">
+      <div class="nav-links" aria-label="Profile navigation">
         <a class="active" href="organizations.html">Organizations</a>
         <span>Profiles</span>
       </div>
@@ -409,12 +437,117 @@
       }[character]));
     }
 
+    function hasText(value) {
+      return Boolean(String(value || "").trim());
+    }
+
+    function hasItems(value) {
+      return Array.isArray(value) && value.length > 0;
+    }
+
     function profileUrl(org) {
       return `organization.html?id=${org.slug || slugify(org.name)}`;
     }
 
     function chipList(items) {
       return (items || []).map(item => `<span class="chip">${escapeHtml(item)}</span>`).join("");
+    }
+
+    function pillList(items) {
+      return (items || []).map(item => `<span class="chip">${escapeHtml(item)}</span>`).join("");
+    }
+
+    function sourceList(sources) {
+      return (sources || []).map(source => {
+        if (typeof source === "string") {
+          return `<div class="source-card"><span>${escapeHtml(source)}</span></div>`;
+        }
+        return `
+          <a class="source-card" href="${escapeHtml(source.url)}" target="_blank" rel="noopener">
+            <span>${escapeHtml(source.label || source.url)}</span>
+            <span>Open →</span>
+          </a>
+        `;
+      }).join("");
+    }
+
+    function researchSections(org) {
+      const sections = [];
+
+      sections.push(`
+        <article class="section-card">
+          <h2>Overview</h2>
+          <p>${escapeHtml(org.description || org.overview)}</p>
+        </article>
+      `);
+
+      sections.push(`
+        <article class="section-card">
+          <h2>Carbon strategy</h2>
+          <p>${escapeHtml(org.strategy)}. This describes how carbon appears in the organization's model, not just its functional role.</p>
+        </article>
+      `);
+
+      if (hasItems(org.representativeProjects)) {
+        sections.push(`
+          <article class="section-card">
+            <h2>Representative projects</h2>
+            <p>Named projects or project types connected to this organization.</p>
+            <div class="list-pills">${pillList(org.representativeProjects)}</div>
+          </article>
+        `);
+      }
+
+      if (hasItems(org.partners)) {
+        sections.push(`
+          <article class="section-card">
+            <h2>Partners</h2>
+            <p>Organizations that appear connected to implementation, sourcing, finance, certification, or delivery.</p>
+            <div class="list-pills">${pillList(org.partners)}</div>
+          </article>
+        `);
+      }
+
+      if (hasItems(org.standards)) {
+        sections.push(`
+          <article class="section-card">
+            <h2>Standards</h2>
+            <p>Relevant standards, registries, or certification systems associated with the profile.</p>
+            <div class="list-pills">${pillList(org.standards)}</div>
+          </article>
+        `);
+      }
+
+      if (hasText(org.financingApproach)) {
+        sections.push(`
+          <article class="section-card wide">
+            <h2>Financing approach</h2>
+            <p>${escapeHtml(org.financingApproach)}</p>
+          </article>
+        `);
+      }
+
+      if (hasItems(org.examples)) {
+        sections.push(`
+          <article class="section-card">
+            <h2>Field guide tags</h2>
+            <p>Quick markers for search, comparison, and future landscape views.</p>
+            <div class="chips">${chipList(org.examples)}</div>
+          </article>
+        `);
+      }
+
+      if (hasItems(org.sources)) {
+        sections.push(`
+          <article class="section-card full">
+            <h2>Sources</h2>
+            <p>Starting points for verification and further research.</p>
+            <div class="source-list">${sourceList(org.sources)}</div>
+          </article>
+        `);
+      }
+
+      return sections.join("");
     }
 
     function renderProfile(org, allOrganizations) {
@@ -451,22 +584,8 @@
           </aside>
         </section>
 
-        <section class="content-grid" aria-label="Profile sections">
-          <article class="section-card">
-            <h2>Overview</h2>
-            <p>${escapeHtml(org.description)}</p>
-          </article>
-
-          <article class="section-card">
-            <h2>Carbon strategy</h2>
-            <p>${escapeHtml(org.strategy)}. This label describes how carbon appears in the organization’s model, not just its functional role.</p>
-          </article>
-
-          <article class="section-card">
-            <h2>Field guide tags</h2>
-            <p>Useful quick markers for search, comparison, and future landscape views.</p>
-            <div class="chips">${chipList(org.examples)}</div>
-          </article>
+        <section class="section-stack" aria-label="Research profile sections">
+          ${researchSections(org)}
         </section>
 
         ${related.length ? `
