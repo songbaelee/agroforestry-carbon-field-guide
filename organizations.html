@@ -86,6 +86,11 @@
     .nav-links a:hover,
     .nav-links a.active { color: var(--ink); }
 
+    .nav-links span[aria-disabled="true"] {
+      color: rgba(102, 115, 101, 0.48);
+      cursor: not-allowed;
+    }
+
     main {
       max-width: 1180px;
       margin: 0 auto;
@@ -164,6 +169,71 @@
       color: var(--muted);
       font-size: 13px;
       font-weight: 700;
+    }
+
+
+    .role-lens {
+      display: grid;
+      grid-template-columns: repeat(7, 1fr);
+      gap: 10px;
+      margin: 22px 0 8px;
+    }
+
+    .lens-card {
+      min-height: 118px;
+      padding: 16px;
+      border-radius: 22px;
+      border: 1px solid var(--line);
+      background: rgba(255, 250, 240, 0.62);
+      cursor: pointer;
+      text-align: left;
+      font: inherit;
+      transition: transform 180ms ease, background 180ms ease, border-color 180ms ease;
+    }
+
+    .lens-card:hover,
+    .lens-card.active {
+      transform: translateY(-3px);
+      background: rgba(255, 250, 240, 0.92);
+      border-color: rgba(18, 59, 42, 0.28);
+    }
+
+    .lens-card strong {
+      display: block;
+      color: var(--green);
+      font-size: 22px;
+      letter-spacing: -0.05em;
+    }
+
+    .lens-card span {
+      display: block;
+      margin-top: 8px;
+      color: var(--muted);
+      font-size: 12px;
+      font-weight: 720;
+      line-height: 1.25;
+    }
+
+    .profile-lines {
+      margin-top: 16px;
+      display: grid;
+      gap: 8px;
+      color: var(--muted);
+      font-size: 13px;
+      line-height: 1.35;
+    }
+
+    .profile-lines div {
+      display: grid;
+      grid-template-columns: 82px 1fr;
+      gap: 10px;
+    }
+
+    .profile-lines b {
+      color: var(--green);
+      font-size: 12px;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
     }
 
     .toolbar {
@@ -381,6 +451,7 @@
     @media (max-width: 980px) {
       .hero { grid-template-columns: 1fr; }
       .grid { grid-template-columns: repeat(2, 1fr); }
+      .role-lens { grid-template-columns: repeat(2, 1fr); }
       .toolbar { grid-template-columns: 1fr; }
       .filters { justify-content: flex-start; }
     }
@@ -388,7 +459,7 @@
     @media (max-width: 720px) {
       main { padding-top: 44px; }
       .nav-links { display: none; }
-      .grid, .stats { grid-template-columns: 1fr; }
+      .grid, .stats, .role-lens { grid-template-columns: 1fr; }
       .toolbar { position: static; }
       .directory-head { display: block; }
       .count { display: block; margin-top: 10px; }
@@ -404,11 +475,11 @@
       </a>
       <div class="nav-links" aria-label="Primary navigation">
         <a class="active" href="organizations.html">Organizations</a>
-        <a href="projects.html">Projects</a>
-        <a href="business-models.html">Business Models</a>
-        <a href="landscape.html">Landscape</a>
-        <a href="resources.html">Resources</a>
-        <a href="about.html">About</a>
+        <span aria-disabled="true">Projects</span>
+        <span aria-disabled="true">Business Models</span>
+        <span aria-disabled="true">Landscape</span>
+        <span aria-disabled="true">Resources</span>
+        <span aria-disabled="true">About</span>
       </div>
     </div>
   </nav>
@@ -429,6 +500,38 @@
         <div class="stat"><strong>6</strong><span>functional roles</span></div>
         <div class="stat"><strong id="statFeatured">0</strong><span>featured profiles</span></div>
       </div>
+    </section>
+
+
+    <section class="role-lens" aria-label="Role snapshot">
+      <button class="lens-card active" data-role-jump="all">
+        <strong>All</strong>
+        <span>The whole market map in one browsable directory.</span>
+      </button>
+      <button class="lens-card" data-role-jump="developers">
+        <strong>Developers</strong>
+        <span>Build supply and carry project delivery risk.</span>
+      </button>
+      <button class="lens-card" data-role-jump="implementation">
+        <strong>Implementation</strong>
+        <span>Make projects work with farmers and partners.</span>
+      </button>
+      <button class="lens-card" data-role-jump="standards">
+        <strong>Standards</strong>
+        <span>Turn claims into verified market instruments.</span>
+      </button>
+      <button class="lens-card" data-role-jump="technology">
+        <strong>Technology</strong>
+        <span>Measure, monitor, and reduce uncertainty.</span>
+      </button>
+      <button class="lens-card" data-role-jump="capital">
+        <strong>Capital</strong>
+        <span>Bridge the long gap before credits arrive.</span>
+      </button>
+      <button class="lens-card" data-role-jump="buyers">
+        <strong>Buyers</strong>
+        <span>Shape demand, quality signals, and price discovery.</span>
+      </button>
     </section>
 
     <section class="toolbar" aria-label="Directory controls">
@@ -504,14 +607,16 @@
           <h3>${org.name}</h3>
           <p class="meta">${org.type} · ${org.hq}</p>
           <p class="desc">${org.description}</p>
+          <div class="profile-lines">
+            <div><b>Role</b><span>${org.roleLabel}</span></div>
+            <div><b>Strategy</b><span>${org.strategy}</span></div>
+            <div><b>Footprint</b><span>${org.geography}</span></div>
+          </div>
           <div class="chips">
-            <span class="chip">${org.strategy}</span>
-            <span class="chip">${org.geography}</span>
             ${(org.examples || []).map(example => `<span class="chip">${example}</span>`).join("")}
           </div>
           <div class="card-actions">
             <a class="link" href="${org.website}" target="_blank" rel="noopener">Website →</a>
-            <a class="link secondary" href="organization-${slugify(org.name)}.html">Profile draft →</a>
           </div>
         </article>
       `;
@@ -545,12 +650,24 @@
       grid.innerHTML = filtered.map(organizationCard).join("");
     }
 
-    function setRole(role) {
-      state.role = role;
+    function setRole(role, updateHash = true) {
+      const validRole = roleLabels[role] ? role : "all";
+      state.role = validRole;
       document.querySelectorAll(".filter").forEach(button => {
-        button.classList.toggle("active", button.dataset.role === role);
+        button.classList.toggle("active", button.dataset.role === validRole);
       });
+      document.querySelectorAll(".lens-card").forEach(card => {
+        card.classList.toggle("active", card.dataset.roleJump === validRole);
+      });
+      if (updateHash) {
+        const hash = validRole === "all" ? "" : `#${validRole}`;
+        history.replaceState(null, "", `${window.location.pathname}${hash}`);
+      }
       render();
+    }
+
+    function roleFromHash() {
+      return window.location.hash.replace("#", "") || "all";
     }
 
     document.getElementById("filters").addEventListener("click", event => {
@@ -564,13 +681,24 @@
       render();
     });
 
+
+    document.querySelectorAll(".lens-card").forEach(card => {
+      card.addEventListener("click", () => {
+        const role = card.dataset.roleJump;
+        setRole(role);
+        document.querySelector(".toolbar").scrollIntoView({ behavior: "smooth", block: "start" });
+      });
+    });
+
+    window.addEventListener("hashchange", () => setRole(roleFromHash(), false));
+
     fetch("data/organizations.json")
       .then(response => response.json())
       .then(data => {
         state.organizations = data;
         statTotal.textContent = data.length;
         statFeatured.textContent = data.filter(org => org.featured).length;
-        render();
+        setRole(roleFromHash(), false);
       })
       .catch(error => {
         console.error("Could not load organizations.json", error);

@@ -85,6 +85,11 @@
 
     .nav-links a:hover { color: var(--ink); }
 
+    .nav-links span[aria-disabled="true"] {
+      color: rgba(102, 115, 101, 0.48);
+      cursor: not-allowed;
+    }
+
     main {
       max-width: 1180px;
       margin: 0 auto;
@@ -466,6 +471,16 @@
       background: rgba(255, 250, 240, 0.9);
     }
 
+    .path-card.disabled {
+      opacity: 0.56;
+      cursor: not-allowed;
+    }
+
+    .path-card.disabled:hover {
+      transform: none;
+      background: rgba(255, 250, 240, 0.66);
+    }
+
     .path-card small {
       color: var(--clay);
       font-weight: 900;
@@ -560,11 +575,12 @@
         <span>Agroforestry Carbon Field Guide</span>
       </a>
       <div class="nav-links" aria-label="Primary navigation">
-        <a href="players.html">Players</a>
-        <a href="projects.html">Projects</a>
-        <a href="business-models.html">Business Models</a>
-        <a href="landscape.html">Landscape</a>
-        <a href="about.html">About</a>
+        <a href="organizations.html">Organizations</a>
+        <span aria-disabled="true">Projects</span>
+        <span aria-disabled="true">Business Models</span>
+        <span aria-disabled="true">Landscape</span>
+        <span aria-disabled="true">Resources</span>
+        <span aria-disabled="true">About</span>
       </div>
     </div>
   </nav>
@@ -580,7 +596,7 @@
         </p>
         <div class="hero-actions">
           <a class="button" href="#ecosystem">Explore the ecosystem</a>
-          <a class="button secondary" href="players.html">Browse players</a>
+          <a class="button secondary" href="organizations.html">Browse organizations</a>
         </div>
       </div>
 
@@ -590,37 +606,37 @@
           <span>6 functional roles</span>
         </div>
 
-        <a class="actor-node node-developers" href="players.html#developers">
+        <a class="actor-node node-developers" href="organizations.html#developers">
           <strong>Developers</strong>
           <span>Originate projects and commercialize carbon assets.</span>
           <em>Acorn · PUR · re.green</em>
         </a>
 
-        <a class="actor-node node-capital" href="players.html#capital">
+        <a class="actor-node node-capital" href="organizations.html#capital">
           <strong>Capital</strong>
           <span>Fund the years before verified credits arrive.</span>
           <em>DFIs · funds · offtakers</em>
         </a>
 
-        <a class="actor-node node-standards" href="players.html#standards">
+        <a class="actor-node node-standards" href="organizations.html#standards">
           <strong>Standards</strong>
           <span>Set rules, verify claims, and issue credits.</span>
           <em>Verra · Gold Standard · Plan Vivo</em>
         </a>
 
-        <a class="actor-node node-implementation" href="players.html#implementation">
+        <a class="actor-node node-implementation" href="organizations.html#implementation">
           <strong>Implementation</strong>
           <span>Work with farmers, cooperatives, and local partners.</span>
           <em>Solidaridad · TechnoServe · CRS</em>
         </a>
 
-        <a class="actor-node node-technology" href="players.html#technology">
+        <a class="actor-node node-technology" href="organizations.html#technology">
           <strong>Technology</strong>
           <span>Measure, monitor, manage, and de-risk projects.</span>
           <em>Pachama · OFP · Chloris</em>
         </a>
 
-        <a class="actor-node node-buyers" href="players.html#buyers">
+        <a class="actor-node node-buyers" href="organizations.html#buyers">
           <strong>Buyers</strong>
           <span>Create demand and shape quality expectations.</span>
           <em>Microsoft · Salesforce · supply chains</em>
@@ -643,7 +659,7 @@
       </div>
 
       <div class="role-grid">
-        <a class="role-card" href="players.html#developers">
+        <a class="role-card" href="organizations.html#developers">
           <div class="role-top">
             <span class="tag">Supply builders</span>
             <span class="arrow">→</span>
@@ -653,7 +669,7 @@
           <div class="examples"><span>Acorn</span><span>PUR</span><span>re.green</span><span>Taking Root</span></div>
         </a>
 
-        <a class="role-card" href="players.html#implementation">
+        <a class="role-card" href="organizations.html#implementation">
           <div class="role-top">
             <span class="tag">Ground game</span>
             <span class="arrow">→</span>
@@ -663,7 +679,7 @@
           <div class="examples"><span>Solidaridad</span><span>TechnoServe</span><span>CRS</span><span>Cooperatives</span></div>
         </a>
 
-        <a class="role-card" href="players.html#standards">
+        <a class="role-card" href="organizations.html#standards">
           <div class="role-top">
             <span class="tag">Rules & trust</span>
             <span class="arrow">→</span>
@@ -673,7 +689,7 @@
           <div class="examples"><span>Verra</span><span>Gold Standard</span><span>Plan Vivo</span></div>
         </a>
 
-        <a class="role-card" href="players.html#technology">
+        <a class="role-card" href="organizations.html#technology">
           <div class="role-top">
             <span class="tag">Measurement layer</span>
             <span class="arrow">→</span>
@@ -683,7 +699,7 @@
           <div class="examples"><span>Pachama</span><span>Open Forest Protocol</span><span>Chloris</span></div>
         </a>
 
-        <a class="role-card" href="players.html#capital">
+        <a class="role-card" href="organizations.html#capital">
           <div class="role-top">
             <span class="tag">Time bridges</span>
             <span class="arrow">→</span>
@@ -693,7 +709,7 @@
           <div class="examples"><span>DFIs</span><span>Funds</span><span>Offtakers</span><span>Donors</span></div>
         </a>
 
-        <a class="role-card" href="players.html#buyers">
+        <a class="role-card" href="organizations.html#buyers">
           <div class="role-top">
             <span class="tag">Demand shapers</span>
             <span class="arrow">→</span>
@@ -739,7 +755,7 @@
           <span class="pill">Implementation</span>
         </a>
 
-        <a class="pattern-row" href="business-models.html">
+        <a class="pattern-row" href="https://songbaelee.github.io/carbon-business-models/">
           <div>
             <strong>Risk decides the model</strong>
             <span>Pre-sales, offtake, grants, and working capital shift who carries risk before credits are issued.</span>
@@ -756,26 +772,26 @@
       </div>
 
       <div class="path-grid">
-        <a class="path-card" href="players.html">
+        <a class="path-card" href="organizations.html">
           <small>01</small>
-          <h3>Players</h3>
-          <p>Who are the major organizations, and what role does each one play?</p>
+          <h3>Organizations</h3>
+          <p>Browse the searchable directory of organizations and filter by role.</p>
         </a>
-        <a class="path-card" href="projects.html">
+        <div class="path-card disabled" aria-disabled="true">
           <small>02</small>
           <h3>Projects</h3>
-          <p>What are representative projects, where are they, and who is behind them?</p>
-        </a>
-        <a class="path-card" href="business-models.html">
+          <p>Project directory is next. No dead link until the page exists.</p>
+        </div>
+        <a class="path-card" href="https://songbaelee.github.io/carbon-business-models/">
           <small>03</small>
           <h3>Business Models</h3>
-          <p>How do platform, insetting, offtake, and community models compare?</p>
+          <p>Open the companion guide for carbon business model mechanics.</p>
         </a>
-        <a class="path-card" href="landscape.html">
+        <div class="path-card disabled" aria-disabled="true">
           <small>04</small>
           <h3>Landscape</h3>
-          <p>What patterns are emerging across geography, crops, standards, and finance?</p>
-        </a>
+          <p>Landscape patterns will be linked after the page is created.</p>
+        </div>
       </div>
     </section>
   </main>
