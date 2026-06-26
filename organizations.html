@@ -243,8 +243,9 @@
       margin: 24px 0 24px;
       padding: 14px;
       display: grid;
-      grid-template-columns: minmax(220px, 1fr) auto;
+      grid-template-columns: 1fr;
       gap: 12px;
+      max-width: 760px;
       border-radius: 26px;
       background: rgba(255, 250, 240, 0.76);
       border: 1px solid var(--line);
@@ -266,32 +267,6 @@
 
     .search:focus { border-color: rgba(18, 59, 42, 0.36); }
 
-    .filters {
-      display: flex;
-      align-items: center;
-      flex-wrap: wrap;
-      gap: 8px;
-      justify-content: flex-end;
-    }
-
-    .filter {
-      min-height: 42px;
-      padding: 0 13px;
-      border-radius: 999px;
-      border: 1px solid var(--line);
-      background: rgba(255,255,255,0.35);
-      color: var(--muted);
-      font: inherit;
-      font-size: 13px;
-      font-weight: 820;
-      cursor: pointer;
-    }
-
-    .filter.active {
-      background: var(--ink);
-      border-color: var(--ink);
-      color: var(--cream);
-    }
 
     .directory-head {
       display: flex;
@@ -356,14 +331,34 @@
       font-weight: 850;
     }
 
-    .featured {
+    .strategy-badge {
       display: inline-flex;
       padding: 7px 10px;
       border-radius: 999px;
-      background: rgba(185, 240, 107, 0.28);
+      background: rgba(185, 240, 107, 0.22);
       color: var(--green);
       font-size: 12px;
       font-weight: 900;
+    }
+
+    .strategy-badge[data-strategy="Carbon inside supply chains"] {
+      background: rgba(197, 111, 71, 0.13);
+      color: #7b3d25;
+    }
+
+    .strategy-badge[data-strategy="Carbon as development finance"] {
+      background: rgba(31, 106, 70, 0.12);
+      color: var(--green-2);
+    }
+
+    .strategy-badge[data-strategy="Market infrastructure"],
+    .strategy-badge[data-strategy="Measurement infrastructure"],
+    .strategy-badge[data-strategy="Measurement and market access"],
+    .strategy-badge[data-strategy="Investment capital"],
+    .strategy-badge[data-strategy="Development finance"],
+    .strategy-badge[data-strategy="Carbon procurement"] {
+      background: rgba(20, 34, 26, 0.08);
+      color: var(--green);
     }
 
     .card h3 {
@@ -453,7 +448,6 @@
       .grid { grid-template-columns: repeat(2, 1fr); }
       .role-lens { grid-template-columns: repeat(2, 1fr); }
       .toolbar { grid-template-columns: 1fr; }
-      .filters { justify-content: flex-start; }
     }
 
     @media (max-width: 720px) {
@@ -498,7 +492,7 @@
       <div class="stats" aria-label="Organization directory summary">
         <div class="stat"><strong id="statTotal">0</strong><span>organizations</span></div>
         <div class="stat"><strong>6</strong><span>functional roles</span></div>
-        <div class="stat"><strong id="statFeatured">0</strong><span>featured profiles</span></div>
+        <div class="stat"><strong id="statStrategies">0</strong><span>carbon strategies</span></div>
       </div>
     </section>
 
@@ -536,15 +530,6 @@
 
     <section class="toolbar" aria-label="Directory controls">
       <input class="search" id="search" type="search" placeholder="Search organizations, roles, strategies, countries..." />
-      <div class="filters" id="filters">
-        <button class="filter active" data-role="all">All</button>
-        <button class="filter" data-role="developers">Developers</button>
-        <button class="filter" data-role="implementation">Implementation</button>
-        <button class="filter" data-role="standards">Standards</button>
-        <button class="filter" data-role="technology">Technology</button>
-        <button class="filter" data-role="capital">Capital</button>
-        <button class="filter" data-role="buyers">Buyers</button>
-      </div>
     </section>
 
     <section>
@@ -578,13 +563,30 @@
       query: ""
     };
 
+
+
+    function shortStrategy(strategy) {
+      const labels = {
+        "Carbon as the core business": "Core business",
+        "Carbon inside supply chains": "Supply chain",
+        "Carbon as development finance": "Development finance",
+        "Market infrastructure": "Market infrastructure",
+        "Measurement infrastructure": "Measurement",
+        "Measurement and market access": "Measurement",
+        "Investment capital": "Investment capital",
+        "Development finance": "Development finance",
+        "Carbon procurement": "Carbon procurement"
+      };
+      return labels[strategy] || strategy;
+    }
+
     const grid = document.getElementById("grid");
     const count = document.getElementById("count");
     const empty = document.getElementById("empty");
     const search = document.getElementById("search");
     const directoryTitle = document.getElementById("directoryTitle");
     const statTotal = document.getElementById("statTotal");
-    const statFeatured = document.getElementById("statFeatured");
+    const statStrategies = document.getElementById("statStrategies");
 
     function organizationCard(org) {
       const text = [
@@ -603,7 +605,7 @@
         <article class="card" data-role="${org.role}" data-search="${text.toLowerCase().replace(/"/g, '&quot;')}">
           <div class="card-top">
             <span class="badge">${org.roleLabel}</span>
-            ${org.featured ? '<span class="featured">Featured</span>' : ''}
+            <span class="strategy-badge" data-strategy="${org.strategy}">${shortStrategy(org.strategy)}</span>
           </div>
           <h3><a href="organization.html?id=${org.slug || slugify(org.name)}">${org.name}</a></h3>
           <p class="meta">${org.type} · ${org.hq}</p>
@@ -655,9 +657,6 @@
     function setRole(role, updateHash = true) {
       const validRole = roleLabels[role] ? role : "all";
       state.role = validRole;
-      document.querySelectorAll(".filter").forEach(button => {
-        button.classList.toggle("active", button.dataset.role === validRole);
-      });
       document.querySelectorAll(".lens-card").forEach(card => {
         card.classList.toggle("active", card.dataset.roleJump === validRole);
       });
@@ -672,11 +671,6 @@
       return window.location.hash.replace("#", "") || "all";
     }
 
-    document.getElementById("filters").addEventListener("click", event => {
-      const button = event.target.closest(".filter");
-      if (!button) return;
-      setRole(button.dataset.role);
-    });
 
     search.addEventListener("input", event => {
       state.query = event.target.value;
@@ -699,7 +693,7 @@
       .then(data => {
         state.organizations = data;
         statTotal.textContent = data.length;
-        statFeatured.textContent = data.filter(org => org.featured).length;
+        statStrategies.textContent = new Set(data.map(org => org.strategy)).size;
         setRole(roleFromHash(), false);
       })
       .catch(error => {
