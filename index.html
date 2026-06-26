@@ -12,21 +12,16 @@
       --muted: #667365;
       --green: #123b2a;
       --green-2: #1f6a46;
-      --moss: #d7ef91;
       --lime: #b9f06b;
       --clay: #c56f47;
-      --ochre: #e3b44d;
       --cream: #fffaf0;
       --line: rgba(20, 34, 26, 0.13);
       --card: rgba(255, 250, 240, 0.72);
       --shadow: 0 24px 80px rgba(28, 43, 31, 0.14);
-      --radius-xl: 34px;
       --radius-lg: 26px;
-      --radius-md: 18px;
     }
 
     * { box-sizing: border-box; }
-
     html { scroll-behavior: smooth; }
 
     body {
@@ -36,7 +31,6 @@
       background:
         radial-gradient(circle at 8% -8%, rgba(185, 240, 107, 0.42), transparent 36rem),
         radial-gradient(circle at 96% 8%, rgba(197, 111, 71, 0.18), transparent 34rem),
-        radial-gradient(circle at 72% 72%, rgba(227, 180, 77, 0.16), transparent 42rem),
         linear-gradient(180deg, var(--bg-soft), var(--bg));
       min-height: 100vh;
     }
@@ -99,14 +93,12 @@
 
     .hero {
       display: grid;
-      grid-template-columns: minmax(0, 1.02fr) minmax(360px, 0.98fr);
+      grid-template-columns: minmax(0, 0.94fr) minmax(440px, 1.06fr);
       gap: 34px;
       align-items: stretch;
     }
 
-    .hero-copy {
-      padding: 30px 0 24px;
-    }
+    .hero-copy { padding: 30px 0 24px; }
 
     .eyebrow {
       display: inline-flex;
@@ -174,44 +166,34 @@
       box-shadow: none;
     }
 
-    .hero-panel {
+    .ecosystem-map {
       position: relative;
       overflow: hidden;
-      min-height: 575px;
+      min-height: 610px;
       border-radius: 42px;
       background:
-        linear-gradient(145deg, rgba(18, 59, 42, 0.98), rgba(34, 92, 58, 0.94)),
-        var(--green);
+        radial-gradient(circle at 50% 54%, rgba(185, 240, 107, 0.1), transparent 15rem),
+        linear-gradient(145deg, rgba(18, 59, 42, 0.98), rgba(28, 82, 52, 0.94));
       color: var(--cream);
       box-shadow: var(--shadow);
       isolation: isolate;
     }
 
-    .hero-panel::before,
-    .hero-panel::after {
+    .ecosystem-map::before,
+    .ecosystem-map::after {
       content: "";
       position: absolute;
+      left: 50%;
+      top: 52%;
+      transform: translate(-50%, -50%);
       border-radius: 999px;
-      border: 1px solid rgba(255, 250, 240, 0.16);
+      border: 1px solid rgba(255, 250, 240, 0.14);
+      pointer-events: none;
       z-index: -1;
     }
 
-    .hero-panel::before {
-      width: 590px;
-      height: 590px;
-      left: 50%;
-      top: 50%;
-      transform: translate(-50%, -50%);
-    }
-
-    .hero-panel::after {
-      width: 360px;
-      height: 360px;
-      left: 50%;
-      top: 50%;
-      transform: translate(-50%, -50%);
-      opacity: 0.72;
-    }
+    .ecosystem-map::before { width: 620px; height: 620px; }
+    .ecosystem-map::after { width: 390px; height: 390px; opacity: 0.75; }
 
     .map-title {
       position: absolute;
@@ -222,64 +204,83 @@
       align-items: center;
       justify-content: space-between;
       gap: 18px;
-      color: rgba(255, 250, 240, 0.8);
+      color: rgba(255, 250, 240, 0.78);
       font-size: 13px;
       font-weight: 720;
     }
 
-    .map-title span:last-child {
-      color: var(--lime);
-    }
+    .map-title span:last-child { color: var(--lime); }
 
-    .center-node {
+    .core-node {
       position: absolute;
       left: 50%;
-      top: 50%;
-      width: 215px;
+      top: 52%;
+      width: 232px;
       transform: translate(-50%, -50%);
-      padding: 18px;
-      border-radius: 25px;
+      padding: 19px;
+      border-radius: 26px;
       background: var(--lime);
       color: var(--green);
-      box-shadow: 0 24px 60px rgba(0,0,0,0.18);
+      box-shadow: 0 24px 60px rgba(0,0,0,0.2);
+      z-index: 3;
     }
 
-    .center-node strong,
-    .market-node strong {
+    .core-node strong,
+    .actor-node strong {
       display: block;
-      letter-spacing: -0.025em;
-      line-height: 1.05;
+      letter-spacing: -0.03em;
+      line-height: 1.03;
     }
 
-    .center-node span,
-    .market-node span {
+    .core-node span,
+    .actor-node span {
       display: block;
       margin-top: 7px;
       font-size: 12px;
-      line-height: 1.28;
+      line-height: 1.3;
     }
 
-    .center-node span { color: rgba(18, 59, 42, 0.72); }
+    .core-node span { color: rgba(18, 59, 42, 0.72); }
 
-    .market-node {
+    .actor-node {
       position: absolute;
-      width: 158px;
+      width: 165px;
+      min-height: 112px;
       padding: 14px 15px;
       border-radius: 22px;
       background: rgba(255, 250, 240, 0.12);
       border: 1px solid rgba(255, 250, 240, 0.16);
       backdrop-filter: blur(16px);
       box-shadow: 0 18px 46px rgba(0,0,0,0.15);
+      transition: transform 180ms ease, background 180ms ease, border-color 180ms ease;
+      z-index: 2;
     }
 
-    .market-node span { color: rgba(255, 250, 240, 0.66); }
+    .actor-node:hover {
+      transform: translateY(-5px) scale(1.04);
+      background: rgba(255, 250, 240, 0.2);
+      border-color: rgba(185, 240, 107, 0.45);
+    }
 
-    .node-1 { left: 38px; top: 92px; }
-    .node-2 { right: 40px; top: 96px; }
-    .node-3 { left: 48px; bottom: 118px; }
-    .node-4 { right: 46px; bottom: 112px; }
-    .node-5 { left: 50%; top: 88px; transform: translateX(-50%); }
-    .node-6 { left: 50%; bottom: 42px; transform: translateX(-50%); }
+    .actor-node span { color: rgba(255, 250, 240, 0.67); }
+
+    .actor-node em {
+      display: inline-flex;
+      margin-top: 10px;
+      color: var(--lime);
+      font-size: 11px;
+      font-style: normal;
+      font-weight: 820;
+    }
+
+    .node-developers { left: 36px; top: 105px; }
+    .node-capital { left: 50%; top: 80px; transform: translateX(-50%); }
+    .node-capital:hover { transform: translateX(-50%) translateY(-5px) scale(1.04); }
+    .node-standards { right: 36px; top: 105px; }
+    .node-implementation { left: 48px; bottom: 112px; }
+    .node-technology { left: 50%; bottom: 64px; transform: translateX(-50%); }
+    .node-technology:hover { transform: translateX(-50%) translateY(-5px) scale(1.04); }
+    .node-buyers { right: 48px; bottom: 112px; }
 
     .section { margin-top: 86px; }
 
@@ -301,7 +302,7 @@
 
     .section-head p {
       margin: 0;
-      max-width: 410px;
+      max-width: 430px;
       color: var(--muted);
       line-height: 1.45;
     }
@@ -399,10 +400,7 @@
       box-shadow: var(--shadow);
     }
 
-    .feature-copy {
-      padding: 32px;
-    }
-
+    .feature-copy { padding: 32px; }
     .feature-copy h2 { color: var(--cream); }
 
     .feature-copy p {
@@ -413,10 +411,7 @@
       line-height: 1.45;
     }
 
-    .pattern-list {
-      display: grid;
-      gap: 12px;
-    }
+    .pattern-list { display: grid; gap: 12px; }
 
     .pattern-row {
       display: grid;
@@ -502,12 +497,8 @@
 
     @media (max-width: 980px) {
       .hero,
-      .feature {
-        grid-template-columns: 1fr;
-      }
-
-      .hero-panel { min-height: 520px; }
-
+      .feature { grid-template-columns: 1fr; }
+      .ecosystem-map { min-height: 560px; }
       .role-grid { grid-template-columns: repeat(2, 1fr); }
       .path-grid { grid-template-columns: repeat(2, 1fr); }
     }
@@ -520,14 +511,44 @@
       .role-grid,
       .path-grid { grid-template-columns: 1fr; }
       .hero { grid-template-columns: 1fr; }
-      .hero-panel { min-height: 555px; border-radius: 32px; }
-      .market-node { width: 140px; padding: 12px; }
-      .node-1 { left: 20px; }
-      .node-2 { right: 20px; }
-      .node-3 { left: 20px; }
-      .node-4 { right: 20px; }
-      .center-node { width: 180px; }
+      .ecosystem-map { min-height: 690px; border-radius: 32px; }
+      .ecosystem-map::before { width: 520px; height: 520px; }
+      .ecosystem-map::after { width: 320px; height: 320px; }
+      .actor-node { width: 142px; min-height: 104px; padding: 12px; }
+      .node-developers { left: 18px; top: 102px; }
+      .node-capital { top: 88px; }
+      .node-standards { right: 18px; top: 102px; }
+      .node-implementation { left: 18px; bottom: 150px; }
+      .node-technology { bottom: 42px; }
+      .node-buyers { right: 18px; bottom: 150px; }
+      .core-node { width: 190px; top: 50%; }
       .pattern-row { grid-template-columns: 1fr; }
+    }
+
+    @media (max-width: 470px) {
+      .ecosystem-map {
+        min-height: auto;
+        display: grid;
+        gap: 10px;
+        padding: 76px 18px 18px;
+      }
+
+      .ecosystem-map::before,
+      .ecosystem-map::after,
+      .core-node { display: none; }
+
+      .actor-node {
+        position: relative;
+        left: auto !important;
+        right: auto !important;
+        top: auto !important;
+        bottom: auto !important;
+        transform: none !important;
+        width: auto;
+        min-height: auto;
+      }
+
+      .actor-node:hover { transform: translateY(-3px) !important; }
     }
   </style>
 </head>
@@ -555,7 +576,7 @@
         <h1>Who is building the agroforestry carbon market?</h1>
         <p>
           A visual guide to the organizations, projects, standards, buyers, finance providers,
-          and local partners shaping the global agroforestry carbon ecosystem.
+          technologies, and field partners shaping the global agroforestry carbon ecosystem.
         </p>
         <div class="hero-actions">
           <a class="button" href="#ecosystem">Explore the ecosystem</a>
@@ -563,156 +584,167 @@
         </div>
       </div>
 
-      <div class="hero-panel" aria-label="Agroforestry carbon ecosystem map">
+      <div class="ecosystem-map" aria-label="Interactive agroforestry carbon ecosystem map">
         <div class="map-title">
-          <span>Market map</span>
-          <span>6 actor groups</span>
+          <span>Interactive ecosystem map</span>
+          <span>6 functional roles</span>
         </div>
 
-        <div class="market-node node-1">
-          <strong>Project Developers</strong>
-          <span>PUR, re.green, Taking Root</span>
-        </div>
-        <div class="market-node node-2">
-          <strong>Standards & Registries</strong>
-          <span>Verra, Gold Standard, Plan Vivo</span>
-        </div>
-        <div class="market-node node-3">
-          <strong>Platforms</strong>
-          <span>Acorn, Pachama, Open Forest Protocol</span>
-        </div>
-        <div class="market-node node-4">
+        <a class="actor-node node-developers" href="players.html#developers">
+          <strong>Developers</strong>
+          <span>Originate projects and commercialize carbon assets.</span>
+          <em>Acorn · PUR · re.green</em>
+        </a>
+
+        <a class="actor-node node-capital" href="players.html#capital">
+          <strong>Capital</strong>
+          <span>Fund the years before verified credits arrive.</span>
+          <em>DFIs · funds · offtakers</em>
+        </a>
+
+        <a class="actor-node node-standards" href="players.html#standards">
+          <strong>Standards</strong>
+          <span>Set rules, verify claims, and issue credits.</span>
+          <em>Verra · Gold Standard · Plan Vivo</em>
+        </a>
+
+        <a class="actor-node node-implementation" href="players.html#implementation">
+          <strong>Implementation</strong>
+          <span>Work with farmers, cooperatives, and local partners.</span>
+          <em>Solidaridad · TechnoServe · CRS</em>
+        </a>
+
+        <a class="actor-node node-technology" href="players.html#technology">
+          <strong>Technology</strong>
+          <span>Measure, monitor, manage, and de-risk projects.</span>
+          <em>Pachama · OFP · Chloris</em>
+        </a>
+
+        <a class="actor-node node-buyers" href="players.html#buyers">
           <strong>Buyers</strong>
-          <span>Microsoft, Salesforce, corporate supply chains</span>
-        </div>
-        <div class="market-node node-5">
-          <strong>Finance Providers</strong>
-          <span>Funds, DFIs, offtakers, donors</span>
-        </div>
-        <div class="market-node node-6">
-          <strong>Implementers</strong>
-          <span>Solidaridad, TechnoServe, cooperatives</span>
-        </div>
+          <span>Create demand and shape quality expectations.</span>
+          <em>Microsoft · Salesforce · supply chains</em>
+        </a>
 
-        <div class="center-node">
+        <div class="core-node">
           <strong>Agroforestry carbon market</strong>
-          <span>Where trees, farmers, buyers, data, standards, and capital have to work together.</span>
+          <span>Where land, farmers, capital, data, rules, and demand have to work together.</span>
         </div>
       </div>
     </section>
 
     <section class="section" id="ecosystem">
       <div class="section-head">
-        <h2>The market is a cast, not a category.</h2>
+        <h2>The market is a chain of jobs.</h2>
         <p>
-          Agroforestry carbon projects only work when specialized actors solve different jobs:
-          aggregation, implementation, measurement, verification, finance, and demand.
+          Each role answers a different question: who builds supply, who works with farmers,
+          who creates trust, who measures performance, who funds risk, and who buys the result?
         </p>
       </div>
 
       <div class="role-grid">
-        <a class="role-card" href="players.html">
+        <a class="role-card" href="players.html#developers">
           <div class="role-top">
             <span class="tag">Supply builders</span>
             <span class="arrow">→</span>
           </div>
-          <h3>Project Developers</h3>
-          <p>Structure projects, manage delivery, coordinate partners, and turn agroforestry systems into carbon assets.</p>
-          <div class="examples"><span>PUR</span><span>re.green</span><span>Taking Root</span></div>
+          <h3>Developers</h3>
+          <p>Structure projects, assemble partners, manage delivery risk, and turn agroforestry systems into carbon assets.</p>
+          <div class="examples"><span>Acorn</span><span>PUR</span><span>re.green</span><span>Taking Root</span></div>
         </a>
 
-        <a class="role-card" href="players.html">
+        <a class="role-card" href="players.html#implementation">
           <div class="role-top">
-            <span class="tag">Market rails</span>
+            <span class="tag">Ground game</span>
             <span class="arrow">→</span>
           </div>
-          <h3>Platforms</h3>
-          <p>Bundle MRV, project tools, commercialization, and market access so many local projects can participate.</p>
-          <div class="examples"><span>Acorn</span><span>Pachama</span><span>OFP</span></div>
+          <h3>Implementation</h3>
+          <p>Organize farmers, deliver technical assistance, coordinate planting, and keep projects alive in the field.</p>
+          <div class="examples"><span>Solidaridad</span><span>TechnoServe</span><span>CRS</span><span>Cooperatives</span></div>
         </a>
 
-        <a class="role-card" href="players.html">
+        <a class="role-card" href="players.html#standards">
           <div class="role-top">
             <span class="tag">Rules & trust</span>
             <span class="arrow">→</span>
           </div>
-          <h3>Standards & Registries</h3>
-          <p>Define methodologies, validate claims, issue credits, and keep the ledger buyers depend on.</p>
+          <h3>Standards</h3>
+          <p>Define methodologies, validate claims, issue credits, and keep the registry ledger buyers depend on.</p>
           <div class="examples"><span>Verra</span><span>Gold Standard</span><span>Plan Vivo</span></div>
         </a>
 
-        <a class="role-card" href="players.html">
+        <a class="role-card" href="players.html#technology">
+          <div class="role-top">
+            <span class="tag">Measurement layer</span>
+            <span class="arrow">→</span>
+          </div>
+          <h3>Technology</h3>
+          <p>Use software, remote sensing, field data, and analytics to monitor carbon and reduce delivery risk.</p>
+          <div class="examples"><span>Pachama</span><span>Open Forest Protocol</span><span>Chloris</span></div>
+        </a>
+
+        <a class="role-card" href="players.html#capital">
+          <div class="role-top">
+            <span class="tag">Time bridges</span>
+            <span class="arrow">→</span>
+          </div>
+          <h3>Capital</h3>
+          <p>Finance the awkward gap between project launch, tree growth, verification, issuance, and payment.</p>
+          <div class="examples"><span>DFIs</span><span>Funds</span><span>Offtakers</span><span>Donors</span></div>
+        </a>
+
+        <a class="role-card" href="players.html#buyers">
           <div class="role-top">
             <span class="tag">Demand shapers</span>
             <span class="arrow">→</span>
           </div>
           <h3>Buyers</h3>
-          <p>Purchase credits, fund future supply, and signal what quality, durability, and community benefits are worth.</p>
-          <div class="examples"><span>Microsoft</span><span>Salesforce</span><span>Supply chains</span></div>
-        </a>
-
-        <a class="role-card" href="players.html">
-          <div class="role-top">
-            <span class="tag">Time bridges</span>
-            <span class="arrow">→</span>
-          </div>
-          <h3>Finance Providers</h3>
-          <p>Cover the awkward years between planting trees, verifying carbon, and getting paid.</p>
-          <div class="examples"><span>DFIs</span><span>Funds</span><span>Offtakers</span></div>
-        </a>
-
-        <a class="role-card" href="players.html">
-          <div class="role-top">
-            <span class="tag">Ground game</span>
-            <span class="arrow">→</span>
-          </div>
-          <h3>Implementers</h3>
-          <p>Work with farmers, cooperatives, NGOs, processors, and extension networks that make projects operational.</p>
-          <div class="examples"><span>Solidaridad</span><span>TechnoServe</span><span>Cooperatives</span></div>
+          <p>Purchase credits, pre-fund supply, and signal what quality, durability, and community benefits are worth.</p>
+          <div class="examples"><span>Microsoft</span><span>Salesforce</span><span>Nestlé</span><span>Mars</span></div>
         </a>
       </div>
     </section>
 
     <section class="section feature">
       <div class="feature-copy">
-        <h2>Business models show who carries the risk.</h2>
+        <h2>Carbon strategy cuts across roles.</h2>
         <p>
-          The same tree can sit inside very different models: platform carbon, supply-chain insetting,
-          community carbon, buyer-funded restoration, or blended-finance development programs.
+          This field guide maps who plays which role. The companion business-model guide explains
+          why organizations use carbon: as a product, as supply-chain strategy, or as development finance.
         </p>
       </div>
 
       <div class="pattern-list">
-        <a class="pattern-row" href="business-models.html">
+        <a class="pattern-row" href="https://songbaelee.github.io/carbon-business-models/">
           <div>
-            <strong>Platform model</strong>
-            <span>Local partners originate projects while a platform provides MRV, registry support, and market access.</span>
+            <strong>Carbon as the core business</strong>
+            <span>Developers and platforms use carbon revenue as the main product and commercial engine.</span>
           </div>
-          <span class="pill">Acorn</span>
+          <span class="pill">Developers</span>
+        </a>
+
+        <a class="pattern-row" href="https://songbaelee.github.io/carbon-business-models/">
+          <div>
+            <strong>Carbon inside supply chains</strong>
+            <span>Commodity companies use agroforestry carbon to link climate, sourcing, resilience, and farmer engagement.</span>
+          </div>
+          <span class="pill">Buyers</span>
+        </a>
+
+        <a class="pattern-row" href="https://songbaelee.github.io/carbon-business-models/">
+          <div>
+            <strong>Carbon as development finance</strong>
+            <span>NGOs and implementers use carbon to fund restoration, livelihoods, and technical assistance.</span>
+          </div>
+          <span class="pill">Implementation</span>
         </a>
 
         <a class="pattern-row" href="business-models.html">
           <div>
-            <strong>Supply-chain insetting</strong>
-            <span>Companies invest inside commodity supply chains to link carbon, resilience, sourcing, and farmer engagement.</span>
+            <strong>Risk decides the model</strong>
+            <span>Pre-sales, offtake, grants, and working capital shift who carries risk before credits are issued.</span>
           </div>
-          <span class="pill">PUR</span>
-        </a>
-
-        <a class="pattern-row" href="business-models.html">
-          <div>
-            <strong>Community carbon</strong>
-            <span>Longer-horizon models built around local governance, farmer participation, and benefit sharing.</span>
-          </div>
-          <span class="pill">Plan Vivo</span>
-        </a>
-
-        <a class="pattern-row" href="business-models.html">
-          <div>
-            <strong>Buyer-funded supply</strong>
-            <span>Corporate buyers use pre-purchases, offtake, or direct funding to help projects reach issuance.</span>
-          </div>
-          <span class="pill">Offtake</span>
+          <span class="pill">Capital</span>
         </a>
       </div>
     </section>
@@ -720,7 +752,7 @@
     <section class="section">
       <div class="section-head">
         <h2>Choose your door into the market.</h2>
-        <p>Start with organizations, projects, business models, or the broader landscape patterns.</p>
+        <p>Start with organizations, projects, business models, or broader landscape patterns.</p>
       </div>
 
       <div class="path-grid">
