@@ -558,7 +558,7 @@
   </main>
 
   <footer>
-    Organization data is stored in <code>data/organizations.json</code> so the field guide can grow without rewriting the page.
+    Organization data is stored in <code>data/organizations.json</code>. Directory cards and profiles now read from the same source.
   </footer>
 
   <script>
@@ -595,6 +595,7 @@
         org.geography,
         org.strategy,
         org.description,
+        org.slug,
         ...(org.examples || [])
       ].join(" ");
 
@@ -604,7 +605,7 @@
             <span class="badge">${org.roleLabel}</span>
             ${org.featured ? '<span class="featured">Featured</span>' : ''}
           </div>
-          <h3>${org.name}</h3>
+          <h3><a href="organization.html?id=${org.slug || slugify(org.name)}">${org.name}</a></h3>
           <p class="meta">${org.type} · ${org.hq}</p>
           <p class="desc">${org.description}</p>
           <div class="profile-lines">
@@ -616,7 +617,8 @@
             ${(org.examples || []).map(example => `<span class="chip">${example}</span>`).join("")}
           </div>
           <div class="card-actions">
-            <a class="link" href="${org.website}" target="_blank" rel="noopener">Website →</a>
+            <a class="link" href="organization.html?id=${org.slug || slugify(org.name)}">Profile →</a>
+            <a class="link secondary" href="${org.website}" target="_blank" rel="noopener">Website →</a>
           </div>
         </article>
       `;

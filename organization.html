@@ -1,0 +1,524 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Organization Profile | Agroforestry Carbon Field Guide</title>
+  <style>
+    :root {
+      --bg: #f6f1e6;
+      --bg-soft: #fbf7ee;
+      --ink: #14221a;
+      --muted: #667365;
+      --green: #123b2a;
+      --green-2: #1f6a46;
+      --lime: #b9f06b;
+      --clay: #c56f47;
+      --cream: #fffaf0;
+      --line: rgba(20, 34, 26, 0.13);
+      --card: rgba(255, 250, 240, 0.72);
+      --shadow: 0 24px 80px rgba(28, 43, 31, 0.14);
+      --radius-lg: 26px;
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+
+    body {
+      margin: 0;
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      color: var(--ink);
+      background:
+        radial-gradient(circle at 8% -8%, rgba(185, 240, 107, 0.42), transparent 36rem),
+        radial-gradient(circle at 96% 8%, rgba(197, 111, 71, 0.18), transparent 34rem),
+        linear-gradient(180deg, var(--bg-soft), var(--bg));
+      min-height: 100vh;
+    }
+
+    a { color: inherit; text-decoration: none; }
+
+    .nav {
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      background: rgba(246, 241, 230, 0.76);
+      backdrop-filter: blur(18px);
+      border-bottom: 1px solid var(--line);
+    }
+
+    .nav-inner {
+      max-width: 1180px;
+      margin: 0 auto;
+      padding: 16px 24px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 22px;
+    }
+
+    .brand {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      font-weight: 820;
+      letter-spacing: -0.035em;
+    }
+
+    .brand-mark {
+      width: 36px;
+      height: 36px;
+      border-radius: 13px;
+      background:
+        radial-gradient(circle at 34% 28%, var(--lime), transparent 28%),
+        conic-gradient(from 150deg, var(--green), var(--green-2), #74ad55, var(--green));
+      box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.48), 0 10px 24px rgba(18, 59, 42, 0.22);
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 18px;
+      color: var(--muted);
+      font-size: 14px;
+      font-weight: 650;
+    }
+
+    .nav-links a:hover,
+    .nav-links a.active { color: var(--ink); }
+
+    main {
+      max-width: 1180px;
+      margin: 0 auto;
+      padding: 54px 24px 96px;
+    }
+
+    .back-link {
+      display: inline-flex;
+      align-items: center;
+      min-height: 38px;
+      padding: 0 13px;
+      margin-bottom: 24px;
+      border-radius: 999px;
+      border: 1px solid var(--line);
+      background: rgba(255, 250, 240, 0.68);
+      color: var(--green);
+      font-size: 13px;
+      font-weight: 820;
+    }
+
+    .profile-shell {
+      display: grid;
+      grid-template-columns: minmax(0, 0.92fr) minmax(340px, 0.48fr);
+      gap: 18px;
+      align-items: start;
+    }
+
+    .hero-card {
+      min-height: 470px;
+      padding: 34px;
+      border-radius: 38px;
+      background:
+        radial-gradient(circle at 83% 14%, rgba(185, 240, 107, 0.22), transparent 18rem),
+        linear-gradient(145deg, rgba(18, 59, 42, 0.98), rgba(28, 82, 52, 0.94));
+      color: var(--cream);
+      box-shadow: var(--shadow);
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      overflow: hidden;
+      position: relative;
+    }
+
+    .hero-card::after {
+      content: "";
+      position: absolute;
+      width: 360px;
+      height: 360px;
+      right: -110px;
+      bottom: -150px;
+      border-radius: 999px;
+      border: 1px solid rgba(255, 250, 240, 0.14);
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 9px;
+      padding: 8px 12px;
+      border-radius: 999px;
+      background: rgba(255, 250, 240, 0.11);
+      border: 1px solid rgba(255, 250, 240, 0.16);
+      color: var(--lime);
+      font-size: 13px;
+      font-weight: 820;
+      width: fit-content;
+    }
+
+    h1 {
+      margin: 24px 0 18px;
+      max-width: 760px;
+      font-size: clamp(54px, 8vw, 104px);
+      line-height: 0.86;
+      letter-spacing: -0.08em;
+    }
+
+    .lede {
+      margin: 0;
+      max-width: 680px;
+      color: rgba(255, 250, 240, 0.72);
+      font-size: clamp(18px, 2vw, 22px);
+      line-height: 1.45;
+    }
+
+    .hero-actions {
+      margin-top: 32px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      position: relative;
+      z-index: 2;
+    }
+
+    .button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 44px;
+      padding: 0 16px;
+      border-radius: 999px;
+      background: var(--lime);
+      color: var(--green);
+      font-size: 13px;
+      font-weight: 900;
+    }
+
+    .button.secondary {
+      background: rgba(255, 250, 240, 0.12);
+      color: var(--cream);
+      border: 1px solid rgba(255, 250, 240, 0.18);
+    }
+
+    .side-card, .section-card, .related-card {
+      border-radius: var(--radius-lg);
+      background: var(--card);
+      border: 1px solid rgba(20, 34, 26, 0.1);
+      box-shadow: 0 16px 46px rgba(28, 43, 31, 0.08);
+    }
+
+    .side-card {
+      padding: 24px;
+      position: sticky;
+      top: 92px;
+    }
+
+    .facts {
+      display: grid;
+      gap: 14px;
+    }
+
+    .fact {
+      padding-bottom: 14px;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .fact:last-child { border-bottom: 0; padding-bottom: 0; }
+
+    .fact b {
+      display: block;
+      color: var(--green);
+      font-size: 12px;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      margin-bottom: 5px;
+    }
+
+    .fact span {
+      display: block;
+      color: var(--muted);
+      line-height: 1.35;
+      font-weight: 700;
+    }
+
+    .content-grid {
+      margin-top: 18px;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 16px;
+    }
+
+    .section-card {
+      min-height: 220px;
+      padding: 24px;
+    }
+
+    .section-card h2 {
+      margin: 0 0 12px;
+      font-size: 26px;
+      line-height: 0.98;
+      letter-spacing: -0.045em;
+    }
+
+    .section-card p {
+      margin: 0;
+      color: var(--muted);
+      line-height: 1.45;
+      font-size: 15px;
+    }
+
+    .chips {
+      margin-top: 18px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 7px;
+    }
+
+    .chip {
+      padding: 7px 9px;
+      border-radius: 999px;
+      background: rgba(20, 34, 26, 0.06);
+      color: var(--green);
+      font-size: 12px;
+      font-weight: 760;
+    }
+
+    .related {
+      margin-top: 18px;
+    }
+
+    .related-head {
+      display: flex;
+      align-items: end;
+      justify-content: space-between;
+      gap: 16px;
+      margin-bottom: 14px;
+    }
+
+    .related-head h2 {
+      margin: 0;
+      font-size: clamp(28px, 4vw, 44px);
+      line-height: 0.95;
+      letter-spacing: -0.06em;
+    }
+
+    .related-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 14px;
+    }
+
+    .related-card {
+      padding: 20px;
+      transition: transform 180ms ease, background 180ms ease;
+    }
+
+    .related-card:hover {
+      transform: translateY(-3px);
+      background: rgba(255, 250, 240, 0.92);
+    }
+
+    .related-card small {
+      color: var(--clay);
+      font-weight: 900;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+    }
+
+    .related-card h3 {
+      margin: 14px 0 7px;
+      font-size: 24px;
+      line-height: 1;
+      letter-spacing: -0.045em;
+    }
+
+    .related-card p {
+      margin: 0;
+      color: var(--muted);
+      font-size: 14px;
+      line-height: 1.35;
+    }
+
+    .empty {
+      padding: 34px;
+      border-radius: 34px;
+      background: rgba(255, 250, 240, 0.74);
+      border: 1px solid var(--line);
+      box-shadow: var(--shadow);
+    }
+
+    footer {
+      max-width: 1180px;
+      margin: 0 auto;
+      padding: 0 24px 42px;
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    @media (max-width: 980px) {
+      .profile-shell,
+      .content-grid { grid-template-columns: 1fr; }
+      .side-card { position: static; }
+      .related-grid { grid-template-columns: repeat(2, 1fr); }
+    }
+
+    @media (max-width: 720px) {
+      main { padding-top: 36px; }
+      .nav-links { display: none; }
+      .hero-card { min-height: auto; padding: 26px; }
+      .related-grid { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+  <nav class="nav">
+    <div class="nav-inner">
+      <a class="brand" href="index.html" aria-label="Agroforestry Carbon Field Guide home">
+        <span class="brand-mark" aria-hidden="true"></span>
+        <span>Agroforestry Carbon Field Guide</span>
+      </a>
+      <div class="nav-links" aria-label="Primary navigation">
+        <a class="active" href="organizations.html">Organizations</a>
+        <span>Profiles</span>
+      </div>
+    </div>
+  </nav>
+
+  <main id="app">
+    <div class="empty">Loading organization profile...</div>
+  </main>
+
+  <footer>
+    Profiles are generated from <code>data/organizations.json</code>. One template, many organizations.
+  </footer>
+
+  <script>
+    const app = document.getElementById("app");
+    const params = new URLSearchParams(window.location.search);
+    const requestedId = params.get("id") || "";
+
+    function slugify(value) {
+      return value.toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/^-|-$/g, "");
+    }
+
+    function escapeHtml(value) {
+      return String(value || "").replace(/[&<>'"]/g, character => ({
+        "&": "&amp;",
+        "<": "&lt;",
+        ">": "&gt;",
+        "'": "&#039;",
+        '"': "&quot;"
+      }[character]));
+    }
+
+    function profileUrl(org) {
+      return `organization.html?id=${org.slug || slugify(org.name)}`;
+    }
+
+    function chipList(items) {
+      return (items || []).map(item => `<span class="chip">${escapeHtml(item)}</span>`).join("");
+    }
+
+    function renderProfile(org, allOrganizations) {
+      const related = allOrganizations
+        .filter(item => item.name !== org.name && item.role === org.role)
+        .slice(0, 3);
+
+      document.title = `${org.name} | Agroforestry Carbon Field Guide`;
+
+      app.innerHTML = `
+        <a class="back-link" href="organizations.html#${org.role}">← Back to ${escapeHtml(org.roleLabel || "Organizations")}</a>
+
+        <section class="profile-shell">
+          <article class="hero-card">
+            <div>
+              <div class="eyebrow">${escapeHtml(org.roleLabel || "Organization profile")}</div>
+              <h1>${escapeHtml(org.name)}</h1>
+              <p class="lede">${escapeHtml(org.overview || org.description)}</p>
+            </div>
+            <div class="hero-actions">
+              <a class="button" href="${escapeHtml(org.website)}" target="_blank" rel="noopener">Visit website →</a>
+              <a class="button secondary" href="organizations.html#${escapeHtml(org.role)}">More ${escapeHtml(org.roleLabel || "organizations")} →</a>
+            </div>
+          </article>
+
+          <aside class="side-card" aria-label="Profile summary">
+            <div class="facts">
+              <div class="fact"><b>Primary role</b><span>${escapeHtml(org.roleLabel)}</span></div>
+              <div class="fact"><b>Organization type</b><span>${escapeHtml(org.type)}</span></div>
+              <div class="fact"><b>Headquarters</b><span>${escapeHtml(org.hq)}</span></div>
+              <div class="fact"><b>Footprint</b><span>${escapeHtml(org.geography)}</span></div>
+              <div class="fact"><b>Carbon strategy</b><span>${escapeHtml(org.strategy)}</span></div>
+            </div>
+          </aside>
+        </section>
+
+        <section class="content-grid" aria-label="Profile sections">
+          <article class="section-card">
+            <h2>Overview</h2>
+            <p>${escapeHtml(org.description)}</p>
+          </article>
+
+          <article class="section-card">
+            <h2>Carbon strategy</h2>
+            <p>${escapeHtml(org.strategy)}. This label describes how carbon appears in the organization’s model, not just its functional role.</p>
+          </article>
+
+          <article class="section-card">
+            <h2>Field guide tags</h2>
+            <p>Useful quick markers for search, comparison, and future landscape views.</p>
+            <div class="chips">${chipList(org.examples)}</div>
+          </article>
+        </section>
+
+        ${related.length ? `
+          <section class="related">
+            <div class="related-head">
+              <h2>Comparable organizations</h2>
+            </div>
+            <div class="related-grid">
+              ${related.map(item => `
+                <a class="related-card" href="${profileUrl(item)}">
+                  <small>${escapeHtml(item.roleLabel)}</small>
+                  <h3>${escapeHtml(item.name)}</h3>
+                  <p>${escapeHtml(item.type)} · ${escapeHtml(item.strategy)}</p>
+                </a>
+              `).join("")}
+            </div>
+          </section>
+        ` : ""}
+      `;
+    }
+
+    function renderNotFound(organizations) {
+      app.innerHTML = `
+        <section class="empty">
+          <h1>Profile not found.</h1>
+          <p>The requested organization profile does not exist in <code>data/organizations.json</code>.</p>
+          <p><a class="back-link" href="organizations.html">Browse all organizations</a></p>
+        </section>
+      `;
+      console.warn("Available organization IDs:", organizations.map(org => org.slug || slugify(org.name)));
+    }
+
+    fetch("data/organizations.json")
+      .then(response => response.json())
+      .then(organizations => {
+        const normalizedId = requestedId.toLowerCase();
+        const organization = organizations.find(org => (org.slug || slugify(org.name)) === normalizedId);
+        if (!organization) {
+          renderNotFound(organizations);
+          return;
+        }
+        renderProfile(organization, organizations);
+      })
+      .catch(error => {
+        console.error("Could not load organizations.json", error);
+        app.innerHTML = `
+          <section class="empty">
+            <h1>Could not load profile data.</h1>
+            <p>Check that <code>data/organizations.json</code> is published with this page.</p>
+          </section>
+        `;
+      });
+  </script>
+</body>
+</html>
