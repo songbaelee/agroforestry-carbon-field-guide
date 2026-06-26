@@ -1,0 +1,677 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Players | Agroforestry Carbon Field Guide</title>
+  <style>
+    :root {
+      --bg: #f6f1e6;
+      --bg-soft: #fbf7ee;
+      --ink: #14221a;
+      --muted: #667365;
+      --green: #123b2a;
+      --green-2: #1f6a46;
+      --lime: #b9f06b;
+      --clay: #c56f47;
+      --cream: #fffaf0;
+      --line: rgba(20, 34, 26, 0.13);
+      --card: rgba(255, 250, 240, 0.72);
+      --shadow: 0 24px 80px rgba(28, 43, 31, 0.14);
+      --radius-lg: 26px;
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+
+    body {
+      margin: 0;
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      color: var(--ink);
+      background:
+        radial-gradient(circle at 8% -8%, rgba(185, 240, 107, 0.42), transparent 36rem),
+        radial-gradient(circle at 96% 8%, rgba(197, 111, 71, 0.18), transparent 34rem),
+        linear-gradient(180deg, var(--bg-soft), var(--bg));
+      min-height: 100vh;
+    }
+
+    a { color: inherit; text-decoration: none; }
+
+    .nav {
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      background: rgba(246, 241, 230, 0.76);
+      backdrop-filter: blur(18px);
+      border-bottom: 1px solid var(--line);
+    }
+
+    .nav-inner {
+      max-width: 1180px;
+      margin: 0 auto;
+      padding: 16px 24px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 22px;
+    }
+
+    .brand {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      font-weight: 820;
+      letter-spacing: -0.035em;
+    }
+
+    .brand-mark {
+      width: 36px;
+      height: 36px;
+      border-radius: 13px;
+      background:
+        radial-gradient(circle at 34% 28%, var(--lime), transparent 28%),
+        conic-gradient(from 150deg, var(--green), var(--green-2), #74ad55, var(--green));
+      box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.48), 0 10px 24px rgba(18, 59, 42, 0.22);
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 18px;
+      color: var(--muted);
+      font-size: 14px;
+      font-weight: 650;
+    }
+
+    .nav-links a:hover,
+    .nav-links a.active { color: var(--ink); }
+
+    main {
+      max-width: 1180px;
+      margin: 0 auto;
+      padding: 72px 24px 96px;
+    }
+
+    .hero {
+      display: grid;
+      grid-template-columns: minmax(0, 0.95fr) minmax(360px, 1.05fr);
+      gap: 34px;
+      align-items: stretch;
+      margin-bottom: 64px;
+    }
+
+    .hero-copy { padding: 28px 0 18px; }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 9px;
+      padding: 8px 12px;
+      border-radius: 999px;
+      border: 1px solid var(--line);
+      background: rgba(255, 250, 240, 0.64);
+      color: var(--green);
+      font-size: 13px;
+      font-weight: 780;
+    }
+
+    .eyebrow::before {
+      content: "";
+      width: 8px;
+      height: 8px;
+      border-radius: 999px;
+      background: var(--lime);
+      box-shadow: 0 0 0 5px rgba(185, 240, 107, 0.22);
+    }
+
+    h1 {
+      margin: 24px 0 18px;
+      max-width: 760px;
+      font-size: clamp(48px, 7.6vw, 90px);
+      line-height: 0.9;
+      letter-spacing: -0.078em;
+    }
+
+    .hero-copy p {
+      margin: 0;
+      max-width: 650px;
+      color: var(--muted);
+      font-size: clamp(18px, 2.1vw, 22px);
+      line-height: 1.45;
+    }
+
+    .role-jump {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 30px;
+    }
+
+    .jump-pill {
+      display: inline-flex;
+      align-items: center;
+      min-height: 40px;
+      padding: 0 14px;
+      border-radius: 999px;
+      background: rgba(255, 250, 240, 0.68);
+      border: 1px solid var(--line);
+      color: var(--green);
+      font-size: 13px;
+      font-weight: 760;
+    }
+
+    .system-card {
+      min-height: 460px;
+      padding: 26px;
+      border-radius: 38px;
+      background:
+        radial-gradient(circle at 70% 26%, rgba(185, 240, 107, 0.18), transparent 18rem),
+        linear-gradient(145deg, rgba(18, 59, 42, 0.98), rgba(28, 82, 52, 0.94));
+      color: var(--cream);
+      box-shadow: var(--shadow);
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    .system-card h2 {
+      margin: 0;
+      max-width: 470px;
+      font-size: clamp(34px, 4.4vw, 54px);
+      line-height: 0.96;
+      letter-spacing: -0.058em;
+    }
+
+    .system-card p {
+      margin: 18px 0 0;
+      max-width: 480px;
+      color: rgba(255, 250, 240, 0.72);
+      font-size: 17px;
+      line-height: 1.45;
+    }
+
+    .mini-map {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 10px;
+      margin-top: 26px;
+    }
+
+    .mini-map a {
+      padding: 13px;
+      border-radius: 18px;
+      background: rgba(255, 250, 240, 0.1);
+      border: 1px solid rgba(255, 250, 240, 0.14);
+      font-size: 13px;
+      font-weight: 760;
+    }
+
+    .section {
+      scroll-margin-top: 96px;
+      margin-top: 70px;
+    }
+
+    .section-head {
+      display: flex;
+      align-items: end;
+      justify-content: space-between;
+      gap: 24px;
+      margin-bottom: 20px;
+    }
+
+    .section h2 {
+      margin: 0;
+      max-width: 720px;
+      font-size: clamp(34px, 5vw, 58px);
+      line-height: 0.96;
+      letter-spacing: -0.058em;
+    }
+
+    .section-head p {
+      margin: 0;
+      max-width: 430px;
+      color: var(--muted);
+      line-height: 1.45;
+    }
+
+    .player-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 16px;
+    }
+
+    .player-card {
+      min-height: 285px;
+      display: flex;
+      flex-direction: column;
+      padding: 22px;
+      border-radius: var(--radius-lg);
+      background: var(--card);
+      border: 1px solid rgba(20, 34, 26, 0.1);
+      box-shadow: 0 16px 46px rgba(28, 43, 31, 0.08);
+      transition: transform 180ms ease, box-shadow 180ms ease, background 180ms ease;
+    }
+
+    .player-card:hover {
+      transform: translateY(-4px);
+      box-shadow: var(--shadow);
+      background: rgba(255, 250, 240, 0.9);
+    }
+
+    .player-top {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 14px;
+      margin-bottom: 22px;
+    }
+
+    .badge {
+      display: inline-flex;
+      padding: 7px 10px;
+      border-radius: 999px;
+      background: rgba(18, 59, 42, 0.08);
+      color: var(--green);
+      font-size: 12px;
+      font-weight: 820;
+    }
+
+    .priority {
+      color: var(--clay);
+      font-size: 12px;
+      font-weight: 860;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+    }
+
+    .player-card h3 {
+      margin: 0 0 10px;
+      font-size: 30px;
+      line-height: 0.98;
+      letter-spacing: -0.05em;
+    }
+
+    .player-card p {
+      margin: 0;
+      color: var(--muted);
+      line-height: 1.45;
+    }
+
+    .facts {
+      margin-top: auto;
+      padding-top: 22px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+
+    .facts span {
+      padding: 7px 9px;
+      border-radius: 999px;
+      background: rgba(20, 34, 26, 0.06);
+      color: var(--green);
+      font-size: 12px;
+      font-weight: 720;
+    }
+
+    .note {
+      margin-top: 20px;
+      padding: 18px 20px;
+      border-radius: 22px;
+      background: rgba(255, 250, 240, 0.62);
+      border: 1px solid var(--line);
+      color: var(--muted);
+      line-height: 1.45;
+    }
+
+    footer {
+      max-width: 1180px;
+      margin: 0 auto;
+      padding: 0 24px 42px;
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    @media (max-width: 980px) {
+      .hero { grid-template-columns: 1fr; }
+      .player-grid { grid-template-columns: repeat(2, 1fr); }
+    }
+
+    @media (max-width: 720px) {
+      main { padding-top: 44px; }
+      .nav-links { display: none; }
+      .section-head { display: block; }
+      .section-head p { margin-top: 14px; }
+      .player-grid { grid-template-columns: 1fr; }
+      .mini-map { grid-template-columns: repeat(2, 1fr); }
+    }
+
+    @media (max-width: 470px) {
+      .system-card { min-height: auto; }
+      .mini-map { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+  <nav class="nav">
+    <div class="nav-inner">
+      <a class="brand" href="index.html" aria-label="Agroforestry Carbon Field Guide home">
+        <span class="brand-mark" aria-hidden="true"></span>
+        <span>Agroforestry Carbon Field Guide</span>
+      </a>
+      <div class="nav-links" aria-label="Primary navigation">
+        <a class="active" href="players.html">Players</a>
+        <a href="projects.html">Projects</a>
+        <a href="business-models.html">Business Models</a>
+        <a href="landscape.html">Landscape</a>
+        <a href="about.html">About</a>
+      </div>
+    </div>
+  </nav>
+
+  <main>
+    <section class="hero">
+      <div class="hero-copy">
+        <div class="eyebrow">Players</div>
+        <h1>The organizations behind the market.</h1>
+        <p>
+          Agroforestry carbon is not built by one type of institution. Developers, implementers,
+          standards, technology companies, finance providers, and buyers each solve a different
+          part of the puzzle.
+        </p>
+
+        <div class="role-jump" aria-label="Jump to player roles">
+          <a class="jump-pill" href="#developers">Developers</a>
+          <a class="jump-pill" href="#implementation">Implementation</a>
+          <a class="jump-pill" href="#standards">Standards</a>
+          <a class="jump-pill" href="#technology">Technology</a>
+          <a class="jump-pill" href="#capital">Capital</a>
+          <a class="jump-pill" href="#buyers">Buyers</a>
+        </div>
+      </div>
+
+      <div class="system-card">
+        <div>
+          <h2>Same market. Different jobs.</h2>
+          <p>
+            The field guide treats each organization by its primary function, then compares how
+            carbon strategy differs across the ecosystem.
+          </p>
+        </div>
+
+        <div class="mini-map">
+          <a href="#developers">Developers</a>
+          <a href="#implementation">Implementation</a>
+          <a href="#standards">Standards</a>
+          <a href="#technology">Technology</a>
+          <a href="#capital">Capital</a>
+          <a href="#buyers">Buyers</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="developers">
+      <div class="section-head">
+        <h2>Developers</h2>
+        <p>Originate projects, assemble partners, manage delivery risk, and commercialize carbon assets.</p>
+      </div>
+
+      <div class="player-grid">
+        <article class="player-card">
+          <div class="player-top">
+            <span class="badge">Platform developer</span>
+            <span class="priority">Profile first</span>
+          </div>
+          <h3>Acorn</h3>
+          <p>Smallholder agroforestry carbon platform that works through local partners and connects projects to carbon markets.</p>
+          <div class="facts"><span>Smallholders</span><span>Agroforestry</span><span>Partner-led</span></div>
+        </article>
+
+        <article class="player-card">
+          <div class="player-top">
+            <span class="badge">Commercial developer</span>
+            <span class="priority">Compare</span>
+          </div>
+          <h3>PUR</h3>
+          <p>Develops nature-based projects, often linked to corporate supply chains and insetting strategies.</p>
+          <div class="facts"><span>Insetting</span><span>Supply chains</span><span>Corporate partners</span></div>
+        </article>
+
+        <article class="player-card">
+          <div class="player-top">
+            <span class="badge">Restoration developer</span>
+            <span class="priority">Compare</span>
+          </div>
+          <h3>re.green</h3>
+          <p>Large-scale ecological restoration developer focused on native forest restoration and carbon removal in Brazil.</p>
+          <div class="facts"><span>Brazil</span><span>Restoration</span><span>Carbon removal</span></div>
+        </article>
+
+        <article class="player-card">
+          <div class="player-top">
+            <span class="badge">Technology-enabled developer</span>
+            <span class="priority">Queued</span>
+          </div>
+          <h3>Taking Root</h3>
+          <p>Works with smallholder farmers and local organizations to build reforestation and agroforestry carbon projects.</p>
+          <div class="facts"><span>Smallholders</span><span>Software</span><span>Reforestation</span></div>
+        </article>
+      </div>
+    </section>
+
+    <section class="section" id="implementation">
+      <div class="section-head">
+        <h2>Implementation</h2>
+        <p>Work with farmers, cooperatives, processors, NGOs, and local networks that make projects operational.</p>
+      </div>
+
+      <div class="player-grid">
+        <article class="player-card">
+          <div class="player-top">
+            <span class="badge">International NGO</span>
+            <span class="priority">Profile first</span>
+          </div>
+          <h3>Solidaridad</h3>
+          <p>Implements farmer programs and appears in multiple agroforestry carbon partnerships, including Acorn-linked projects.</p>
+          <div class="facts"><span>Farmer programs</span><span>Commodity chains</span><span>Carbon partner</span></div>
+        </article>
+
+        <article class="player-card">
+          <div class="player-top">
+            <span class="badge">Technical assistance</span>
+            <span class="priority">Profile first</span>
+          </div>
+          <h3>TechnoServe</h3>
+          <p>Strong smallholder and agribusiness technical assistance platform. Key question: when does carbon finance the work?</p>
+          <div class="facts"><span>TA provider</span><span>Smallholders</span><span>CASA link</span></div>
+        </article>
+
+        <article class="player-card">
+          <div class="player-top">
+            <span class="badge">Potential entrant</span>
+            <span class="priority">Strategic</span>
+          </div>
+          <h3>CRS</h3>
+          <p>Potential implementation partner with field presence. The strategic question is what to build versus partner for.</p>
+          <div class="facts"><span>Field networks</span><span>Development finance</span><span>Partner model</span></div>
+        </article>
+
+        <article class="player-card">
+          <div class="player-top">
+            <span class="badge">Local institutions</span>
+            <span class="priority">Critical</span>
+          </div>
+          <h3>Cooperatives</h3>
+          <p>Farmer aggregation, trust, local governance, benefit sharing, and long-term maintenance often depend on them.</p>
+          <div class="facts"><span>Aggregation</span><span>Governance</span><span>Farmer trust</span></div>
+        </article>
+      </div>
+    </section>
+
+    <section class="section" id="standards">
+      <div class="section-head">
+        <h2>Standards</h2>
+        <p>Define methodologies, validate claims, issue credits, and keep the registry ledger buyers depend on.</p>
+      </div>
+
+      <div class="player-grid">
+        <article class="player-card">
+          <div class="player-top">
+            <span class="badge">Registry standard</span>
+            <span class="priority">Core</span>
+          </div>
+          <h3>Verra</h3>
+          <p>Major voluntary carbon standard and registry used across many nature-based carbon projects.</p>
+          <div class="facts"><span>VCS</span><span>Registry</span><span>Methodologies</span></div>
+        </article>
+
+        <article class="player-card">
+          <div class="player-top">
+            <span class="badge">Registry standard</span>
+            <span class="priority">Core</span>
+          </div>
+          <h3>Gold Standard</h3>
+          <p>Carbon standard with strong sustainable development positioning and registry infrastructure.</p>
+          <div class="facts"><span>SDGs</span><span>Registry</span><span>Quality claims</span></div>
+        </article>
+
+        <article class="player-card">
+          <div class="player-top">
+            <span class="badge">Community standard</span>
+            <span class="priority">Relevant</span>
+          </div>
+          <h3>Plan Vivo</h3>
+          <p>Long-running standard associated with community-led land use, restoration, and smallholder benefit-sharing models.</p>
+          <div class="facts"><span>Community carbon</span><span>Smallholders</span><span>Benefits</span></div>
+        </article>
+      </div>
+    </section>
+
+    <section class="section" id="technology">
+      <div class="section-head">
+        <h2>Technology</h2>
+        <p>Measure, monitor, manage, and de-risk projects using remote sensing, software, field data, and analytics.</p>
+      </div>
+
+      <div class="player-grid">
+        <article class="player-card">
+          <div class="player-top">
+            <span class="badge">Carbon marketplace & MRV</span>
+            <span class="priority">Compare</span>
+          </div>
+          <h3>Pachama</h3>
+          <p>Forest carbon technology and marketplace company focused on monitoring, assessment, and procurement tools.</p>
+          <div class="facts"><span>Remote sensing</span><span>Marketplace</span><span>Quality</span></div>
+        </article>
+
+        <article class="player-card">
+          <div class="player-top">
+            <span class="badge">Open infrastructure</span>
+            <span class="priority">Queued</span>
+          </div>
+          <h3>Open Forest Protocol</h3>
+          <p>Digital infrastructure for forest project monitoring and data transparency.</p>
+          <div class="facts"><span>Digital MRV</span><span>Transparency</span><span>Infrastructure</span></div>
+        </article>
+
+        <article class="player-card">
+          <div class="player-top">
+            <span class="badge">Biomass analytics</span>
+            <span class="priority">Queued</span>
+          </div>
+          <h3>Chloris</h3>
+          <p>Uses remote sensing to estimate above-ground biomass and nature-based carbon performance.</p>
+          <div class="facts"><span>Biomass</span><span>Remote sensing</span><span>Analytics</span></div>
+        </article>
+      </div>
+    </section>
+
+    <section class="section" id="capital">
+      <div class="section-head">
+        <h2>Capital</h2>
+        <p>Finance the gap between project launch, tree growth, verification, issuance, and payment.</p>
+      </div>
+
+      <div class="player-grid">
+        <article class="player-card">
+          <div class="player-top">
+            <span class="badge">Development finance</span>
+            <span class="priority">Research</span>
+          </div>
+          <h3>DFIs</h3>
+          <p>Provide concessional capital, guarantees, or anchor funding where commercial capital is not yet comfortable.</p>
+          <div class="facts"><span>Risk sharing</span><span>Guarantees</span><span>Concessional</span></div>
+        </article>
+
+        <article class="player-card">
+          <div class="player-top">
+            <span class="badge">Climate funds</span>
+            <span class="priority">Research</span>
+          </div>
+          <h3>Climate funds</h3>
+          <p>Can finance restoration portfolios, developers, or project platforms before carbon cash flows arrive.</p>
+          <div class="facts"><span>Working capital</span><span>Equity</span><span>Debt</span></div>
+        </article>
+
+        <article class="player-card">
+          <div class="player-top">
+            <span class="badge">Commercialization</span>
+            <span class="priority">Core question</span>
+          </div>
+          <h3>Offtakers</h3>
+          <p>Use pre-purchases or offtake agreements to shape supply and shift risk before credits are delivered.</p>
+          <div class="facts"><span>Pre-sales</span><span>Offtake</span><span>Demand signal</span></div>
+        </article>
+      </div>
+    </section>
+
+    <section class="section" id="buyers">
+      <div class="section-head">
+        <h2>Buyers</h2>
+        <p>Purchase credits, pre-fund supply, and signal what quality, durability, and community benefits are worth.</p>
+      </div>
+
+      <div class="player-grid">
+        <article class="player-card">
+          <div class="player-top">
+            <span class="badge">Corporate buyer</span>
+            <span class="priority">Quality signal</span>
+          </div>
+          <h3>Microsoft</h3>
+          <p>High-profile carbon removal buyer whose procurement strategy influences market expectations.</p>
+          <div class="facts"><span>Carbon removal</span><span>Procurement</span><span>Quality</span></div>
+        </article>
+
+        <article class="player-card">
+          <div class="player-top">
+            <span class="badge">Corporate buyer</span>
+            <span class="priority">Quality signal</span>
+          </div>
+          <h3>Salesforce</h3>
+          <p>Corporate climate buyer active in voluntary carbon markets and nature-based climate solutions.</p>
+          <div class="facts"><span>VCM</span><span>Nature-based</span><span>Demand</span></div>
+        </article>
+
+        <article class="player-card">
+          <div class="player-top">
+            <span class="badge">Supply-chain buyer</span>
+            <span class="priority">Compare</span>
+          </div>
+          <h3>Nestlé / Mars</h3>
+          <p>Food and agriculture companies may use agroforestry carbon inside sourcing, resilience, and supplier programs.</p>
+          <div class="facts"><span>Cocoa</span><span>Coffee</span><span>Insetting</span></div>
+        </article>
+      </div>
+
+      <div class="note">
+        Next layer: turn these cards into full organization profiles with role, carbon strategy, representative projects,
+        partners, registries, financing approach, and comparable organizations.
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    Built incrementally as a public field guide to the organizations shaping agroforestry carbon markets.
+  </footer>
+</body>
+</html>
