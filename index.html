@@ -6,30 +6,38 @@
   <title>Agroforestry Carbon Field Guide</title>
   <style>
     :root {
-      --bg: #f6f2e8;
-      --ink: #17231c;
-      --muted: #657166;
-      --line: rgba(23, 35, 28, 0.14);
-      --green: #123c2b;
-      --lime: #b7f06a;
-      --clay: #c86f4a;
-      --sand: #efe4c8;
-      --card: rgba(255, 252, 244, 0.78);
-      --white: #fffdf8;
-      --shadow: 0 24px 80px rgba(24, 39, 27, 0.14);
-      --radius: 28px;
+      --bg: #f6f1e6;
+      --bg-soft: #fbf7ee;
+      --ink: #14221a;
+      --muted: #667365;
+      --green: #123b2a;
+      --green-2: #1f6a46;
+      --moss: #d7ef91;
+      --lime: #b9f06b;
+      --clay: #c56f47;
+      --ochre: #e3b44d;
+      --cream: #fffaf0;
+      --line: rgba(20, 34, 26, 0.13);
+      --card: rgba(255, 250, 240, 0.72);
+      --shadow: 0 24px 80px rgba(28, 43, 31, 0.14);
+      --radius-xl: 34px;
+      --radius-lg: 26px;
+      --radius-md: 18px;
     }
 
     * { box-sizing: border-box; }
+
+    html { scroll-behavior: smooth; }
 
     body {
       margin: 0;
       font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
       color: var(--ink);
       background:
-        radial-gradient(circle at 15% 0%, rgba(183, 240, 106, 0.35), transparent 34rem),
-        radial-gradient(circle at 85% 12%, rgba(200, 111, 74, 0.18), transparent 32rem),
-        linear-gradient(180deg, #fbf7ed 0%, var(--bg) 48%, #efe6d0 100%);
+        radial-gradient(circle at 8% -8%, rgba(185, 240, 107, 0.42), transparent 36rem),
+        radial-gradient(circle at 96% 8%, rgba(197, 111, 71, 0.18), transparent 34rem),
+        radial-gradient(circle at 72% 72%, rgba(227, 180, 77, 0.16), transparent 42rem),
+        linear-gradient(180deg, var(--bg-soft), var(--bg));
       min-height: 100vh;
     }
 
@@ -38,43 +46,47 @@
     .nav {
       position: sticky;
       top: 0;
-      z-index: 20;
+      z-index: 50;
+      background: rgba(246, 241, 230, 0.76);
       backdrop-filter: blur(18px);
-      background: rgba(246, 242, 232, 0.72);
       border-bottom: 1px solid var(--line);
     }
 
     .nav-inner {
       max-width: 1180px;
       margin: 0 auto;
-      padding: 18px 24px;
+      padding: 16px 24px;
       display: flex;
-      justify-content: space-between;
       align-items: center;
-      gap: 24px;
+      justify-content: space-between;
+      gap: 22px;
     }
 
     .brand {
-      display: flex;
+      display: inline-flex;
       align-items: center;
       gap: 10px;
-      font-weight: 760;
-      letter-spacing: -0.03em;
+      font-weight: 820;
+      letter-spacing: -0.035em;
     }
 
     .brand-mark {
-      width: 34px;
-      height: 34px;
-      border-radius: 12px;
-      background: conic-gradient(from 140deg, var(--green), #2f7a4d, var(--lime), var(--green));
-      box-shadow: inset 0 0 0 1px rgba(255,255,255,0.55);
+      width: 36px;
+      height: 36px;
+      border-radius: 13px;
+      background:
+        radial-gradient(circle at 34% 28%, var(--lime), transparent 28%),
+        conic-gradient(from 150deg, var(--green), var(--green-2), #74ad55, var(--green));
+      box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.48), 0 10px 24px rgba(18, 59, 42, 0.22);
     }
 
     .nav-links {
       display: flex;
+      align-items: center;
       gap: 18px;
-      font-size: 14px;
       color: var(--muted);
+      font-size: 14px;
+      font-weight: 650;
     }
 
     .nav-links a:hover { color: var(--ink); }
@@ -82,158 +94,214 @@
     main {
       max-width: 1180px;
       margin: 0 auto;
-      padding: 76px 24px 96px;
+      padding: 72px 24px 96px;
     }
 
     .hero {
       display: grid;
-      grid-template-columns: 1.08fr 0.92fr;
+      grid-template-columns: minmax(0, 1.02fr) minmax(360px, 0.98fr);
       gap: 34px;
       align-items: stretch;
     }
 
-    .hero-copy { padding: 34px 0; }
+    .hero-copy {
+      padding: 30px 0 24px;
+    }
 
     .eyebrow {
       display: inline-flex;
       align-items: center;
-      gap: 8px;
+      gap: 9px;
       padding: 8px 12px;
-      border: 1px solid var(--line);
       border-radius: 999px;
-      background: rgba(255,255,255,0.46);
+      border: 1px solid var(--line);
+      background: rgba(255, 250, 240, 0.64);
       color: var(--green);
       font-size: 13px;
-      font-weight: 680;
+      font-weight: 780;
+    }
+
+    .eyebrow::before {
+      content: "";
+      width: 8px;
+      height: 8px;
+      border-radius: 999px;
+      background: var(--lime);
+      box-shadow: 0 0 0 5px rgba(185, 240, 107, 0.22);
     }
 
     h1 {
-      margin: 22px 0 18px;
-      max-width: 820px;
-      font-size: clamp(48px, 8vw, 92px);
-      line-height: 0.91;
-      letter-spacing: -0.075em;
+      margin: 24px 0 18px;
+      max-width: 760px;
+      font-size: clamp(48px, 7.8vw, 92px);
+      line-height: 0.9;
+      letter-spacing: -0.078em;
     }
 
     .hero-copy p {
       margin: 0;
       max-width: 620px;
       color: var(--muted);
-      font-size: clamp(18px, 2.2vw, 22px);
+      font-size: clamp(18px, 2.1vw, 22px);
       line-height: 1.45;
     }
 
     .hero-actions {
+      margin-top: 30px;
       display: flex;
       flex-wrap: wrap;
       gap: 12px;
-      margin-top: 30px;
     }
 
     .button {
       display: inline-flex;
       align-items: center;
       justify-content: center;
-      min-height: 48px;
-      padding: 0 18px;
+      min-height: 50px;
+      padding: 0 20px;
       border-radius: 999px;
-      font-weight: 740;
-      border: 1px solid var(--line);
+      border: 1px solid transparent;
       background: var(--ink);
-      color: var(--white);
-      box-shadow: 0 12px 30px rgba(18, 60, 43, 0.18);
+      color: var(--cream);
+      font-weight: 820;
+      box-shadow: 0 16px 38px rgba(20, 34, 26, 0.18);
     }
 
     .button.secondary {
-      background: rgba(255,255,255,0.52);
+      background: rgba(255, 250, 240, 0.68);
       color: var(--ink);
+      border-color: var(--line);
       box-shadow: none;
     }
 
-    .map-card {
+    .hero-panel {
       position: relative;
       overflow: hidden;
-      min-height: 560px;
-      border-radius: 38px;
+      min-height: 575px;
+      border-radius: 42px;
       background:
-        linear-gradient(160deg, rgba(18,60,43,0.96), rgba(25,84,58,0.92)),
+        linear-gradient(145deg, rgba(18, 59, 42, 0.98), rgba(34, 92, 58, 0.94)),
         var(--green);
-      color: var(--white);
+      color: var(--cream);
       box-shadow: var(--shadow);
+      isolation: isolate;
     }
 
-    .orbit {
+    .hero-panel::before,
+    .hero-panel::after {
+      content: "";
       position: absolute;
-      inset: 38px;
-      border: 1px solid rgba(255,255,255,0.18);
-      border-radius: 50%;
+      border-radius: 999px;
+      border: 1px solid rgba(255, 250, 240, 0.16);
+      z-index: -1;
     }
 
-    .orbit.two { inset: 92px; opacity: 0.65; }
-    .orbit.three { inset: 152px; opacity: 0.45; }
-
-    .node {
-      position: absolute;
-      width: 150px;
-      padding: 13px 14px;
-      border-radius: 20px;
-      background: rgba(255,255,255,0.12);
-      border: 1px solid rgba(255,255,255,0.18);
-      backdrop-filter: blur(14px);
-      box-shadow: 0 18px 45px rgba(0,0,0,0.16);
-    }
-
-    .node strong {
-      display: block;
-      font-size: 14px;
-      letter-spacing: -0.02em;
-    }
-
-    .node span {
-      display: block;
-      margin-top: 4px;
-      font-size: 12px;
-      color: rgba(255,255,255,0.72);
-      line-height: 1.25;
-    }
-
-    .node.acorn { top: 54px; left: 48px; }
-    .node.verra { top: 116px; right: 42px; }
-    .node.pachama { bottom: 78px; left: 56px; }
-    .node.pur { bottom: 54px; right: 72px; }
-    .node.center {
-      width: 196px;
-      top: 50%;
+    .hero-panel::before {
+      width: 590px;
+      height: 590px;
       left: 50%;
+      top: 50%;
       transform: translate(-50%, -50%);
+    }
+
+    .hero-panel::after {
+      width: 360px;
+      height: 360px;
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%, -50%);
+      opacity: 0.72;
+    }
+
+    .map-title {
+      position: absolute;
+      left: 28px;
+      top: 26px;
+      right: 28px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 18px;
+      color: rgba(255, 250, 240, 0.8);
+      font-size: 13px;
+      font-weight: 720;
+    }
+
+    .map-title span:last-child {
+      color: var(--lime);
+    }
+
+    .center-node {
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      width: 215px;
+      transform: translate(-50%, -50%);
+      padding: 18px;
+      border-radius: 25px;
       background: var(--lime);
       color: var(--green);
-      border: 0;
+      box-shadow: 0 24px 60px rgba(0,0,0,0.18);
     }
 
-    .node.center span { color: rgba(18,60,43,0.72); }
+    .center-node strong,
+    .market-node strong {
+      display: block;
+      letter-spacing: -0.025em;
+      line-height: 1.05;
+    }
 
-    .section { margin-top: 82px; }
+    .center-node span,
+    .market-node span {
+      display: block;
+      margin-top: 7px;
+      font-size: 12px;
+      line-height: 1.28;
+    }
+
+    .center-node span { color: rgba(18, 59, 42, 0.72); }
+
+    .market-node {
+      position: absolute;
+      width: 158px;
+      padding: 14px 15px;
+      border-radius: 22px;
+      background: rgba(255, 250, 240, 0.12);
+      border: 1px solid rgba(255, 250, 240, 0.16);
+      backdrop-filter: blur(16px);
+      box-shadow: 0 18px 46px rgba(0,0,0,0.15);
+    }
+
+    .market-node span { color: rgba(255, 250, 240, 0.66); }
+
+    .node-1 { left: 38px; top: 92px; }
+    .node-2 { right: 40px; top: 96px; }
+    .node-3 { left: 48px; bottom: 118px; }
+    .node-4 { right: 46px; bottom: 112px; }
+    .node-5 { left: 50%; top: 88px; transform: translateX(-50%); }
+    .node-6 { left: 50%; bottom: 42px; transform: translateX(-50%); }
+
+    .section { margin-top: 86px; }
 
     .section-head {
       display: flex;
-      justify-content: space-between;
-      gap: 20px;
       align-items: end;
-      margin-bottom: 22px;
+      justify-content: space-between;
+      gap: 24px;
+      margin-bottom: 24px;
     }
 
     .section h2 {
       margin: 0;
-      max-width: 720px;
-      font-size: clamp(34px, 5vw, 58px);
+      max-width: 760px;
+      font-size: clamp(34px, 5.2vw, 60px);
       line-height: 0.96;
-      letter-spacing: -0.055em;
+      letter-spacing: -0.058em;
     }
 
     .section-head p {
       margin: 0;
-      max-width: 380px;
+      max-width: 410px;
       color: var(--muted);
       line-height: 1.45;
     }
@@ -245,111 +313,141 @@
     }
 
     .role-card {
-      min-height: 260px;
+      min-height: 286px;
+      display: flex;
+      flex-direction: column;
       padding: 24px;
-      border-radius: var(--radius);
+      border-radius: var(--radius-lg);
       background: var(--card);
-      border: 1px solid rgba(23,35,28,0.1);
-      box-shadow: 0 16px 48px rgba(24,39,27,0.08);
-      transition: transform 180ms ease, box-shadow 180ms ease;
+      border: 1px solid rgba(20, 34, 26, 0.1);
+      box-shadow: 0 16px 46px rgba(28, 43, 31, 0.08);
+      transition: transform 180ms ease, box-shadow 180ms ease, background 180ms ease;
     }
 
     .role-card:hover {
       transform: translateY(-4px);
       box-shadow: var(--shadow);
+      background: rgba(255, 250, 240, 0.9);
     }
 
-    .role-card .tag {
+    .role-top {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 14px;
+    }
+
+    .tag {
       display: inline-flex;
       padding: 7px 10px;
       border-radius: 999px;
-      background: var(--sand);
+      background: rgba(18, 59, 42, 0.08);
       color: var(--green);
       font-size: 12px;
-      font-weight: 760;
+      font-weight: 820;
+    }
+
+    .arrow {
+      width: 34px;
+      height: 34px;
+      display: grid;
+      place-items: center;
+      border-radius: 999px;
+      background: rgba(18, 59, 42, 0.08);
+      color: var(--green);
+      font-weight: 900;
     }
 
     .role-card h3 {
-      margin: 22px 0 10px;
-      font-size: 26px;
-      line-height: 1;
-      letter-spacing: -0.04em;
+      margin: 24px 0 10px;
+      font-size: 29px;
+      line-height: 0.98;
+      letter-spacing: -0.045em;
     }
 
     .role-card p {
-      margin: 0 0 22px;
+      margin: 0;
       color: var(--muted);
       line-height: 1.45;
     }
 
     .examples {
+      margin-top: auto;
+      padding-top: 22px;
       display: flex;
       flex-wrap: wrap;
       gap: 8px;
-      margin-top: auto;
     }
 
     .examples span {
       padding: 7px 9px;
       border-radius: 999px;
-      background: rgba(18,60,43,0.08);
+      background: rgba(20, 34, 26, 0.06);
       color: var(--green);
       font-size: 12px;
-      font-weight: 680;
+      font-weight: 720;
     }
 
-    .feature-band {
+    .feature {
       display: grid;
-      grid-template-columns: 0.9fr 1.1fr;
+      grid-template-columns: 0.92fr 1.08fr;
       gap: 18px;
       padding: 18px;
-      border-radius: 36px;
-      background: rgba(18,60,43,0.94);
-      color: var(--white);
+      border-radius: 38px;
+      background: rgba(18, 59, 42, 0.96);
+      color: var(--cream);
       box-shadow: var(--shadow);
     }
 
-    .feature-copy { padding: 30px; }
-    .feature-copy h2 { color: var(--white); }
+    .feature-copy {
+      padding: 32px;
+    }
+
+    .feature-copy h2 { color: var(--cream); }
 
     .feature-copy p {
       margin: 18px 0 0;
-      color: rgba(255,255,255,0.72);
+      max-width: 460px;
+      color: rgba(255, 250, 240, 0.72);
       font-size: 18px;
       line-height: 1.45;
     }
 
-    .project-list { display: grid; gap: 12px; }
+    .pattern-list {
+      display: grid;
+      gap: 12px;
+    }
 
-    .project-row {
+    .pattern-row {
       display: grid;
       grid-template-columns: 1fr auto;
       gap: 16px;
-      padding: 18px 18px;
-      border-radius: 22px;
-      background: rgba(255,255,255,0.1);
-      border: 1px solid rgba(255,255,255,0.12);
+      padding: 18px;
+      border-radius: 23px;
+      background: rgba(255, 250, 240, 0.1);
+      border: 1px solid rgba(255, 250, 240, 0.13);
     }
 
-    .project-row strong {
+    .pattern-row strong {
       display: block;
       margin-bottom: 5px;
-      letter-spacing: -0.02em;
+      letter-spacing: -0.025em;
     }
 
-    .project-row span {
-      color: rgba(255,255,255,0.66);
+    .pattern-row span {
+      color: rgba(255, 250, 240, 0.68);
       font-size: 14px;
+      line-height: 1.35;
     }
 
     .pill {
       align-self: start;
       padding: 7px 10px;
       border-radius: 999px;
-      background: rgba(183,240,106,0.18);
+      background: rgba(185, 240, 107, 0.16);
       color: var(--lime);
       font-size: 12px;
-      font-weight: 760;
+      font-weight: 820;
       white-space: nowrap;
     }
 
@@ -360,24 +458,31 @@
     }
 
     .path-card {
-      min-height: 190px;
+      min-height: 195px;
       padding: 22px;
-      border-radius: 26px;
-      background: rgba(255,253,248,0.66);
+      border-radius: 25px;
+      background: rgba(255, 250, 240, 0.66);
       border: 1px solid var(--line);
+      transition: transform 180ms ease, background 180ms ease;
+    }
+
+    .path-card:hover {
+      transform: translateY(-3px);
+      background: rgba(255, 250, 240, 0.9);
     }
 
     .path-card small {
       color: var(--clay);
-      font-weight: 800;
-      letter-spacing: 0.04em;
+      font-weight: 900;
+      letter-spacing: 0.05em;
       text-transform: uppercase;
     }
 
     .path-card h3 {
-      margin: 18px 0 8px;
-      font-size: 22px;
-      letter-spacing: -0.035em;
+      margin: 20px 0 8px;
+      font-size: 23px;
+      line-height: 1;
+      letter-spacing: -0.04em;
     }
 
     .path-card p {
@@ -390,42 +495,50 @@
     footer {
       max-width: 1180px;
       margin: 0 auto;
-      padding: 0 24px 40px;
+      padding: 0 24px 42px;
       color: var(--muted);
       font-size: 14px;
     }
 
-    @media (max-width: 900px) {
+    @media (max-width: 980px) {
       .hero,
-      .feature-band { grid-template-columns: 1fr; }
-      .map-card { min-height: 480px; }
-      .role-grid,
-      .path-grid { grid-template-columns: 1fr 1fr; }
-      .section-head { display: block; }
-      .section-head p { margin-top: 14px; }
-      .nav-links { display: none; }
+      .feature {
+        grid-template-columns: 1fr;
+      }
+
+      .hero-panel { min-height: 520px; }
+
+      .role-grid { grid-template-columns: repeat(2, 1fr); }
+      .path-grid { grid-template-columns: repeat(2, 1fr); }
     }
 
-    @media (max-width: 620px) {
-      main { padding-top: 42px; }
+    @media (max-width: 720px) {
+      main { padding-top: 44px; }
+      .nav-links { display: none; }
+      .section-head { display: block; }
+      .section-head p { margin-top: 14px; }
       .role-grid,
       .path-grid { grid-template-columns: 1fr; }
-      .node { width: 132px; }
-      .node.center { width: 170px; }
-      .project-row { grid-template-columns: 1fr; }
+      .hero { grid-template-columns: 1fr; }
+      .hero-panel { min-height: 555px; border-radius: 32px; }
+      .market-node { width: 140px; padding: 12px; }
+      .node-1 { left: 20px; }
+      .node-2 { right: 20px; }
+      .node-3 { left: 20px; }
+      .node-4 { right: 20px; }
+      .center-node { width: 180px; }
+      .pattern-row { grid-template-columns: 1fr; }
     }
   </style>
 </head>
-
 <body>
   <nav class="nav">
     <div class="nav-inner">
-      <a class="brand" href="index.html">
-        <span class="brand-mark"></span>
+      <a class="brand" href="index.html" aria-label="Agroforestry Carbon Field Guide home">
+        <span class="brand-mark" aria-hidden="true"></span>
         <span>Agroforestry Carbon Field Guide</span>
       </a>
-
-      <div class="nav-links">
+      <div class="nav-links" aria-label="Primary navigation">
         <a href="players.html">Players</a>
         <a href="projects.html">Projects</a>
         <a href="business-models.html">Business Models</a>
@@ -438,199 +551,205 @@
   <main>
     <section class="hero">
       <div class="hero-copy">
-        <div class="eyebrow">Living map of the market</div>
+        <div class="eyebrow">Field guide to the builders</div>
         <h1>Who is building the agroforestry carbon market?</h1>
         <p>
-          A visual field guide to the organizations, projects, platforms, standards, buyers,
-          and business models shaping agroforestry carbon around the world.
+          A visual guide to the organizations, projects, standards, buyers, finance providers,
+          and local partners shaping the global agroforestry carbon ecosystem.
         </p>
-
         <div class="hero-actions">
-          <a class="button" href="players.html">Explore players</a>
-          <a class="button secondary" href="projects.html">View projects</a>
+          <a class="button" href="#ecosystem">Explore the ecosystem</a>
+          <a class="button secondary" href="players.html">Browse players</a>
         </div>
       </div>
 
-      <div class="map-card" aria-label="Market map preview">
-        <div class="orbit"></div>
-        <div class="orbit two"></div>
-        <div class="orbit three"></div>
-
-        <div class="node acorn">
-          <strong>Acorn</strong>
-          <span>Smallholder agroforestry carbon platform</span>
+      <div class="hero-panel" aria-label="Agroforestry carbon ecosystem map">
+        <div class="map-title">
+          <span>Market map</span>
+          <span>6 actor groups</span>
         </div>
 
-        <div class="node verra">
-          <strong>Verra</strong>
-          <span>Carbon standard and registry infrastructure</span>
+        <div class="market-node node-1">
+          <strong>Project Developers</strong>
+          <span>PUR, re.green, Taking Root</span>
+        </div>
+        <div class="market-node node-2">
+          <strong>Standards & Registries</strong>
+          <span>Verra, Gold Standard, Plan Vivo</span>
+        </div>
+        <div class="market-node node-3">
+          <strong>Platforms</strong>
+          <span>Acorn, Pachama, Open Forest Protocol</span>
+        </div>
+        <div class="market-node node-4">
+          <strong>Buyers</strong>
+          <span>Microsoft, Salesforce, corporate supply chains</span>
+        </div>
+        <div class="market-node node-5">
+          <strong>Finance Providers</strong>
+          <span>Funds, DFIs, offtakers, donors</span>
+        </div>
+        <div class="market-node node-6">
+          <strong>Implementers</strong>
+          <span>Solidaridad, TechnoServe, cooperatives</span>
         </div>
 
-        <div class="node pachama">
-          <strong>Pachama</strong>
-          <span>Forest carbon marketplace and technology</span>
-        </div>
-
-        <div class="node pur">
-          <strong>re.green</strong>
-          <span>Large-scale restoration project developer</span>
-        </div>
-
-        <div class="node center">
-          <strong>Agroforestry carbon ecosystem</strong>
-          <span>Developers, buyers, standards, finance, technology, and farmers</span>
+        <div class="center-node">
+          <strong>Agroforestry carbon market</strong>
+          <span>Where trees, farmers, buyers, data, standards, and capital have to work together.</span>
         </div>
       </div>
     </section>
 
-    <section class="section">
+    <section class="section" id="ecosystem">
       <div class="section-head">
-        <h2>The market is not one thing.</h2>
+        <h2>The market is a cast, not a category.</h2>
         <p>
-          It is a working system of specialized actors. Each solves a different bottleneck:
-          land, trust, finance, monitoring, demand, or delivery.
+          Agroforestry carbon projects only work when specialized actors solve different jobs:
+          aggregation, implementation, measurement, verification, finance, and demand.
         </p>
       </div>
 
       <div class="role-grid">
         <a class="role-card" href="players.html">
-          <span class="tag">Project developers</span>
-          <h3>Build supply</h3>
-          <p>Design projects, organize farmers, plant trees, manage delivery risk, and bring credits to market.</p>
-          <div class="examples">
-            <span>Acorn</span><span>PUR</span><span>re.green</span>
+          <div class="role-top">
+            <span class="tag">Supply builders</span>
+            <span class="arrow">→</span>
           </div>
+          <h3>Project Developers</h3>
+          <p>Structure projects, manage delivery, coordinate partners, and turn agroforestry systems into carbon assets.</p>
+          <div class="examples"><span>PUR</span><span>re.green</span><span>Taking Root</span></div>
         </a>
 
         <a class="role-card" href="players.html">
-          <span class="tag">Standards & registries</span>
-          <h3>Create trust</h3>
-          <p>Define methodologies, validate claims, issue credits, and maintain market infrastructure.</p>
-          <div class="examples">
-            <span>Verra</span><span>Gold Standard</span><span>Plan Vivo</span>
+          <div class="role-top">
+            <span class="tag">Market rails</span>
+            <span class="arrow">→</span>
           </div>
+          <h3>Platforms</h3>
+          <p>Bundle MRV, project tools, commercialization, and market access so many local projects can participate.</p>
+          <div class="examples"><span>Acorn</span><span>Pachama</span><span>OFP</span></div>
         </a>
 
         <a class="role-card" href="players.html">
-          <span class="tag">Technology platforms</span>
-          <h3>Measure nature</h3>
-          <p>Use remote sensing, field data, and software to monitor carbon, risk, and project performance.</p>
-          <div class="examples">
-            <span>Pachama</span><span>Renoster</span><span>Open Forest Protocol</span>
+          <div class="role-top">
+            <span class="tag">Rules & trust</span>
+            <span class="arrow">→</span>
           </div>
+          <h3>Standards & Registries</h3>
+          <p>Define methodologies, validate claims, issue credits, and keep the ledger buyers depend on.</p>
+          <div class="examples"><span>Verra</span><span>Gold Standard</span><span>Plan Vivo</span></div>
         </a>
 
         <a class="role-card" href="players.html">
-          <span class="tag">Corporate buyers</span>
-          <h3>Shape demand</h3>
-          <p>Buy credits, fund supply, set quality expectations, and influence which models scale.</p>
-          <div class="examples">
-            <span>Microsoft</span><span>Salesforce</span><span>Frontier buyers</span>
+          <div class="role-top">
+            <span class="tag">Demand shapers</span>
+            <span class="arrow">→</span>
           </div>
+          <h3>Buyers</h3>
+          <p>Purchase credits, fund future supply, and signal what quality, durability, and community benefits are worth.</p>
+          <div class="examples"><span>Microsoft</span><span>Salesforce</span><span>Supply chains</span></div>
         </a>
 
         <a class="role-card" href="players.html">
-          <span class="tag">Finance providers</span>
-          <h3>Bridge time</h3>
-          <p>Provide working capital before carbon revenue arrives and help projects survive the verification delay.</p>
-          <div class="examples">
-            <span>Climate Asset Management</span><span>DFC</span><span>FMO</span>
+          <div class="role-top">
+            <span class="tag">Time bridges</span>
+            <span class="arrow">→</span>
           </div>
+          <h3>Finance Providers</h3>
+          <p>Cover the awkward years between planting trees, verifying carbon, and getting paid.</p>
+          <div class="examples"><span>DFIs</span><span>Funds</span><span>Offtakers</span></div>
         </a>
 
         <a class="role-card" href="players.html">
-          <span class="tag">Local partners</span>
-          <h3>Make it real</h3>
-          <p>Work with farmers, cooperatives, processors, NGOs, and aggregators on the ground.</p>
-          <div class="examples">
-            <span>TechnoServe</span><span>Solidaridad</span><span>Cooperatives</span>
+          <div class="role-top">
+            <span class="tag">Ground game</span>
+            <span class="arrow">→</span>
           </div>
+          <h3>Implementers</h3>
+          <p>Work with farmers, cooperatives, NGOs, processors, and extension networks that make projects operational.</p>
+          <div class="examples"><span>Solidaridad</span><span>TechnoServe</span><span>Cooperatives</span></div>
         </a>
       </div>
     </section>
 
-    <section class="section feature-band">
+    <section class="section feature">
       <div class="feature-copy">
-        <h2>Representative projects reveal the patterns.</h2>
+        <h2>Business models show who carries the risk.</h2>
         <p>
-          The field guide compares real projects across geography, crop systems,
-          partners, carbon standards, and commercialization models.
+          The same tree can sit inside very different models: platform carbon, supply-chain insetting,
+          community carbon, buyer-funded restoration, or blended-finance development programs.
         </p>
       </div>
 
-      <div class="project-list">
-        <a class="project-row" href="projects.html">
+      <div class="pattern-list">
+        <a class="pattern-row" href="business-models.html">
           <div>
-            <strong>Acorn smallholder agroforestry projects</strong>
-            <span>Farmer-centered carbon removal programs across Africa, Asia, and Latin America.</span>
+            <strong>Platform model</strong>
+            <span>Local partners originate projects while a platform provides MRV, registry support, and market access.</span>
           </div>
-          <span class="pill">Platform model</span>
+          <span class="pill">Acorn</span>
         </a>
 
-        <a class="project-row" href="projects.html">
+        <a class="pattern-row" href="business-models.html">
           <div>
-            <strong>PUR insetting programs</strong>
-            <span>Supply-chain-linked agroforestry with corporate partners and farmer networks.</span>
+            <strong>Supply-chain insetting</strong>
+            <span>Companies invest inside commodity supply chains to link carbon, resilience, sourcing, and farmer engagement.</span>
           </div>
-          <span class="pill">Insetting</span>
+          <span class="pill">PUR</span>
         </a>
 
-        <a class="project-row" href="projects.html">
+        <a class="pattern-row" href="business-models.html">
           <div>
-            <strong>Plan Vivo community projects</strong>
-            <span>Community-led land restoration with long-running smallholder carbon models.</span>
+            <strong>Community carbon</strong>
+            <span>Longer-horizon models built around local governance, farmer participation, and benefit sharing.</span>
           </div>
-          <span class="pill">Community carbon</span>
+          <span class="pill">Plan Vivo</span>
         </a>
 
-        <a class="project-row" href="projects.html">
+        <a class="pattern-row" href="business-models.html">
           <div>
-            <strong>Corporate-funded restoration portfolios</strong>
-            <span>Large buyers funding nature-based carbon supply through offtake and procurement.</span>
+            <strong>Buyer-funded supply</strong>
+            <span>Corporate buyers use pre-purchases, offtake, or direct funding to help projects reach issuance.</span>
           </div>
-          <span class="pill">Buyer-led</span>
+          <span class="pill">Offtake</span>
         </a>
       </div>
     </section>
 
     <section class="section">
       <div class="section-head">
-        <h2>Start with the question you have.</h2>
-        <p>
-          Follow the map by organization, project, model, or market pattern.
-        </p>
+        <h2>Choose your door into the market.</h2>
+        <p>Start with organizations, projects, business models, or the broader landscape patterns.</p>
       </div>
 
       <div class="path-grid">
         <a class="path-card" href="players.html">
           <small>01</small>
-          <h3>Who are the players?</h3>
-          <p>Browse developers, standards, buyers, platforms, and finance providers.</p>
+          <h3>Players</h3>
+          <p>Who are the major organizations, and what role does each one play?</p>
         </a>
-
         <a class="path-card" href="projects.html">
           <small>02</small>
-          <h3>What are they building?</h3>
-          <p>Explore representative projects and the partners behind them.</p>
+          <h3>Projects</h3>
+          <p>What are representative projects, where are they, and who is behind them?</p>
         </a>
-
         <a class="path-card" href="business-models.html">
           <small>03</small>
-          <h3>How do models differ?</h3>
-          <p>Compare insetting, offset sales, platforms, offtake, and blended finance.</p>
+          <h3>Business Models</h3>
+          <p>How do platform, insetting, offtake, and community models compare?</p>
         </a>
-
         <a class="path-card" href="landscape.html">
           <small>04</small>
-          <h3>What patterns matter?</h3>
-          <p>See how geography, crops, standards, buyers, and finance connect.</p>
+          <h3>Landscape</h3>
+          <p>What patterns are emerging across geography, crops, standards, and finance?</p>
         </a>
       </div>
     </section>
   </main>
 
   <footer>
-    Built as a public field guide to the organizations shaping agroforestry carbon markets.
+    Built incrementally as a public field guide to the organizations shaping agroforestry carbon markets.
   </footer>
 </body>
 </html>
