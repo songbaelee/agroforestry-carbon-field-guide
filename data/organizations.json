@@ -359,7 +359,7 @@
     "hq": "Netherlands",
     "geography": "Global",
     "strategy": "Carbon as development finance",
-    "description": "Works with producers, supply chains, and landscapes. In carbon projects, often plays the field implementation and farmer engagement role.",
+    "description": "Works with producers, supply chains, and landscapes. In agroforestry carbon, Solidaridad often plays the field implementation role: organizing farmers, delivering training, supporting agroforestry adoption, and connecting smallholders to carbon finance through partners and platforms.",
     "examples": [
       "Farmer programs",
       "Commodity chains",
@@ -368,7 +368,144 @@
     "featured": true,
     "website": "https://www.solidaridadnetwork.org/",
     "slug": "solidaridad",
-    "overview": "Works with producers, supply chains, and landscapes. In carbon projects, often plays the field implementation and farmer engagement role."
+    "overview": "Solidaridad is an international civil society organization that works with smallholder producers and commodity supply chains. In agroforestry carbon, it is most relevant as an implementation partner: helping farmers adopt climate-smart agroforestry systems, access training, and participate in carbon finance programs such as Acorn-linked carbon removal projects.",
+    "businessModel": "Program implementation and development partnership model. Solidaridad earns and deploys funding through donor, corporate, foundation, and platform partnerships to deliver farmer training, technical assistance, supply-chain sustainability programs, and carbon-market readiness. Carbon is not the core product; it is a financing layer that can reward farmers and help scale climate-smart agriculture.",
+    "representativeProjects": [
+      "Asómbrate programme for coffee and cocoa agroforestry and carbon payments in Latin America",
+      "Solidaridad Colombia agroforestry project connected to Acorn carbon finance",
+      "Climate Heroes project for coffee and cocoa farmers adopting agroforestry",
+      "Carbon Farming Academy with Rabobank and Acorn for smallholder carbon-market training",
+      "Climate-smart cocoa project in Colombia supported by UK PACT"
+    ],
+    "partners": [
+      "Acorn",
+      "Rabobank",
+      "Rabo Foundation",
+      "Plan Vivo",
+      "Postcode Lottery Group",
+      "UK PACT",
+      "Farmers and producer organizations"
+    ],
+    "standards": [
+      "Acorn",
+      "Plan Vivo",
+      "Verra"
+    ],
+    "financingApproach": "Solidaridad's agroforestry carbon work blends program funding, partner funding, and carbon-market incentives. Its public materials describe carbon finance as an incentive for small-scale farmers to establish or maintain agroforestry systems, with initiatives linked to Acorn carbon removal units and annual payments for carbon capture. The model relies on local implementation capacity and farmer training before verified carbon revenue can become meaningful.",
+    "sources": [
+      {
+        "title": "Asómbrate: Promoting climate smart agriculture, harvesting carbon credits",
+        "organization": "Solidaridad",
+        "url": "https://www.solidaridadnetwork.org/story/asombrate-promoting-climate-smart-agriculture-harvesting-carbon-credits/",
+        "type": "Project",
+        "sections": [
+          "overview",
+          "businessModel",
+          "representativeProjects",
+          "financingApproach"
+        ]
+      },
+      {
+        "title": "Coffee and cocoa farmers respond to climate change with agroforestry",
+        "organization": "Solidaridad",
+        "url": "https://www.solidaridadnetwork.org/news/coffee-and-cocoa-farmers-respond-to-climate-change-with-agroforestry/",
+        "type": "Project",
+        "sections": [
+          "representativeProjects",
+          "financingApproach",
+          "partners"
+        ]
+      },
+      {
+        "title": "Carbon Farming Academy connects small-scale farmers with carbon markets",
+        "organization": "Solidaridad",
+        "url": "https://www.solidaridadnetwork.org/news/join-the-carbon-farming-academy-to-learn-how-carbon-markets-work/",
+        "type": "Training platform",
+        "sections": [
+          "businessModel",
+          "representativeProjects",
+          "partners",
+          "financingApproach"
+        ]
+      },
+      {
+        "title": "Carbon Farming Academy",
+        "organization": "Rabobank / Solidaridad",
+        "url": "https://eastafrica.carbonfarmingacademy.org/",
+        "type": "Training platform",
+        "sections": [
+          "representativeProjects",
+          "partners"
+        ]
+      },
+      {
+        "title": "Spotlight on Solidaridad Colombia",
+        "organization": "Acorn",
+        "url": "https://acorn.rabobank.com/en/spotlight-on-solidaridad-colombia/",
+        "type": "Project",
+        "sections": [
+          "overview",
+          "representativeProjects",
+          "partners",
+          "financingApproach"
+        ]
+      },
+      {
+        "title": "Solidaridad Colombia Acorn Design Document",
+        "organization": "Acorn / Solidaridad Colombia",
+        "url": "https://assets.ctfassets.net/9vhdnop8eg9t/5WD0UFg3xtCByLXwG84LNs/482fe5cb64002e146a053e01f906fc27/Colombia_Solidaridad_ADD.pdf",
+        "type": "Project document",
+        "kind": "PDF",
+        "sections": [
+          "representativeProjects",
+          "standards",
+          "financingApproach"
+        ]
+      },
+      {
+        "title": "Solidaridad Uganda Acorn Design Document",
+        "organization": "Acorn / Solidaridad",
+        "url": "https://assets.ctfassets.net/9vhdnop8eg9t/FVdzspGGerbZNn1tDHKAM/6002d230aad7d45a3d1a3095e2f2e11d/Uganda_Solidaridad_ADD-2.pdf",
+        "type": "Project document",
+        "kind": "PDF",
+        "sections": [
+          "representativeProjects",
+          "standards",
+          "financingApproach"
+        ]
+      },
+      {
+        "title": "Climate-smart solutions and markets for small-scale cocoa producers in Colombia",
+        "organization": "UK PACT",
+        "url": "https://www.ukpact.co.uk/climate-smart-solutions-solidaridad-colombia-project",
+        "type": "Project",
+        "sections": [
+          "representativeProjects",
+          "partners"
+        ]
+      },
+      {
+        "title": "Acorn Projects",
+        "organization": "Acorn",
+        "url": "https://acorn.earth/projects",
+        "type": "Registry / project directory",
+        "sections": [
+          "standards",
+          "partners"
+        ]
+      },
+      {
+        "title": "Carbon Farming for Small-scale Farmers: Lessons for a fair and practical path forward",
+        "organization": "Solidaridad",
+        "url": "https://www.solidaridadnetwork.org/news/carbon-farming-for-small-scale-farmers-lessons-for-a-fair-and-practical-path-forward/",
+        "type": "Field lessons",
+        "sections": [
+          "overview",
+          "businessModel",
+          "financingApproach"
+        ]
+      }
+    ]
   },
   {
     "name": "TechnoServe",
