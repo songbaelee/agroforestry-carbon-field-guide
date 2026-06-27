@@ -1084,7 +1084,7 @@
     "featured": false,
     "website": "https://www.goldstandard.org/",
     "slug": "gold-standard",
-    "overview": "Certifies climate and sustainable development outcomes, including land-use and nature-based activities where methodology requirements are met.",
+    "overview": "Gold Standard for the Global Goals is a nonprofit standard setter that develops methodologies, requirements, and registry infrastructure for climate and sustainable development projects. It certifies verified climate impacts alongside contributions to the UN Sustainable Development Goals and is widely used for renewable energy, cookstoves, waste, agriculture, and land-use projects.",
     "similarityScores": {
       "carbonFirst": 1,
       "supplyChainFocus": 2,
@@ -1097,8 +1097,8 @@
       "restorationFocus": 2,
       "smallholderFocus": 2
     },
-    "researchStatus": "preliminary",
-    "researchConfidence": "Low",
+    "researchStatus": "complete",
+    "researchConfidence": "High",
     "lastReviewed": "2026-06-27",
     "methodologyVersion": "v0.1",
     "relationships": {
@@ -1112,7 +1112,94 @@
         "buyers"
       ]
     },
-    "featuredComparison": "verra"
+    "featuredComparison": "verra",
+    "businessModel": "Gold Standard develops and governs certification standards, methodologies, project requirements, and registry processes. Independent project developers use approved methodologies, undergo third-party validation and verification, and register projects and issue certified credits and impact certificates through Gold Standard systems.",
+    "representativeProjects": [
+      "Gold Standard for the Global Goals certification framework",
+      "Gold Standard Registry",
+      "Agriculture and Land Use (AFOLU) requirements and methodologies",
+      "Clean Cooking certification programs",
+      "Renewable energy and community development projects"
+    ],
+    "partners": [
+      "WWF",
+      "South Pole",
+      "Project developers",
+      "Validation and Verification Bodies",
+      "Registry account holders",
+      "ICLEI"
+    ],
+    "standards": [
+      "Gold Standard for the Global Goals",
+      "Gold Standard Registry",
+      "Agriculture and Land Use Requirements",
+      "Methodology approval framework"
+    ],
+    "financingApproach": "Gold Standard does not finance projects directly. It enables project financing by providing trusted certification, methodologies, and registry infrastructure that allow verified climate and sustainable development outcomes to be issued and monetized in voluntary environmental markets.",
+    "comparison": {
+      "customer": "Project developers, project proponents, VVBs, registry users, and impact buyers",
+      "primaryRevenue": "Standards administration, certification, and registry services",
+      "mainOffering": "Certification emphasizing both climate impact and Sustainable Development Goals",
+      "carbonRole": "Market infrastructure with explicit sustainable development focus",
+      "financing": "Enables market access rather than providing capital",
+      "typicalClient": "Developers seeking certification with strong SDG claims alongside carbon credits",
+      "philosophy": "Compared with Verra, Gold Standard places stronger emphasis on demonstrating sustainable development outcomes alongside climate benefits while both rely on third-party validation and verification.",
+      "methodologies": "Both maintain approved methodologies; Verra has broader methodology coverage while Gold Standard has historically emphasized high-integrity SDG-linked approaches.",
+      "registryRole": "Both operate registry infrastructure for issuance, transfer, and retirement of certified units.",
+      "commonProjectTypes": "Gold Standard is especially well known for clean cooking, renewable energy, community development, and selected land-use projects."
+    },
+    "sources": [
+      {
+        "title": "Gold Standard for the Global Goals",
+        "organization": "Gold Standard",
+        "url": "https://www.goldstandard.org/",
+        "type": "Company",
+        "sections": [
+          "overview",
+          "businessModel"
+        ]
+      },
+      {
+        "title": "Standards & Requirements",
+        "organization": "Gold Standard",
+        "url": "https://www.goldstandard.org/our-standard",
+        "type": "Standard",
+        "sections": [
+          "standards",
+          "businessModel"
+        ]
+      },
+      {
+        "title": "Agriculture & Land Use",
+        "organization": "Gold Standard",
+        "url": "https://www.goldstandard.org/our-standard/agriculture-land-use",
+        "type": "Program area",
+        "sections": [
+          "representativeProjects",
+          "standards"
+        ]
+      },
+      {
+        "title": "Gold Standard Registry",
+        "organization": "Gold Standard",
+        "url": "https://registry.goldstandard.org/",
+        "type": "Registry",
+        "sections": [
+          "businessModel",
+          "financingApproach"
+        ]
+      },
+      {
+        "title": "Gold Standard Annual Report",
+        "organization": "Gold Standard",
+        "url": "https://www.goldstandard.org/resources",
+        "type": "Report",
+        "sections": [
+          "overview",
+          "partners"
+        ]
+      }
+    ]
   },
   {
     "name": "Plan Vivo",
