@@ -290,6 +290,35 @@
       margin-top: 14px;
     }
 
+    .inline-sources {
+      margin-top: 16px;
+      padding-top: 14px;
+      border-top: 1px solid var(--line);
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      align-items: center;
+    }
+
+    .inline-sources b {
+      color: var(--green);
+      font-size: 11px;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+      margin-right: 2px;
+    }
+
+    .inline-sources a,
+    .inline-sources span {
+      padding: 6px 8px;
+      border-radius: 999px;
+      background: rgba(197, 111, 71, 0.09);
+      color: var(--clay);
+      font-size: 11px;
+      font-weight: 820;
+      line-height: 1.2;
+    }
+
     .source-card {
       display: flex;
       align-items: center;
@@ -453,8 +482,22 @@
       return (items || []).map(item => `<span class="chip">${escapeHtml(item)}</span>`).join("");
     }
 
-    function pillList(items) {
-      return (items || []).map(item => `<span class="chip">${escapeHtml(item)}</span>`).join("");
+    function findOrganizationByName(name, organizations) {
+      const normalized = String(name || "").toLowerCase();
+      return organizations.find(item => {
+        const itemName = String(item.name || "").toLowerCase();
+        return normalized === itemName || normalized.includes(itemName) || itemName.includes(normalized);
+      });
+    }
+
+    function pillList(items, organizations = []) {
+      return (items || []).map(item => {
+        const linkedOrg = findOrganizationByName(item, organizations);
+        if (linkedOrg) {
+          return `<a class="pill-link" href="${profileUrl(linkedOrg)}">${escapeHtml(item)}</a>`;
+        }
+        return `<span class="chip">${escapeHtml(item)}</span>`;
+      }).join("");
     }
 
     function sourceList(sources) {
@@ -475,7 +518,34 @@
       }).join("");
     }
 
-    function researchSections(org) {
+    function matchingSources(sources, keywords) {
+      const terms = (keywords || []).map(item => String(item).toLowerCase());
+      return (sources || []).filter(source => {
+        const text = typeof source === "string"
+          ? source
+          : [source.title, source.organization, source.url].join(" ");
+        const normalized = text.toLowerCase();
+        return terms.some(term => normalized.includes(term));
+      });
+    }
+
+    function inlineSources(sources, keywords) {
+      const matches = matchingSources(sources, keywords);
+      if (!matches.length) return "";
+
+      return `
+        <div class="inline-sources">
+          <b>Sources</b>
+          ${matches.map(source => {
+            if (typeof source === "string") return `<span>${escapeHtml(source)}</span>`;
+            const title = source.title || source.label || source.url;
+            return `<a href="${escapeHtml(source.url)}" target="_blank" rel="noopener">${escapeHtml(title)}</a>`;
+          }).join("")}
+        </div>
+      `;
+    }
+
+    function researchSections(org, allOrganizations) {
       const sections = [];
 
       sections.push(`
@@ -485,19 +555,13 @@
         </article>
       `);
 
-      sections.push(`
-        <article class="section-card">
-          <h2>Carbon strategy</h2>
-          <p>${escapeHtml(org.strategy)}. This describes how carbon appears in the organization's model, not just its functional role.</p>
-        </article>
-      `);
-
       if (hasItems(org.representativeProjects)) {
         sections.push(`
           <article class="section-card">
             <h2>Representative projects</h2>
             <p>Named projects or project types connected to this organization.</p>
-            <div class="list-pills">${pillList(org.representativeProjects)}</div>
+            <div class="list-pills">${pillList(org.representativeProjects, allOrganizations)}</div>
+            ${inlineSources(org.sources, ["projects", "farm africa", "fsd africa", "solidaridad", "design document"])}
           </article>
         `);
       }
@@ -506,8 +570,9 @@
         sections.push(`
           <article class="section-card">
             <h2>Partners</h2>
-            <p>Organizations that appear connected to implementation, sourcing, finance, certification, or delivery.</p>
-            <div class="list-pills">${pillList(org.partners)}</div>
+            <p>Organizations connected to implementation, finance, certification, MRV, or delivery. Linked pills open profiles when available.</p>
+            <div class="list-pills">${pillList(org.partners, allOrganizations)}</div>
+            ${inlineSources(org.sources, ["fsd africa", "farm africa", "solidaridad", "satelligence", "acorn"])}
           </article>
         `);
       }
@@ -516,8 +581,9 @@
         sections.push(`
           <article class="section-card">
             <h2>Standards</h2>
-            <p>Relevant standards, registries, or certification systems associated with the profile.</p>
-            <div class="list-pills">${pillList(org.standards)}</div>
+            <p>Standards, registries, or certification systems associated with the profile. Linked pills open profiles when available.</p>
+            <div class="list-pills">${pillList(org.standards, allOrganizations)}</div>
+            ${inlineSources(org.sources, ["framework", "plan vivo", "verra"])}
           </article>
         `);
       }
@@ -527,16 +593,7 @@
           <article class="section-card wide">
             <h2>Financing approach</h2>
             <p>${escapeHtml(org.financingApproach)}</p>
-          </article>
-        `);
-      }
-
-      if (hasItems(org.examples)) {
-        sections.push(`
-          <article class="section-card">
-            <h2>Field guide tags</h2>
-            <p>Quick markers for search, comparison, and future landscape views.</p>
-            <div class="chips">${chipList(org.examples)}</div>
+            ${inlineSources(org.sources, ["frequently asked", "fsd africa", "framework"])}
           </article>
         `);
       }
@@ -544,8 +601,8 @@
       if (hasItems(org.sources)) {
         sections.push(`
           <article class="section-card full">
-            <h2>Sources</h2>
-            <p>Starting points for verification and further research.</p>
+            <h2>All sources</h2>
+            <p>Full source list for verification and further research.</p>
             <div class="source-list">${sourceList(org.sources)}</div>
           </article>
         `);
@@ -589,7 +646,7 @@
         </section>
 
         <section class="section-stack" aria-label="Research profile sections">
-          ${researchSections(org)}
+          ${researchSections(org, allOrganizations)}
         </section>
 
         ${related.length ? `
