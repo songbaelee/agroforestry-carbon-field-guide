@@ -337,6 +337,31 @@
       white-space: nowrap;
     }
 
+    .reference-card {
+      display: grid;
+      grid-template-columns: 1fr auto;
+      gap: 14px;
+      align-items: center;
+    }
+
+    .reference-meta {
+      display: block;
+      margin-top: 4px;
+      color: var(--muted);
+      font-size: 12px;
+      font-weight: 720;
+    }
+
+    .reference-type {
+      padding: 6px 8px;
+      border-radius: 999px;
+      background: rgba(18, 59, 42, 0.08);
+      color: var(--green);
+      font-size: 11px;
+      font-weight: 900;
+      white-space: nowrap;
+    }
+
     .related { margin-top: 18px; }
 
     .related-head {
@@ -478,6 +503,32 @@
       return `organization.html?id=${org.slug || slugify(org.name)}`;
     }
 
+    function sourceTitle(source) {
+      return typeof source === "string" ? source : source.title || source.label || source.url;
+    }
+
+    function sourceOrg(source) {
+      return typeof source === "string" ? "" : source.organization || "";
+    }
+
+    function sourceUrl(source) {
+      return typeof source === "string" ? "" : source.url || "";
+    }
+
+    function sourceKey(source) {
+      return sourceUrl(source) || sourceTitle(source);
+    }
+
+    function sourceType(source) {
+      const text = [sourceTitle(source), sourceOrg(source), sourceUrl(source)].join(" ").toLowerCase();
+      if (text.includes("framework") || text.includes("methodolog")) return "Methodology";
+      if (text.includes("faq")) return "Company FAQ";
+      if (text.includes("project") || text.includes("design document") || text.includes("farm africa") || text.includes("solidaridad")) return "Project";
+      if (text.includes("fsd africa") || text.includes("rabo foundation")) return "Finance";
+      if (text.includes("satelligence")) return "Technology";
+      return "Reference";
+    }
+
     function chipList(items) {
       return (items || []).map(item => `<span class="chip">${escapeHtml(item)}</span>`).join("");
     }
@@ -500,52 +551,76 @@
       }).join("");
     }
 
-    function sourceList(sources) {
-      return (sources || []).map(source => {
-        if (typeof source === "string") {
-          return `<div class="source-card"><span>${escapeHtml(source)}</span></div>`;
+    function sourceMatches(source, keywords) {
+      const text = [sourceTitle(source), sourceOrg(source), sourceUrl(source)].join(" ").toLowerCase();
+      return (keywords || []).some(keyword => text.includes(String(keyword).toLowerCase()));
+    }
+
+    function getInlineSources(sources, keywords, usedSourceKeys) {
+      const matches = (sources || []).filter(source => sourceMatches(source, keywords));
+      const unique = [];
+      matches.forEach(source => {
+        const key = sourceKey(source);
+        if (!usedSourceKeys.has(key)) {
+          usedSourceKeys.add(key);
+          unique.push(source);
         }
-
-        const title = source.title || source.label || source.url;
-        const organization = source.organization ? ` · ${source.organization}` : "";
-
-        return `
-          <a class="source-card" href="${escapeHtml(source.url)}" target="_blank" rel="noopener">
-            <span>${escapeHtml(title)}${escapeHtml(organization)}</span>
-            <span>Open →</span>
-          </a>
-        `;
-      }).join("");
-    }
-
-    function matchingSources(sources, keywords) {
-      const terms = (keywords || []).map(item => String(item).toLowerCase());
-      return (sources || []).filter(source => {
-        const text = typeof source === "string"
-          ? source
-          : [source.title, source.organization, source.url].join(" ");
-        const normalized = text.toLowerCase();
-        return terms.some(term => normalized.includes(term));
       });
+      return unique;
     }
 
-    function inlineSources(sources, keywords) {
-      const matches = matchingSources(sources, keywords);
-      if (!matches.length) return "";
-
+    function inlineSources(sourceItems) {
+      if (!sourceItems.length) return "";
       return `
         <div class="inline-sources">
-          <b>Sources</b>
-          ${matches.map(source => {
-            if (typeof source === "string") return `<span>${escapeHtml(source)}</span>`;
-            const title = source.title || source.label || source.url;
-            return `<a href="${escapeHtml(source.url)}" target="_blank" rel="noopener">${escapeHtml(title)}</a>`;
+          <b>References</b>
+          ${sourceItems.map(source => {
+            const title = sourceTitle(source);
+            const url = sourceUrl(source);
+            if (!url) return `<span>${escapeHtml(title)}</span>`;
+            return `<a href="${escapeHtml(url)}" target="_blank" rel="noopener">${escapeHtml(title)}</a>`;
           }).join("")}
         </div>
       `;
     }
 
-    function researchSections(org, allOrganizations) {
+    function referenceList(sources) {
+      return (sources || []).map(source => {
+        const title = sourceTitle(source);
+        const organization = sourceOrg(source);
+        const url = sourceUrl(source);
+        const type = sourceType(source);
+        const body = `
+          <span>
+            ${escapeHtml(title)}
+            ${organization ? `<span class="reference-meta">${escapeHtml(organization)}</span>` : ""}
+          </span>
+          <span class="reference-type">${escapeHtml(type)}</span>
+        `;
+
+        if (!url) return `<div class="source-card reference-card">${body}</div>`;
+        return `<a class="source-card reference-card" href="${escapeHtml(url)}" target="_blank" rel="noopener">${body}</a>`;
+      }).join("");
+    }
+
+    function referencesSection(org, usedSourceKeys) {
+      const remaining = (org.sources || []).filter(source => !usedSourceKeys.has(sourceKey(source)));
+      if (!remaining.length) return "";
+
+      return `
+        <section class="related" aria-label="References">
+          <div class="related-head">
+            <h2>References</h2>
+          </div>
+          <article class="section-card full">
+            <p>Foundational references and additional verification sources for this profile.</p>
+            <div class="source-list">${referenceList(remaining)}</div>
+          </article>
+        </section>
+      `;
+    }
+
+    function researchSections(org, allOrganizations, usedSourceKeys) {
       const sections = [];
 
       sections.push(`
@@ -556,23 +631,25 @@
       `);
 
       if (hasItems(org.representativeProjects)) {
+        const sources = getInlineSources(org.sources, ["projects", "farm africa", "solidaridad", "design document"], usedSourceKeys);
         sections.push(`
           <article class="section-card">
             <h2>Representative projects</h2>
             <p>Named projects or project types connected to this organization.</p>
             <div class="list-pills">${pillList(org.representativeProjects, allOrganizations)}</div>
-            ${inlineSources(org.sources, ["projects", "farm africa", "fsd africa", "solidaridad", "design document"])}
+            ${inlineSources(sources)}
           </article>
         `);
       }
 
       if (hasItems(org.partners)) {
+        const sources = getInlineSources(org.sources, ["satelligence"], usedSourceKeys);
         sections.push(`
           <article class="section-card">
             <h2>Partners</h2>
             <p>Organizations connected to implementation, finance, certification, MRV, or delivery. Linked pills open profiles when available.</p>
             <div class="list-pills">${pillList(org.partners, allOrganizations)}</div>
-            ${inlineSources(org.sources, ["fsd africa", "farm africa", "solidaridad", "satelligence", "acorn"])}
+            ${inlineSources(sources)}
           </article>
         `);
       }
@@ -583,27 +660,17 @@
             <h2>Standards</h2>
             <p>Standards, registries, or certification systems associated with the profile. Linked pills open profiles when available.</p>
             <div class="list-pills">${pillList(org.standards, allOrganizations)}</div>
-            ${inlineSources(org.sources, ["framework", "plan vivo", "verra"])}
           </article>
         `);
       }
 
       if (hasText(org.financingApproach)) {
+        const sources = getInlineSources(org.sources, ["fsd africa"], usedSourceKeys);
         sections.push(`
           <article class="section-card wide">
             <h2>Financing approach</h2>
             <p>${escapeHtml(org.financingApproach)}</p>
-            ${inlineSources(org.sources, ["frequently asked", "fsd africa", "framework"])}
-          </article>
-        `);
-      }
-
-      if (hasItems(org.sources)) {
-        sections.push(`
-          <article class="section-card full">
-            <h2>All sources</h2>
-            <p>Full source list for verification and further research.</p>
-            <div class="source-list">${sourceList(org.sources)}</div>
+            ${inlineSources(sources)}
           </article>
         `);
       }
@@ -611,11 +678,33 @@
       return sections.join("");
     }
 
-    function renderProfile(org, allOrganizations) {
+    function renderRelated(org, allOrganizations) {
       const related = allOrganizations
         .filter(item => item.name !== org.name && item.role === org.role)
         .slice(0, 3);
 
+      if (!related.length) return "";
+
+      return `
+        <section class="related">
+          <div class="related-head">
+            <h2>Comparable organizations</h2>
+          </div>
+          <div class="related-grid">
+            ${related.map(item => `
+              <a class="related-card" href="${profileUrl(item)}">
+                <small>${escapeHtml(item.roleLabel)}</small>
+                <h3>${escapeHtml(item.name)}</h3>
+                <p>${escapeHtml(item.type)} · ${escapeHtml(item.strategy)}</p>
+              </a>
+            `).join("")}
+          </div>
+        </section>
+      `;
+    }
+
+    function renderProfile(org, allOrganizations) {
+      const usedSourceKeys = new Set();
       document.title = `${org.name} | Agroforestry Carbon Field Guide`;
 
       app.innerHTML = `
@@ -646,25 +735,11 @@
         </section>
 
         <section class="section-stack" aria-label="Research profile sections">
-          ${researchSections(org, allOrganizations)}
+          ${researchSections(org, allOrganizations, usedSourceKeys)}
         </section>
 
-        ${related.length ? `
-          <section class="related">
-            <div class="related-head">
-              <h2>Comparable organizations</h2>
-            </div>
-            <div class="related-grid">
-              ${related.map(item => `
-                <a class="related-card" href="${profileUrl(item)}">
-                  <small>${escapeHtml(item.roleLabel)}</small>
-                  <h3>${escapeHtml(item.name)}</h3>
-                  <p>${escapeHtml(item.type)} · ${escapeHtml(item.strategy)}</p>
-                </a>
-              `).join("")}
-            </div>
-          </section>
-        ` : ""}
+        ${renderRelated(org, allOrganizations)}
+        ${referencesSection(org, usedSourceKeys)}
       `;
     }
 
