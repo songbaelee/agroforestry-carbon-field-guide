@@ -238,19 +238,21 @@
 
     .section-stack {
       margin-top: 18px;
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 16px;
-      align-items: stretch;
+      column-count: 3;
+      column-gap: 16px;
     }
 
     .section-card {
-      min-height: 220px;
+      display: inline-block;
+      width: 100%;
+      min-height: 0;
+      margin: 0 0 16px;
       padding: 24px;
+      break-inside: avoid;
     }
 
-    .section-card.wide { grid-column: span 2; }
-    .section-card.full { grid-column: 1 / -1; }
+    .section-card.wide,
+    .section-card.full { grid-column: auto; }
 
     .section-card h2 {
       margin: 0 0 12px;
@@ -308,42 +310,45 @@
 
     .inline-sources {
       margin-top: 16px;
-      padding-top: 14px;
+      padding-top: 12px;
       border-top: 1px solid var(--line);
-      display: flex;
-      flex-wrap: wrap;
-      gap: 8px;
-      align-items: center;
+      display: grid;
+      gap: 6px;
     }
 
     .inline-sources b {
       color: var(--green);
-      font-size: 11px;
+      font-size: 10px;
       text-transform: uppercase;
-      letter-spacing: 0.04em;
-      margin-right: 2px;
+      letter-spacing: 0.06em;
     }
 
     .inline-sources a,
     .inline-sources span {
-      padding: 6px 8px;
-      border-radius: 999px;
-      background: rgba(197, 111, 71, 0.09);
       color: var(--clay);
       font-size: 11px;
-      font-weight: 820;
-      line-height: 1.2;
+      font-weight: 780;
+      line-height: 1.25;
+    }
+
+    .inline-sources a::before {
+      content: "↗ ";
+      color: rgba(197, 111, 71, 0.62);
     }
 
     .resource-kind {
       display: inline-flex;
       align-items: center;
-      margin-left: 6px;
+      margin-left: 5px;
+      padding: 1px 5px;
+      border-radius: 999px;
+      background: rgba(20, 34, 26, 0.06);
       color: var(--muted);
-      font-size: 10px;
+      font-size: 8px;
       font-weight: 900;
-      letter-spacing: 0.04em;
+      letter-spacing: 0.05em;
       text-transform: uppercase;
+      vertical-align: 1px;
     }
 
     .source-card {
@@ -387,6 +392,70 @@
       font-size: 11px;
       font-weight: 900;
       white-space: nowrap;
+    }
+
+
+    .comparison {
+      margin-top: 18px;
+      border-radius: 34px;
+      background: rgba(255, 250, 240, 0.72);
+      border: 1px solid rgba(20, 34, 26, 0.1);
+      box-shadow: 0 16px 46px rgba(28, 43, 31, 0.08);
+      overflow: hidden;
+    }
+
+    .comparison-head {
+      padding: 24px;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .comparison-head h2 {
+      margin: 0;
+      font-size: clamp(28px, 4vw, 44px);
+      line-height: 0.95;
+      letter-spacing: -0.06em;
+    }
+
+    .comparison-head p {
+      margin: 8px 0 0;
+      color: var(--muted);
+      line-height: 1.4;
+      max-width: 680px;
+    }
+
+    .comparison-table {
+      display: grid;
+    }
+
+    .comparison-row {
+      display: grid;
+      grid-template-columns: 170px repeat(2, minmax(0, 1fr));
+      border-bottom: 1px solid var(--line);
+    }
+
+    .comparison-row:last-child { border-bottom: 0; }
+
+    .comparison-row > div {
+      padding: 16px 18px;
+      color: var(--muted);
+      line-height: 1.35;
+      font-size: 14px;
+    }
+
+    .comparison-row > div:first-child {
+      color: var(--green);
+      font-size: 12px;
+      font-weight: 900;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      background: rgba(20, 34, 26, 0.035);
+    }
+
+    .comparison-name {
+      color: var(--ink) !important;
+      font-weight: 880;
+      font-size: 16px !important;
+      letter-spacing: -0.02em;
     }
 
     .related { margin-top: 18px; }
@@ -460,18 +529,21 @@
     }
 
     @media (max-width: 980px) {
-      .profile-shell,
-      .section-stack { grid-template-columns: 1fr; }
+      .profile-shell { grid-template-columns: 1fr; }
+      .section-stack { column-count: 2; }
       .section-card.wide,
       .section-card.full { grid-column: auto; }
       .side-card { position: static; }
       .related-grid { grid-template-columns: repeat(2, 1fr); }
+      .comparison-row { grid-template-columns: 1fr; }
+      .comparison-row > div:first-child { border-bottom: 1px solid var(--line); }
     }
 
     @media (max-width: 720px) {
       main { padding-top: 36px; }
       .nav-links { display: none; }
       .hero-card { min-height: auto; padding: 26px; }
+      .section-stack { column-count: 1; }
       .related-grid { grid-template-columns: 1fr; }
       .source-card { align-items: flex-start; flex-direction: column; }
     }
@@ -747,6 +819,63 @@
       return sections.join("");
     }
 
+
+    function comparisonValue(org, key, fallback = "") {
+      if (org.comparison && org.comparison[key]) return org.comparison[key];
+      const fallbacks = {
+        customer: org.roleLabel || fallback,
+        primaryRevenue: org.businessModel || org.strategy || fallback,
+        mainOffering: org.type || fallback,
+        carbonRole: org.strategy || fallback,
+        financing: org.financingApproach || fallback,
+        typicalClient: hasItems(org.partners) ? org.partners.slice(0, 3).join(", ") : fallback
+      };
+      return fallbacks[key] || fallback;
+    }
+
+    function comparisonPartner(org, allOrganizations) {
+      if (org.slug === "acorn") return allOrganizations.find(item => item.slug === "pur");
+      if (org.slug === "pur") return allOrganizations.find(item => item.slug === "acorn");
+      return allOrganizations.find(item => item.name !== org.name && item.role === org.role && item.comparison);
+    }
+
+    function renderComparison(org, allOrganizations) {
+      const other = comparisonPartner(org, allOrganizations);
+      if (!other) return "";
+
+      const rows = [
+        ["Customer", "customer"],
+        ["Primary revenue", "primaryRevenue"],
+        ["Main offering", "mainOffering"],
+        ["Carbon role", "carbonRole"],
+        ["Financing", "financing"],
+        ["Typical client", "typicalClient"]
+      ];
+
+      return `
+        <section class="comparison" aria-label="Organization comparison">
+          <div class="comparison-head">
+            <h2>${escapeHtml(org.name)} vs ${escapeHtml(other.name)}</h2>
+            <p>A quick comparison to show why both organizations sit in the same role while using different carbon business models.</p>
+          </div>
+          <div class="comparison-table">
+            <div class="comparison-row">
+              <div></div>
+              <div class="comparison-name">${escapeHtml(org.name)}</div>
+              <div class="comparison-name">${escapeHtml(other.name)}</div>
+            </div>
+            ${rows.map(([label, key]) => `
+              <div class="comparison-row">
+                <div>${escapeHtml(label)}</div>
+                <div>${escapeHtml(comparisonValue(org, key, "Not yet documented"))}</div>
+                <div>${escapeHtml(comparisonValue(other, key, "Not yet documented"))}</div>
+              </div>
+            `).join("")}
+          </div>
+        </section>
+      `;
+    }
+
     function renderRelated(org, allOrganizations) {
       const related = allOrganizations
         .filter(item => item.name !== org.name && item.role === org.role)
@@ -777,7 +906,7 @@
       document.title = `${org.name} | Agroforestry Carbon Field Guide`;
 
       app.innerHTML = `
-        <a class="back-link" href="organizations.html#${org.role}">← Back to ${escapeHtml(org.roleLabel || "Organizations")}</a>
+        <a class="back-link" href="organizations.html#${org.role}">← Back to Organizations</a>
 
         <section class="profile-shell">
           <article class="hero-card">
@@ -788,7 +917,6 @@
             </div>
             <div class="hero-actions">
               <a class="button" href="${escapeHtml(org.website)}" target="_blank" rel="noopener">Visit website →</a>
-              <a class="button secondary" href="organizations.html#${escapeHtml(org.role)}">More ${escapeHtml(org.roleLabel || "organizations")} →</a>
             </div>
           </article>
 
@@ -807,6 +935,7 @@
           ${researchSections(org, allOrganizations, usedSourceKeys)}
         </section>
 
+        ${renderComparison(org, allOrganizations)}
         ${renderRelated(org, allOrganizations)}
         ${referencesSection(org, usedSourceKeys)}
       `;

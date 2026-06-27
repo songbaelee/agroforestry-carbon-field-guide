@@ -40,27 +40,52 @@
       {
         "title": "Planting a better future with smallholder farmers",
         "organization": "Acorn",
-        "url": "https://www.acorn.earth/"
+        "url": "https://www.acorn.earth/",
+        "type": "Company",
+        "sections": [
+          "overview",
+          "businessModel"
+        ]
       },
       {
         "title": "Frequently Asked Questions",
         "organization": "Acorn",
-        "url": "https://www.acorn.earth/faqs"
+        "url": "https://www.acorn.earth/faqs",
+        "type": "Company FAQ",
+        "sections": [
+          "businessModel",
+          "financingApproach"
+        ]
       },
       {
         "title": "Acorn Projects",
         "organization": "Acorn",
-        "url": "https://acorn.earth/projects"
+        "url": "https://acorn.earth/projects",
+        "type": "Project",
+        "sections": [
+          "representativeProjects"
+        ]
       },
       {
         "title": "The Acorn Framework for Voluntary, Ex-Post, Agroforestry Carbon Removal Units v2.0",
         "organization": "Acorn",
-        "url": "https://assets.ctfassets.net/9vhdnop8eg9t/3WZPMdnQCTlgerVGDIR5bh/39c555180882dd1ac49a47527e442752/The_Acorn_Framework_for_Voluntary__Ex-Post__Agroforestry_Carbon_Removal_Units_v2.0__UNDER_REVIEW_.pdf"
+        "url": "https://assets.ctfassets.net/9vhdnop8eg9t/3WZPMdnQCTlgerVGDIR5bh/39c555180882dd1ac49a47527e442752/The_Acorn_Framework_for_Voluntary__Ex-Post__Agroforestry_Carbon_Removal_Units_v2.0__UNDER_REVIEW_.pdf",
+        "type": "Methodology",
+        "kind": "PDF",
+        "sections": [
+          "standards",
+          "businessModel"
+        ]
       },
       {
         "title": "FSD Africa and Rabobank ACORN/Rabo Foundation to fund sustainable farming for African small-scale farmers with loans for carbon credits",
         "organization": "FSD Africa",
-        "url": "https://fsdafrica.org/fsd-africa-and-rabobank-acorn-rabo-foundation-to-fund-sustainable-farming-for-african-small-scale-farmers-with-loans-for-carbon-credits/"
+        "url": "https://fsdafrica.org/fsd-africa-and-rabobank-acorn-rabo-foundation-to-fund-sustainable-farming-for-african-small-scale-farmers-with-loans-for-carbon-credits/",
+        "type": "Finance",
+        "sections": [
+          "financingApproach",
+          "representativeProjects"
+        ]
       },
       {
         "title": "Acorn agroforestry",
@@ -70,19 +95,43 @@
       {
         "title": "Spotlight on Solidaridad Colombia",
         "organization": "Acorn",
-        "url": "https://acorn.rabobank.com/en/spotlight-on-solidaridad-colombia/"
+        "url": "https://acorn.rabobank.com/en/spotlight-on-solidaridad-colombia/",
+        "type": "Project",
+        "sections": [
+          "representativeProjects",
+          "partners"
+        ]
       },
       {
         "title": "Solidaridad Colombia Acorn Design Document",
         "organization": "Acorn / Solidaridad Colombia",
-        "url": "https://assets.ctfassets.net/9vhdnop8eg9t/5WD0UFg3xtCByLXwG84LNs/482fe5cb64002e146a053e01f906fc27/Colombia_Solidaridad_ADD.pdf"
+        "url": "https://assets.ctfassets.net/9vhdnop8eg9t/5WD0UFg3xtCByLXwG84LNs/482fe5cb64002e146a053e01f906fc27/Colombia_Solidaridad_ADD.pdf",
+        "type": "Project document",
+        "kind": "PDF",
+        "sections": [
+          "representativeProjects",
+          "standards"
+        ]
       },
       {
         "title": "Acorn",
         "organization": "Satelligence",
-        "url": "https://satelligence.com/acorn/"
+        "url": "https://satelligence.com/acorn/",
+        "type": "Technology",
+        "sections": [
+          "partners"
+        ]
       }
-    ]
+    ],
+    "businessModel": "Smallholder agroforestry carbon platform. Acorn works through local partners to enroll farmers, measure biomass growth, certify ex-post carbon removal units, commercialize credits, and share carbon revenue with farmers and implementation partners.",
+    "comparison": {
+      "customer": "Carbon credit buyers and local implementation partners",
+      "primaryRevenue": "Carbon credit commercialization and platform administration share",
+      "mainOffering": "Smallholder agroforestry carbon platform",
+      "carbonRole": "Carbon is the core product",
+      "financing": "Revenue sharing, ex-post carbon sales, and partner/project finance",
+      "typicalClient": "Local partners, farmer groups, and carbon credit buyers"
+    }
   },
   {
     "name": "PUR",
@@ -254,7 +303,15 @@
           "businessModel"
         ]
       }
-    ]
+    ],
+    "comparison": {
+      "customer": "Corporations with supply-chain, Scope 3, and nature goals",
+      "primaryRevenue": "Project development, implementation, monitoring, and carbon/nature program services",
+      "mainOffering": "Corporate insetting and nature-based project development",
+      "carbonRole": "Carbon is one outcome inside supply-chain programs",
+      "financing": "Corporate-funded supply-chain programs and carbon-credit-oriented project finance",
+      "typicalClient": "Nespresso, Cocoa Life, food and beverage companies, and corporate sustainability teams"
+    }
   },
   {
     "name": "re.green",
