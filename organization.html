@@ -236,6 +236,32 @@
       font-weight: 700;
     }
 
+    .status-dot {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .status-dot::before {
+      content: "";
+      width: 8px;
+      height: 8px;
+      border-radius: 999px;
+      background: var(--muted);
+    }
+
+    .status-dot.complete::before { background: var(--lime); }
+    .status-dot.expanding::before { background: var(--clay); }
+    .status-dot.preliminary::before { background: rgba(102, 115, 101, 0.58); }
+
+    .methodology-link {
+      display: inline-flex !important;
+      margin-top: 6px;
+      color: var(--clay) !important;
+      font-size: 12px;
+      font-weight: 900 !important;
+    }
+
     .section-stack {
       margin-top: 18px;
       column-count: 3;
@@ -641,7 +667,7 @@
   </main>
 
   <footer>
-    Profiles are generated from <code>data/organizations.json</code>. One template, many organizations.
+    Profiles and comparison dimensions are generated from <code>data/organizations.json</code>.
   </footer>
 
   <script>
@@ -1046,6 +1072,10 @@
       `;
     }
 
+    function researchStatusClass(status) {
+      return String(status || "Preliminary").toLowerCase().replace(/[^a-z0-9]+/g, "-");
+    }
+
     function renderProfile(org, allOrganizations) {
       const usedSourceKeys = new Set();
       document.title = `${org.name} | Agroforestry Carbon Field Guide`;
@@ -1070,6 +1100,9 @@
               <div class="fact"><b>Headquarters</b><span>${escapeHtml(org.hq)}</span></div>
               <div class="fact"><b>Footprint</b><span>${escapeHtml(org.geography)}</span></div>
               <div class="fact"><b>Carbon model</b><span>${escapeHtml(org.strategy)}</span></div>
+              <div class="fact"><b>Research status</b><span class="status-dot ${researchStatusClass(org.researchStatus)}">${escapeHtml(org.researchStatus || "Preliminary")} · ${escapeHtml(org.researchConfidence || "Low")} confidence</span></div>
+              <div class="fact"><b>Last reviewed</b><span>${escapeHtml(org.lastReviewed || "Not yet reviewed")}</span></div>
+              <div class="fact"><b>Methodology</b><span>${escapeHtml(org.methodologyVersion || "v0.1")}<a class="methodology-link" href="compare.html#methodology">View comparison methodology →</a></span></div>
             </div>
           </aside>
         </section>
