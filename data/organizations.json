@@ -143,6 +143,27 @@
       "corporateDemand": 3,
       "restorationFocus": 3,
       "smallholderFocus": 5
+    },
+    "researchStatus": "complete",
+    "researchConfidence": "High",
+    "lastReviewed": "2026-06-27",
+    "methodologyVersion": "v0.1",
+    "relationships": {
+      "comparable": [
+        "taking-root",
+        "pur",
+        "re-green"
+      ],
+      "collaborators": [
+        "rabobank",
+        "solidaridad",
+        "plan-vivo",
+        "verra",
+        "farm-africa",
+        "rabo-foundation",
+        "fsd-africa",
+        "satelligence"
+      ]
     }
   },
   {
@@ -335,6 +356,27 @@
       "corporateDemand": 5,
       "restorationFocus": 4,
       "smallholderFocus": 4
+    },
+    "researchStatus": "complete",
+    "researchConfidence": "High",
+    "lastReviewed": "2026-06-27",
+    "methodologyVersion": "v0.1",
+    "relationships": {
+      "comparable": [
+        "acorn",
+        "taking-root",
+        "re-green"
+      ],
+      "collaborators": [
+        "nestl",
+        "mars",
+        "gold-standard",
+        "verra",
+        "climeco",
+        "nespresso",
+        "cocoa-life",
+        "sustaincert"
+      ]
     }
   },
   {
@@ -366,6 +408,22 @@
       "corporateDemand": 4,
       "restorationFocus": 5,
       "smallholderFocus": 1
+    },
+    "researchStatus": "preliminary",
+    "researchConfidence": "Low",
+    "lastReviewed": "2026-06-27",
+    "methodologyVersion": "v0.1",
+    "relationships": {
+      "comparable": [
+        "acorn",
+        "taking-root",
+        "pur"
+      ],
+      "collaborators": [
+        "carbon-buyers",
+        "landowners",
+        "investors"
+      ]
     }
   },
   {
@@ -397,6 +455,22 @@
       "corporateDemand": 3,
       "restorationFocus": 4,
       "smallholderFocus": 5
+    },
+    "researchStatus": "preliminary",
+    "researchConfidence": "Low",
+    "lastReviewed": "2026-06-27",
+    "methodologyVersion": "v0.1",
+    "relationships": {
+      "comparable": [
+        "acorn",
+        "re-green",
+        "pur"
+      ],
+      "collaborators": [
+        "local-partners",
+        "farmer-groups",
+        "carbon-buyers"
+      ]
     }
   },
   {
@@ -573,6 +647,24 @@
       "carbonRole": "Enabling service for farmer and supply-chain programs",
       "financing": "Program funding plus carbon-market incentives for farmers",
       "typicalClient": "Acorn, Rabobank, UK PACT, producer organizations, and commodity supply-chain partners"
+    },
+    "researchStatus": "complete",
+    "researchConfidence": "High",
+    "lastReviewed": "2026-06-27",
+    "methodologyVersion": "v0.1",
+    "relationships": {
+      "comparable": [
+        "technoserve",
+        "catholic-relief-services"
+      ],
+      "collaborators": [
+        "acorn",
+        "rabobank",
+        "rabo-foundation",
+        "plan-vivo",
+        "uk-pact",
+        "postcode-lottery-group"
+      ]
     }
   },
   {
@@ -612,6 +704,21 @@
       "carbonRole": "Potential enabling service for climate-smart agriculture",
       "financing": "Donor funding, corporate partnerships, and blended program finance",
       "typicalClient": "Donors, agribusinesses, farmer groups, and market-system partners"
+    },
+    "researchStatus": "expanding",
+    "researchConfidence": "Medium",
+    "lastReviewed": "2026-06-27",
+    "methodologyVersion": "v0.1",
+    "relationships": {
+      "comparable": [
+        "solidaridad",
+        "catholic-relief-services"
+      ],
+      "collaborators": [
+        "donors",
+        "agribusinesses",
+        "farmer-groups"
+      ]
     }
   },
   {
@@ -643,6 +750,21 @@
       "corporateDemand": 2,
       "restorationFocus": 3,
       "smallholderFocus": 5
+    },
+    "researchStatus": "preliminary",
+    "researchConfidence": "Low",
+    "lastReviewed": "2026-06-27",
+    "methodologyVersion": "v0.1",
+    "relationships": {
+      "comparable": [
+        "solidaridad",
+        "technoserve"
+      ],
+      "collaborators": [
+        "local-partners",
+        "donors",
+        "farmer-groups"
+      ]
     }
   },
   {
@@ -674,6 +796,21 @@
       "corporateDemand": 4,
       "restorationFocus": 2,
       "smallholderFocus": 1
+    },
+    "researchStatus": "preliminary",
+    "researchConfidence": "Low",
+    "lastReviewed": "2026-06-27",
+    "methodologyVersion": "v0.1",
+    "relationships": {
+      "comparable": [
+        "gold-standard",
+        "plan-vivo"
+      ],
+      "collaborators": [
+        "developers",
+        "validators-and-verifiers",
+        "carbon-registries"
+      ]
     }
   },
   {
@@ -705,6 +842,21 @@
       "corporateDemand": 4,
       "restorationFocus": 2,
       "smallholderFocus": 2
+    },
+    "researchStatus": "preliminary",
+    "researchConfidence": "Low",
+    "lastReviewed": "2026-06-27",
+    "methodologyVersion": "v0.1",
+    "relationships": {
+      "comparable": [
+        "verra",
+        "plan-vivo"
+      ],
+      "collaborators": [
+        "developers",
+        "validators-and-verifiers",
+        "buyers"
+      ]
     }
   },
   {
@@ -736,6 +888,22 @@
       "corporateDemand": 3,
       "restorationFocus": 3,
       "smallholderFocus": 5
+    },
+    "researchStatus": "preliminary",
+    "researchConfidence": "Low",
+    "lastReviewed": "2026-06-27",
+    "methodologyVersion": "v0.1",
+    "relationships": {
+      "comparable": [
+        "verra",
+        "gold-standard"
+      ],
+      "collaborators": [
+        "acorn",
+        "solidaridad",
+        "community-projects",
+        "developers"
+      ]
     }
   },
   {
@@ -767,6 +935,20 @@
       "corporateDemand": 5,
       "restorationFocus": 4,
       "smallholderFocus": 1
+    },
+    "researchStatus": "preliminary",
+    "researchConfidence": "Low",
+    "lastReviewed": "2026-06-27",
+    "methodologyVersion": "v0.1",
+    "relationships": {
+      "comparable": [
+        "chloris-geospatial",
+        "open-forest-protocol"
+      ],
+      "collaborators": [
+        "carbon-buyers",
+        "project-developers"
+      ]
     }
   },
   {
@@ -798,6 +980,20 @@
       "corporateDemand": 2,
       "restorationFocus": 4,
       "smallholderFocus": 3
+    },
+    "researchStatus": "preliminary",
+    "researchConfidence": "Low",
+    "lastReviewed": "2026-06-27",
+    "methodologyVersion": "v0.1",
+    "relationships": {
+      "comparable": [
+        "pachama",
+        "chloris-geospatial"
+      ],
+      "collaborators": [
+        "project-developers",
+        "field-partners"
+      ]
     }
   },
   {
@@ -829,6 +1025,21 @@
       "corporateDemand": 4,
       "restorationFocus": 4,
       "smallholderFocus": 1
+    },
+    "researchStatus": "preliminary",
+    "researchConfidence": "Low",
+    "lastReviewed": "2026-06-27",
+    "methodologyVersion": "v0.1",
+    "relationships": {
+      "comparable": [
+        "pachama",
+        "open-forest-protocol"
+      ],
+      "collaborators": [
+        "project-developers",
+        "investors",
+        "buyers"
+      ]
     }
   },
   {
@@ -860,6 +1071,20 @@
       "corporateDemand": 3,
       "restorationFocus": 4,
       "smallholderFocus": 1
+    },
+    "researchStatus": "preliminary",
+    "researchConfidence": "Low",
+    "lastReviewed": "2026-06-27",
+    "methodologyVersion": "v0.1",
+    "relationships": {
+      "comparable": [
+        "fmo"
+      ],
+      "collaborators": [
+        "investors",
+        "land-managers",
+        "developers"
+      ]
     }
   },
   {
@@ -891,6 +1116,20 @@
       "corporateDemand": 1,
       "restorationFocus": 3,
       "smallholderFocus": 2
+    },
+    "researchStatus": "preliminary",
+    "researchConfidence": "Low",
+    "lastReviewed": "2026-06-27",
+    "methodologyVersion": "v0.1",
+    "relationships": {
+      "comparable": [
+        "climate-asset-management"
+      ],
+      "collaborators": [
+        "project-sponsors",
+        "funds",
+        "dfis"
+      ]
     }
   },
   {
@@ -922,6 +1161,22 @@
       "corporateDemand": 5,
       "restorationFocus": 3,
       "smallholderFocus": 1
+    },
+    "researchStatus": "preliminary",
+    "researchConfidence": "Low",
+    "lastReviewed": "2026-06-27",
+    "methodologyVersion": "v0.1",
+    "relationships": {
+      "comparable": [
+        "salesforce",
+        "nestl",
+        "mars"
+      ],
+      "collaborators": [
+        "carbon-removal-suppliers",
+        "standards",
+        "developers"
+      ]
     }
   },
   {
@@ -953,6 +1208,22 @@
       "corporateDemand": 5,
       "restorationFocus": 3,
       "smallholderFocus": 1
+    },
+    "researchStatus": "preliminary",
+    "researchConfidence": "Low",
+    "lastReviewed": "2026-06-27",
+    "methodologyVersion": "v0.1",
+    "relationships": {
+      "comparable": [
+        "microsoft",
+        "nestl",
+        "mars"
+      ],
+      "collaborators": [
+        "carbon-removal-suppliers",
+        "standards",
+        "developers"
+      ]
     }
   },
   {
@@ -984,6 +1255,22 @@
       "corporateDemand": 5,
       "restorationFocus": 3,
       "smallholderFocus": 4
+    },
+    "researchStatus": "preliminary",
+    "researchConfidence": "Low",
+    "lastReviewed": "2026-06-27",
+    "methodologyVersion": "v0.1",
+    "relationships": {
+      "comparable": [
+        "mars",
+        "salesforce",
+        "microsoft"
+      ],
+      "collaborators": [
+        "pur",
+        "suppliers",
+        "farmer-groups"
+      ]
     }
   },
   {
@@ -1015,6 +1302,22 @@
       "corporateDemand": 5,
       "restorationFocus": 3,
       "smallholderFocus": 4
+    },
+    "researchStatus": "preliminary",
+    "researchConfidence": "Low",
+    "lastReviewed": "2026-06-27",
+    "methodologyVersion": "v0.1",
+    "relationships": {
+      "comparable": [
+        "nestl",
+        "salesforce",
+        "microsoft"
+      ],
+      "collaborators": [
+        "pur",
+        "suppliers",
+        "farmer-groups"
+      ]
     }
   }
 ]

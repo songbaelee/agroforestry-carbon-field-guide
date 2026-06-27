@@ -997,9 +997,9 @@
       const comparableSlugs = relationshipSlugs(org, "comparable", allOrganizations);
       const editorialMatch = comparableSlugs
         .map(slug => findOrgBySlug(slug, allOrganizations))
-        .find(item => item && item.name !== org.name && item.role === org.role && item.comparison);
+        .find(item => item && item.name !== org.name && item.role === org.role);
       if (editorialMatch) return editorialMatch;
-      return allOrganizations.find(item => item.name !== org.name && item.role === org.role && item.comparison);
+      return allOrganizations.find(item => item.name !== org.name && item.role === org.role);
     }
 
     function renderComparison(org, allOrganizations) {
@@ -1019,7 +1019,7 @@
         <section class="comparison" aria-label="Organization comparison">
           <div class="comparison-head">
             <h2>${escapeHtml(org.name)} vs ${escapeHtml(other.name)}</h2>
-            <p>A quick comparison to show why both organizations sit in the same role while showing where they are similar and where they diverge.</p>
+            <p>A quick comparison with the first listed comparable organization in the same primary role.</p>
           </div>
           <div class="comparison-table">
             <div class="comparison-row">
