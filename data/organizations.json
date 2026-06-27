@@ -446,7 +446,7 @@
     "featured": false,
     "website": "https://takingroot.com/",
     "slug": "taking-root",
-    "overview": "Builds farmer-centered reforestation and agroforestry carbon programs with technology, local implementation, and long-term monitoring.",
+    "overview": "Taking Root is a Canadian project developer that designs, implements, and monitors community-based reforestation and agroforestry projects. Its model combines local implementation partners, long-term farmer engagement, proprietary digital monitoring technology, and verified carbon credit generation to finance landscape restoration.",
     "similarityScores": {
       "carbonFirst": 5,
       "supplyChainFocus": 2,
@@ -459,8 +459,8 @@
       "restorationFocus": 4,
       "smallholderFocus": 5
     },
-    "researchStatus": "preliminary",
-    "researchConfidence": "Low",
+    "researchStatus": "complete",
+    "researchConfidence": "High",
     "lastReviewed": "2026-06-27",
     "methodologyVersion": "v0.1",
     "relationships": {
@@ -475,7 +475,73 @@
         "carbon-buyers"
       ]
     },
-    "featuredComparison": "acorn"
+    "featuredComparison": "acorn",
+    "businessModel": "Taking Root develops and operates forest restoration and agroforestry carbon projects, working with local partners and smallholder landholders. The company combines project development, digital MRV technology through its FARM-TRACE platform, long-term monitoring, carbon certification, and commercialization of verified carbon credits to fund restoration.",
+    "representativeProjects": [
+      "CommuniTree reforestation program in Nicaragua",
+      "FARM-TRACE digital MRV platform",
+      "Community-based restoration projects in Nicaragua"
+    ],
+    "partners": [
+      "Plan Vivo",
+      "Arbor Day Foundation",
+      "Local implementing partners",
+      "Smallholder farmer organizations"
+    ],
+    "standards": [
+      "Plan Vivo"
+    ],
+    "financingApproach": "Taking Root finances restoration primarily through the sale of verified carbon credits generated from community-based reforestation and agroforestry projects. Carbon revenue supports long-term maintenance, monitoring, and payments to participating landholders while digital MRV improves transparency and efficiency.",
+    "comparison": {
+      "customer": "Corporate carbon buyers and climate investors",
+      "primaryRevenue": "Verified carbon credit development and sales",
+      "mainOffering": "Smallholder reforestation and agroforestry project development",
+      "carbonRole": "Core product",
+      "financing": "Carbon-credit-backed restoration",
+      "typicalClient": "Corporate buyers and restoration partners",
+      "platformComparison": "Compared with Acorn, Taking Root is more vertically integrated around its own restoration programs and FARM-TRACE technology, while Acorn primarily operates as a platform connecting implementation partners to carbon markets."
+    },
+    "sources": [
+      {
+        "title": "Taking Root",
+        "organization": "Taking Root",
+        "url": "https://takingroot.com/",
+        "type": "Company",
+        "sections": [
+          "overview",
+          "businessModel"
+        ]
+      },
+      {
+        "title": "CommuniTree",
+        "organization": "Taking Root",
+        "url": "https://takingroot.com/communitree/",
+        "type": "Project",
+        "sections": [
+          "representativeProjects",
+          "financingApproach"
+        ]
+      },
+      {
+        "title": "FARM-TRACE",
+        "organization": "Taking Root",
+        "url": "https://takingroot.com/farm-trace/",
+        "type": "Technology",
+        "sections": [
+          "businessModel",
+          "financingApproach"
+        ]
+      },
+      {
+        "title": "Plan Vivo Project Network",
+        "organization": "Plan Vivo",
+        "url": "https://www.planvivo.org/project-network",
+        "type": "Standard",
+        "sections": [
+          "standards"
+        ]
+      }
+    ]
   },
   {
     "name": "Solidaridad",
