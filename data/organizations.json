@@ -92,7 +92,7 @@
     "hq": "France",
     "geography": "Global",
     "strategy": "Carbon inside supply chains",
-    "description": "Develops agroforestry, restoration, and insetting programs, often linked to corporate supply chains and long-term farmer engagement.",
+    "description": "Develops agroforestry, restoration, and insetting programs for companies, often linked to corporate supply chains, Scope 3 emissions strategies, and long-term farmer and landscape resilience.",
     "examples": [
       "Insetting",
       "Supply chains",
@@ -101,7 +101,160 @@
     "featured": true,
     "website": "https://www.pur.co/",
     "slug": "pur",
-    "overview": "Develops agroforestry, restoration, and insetting programs, often linked to corporate supply chains and long-term farmer engagement."
+    "overview": "PUR is a France-headquartered nature-based solutions developer that helps companies build resilient supply chains, develop high-integrity nature-based carbon removal projects, and scale measurable climate and nature impact through locally embedded project teams.",
+    "businessModel": "Corporate-funded nature-based project development and implementation. PUR works with companies to design, implement, monitor, and scale insetting, agroforestry, restoration, and carbon removal programs that generate supply-chain resilience, Scope 3 emissions outcomes, carbon assets, and wider nature benefits.",
+    "representativeProjects": [
+      "Nespresso agroforestry program across coffee sourcing regions",
+      "Cocoa agroforestry and community benefit activities in Côte d'Ivoire",
+      "Guatemala Robusta coffee agroforestry project in San Marcos",
+      "Diana Project in Ambanja, Madagascar",
+      "Cocoa Life Program agroforestry initiative in Indonesia"
+    ],
+    "partners": [
+      "Nespresso",
+      "Cocoa Life",
+      "Cornell University",
+      "ClimeCo",
+      "YAKOPI",
+      "Local producer communities"
+    ],
+    "standards": [
+      "SustainCERT",
+      "Gold Standard",
+      "Verra",
+      "VCI"
+    ],
+    "financingApproach": "PUR's public materials emphasize corporate-funded supply-chain insetting and nature-based solution investments rather than a single project-finance structure. Companies work with PUR to fund interventions inside or around their value chains, including agroforestry and landscape restoration designed to support Scope 3 emissions reductions, carbon removals, biodiversity, water, and farmer livelihood outcomes. In carbon-credit-oriented projects, PUR also works with certification pathways and partners such as ClimeCo, where project funding can be linked to the sale of verified carbon units.",
+    "sources": [
+      {
+        "title": "Regenerating the landscapes business depends on",
+        "organization": "PUR",
+        "url": "https://pur.co/",
+        "type": "Company",
+        "sections": [
+          "overview",
+          "businessModel"
+        ]
+      },
+      {
+        "title": "What We Do",
+        "organization": "PUR",
+        "url": "https://pur.co/what-we-do/",
+        "type": "Company",
+        "sections": [
+          "businessModel",
+          "financingApproach"
+        ]
+      },
+      {
+        "title": "About Us",
+        "organization": "PUR",
+        "url": "https://pur.co/about-us/",
+        "type": "Company",
+        "sections": [
+          "overview",
+          "geography"
+        ]
+      },
+      {
+        "title": "Nespresso",
+        "organization": "PUR",
+        "url": "https://pur.co/partner/nespresso/",
+        "type": "Project",
+        "sections": [
+          "representativeProjects",
+          "partners"
+        ]
+      },
+      {
+        "title": "Scaling Agroforestry For Resilient Coffee Landscapes",
+        "organization": "PUR",
+        "url": "https://pur.co/scaling-agroforestry-for-resilient-coffee-landscapes/",
+        "type": "Project",
+        "sections": [
+          "representativeProjects",
+          "partners"
+        ]
+      },
+      {
+        "title": "Cocoa Agroforestry and Community Benefit Activities",
+        "organization": "PUR",
+        "url": "https://pur.co/cocoa-agroforestry-in-cote-divoire/",
+        "type": "Project",
+        "sections": [
+          "representativeProjects"
+        ]
+      },
+      {
+        "title": "Guatemala",
+        "organization": "PUR",
+        "url": "https://pur.co/project/guatemala/",
+        "type": "Project",
+        "sections": [
+          "representativeProjects"
+        ]
+      },
+      {
+        "title": "Ambanja, Madagascar",
+        "organization": "PUR",
+        "url": "https://pur.co/project/ambanja-madagascar/",
+        "type": "Project",
+        "sections": [
+          "representativeProjects"
+        ]
+      },
+      {
+        "title": "Empowering Cocoa Farmers Through Agroforestry",
+        "organization": "PUR",
+        "url": "https://pur.co/empowering-cocoa-farmers-through-agroforestry/",
+        "type": "Project",
+        "sections": [
+          "representativeProjects",
+          "partners"
+        ]
+      },
+      {
+        "title": "Reduce Supply Chain Emissions: Cocoa",
+        "organization": "PUR",
+        "url": "https://pur.co/project/reduce-supply-chain-emissions-cocoa/",
+        "type": "Methodology",
+        "sections": [
+          "standards",
+          "businessModel"
+        ]
+      },
+      {
+        "title": "Partner Profile: PUR",
+        "organization": "Sustainable Coffee Challenge",
+        "url": "https://www.sustaincoffee.org/partners/pur-projet",
+        "type": "Industry profile",
+        "sections": [
+          "overview",
+          "standards"
+        ]
+      },
+      {
+        "title": "ClimeCo",
+        "organization": "PUR",
+        "url": "https://pur.co/partner/climeco/",
+        "type": "Finance",
+        "sections": [
+          "partners",
+          "financingApproach",
+          "standards"
+        ]
+      },
+      {
+        "title": "PUR's 2024 Impact Report",
+        "organization": "PUR",
+        "url": "https://pur.co/pur-impact-report-2024/",
+        "type": "Report",
+        "sections": [
+          "overview",
+          "businessModel"
+        ]
+      }
+    ]
   },
   {
     "name": "re.green",

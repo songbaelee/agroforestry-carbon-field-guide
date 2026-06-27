@@ -546,6 +546,7 @@
     }
 
     function sourceType(source) {
+      if (typeof source !== "string" && source.type) return source.type;
       const text = [sourceTitle(source), sourceOrg(source), sourceUrl(source)].join(" ").toLowerCase();
       if (text.includes("framework") || text.includes("methodolog")) return "Methodology";
       if (text.includes("faq")) return "Company FAQ";
@@ -557,9 +558,13 @@
     }
 
     function resourceKind(source) {
+      if (typeof source !== "string" && source.kind) return source.kind;
+      const type = sourceType(source).toLowerCase();
       const text = [sourceTitle(source), sourceUrl(source)].join(" ").toLowerCase();
-      if (text.includes(".pdf") || text.includes("framework") || text.includes("design document")) return "PDF";
-      if (text.includes("registry")) return "Registry";
+      if (text.includes(".pdf") || text.includes("framework") || text.includes("design document") || type.includes("pdf")) return "PDF";
+      if (text.includes("registry") || type.includes("registry")) return "Registry";
+      if (type.includes("report")) return "Report";
+      if (type.includes("methodology")) return "Methodology";
       return "Web";
     }
 
@@ -600,8 +605,15 @@
       return (keywords || []).some(keyword => text.includes(String(keyword).toLowerCase()));
     }
 
-    function getInlineSources(sources, keywords, usedSourceKeys) {
-      const matches = (sources || []).filter(source => sourceMatches(source, keywords));
+    function sourceSupportsSection(source, sectionName) {
+      if (typeof source === "string" || !Array.isArray(source.sections)) return false;
+      return source.sections.includes(sectionName);
+    }
+
+    function getInlineSources(sources, keywords, usedSourceKeys, sectionName = "") {
+      const sectionMatches = (sources || []).filter(source => sourceSupportsSection(source, sectionName));
+      const keywordMatches = (sources || []).filter(source => sourceMatches(source, keywords));
+      const matches = sectionMatches.length ? sectionMatches : keywordMatches;
       const unique = [];
       matches.forEach(source => {
         const key = sourceKey(source);
@@ -674,8 +686,19 @@
         </article>
       `);
 
+      if (hasText(org.businessModel)) {
+        const sources = getInlineSources(org.sources, ["what we do", "impact report"], usedSourceKeys, "businessModel");
+        sections.push(`
+          <article class="section-card">
+            <h2>Business model</h2>
+            <p>${escapeHtml(org.businessModel)}</p>
+            ${inlineSources(sources)}
+          </article>
+        `);
+      }
+
       if (hasItems(org.representativeProjects)) {
-        const sources = getInlineSources(org.sources, ["projects", "farm africa", "solidaridad", "design document"], usedSourceKeys);
+        const sources = getInlineSources(org.sources, ["projects", "farm africa", "solidaridad", "design document"], usedSourceKeys, "representativeProjects");
         sections.push(`
           <article class="section-card">
             <h2>Representative projects</h2>
@@ -687,7 +710,7 @@
       }
 
       if (hasItems(org.partners)) {
-        const sources = getInlineSources(org.sources, ["satelligence"], usedSourceKeys);
+        const sources = getInlineSources(org.sources, ["satelligence"], usedSourceKeys, "partners");
         sections.push(`
           <article class="section-card">
             <h2>Partners</h2>
@@ -699,17 +722,19 @@
       }
 
       if (hasItems(org.standards)) {
+        const sources = getInlineSources(org.sources, ["framework", "verra", "gold standard", "sustaincert", "vci"], usedSourceKeys, "standards");
         sections.push(`
           <article class="section-card">
             <h2>Standards</h2>
             <p>Standards, registries, or certification systems associated with the profile. Linked pills open profiles when available.</p>
             <div class="list-pills">${pillList(org.standards, allOrganizations)}</div>
+            ${inlineSources(sources)}
           </article>
         `);
       }
 
       if (hasText(org.financingApproach)) {
-        const sources = getInlineSources(org.sources, ["fsd africa"], usedSourceKeys);
+        const sources = getInlineSources(org.sources, ["fsd africa"], usedSourceKeys, "financingApproach");
         sections.push(`
           <article class="section-card wide">
             <h2>Financing approach</h2>
