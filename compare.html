@@ -428,6 +428,7 @@
 </a>
 <div aria-label="Compare navigation" class="nav-links">
 <a href="organizations.html">Organizations</a>
+        <a href="ecosystem.html">Ecosystem</a>
 <a class="active" href="compare.html">Compare</a>
 </div>
 </div>
@@ -449,11 +450,10 @@
 </div>
 <section class="layout">
 <aside class="panel">
-<h2>Most similar</h2>
+<h2>Comparable within role</h2>
 <div class="rank-list" id="rankList"></div>
 <p class="method">
-          Similarity is calculated from 1–5 research dimensions in <code>data/organizations.json</code>.
-          The result is directional: useful for exploration, not a scientific ranking.
+          Comparison is limited to organizations with the same primary role by default. Similarity is calculated from 1–5 research dimensions in <code>data/organizations.json</code>.
         </p>
 </aside>
 <section class="panel">
@@ -466,9 +466,7 @@
 <section class="methodology" id="methodology">
 <h2>Methodology v0.1</h2>
 <p>
-        Organizations are compared using a common set of research dimensions that describe how they participate
-        in the agroforestry carbon ecosystem. The dimensions are intended to support exploration and comparison,
-        not to produce definitive rankings.
+        Organizations are compared primarily within the same functional role, using a common set of research dimensions that describe how they participate in the agroforestry carbon ecosystem. The dimensions are intended to support exploration and comparison, not to produce definitive rankings.
       </p>
 <p>
         Initial values were drafted with the assistance of OpenAI ChatGPT (GPT-5.5) using publicly available information,
@@ -484,7 +482,7 @@
 </section>
 </main>
 <footer>
-    Compare is generated from <code>data/organizations.json</code>. Research dimensions are transparent and editable.
+    Compare is generated from <code>data/organizations.json</code>. Comparable organizations are role-filtered; collaboration links are mapped separately in Ecosystem.
   </footer>
 <script>
     const dimensionLabels = {
@@ -570,7 +568,7 @@
 
     function rankedSimilar(org, organizations) {
       return organizations
-        .filter(item => item.name !== org.name && item.similarityScores)
+        .filter(item => item.name !== org.name && item.role === org.role && item.similarityScores)
         .map(item => ({ ...item, score: similarityScore(org, item) }))
         .filter(item => item.score !== null)
         .sort((a, b) => b.score - a.score);

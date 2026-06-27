@@ -1,0 +1,605 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Ecosystem Map | Agroforestry Carbon Field Guide</title>
+  <style>
+    :root {
+      --bg: #f6f1e6;
+      --bg-soft: #fbf7ee;
+      --ink: #14221a;
+      --muted: #667365;
+      --green: #123b2a;
+      --green-2: #1f6a46;
+      --lime: #b9f06b;
+      --clay: #c56f47;
+      --cream: #fffaf0;
+      --line: rgba(20, 34, 26, 0.13);
+      --card: rgba(255, 250, 240, 0.72);
+      --shadow: 0 24px 80px rgba(28, 43, 31, 0.14);
+    }
+
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      color: var(--ink);
+      background:
+        radial-gradient(circle at 8% -8%, rgba(185, 240, 107, 0.42), transparent 36rem),
+        radial-gradient(circle at 96% 8%, rgba(197, 111, 71, 0.18), transparent 34rem),
+        linear-gradient(180deg, var(--bg-soft), var(--bg));
+      min-height: 100vh;
+    }
+
+    a { color: inherit; text-decoration: none; }
+
+    .nav {
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      background: rgba(246, 241, 230, 0.76);
+      backdrop-filter: blur(18px);
+      border-bottom: 1px solid var(--line);
+    }
+
+    .nav-inner {
+      max-width: 1240px;
+      margin: 0 auto;
+      padding: 16px 24px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 22px;
+    }
+
+    .brand {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      font-weight: 820;
+      letter-spacing: -0.035em;
+    }
+
+    .brand-mark {
+      width: 36px;
+      height: 36px;
+      border-radius: 13px;
+      background:
+        radial-gradient(circle at 34% 28%, var(--lime), transparent 28%),
+        conic-gradient(from 150deg, var(--green), var(--green-2), #74ad55, var(--green));
+      box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.48), 0 10px 24px rgba(18, 59, 42, 0.22);
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 18px;
+      color: var(--muted);
+      font-size: 14px;
+      font-weight: 650;
+    }
+
+    .nav-links a:hover,
+    .nav-links a.active { color: var(--ink); }
+
+    main {
+      max-width: 1240px;
+      margin: 0 auto;
+      padding: 64px 24px 96px;
+    }
+
+    .hero {
+      display: grid;
+      grid-template-columns: minmax(0, 0.95fr) minmax(340px, 0.45fr);
+      gap: 18px;
+      align-items: stretch;
+    }
+
+    .hero-card, .control-card, .map-shell, .panel {
+      border-radius: 34px;
+      background: var(--card);
+      border: 1px solid rgba(20, 34, 26, 0.1);
+      box-shadow: 0 16px 46px rgba(28, 43, 31, 0.08);
+    }
+
+    .hero-card {
+      padding: 34px;
+      min-height: 320px;
+      background:
+        radial-gradient(circle at 82% 12%, rgba(185, 240, 107, 0.26), transparent 18rem),
+        linear-gradient(145deg, rgba(18, 59, 42, 0.98), rgba(28, 82, 52, 0.94));
+      color: var(--cream);
+      box-shadow: var(--shadow);
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      padding: 8px 12px;
+      border-radius: 999px;
+      background: rgba(255, 250, 240, 0.11);
+      border: 1px solid rgba(255, 250, 240, 0.16);
+      color: var(--lime);
+      font-size: 13px;
+      font-weight: 820;
+    }
+
+    h1 {
+      margin: 24px 0 18px;
+      max-width: 760px;
+      font-size: clamp(48px, 7.2vw, 92px);
+      line-height: 0.88;
+      letter-spacing: -0.075em;
+    }
+
+    .hero-card p {
+      margin: 0;
+      max-width: 720px;
+      color: rgba(255, 250, 240, 0.72);
+      font-size: clamp(18px, 2vw, 22px);
+      line-height: 1.45;
+    }
+
+    .control-card {
+      padding: 24px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      gap: 12px;
+    }
+
+    label {
+      color: var(--green);
+      font-size: 12px;
+      font-weight: 900;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+    }
+
+    select {
+      width: 100%;
+      min-height: 48px;
+      padding: 0 14px;
+      border-radius: 999px;
+      border: 1px solid var(--line);
+      background: rgba(255, 250, 240, 0.76);
+      color: var(--ink);
+      font: inherit;
+      font-weight: 780;
+    }
+
+    .toggle-row { display: flex; flex-wrap: wrap; gap: 8px; }
+    .toggle {
+      border: 1px solid var(--line);
+      background: rgba(255, 250, 240, 0.66);
+      color: var(--green);
+      border-radius: 999px;
+      padding: 9px 12px;
+      font: inherit;
+      font-size: 12px;
+      font-weight: 900;
+      cursor: pointer;
+    }
+    .toggle.active { background: var(--green); color: var(--cream); }
+
+    .layout {
+      margin-top: 18px;
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) minmax(300px, 0.32fr);
+      gap: 18px;
+      align-items: stretch;
+    }
+
+    .map-shell {
+      position: relative;
+      min-height: 720px;
+      overflow: hidden;
+      background:
+        radial-gradient(circle at 50% 48%, rgba(185, 240, 107, 0.16), transparent 18rem),
+        linear-gradient(145deg, rgba(18, 59, 42, 0.98), rgba(28, 82, 52, 0.94));
+    }
+
+    .map-svg {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      pointer-events: none;
+    }
+
+    .map-link {
+      stroke: rgba(255, 250, 240, 0.18);
+      stroke-width: 1.5;
+      transition: stroke 160ms ease, opacity 160ms ease, stroke-width 160ms ease;
+    }
+
+    .map-link.active {
+      stroke: rgba(185, 240, 107, 0.92);
+      stroke-width: 3;
+    }
+
+    .map-link.comparable { stroke-dasharray: 7 7; }
+
+    .role-label {
+      position: absolute;
+      color: rgba(255, 250, 240, 0.5);
+      font-size: 11px;
+      font-weight: 900;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      transform: translate(-50%, -50%);
+    }
+
+    .node {
+      position: absolute;
+      width: 138px;
+      min-height: 88px;
+      padding: 12px;
+      transform: translate(-50%, -50%);
+      border-radius: 20px;
+      background: rgba(255, 250, 240, 0.12);
+      border: 1px solid rgba(255, 250, 240, 0.16);
+      color: var(--cream);
+      backdrop-filter: blur(16px);
+      cursor: pointer;
+      transition: transform 160ms ease, opacity 160ms ease, background 160ms ease, border-color 160ms ease;
+      z-index: 2;
+    }
+
+    .node:hover,
+    .node.selected {
+      transform: translate(-50%, -50%) scale(1.07);
+      background: rgba(255, 250, 240, 0.22);
+      border-color: rgba(185, 240, 107, 0.62);
+    }
+
+    .node.dimmed { opacity: 0.26; }
+    .node.connected { border-color: rgba(185, 240, 107, 0.72); }
+
+    .node strong {
+      display: block;
+      font-size: 15px;
+      line-height: 1.05;
+      letter-spacing: -0.035em;
+    }
+
+    .node span {
+      display: block;
+      margin-top: 7px;
+      color: rgba(255, 250, 240, 0.66);
+      font-size: 11px;
+      line-height: 1.25;
+      font-weight: 720;
+    }
+
+    .panel { padding: 24px; }
+    .panel h2 {
+      margin: 0 0 12px;
+      font-size: clamp(28px, 4vw, 42px);
+      line-height: 0.95;
+      letter-spacing: -0.06em;
+    }
+    .panel p { margin: 0; color: var(--muted); line-height: 1.45; }
+
+    .detail-list { display: grid; gap: 10px; margin-top: 18px; }
+    .detail-card {
+      padding: 14px;
+      border-radius: 20px;
+      background: rgba(255, 250, 240, 0.58);
+      border: 1px solid rgba(20, 34, 26, 0.08);
+    }
+    .detail-card strong { display: block; color: var(--ink); letter-spacing: -0.03em; }
+    .detail-card span { display: block; margin-top: 4px; color: var(--muted); font-size: 13px; line-height: 1.35; }
+
+    .button {
+      display: inline-flex;
+      margin-top: 18px;
+      min-height: 42px;
+      align-items: center;
+      padding: 0 14px;
+      border-radius: 999px;
+      background: var(--green);
+      color: var(--cream);
+      font-size: 13px;
+      font-weight: 900;
+    }
+
+    .methodology {
+      margin-top: 18px;
+      padding: 24px;
+      border-radius: 34px;
+      background: rgba(255, 250, 240, 0.72);
+      border: 1px solid rgba(20, 34, 26, 0.1);
+      color: var(--muted);
+      line-height: 1.45;
+    }
+    .methodology strong { color: var(--green); }
+
+    footer {
+      max-width: 1240px;
+      margin: 0 auto;
+      padding: 0 24px 42px;
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    @media (max-width: 980px) {
+      .hero, .layout { grid-template-columns: 1fr; }
+      .map-shell { min-height: 760px; }
+    }
+
+    @media (max-width: 720px) {
+      main { padding-top: 36px; }
+      .nav-links { display: none; }
+      .hero-card { min-height: auto; padding: 26px; }
+      .map-shell { min-height: auto; padding: 18px; display: grid; gap: 10px; }
+      .map-svg, .role-label { display: none; }
+      .node { position: relative; left: auto !important; top: auto !important; transform: none !important; width: auto; min-height: auto; }
+      .node:hover, .node.selected { transform: none !important; }
+    }
+  </style>
+</head>
+<body>
+  <nav class="nav">
+    <div class="nav-inner">
+      <a class="brand" href="index.html" aria-label="Agroforestry Carbon Field Guide home">
+        <span class="brand-mark" aria-hidden="true"></span>
+        <span>Agroforestry Carbon Field Guide</span>
+      </a>
+      <div class="nav-links" aria-label="Ecosystem navigation">
+        <a href="organizations.html">Organizations</a>
+        <a class="active" href="ecosystem.html">Ecosystem</a>
+        <a href="compare.html">Compare</a>
+      </div>
+    </div>
+  </nav>
+
+  <main>
+    <section class="hero">
+      <article class="hero-card">
+        <span class="eyebrow">Ecosystem map v0.1</span>
+        <h1>Explore the market as a network.</h1>
+        <p>
+          Collaboration and comparability are different. This map separates who organizations resemble from who they work with across the agroforestry carbon value chain.
+        </p>
+      </article>
+      <aside class="control-card">
+        <label for="organizationSelect">Focus organization</label>
+        <select id="organizationSelect"></select>
+        <label>Relationship layer</label>
+        <div class="toggle-row">
+          <button class="toggle active" data-mode="collaborators">Common collaborators</button>
+          <button class="toggle" data-mode="comparable">Comparable peers</button>
+        </div>
+      </aside>
+    </section>
+
+    <section class="layout">
+      <div class="map-shell" id="mapShell">
+        <svg class="map-svg" id="mapSvg" aria-hidden="true"></svg>
+        <div id="roleLabels"></div>
+        <div id="nodes"></div>
+      </div>
+      <aside class="panel" id="detailPanel">
+        <h2>Loading map...</h2>
+        <p>Reading organization relationships from <code>data/organizations.json</code>.</p>
+      </aside>
+    </section>
+
+    <section class="methodology">
+      <strong>Methodology note.</strong> Relationships are directional research judgments stored in <code>data/organizations.json</code>. Common collaborators identify organizations that appear together in projects, finance, MRV, certification, or delivery. Comparable peers identify organizations that are useful to evaluate side by side, usually within the same primary role.
+    </section>
+  </main>
+
+  <footer>
+    Ecosystem is generated from <code>data/organizations.json</code>. The map is a living research layer, not a complete market census.
+  </footer>
+
+  <script>
+    const rolePositions = {
+      developers: { x: 17, y: 28, label: "Developers" },
+      implementation: { x: 22, y: 72, label: "Implementation" },
+      standards: { x: 50, y: 20, label: "Standards" },
+      technology: { x: 50, y: 78, label: "Technology" },
+      capital: { x: 78, y: 28, label: "Capital" },
+      buyers: { x: 80, y: 72, label: "Buyers" }
+    };
+
+    const params = new URLSearchParams(window.location.search);
+    const requestedId = params.get("id") || "acorn";
+    const select = document.getElementById("organizationSelect");
+    const nodesEl = document.getElementById("nodes");
+    const svg = document.getElementById("mapSvg");
+    const detailPanel = document.getElementById("detailPanel");
+    const roleLabels = document.getElementById("roleLabels");
+    let mode = "collaborators";
+    let organizations = [];
+    let selected = null;
+
+    function slugify(value) {
+      return String(value || "").toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/^-|-$/g, "");
+    }
+
+    function escapeHtml(value) {
+      return String(value || "").replace(/[&<>'"]/g, character => ({
+        "&": "&amp;",
+        "<": "&lt;",
+        ">": "&gt;",
+        "'": "&#039;",
+        '"': "&quot;"
+      }[character]));
+    }
+
+    function profileUrl(org) {
+      return `organization.html?id=${org.slug || slugify(org.name)}`;
+    }
+
+    function getSlug(org) { return org.slug || slugify(org.name); }
+
+    function getOrg(slug) {
+      return organizations.find(org => getSlug(org) === slug);
+    }
+
+    function externalLabel(slug) {
+      return String(slug || "").replace(/-/g, " ").replace(/\b\w/g, c => c.toUpperCase());
+    }
+
+    function relationSlugs(org) {
+      const relationships = org.relationships || {};
+      const explicit = Array.isArray(relationships[mode]) ? relationships[mode] : [];
+      if (explicit.length) return explicit;
+      if (mode === "comparable") {
+        return organizations.filter(item => item.role === org.role && getSlug(item) !== getSlug(org)).slice(0, 4).map(getSlug);
+      }
+      return [];
+    }
+
+    function buildPositions() {
+      const groups = {};
+      organizations.forEach(org => {
+        groups[org.role] = groups[org.role] || [];
+        groups[org.role].push(org);
+      });
+
+      Object.entries(groups).forEach(([role, items]) => {
+        const base = rolePositions[role] || { x: 50, y: 50, label: role };
+        items.forEach((org, index) => {
+          const angle = (Math.PI * 2 * index / Math.max(items.length, 1)) - Math.PI / 2;
+          const radius = items.length > 3 ? 11 : 8;
+          org._x = Math.max(8, Math.min(92, base.x + Math.cos(angle) * radius));
+          org._y = Math.max(10, Math.min(90, base.y + Math.sin(angle) * radius));
+        });
+      });
+    }
+
+    function renderRoleLabels() {
+      roleLabels.innerHTML = Object.entries(rolePositions).map(([role, position]) => `
+        <div class="role-label" style="left:${position.x}%; top:${position.y}%">${escapeHtml(position.label)}</div>
+      `).join("");
+    }
+
+    function renderNodes() {
+      nodesEl.innerHTML = organizations.map(org => `
+        <a class="node" data-slug="${escapeHtml(getSlug(org))}" href="${profileUrl(org)}" style="left:${org._x}%; top:${org._y}%">
+          <strong>${escapeHtml(org.name)}</strong>
+          <span>${escapeHtml(org.roleLabel || org.role)} · ${escapeHtml(org.strategy || org.type)}</span>
+        </a>
+      `).join("");
+
+      nodesEl.querySelectorAll(".node").forEach(node => {
+        node.addEventListener("mouseenter", event => focusNode(event.currentTarget.dataset.slug, false));
+        node.addEventListener("focus", event => focusNode(event.currentTarget.dataset.slug, false));
+        node.addEventListener("click", event => {
+          if (event.metaKey || event.ctrlKey) return;
+          event.preventDefault();
+          focusNode(event.currentTarget.dataset.slug, true);
+        });
+      });
+    }
+
+    function renderLinks(activeSlug = "") {
+      const selectedOrg = getOrg(activeSlug) || selected || organizations[0];
+      const activeSet = new Set([getSlug(selectedOrg), ...relationSlugs(selectedOrg).filter(slug => getOrg(slug))]);
+      const links = [];
+
+      organizations.forEach(org => {
+        relationSlugs(org).forEach(targetSlug => {
+          const target = getOrg(targetSlug);
+          if (!target) return;
+          const isActive = getSlug(org) === getSlug(selectedOrg) || getSlug(target) === getSlug(selectedOrg) || (activeSet.has(getSlug(org)) && activeSet.has(getSlug(target)));
+          links.push(`
+            <line class="map-link ${mode === "comparable" ? "comparable" : ""} ${isActive ? "active" : ""}"
+              x1="${org._x}%" y1="${org._y}%" x2="${target._x}%" y2="${target._y}%"></line>
+          `);
+        });
+      });
+
+      svg.innerHTML = links.join("");
+    }
+
+    function renderDetails(org) {
+      const relations = relationSlugs(org);
+      const found = relations.map(slug => getOrg(slug)).filter(Boolean);
+      const external = relations.filter(slug => !getOrg(slug));
+      const heading = mode === "collaborators" ? "Common collaborators" : "Comparable peers";
+      const description = mode === "collaborators"
+        ? "Organizations and grouped actors that commonly connect through projects, finance, MRV, certification, or field delivery."
+        : "Organizations useful to evaluate side by side, generally within the same primary role.";
+
+      detailPanel.innerHTML = `
+        <h2>${escapeHtml(org.name)}</h2>
+        <p>${escapeHtml(org.type)} · ${escapeHtml(org.strategy || org.roleLabel)}</p>
+        <div class="detail-list">
+          <div class="detail-card">
+            <strong>${escapeHtml(heading)}</strong>
+            <span>${escapeHtml(description)}</span>
+          </div>
+          ${found.map(item => `
+            <a class="detail-card" href="${profileUrl(item)}">
+              <strong>${escapeHtml(item.name)}</strong>
+              <span>${escapeHtml(item.roleLabel || item.role)} · ${escapeHtml(item.type || "Organization")}</span>
+            </a>
+          `).join("")}
+          ${external.map(slug => `
+            <div class="detail-card">
+              <strong>${escapeHtml(externalLabel(slug))}</strong>
+              <span>External or grouped relationship</span>
+            </div>
+          `).join("")}
+        </div>
+        <a class="button" href="${profileUrl(org)}">Open profile →</a>
+      `;
+    }
+
+    function focusNode(slug, persist = false) {
+      const org = getOrg(slug) || organizations[0];
+      if (persist) {
+        selected = org;
+        const url = new URL(window.location.href);
+        url.searchParams.set("id", getSlug(org));
+        window.history.replaceState({}, "", url);
+        select.value = getSlug(org);
+      }
+
+      const connected = new Set([getSlug(org), ...relationSlugs(org).filter(slug => getOrg(slug))]);
+      nodesEl.querySelectorAll(".node").forEach(node => {
+        const isConnected = connected.has(node.dataset.slug);
+        node.classList.toggle("selected", node.dataset.slug === getSlug(org));
+        node.classList.toggle("connected", isConnected && node.dataset.slug !== getSlug(org));
+        node.classList.toggle("dimmed", !isConnected);
+      });
+      renderLinks(getSlug(org));
+      renderDetails(org);
+    }
+
+    function init(data) {
+      organizations = data.filter(org => org.slug && org.role);
+      buildPositions();
+      select.innerHTML = organizations.map(org => `<option value="${escapeHtml(getSlug(org))}">${escapeHtml(org.name)}</option>`).join("");
+      renderRoleLabels();
+      renderNodes();
+
+      selected = getOrg(requestedId) || organizations[0];
+      select.value = getSlug(selected);
+      focusNode(getSlug(selected), true);
+
+      select.addEventListener("change", event => focusNode(event.target.value, true));
+      document.querySelectorAll(".toggle").forEach(button => {
+        button.addEventListener("click", () => {
+          mode = button.dataset.mode;
+          document.querySelectorAll(".toggle").forEach(item => item.classList.toggle("active", item === button));
+          focusNode(getSlug(selected), true);
+        });
+      });
+    }
+
+    fetch("data/organizations.json")
+      .then(response => response.json())
+      .then(init)
+      .catch(error => {
+        console.error("Could not load organizations.json", error);
+        detailPanel.innerHTML = "<h2>Could not load ecosystem data.</h2><p>Check that data/organizations.json is published with this page.</p>";
+      });
+  </script>
+</body>
+</html>
