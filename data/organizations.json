@@ -680,7 +680,7 @@
     "hq": "United States",
     "geography": "Africa, Latin America, Asia",
     "strategy": "Enabling service",
-    "description": "Provides technical assistance and market systems support. Agroforestry carbon may become a financing layer for farmer livelihoods and resilient supply chains.",
+    "description": "Provides technical assistance, market-systems support, and regenerative agriculture programming for smallholder farmers and agribusinesses. In agroforestry carbon, TechnoServe is most relevant as an implementation and advisory partner that can help producers adopt practices such as shade trees, soil management, composting, and climate-smart coffee production.",
     "examples": [
       "Technical assistance",
       "Agribusiness",
@@ -689,7 +689,7 @@
     "featured": true,
     "website": "https://www.technoserve.org/",
     "slug": "technoserve",
-    "overview": "Provides technical assistance and market systems support. Agroforestry carbon may become a financing layer for farmer livelihoods and resilient supply chains.",
+    "overview": "TechnoServe is an international nonprofit that works with enterprising people in the developing world to build competitive farms, businesses, and industries. In the agroforestry carbon field, it is most relevant as an implementation and technical assistance partner: helping smallholder farmers and agribusinesses adopt regenerative practices, improve productivity and income, and connect climate-smart agriculture to supply-chain and finance strategies.",
     "similarityScores": {
       "carbonFirst": 1,
       "supplyChainFocus": 4,
@@ -699,19 +699,19 @@
       "capitalProvision": 2,
       "standardSetting": 1,
       "corporateDemand": 3,
-      "restorationFocus": 2,
+      "restorationFocus": 3,
       "smallholderFocus": 5
     },
     "comparison": {
-      "customer": "Donors, agribusinesses, and market-system partners",
-      "primaryRevenue": "Donor-funded and partner-funded technical assistance programs",
-      "mainOffering": "Enterprise development, agribusiness advisory, and farmer livelihoods support",
-      "carbonRole": "Potential enabling service for climate-smart agriculture",
-      "financing": "Donor funding, corporate partnerships, and blended program finance",
-      "typicalClient": "Donors, agribusinesses, farmer groups, and market-system partners"
+      "customer": "Donors, foundations, agribusinesses, and market-system partners",
+      "primaryRevenue": "Donor-funded, philanthropic, and corporate-funded technical assistance programs",
+      "mainOffering": "Farmer training, agribusiness advisory, market systems support, and regenerative agriculture implementation",
+      "carbonRole": "Enabling service for climate-smart agriculture and potential carbon-finance readiness",
+      "financing": "Program funding, corporate partnerships, philanthropic support, and sector-level investment cases",
+      "typicalClient": "Donors, foundations, agribusinesses, coffee companies, farmer groups, and market-system partners"
     },
-    "researchStatus": "expanding",
-    "researchConfidence": "Medium",
+    "researchStatus": "complete",
+    "researchConfidence": "High",
     "lastReviewed": "2026-06-27",
     "methodologyVersion": "v0.1",
     "relationships": {
@@ -720,12 +720,125 @@
         "catholic-relief-services"
       ],
       "collaborators": [
+        "nestl",
+        "nespresso",
+        "jde-peets",
+        "unido",
+        "casa-technical-assistance-facility",
         "donors",
         "agribusinesses",
         "farmer-groups"
       ]
     },
-    "featuredComparison": "solidaridad"
+    "featuredComparison": "solidaridad",
+    "businessModel": "Donor-, foundation-, and corporate-funded technical assistance and market systems implementation. TechnoServe designs and delivers farmer training, agribusiness advisory, supply-chain upgrading, and sector transformation programs. Carbon is not TechnoServe's core product; it is a potential financing layer for regenerative agriculture, agroforestry, and smallholder resilience programs.",
+    "representativeProjects": [
+      "Regenerative Coffee Investment Case across nine leading coffee-producing countries",
+      "Carbon Finance for Smallholder Farmers and Agribusinesses analytical briefing on agroforestry solutions",
+      "Nespresso and TechnoServe sustainable coffee supply-chain partnership",
+      "CaféTec regenerative coffee support in Guatemala",
+      "ACT Coffee Programme climate-risk benchmarking with UNIDO"
+    ],
+    "partners": [
+      "Nestlé",
+      "Nespresso",
+      "JDE Peet's",
+      "Rudy & Alice Ramsey Foundation",
+      "CASA Technical Assistance Facility",
+      "UNIDO",
+      "Donors and agribusiness partners",
+      "Smallholder farmer groups"
+    ],
+    "standards": [
+      "Not a carbon standard"
+    ],
+    "financingApproach": "TechnoServe generally works through donor, philanthropic, and corporate program funding rather than project-level carbon commercialization. Its carbon-finance work is best understood as advisory and enabling: assessing how agroforestry carbon finance could support smallholder agriculture, and helping farmers and agribusinesses adopt regenerative practices that may create climate, income, and supply-chain benefits. The Regenerative Coffee Investment Case frames investment in regenerative practices as a sector-level business case, rather than a TechnoServe-owned credit-generation model.",
+    "sources": [
+      {
+        "title": "About Us",
+        "organization": "TechnoServe",
+        "url": "https://www.technoserve.org/about-us/",
+        "type": "Company",
+        "sections": [
+          "overview",
+          "businessModel"
+        ]
+      },
+      {
+        "title": "The Regenerative Coffee Investment Case",
+        "organization": "TechnoServe",
+        "url": "https://www.technoserve.org/regenerative-coffee-investment-case/",
+        "type": "Report",
+        "sections": [
+          "overview",
+          "businessModel",
+          "representativeProjects",
+          "financingApproach",
+          "partners"
+        ]
+      },
+      {
+        "title": "Report: Regenerative coffee could boost farmer incomes and the environment",
+        "organization": "TechnoServe",
+        "url": "https://www.technoserve.org/news/report-regenerative-coffee-could-boost-farmer-incomes-and-the-environment/",
+        "type": "Report summary",
+        "sections": [
+          "representativeProjects",
+          "financingApproach"
+        ]
+      },
+      {
+        "title": "Q&A: The Investment Case for Regenerative Coffee",
+        "organization": "TechnoServe",
+        "url": "https://www.technoserve.org/blog/regenerative-coffee-investment-qa/",
+        "type": "Interview",
+        "sections": [
+          "businessModel",
+          "representativeProjects",
+          "partners"
+        ]
+      },
+      {
+        "title": "Carbon Finance for Smallholder Farmers and Agribusinesses",
+        "organization": "TechnoServe / CASA Technical Assistance Facility",
+        "url": "https://www.technoserve.org/resources/carbon-finance-for-smallholder-farmers-and-agribusinesses-analytical-briefing-on-agroforestry-solutions/",
+        "type": "Report",
+        "sections": [
+          "businessModel",
+          "representativeProjects",
+          "financingApproach"
+        ]
+      },
+      {
+        "title": "How to Help Coffee Farmers Manage Climate Change Threats",
+        "organization": "TechnoServe",
+        "url": "https://www.technoserve.org/blog/how-to-help-coffee-farmers-manage-climate-change-threats/",
+        "type": "Partnership",
+        "sections": [
+          "representativeProjects",
+          "partners"
+        ]
+      },
+      {
+        "title": "Sustainable Coffee Farming: How Top Working is Shaping Guatemala's Coffee Sector",
+        "organization": "TechnoServe",
+        "url": "https://www.technoserve.org/blog/sustainable-coffee-farming-top-working-guatemala/",
+        "type": "Project",
+        "sections": [
+          "representativeProjects"
+        ]
+      },
+      {
+        "title": "New Coffee Report Maps Climate Risks and Paths to Resilience",
+        "organization": "TechnoServe / UNIDO ACT Coffee Programme",
+        "url": "https://www.technoserve.org/news/report-coffee-climate-risks-challenges-resilience/",
+        "type": "Report",
+        "sections": [
+          "representativeProjects",
+          "partners"
+        ]
+      }
+    ]
   },
   {
     "name": "Catholic Relief Services",
