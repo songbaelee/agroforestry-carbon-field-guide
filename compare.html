@@ -1,10 +1,11 @@
 <!DOCTYPE html>
+
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Compare Organizations | Agroforestry Carbon Field Guide</title>
-  <style>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Compare Organizations | Agroforestry Carbon Field Guide</title>
+<style>
     :root {
       --bg: #f6f1e6;
       --bg-soft: #fbf7ee;
@@ -419,80 +420,73 @@
   </style>
 </head>
 <body>
-  <nav class="nav">
-    <div class="nav-inner">
-      <a class="brand" href="index.html" aria-label="Agroforestry Carbon Field Guide home">
-        <span class="brand-mark" aria-hidden="true"></span>
-        <span>Agroforestry Carbon Field Guide</span>
-      </a>
-      <div class="nav-links" aria-label="Compare navigation">
-        <a href="organizations.html">Organizations</a>
-        <a class="active" href="compare.html">Compare</a>
-      </div>
-    </div>
-  </nav>
-
-  <main id="app">
-    <div class="hero">
-      <section class="hero-card">
-        <span class="eyebrow">Similarity engine</span>
-        <h1>Who actually looks like whom?</h1>
-        <p>
+<nav class="nav">
+<div class="nav-inner">
+<a aria-label="Agroforestry Carbon Field Guide home" class="brand" href="index.html">
+<span aria-hidden="true" class="brand-mark"></span>
+<span>Agroforestry Carbon Field Guide</span>
+</a>
+<div aria-label="Compare navigation" class="nav-links">
+<a href="organizations.html">Organizations</a>
+<a class="active" href="compare.html">Compare</a>
+</div>
+</div>
+</nav>
+<main id="app">
+<div class="hero">
+<section class="hero-card">
+<span class="eyebrow">Similarity engine</span>
+<h1>Who actually looks like whom?</h1>
+<p>
           Compare organizations using transparent research dimensions across carbon model, farmer delivery,
           supply-chain orientation, technology, capital, standards, and demand.
         </p>
-      </section>
-
-      <aside class="control-card">
-        <label for="organizationSelect">Start with an organization</label>
-        <select id="organizationSelect"></select>
-      </aside>
-    </div>
-
-    <section class="layout">
-      <aside class="panel">
-        <h2>Most similar</h2>
-        <div class="rank-list" id="rankList"></div>
-        <p class="method">
+</section>
+<aside class="control-card">
+<label for="organizationSelect">Start with an organization</label>
+<select id="organizationSelect"></select>
+</aside>
+</div>
+<section class="layout">
+<aside class="panel">
+<h2>Most similar</h2>
+<div class="rank-list" id="rankList"></div>
+<p class="method">
           Similarity is calculated from 1–5 research dimensions in <code>data/organizations.json</code>.
           The result is directional: useful for exploration, not a scientific ranking.
         </p>
-      </aside>
-
-      <section class="panel">
-        <h2 id="comparisonTitle">Comparison</h2>
-        <div class="compare-table" id="compareTable"></div>
-        <div class="bars" id="dimensionBars"></div>
-        <a class="profile-link" id="profileLink" href="#">Open profile →</a>
-      </section>
-    </section>
-
-    <section class="methodology" id="methodology">
-      <h2>Methodology v0.1</h2>
-      <p>
+</aside>
+<section class="panel">
+<h2 id="comparisonTitle">Comparison</h2>
+<div class="compare-table" id="compareTable"></div>
+<div class="bars" id="dimensionBars"></div>
+<a class="profile-link" href="#" id="profileLink">Open profile →</a>
+</section>
+</section>
+<section class="methodology" id="methodology">
+<h2>Methodology v0.1</h2>
+<p>
         Organizations are compared using a common set of research dimensions that describe how they participate
         in the agroforestry carbon ecosystem. The dimensions are intended to support exploration and comparison,
         not to produce definitive rankings.
       </p>
-      <p>
+<p>
         Initial values were drafted with the assistance of OpenAI ChatGPT (GPT-5.5) using publicly available information,
         the Field Guide taxonomy, and the research already captured in organization profiles. Each value is manually
         editable and expected to evolve as profiles are expanded, sources are reviewed, and better evidence is added.
       </p>
-      <p>
+<p>
         Research status indicates confidence in the underlying profile: <strong>Complete</strong> means the organization has
         a sourced research profile, <strong>Expanding</strong> means the profile is being developed, and <strong>Preliminary</strong>
         means the comparison values are an early directional estimate.
       </p>
-      <div class="dimension-grid" id="dimensionGrid"></div>
-    </section>
-  </main>
 
-  <footer>
+</section>
+</main>
+<footer>
     Compare is generated from <code>data/organizations.json</code>. Research dimensions are transparent and editable.
   </footer>
-
-  <script>
+<script>
     const dimensionLabels = {
       carbonFirst: "Carbon-first",
       supplyChainFocus: "Supply-chain focus",
