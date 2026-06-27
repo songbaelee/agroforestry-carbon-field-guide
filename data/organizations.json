@@ -7,7 +7,7 @@
     "hq": "Netherlands",
     "geography": "Africa, Asia, Latin America",
     "strategy": "Carbon as the core business",
-    "description": "Connects local partners and smallholder farmers to carbon markets through agroforestry project support, MRV, certification, and commercialization.",
+    "description": "Connects local partners and smallholder farmers to carbon markets through agroforestry project support, remote-sensing-enabled MRV, certification, and commercialization.",
     "examples": [
       "Smallholder agroforestry",
       "Farmer payments",
@@ -16,7 +16,73 @@
     "featured": true,
     "website": "https://www.acorn.earth/",
     "slug": "acorn",
-    "overview": "Connects local partners and smallholder farmers to carbon markets through agroforestry project support, MRV, certification, and commercialization."
+    "overview": "Acorn is a Rabobank-supported smallholder agroforestry carbon platform that helps local partners and farmers design agroforestry projects, monitor biomass growth, certify ex-post carbon removal units, and sell credits through carbon markets.",
+    "representativeProjects": [
+      "Solidaridad Colombia agroforestry project",
+      "Farm Africa Acorn agroforestry project in Embu and Tharaka Nithi, Kenya",
+      "FSD Africa / Rabo Foundation launch-phase Acorn projects in Kenya, Nigeria, and Zambia"
+    ],
+    "partners": [
+      "Rabobank",
+      "Rabo Foundation",
+      "FSD Africa",
+      "Farm Africa",
+      "Solidaridad Colombia",
+      "Plan Vivo",
+      "Satelligence"
+    ],
+    "standards": [
+      "Plan Vivo",
+      "Verra"
+    ],
+    "financingApproach": "Acorn sells ex-post carbon removal units generated from measured agroforestry biomass growth. Its public materials describe a revenue-sharing model in which at least 70% of carbon credit revenue flows back to farmers, 15% goes to the local partner, and 15% goes to Acorn for administration and operational costs. The FSD Africa / Rabo Foundation collaboration tested a financing structure in which loans help small-scale farmers transition to agroforestry and are repaid from carbon removal unit proceeds.",
+    "sources": [
+      {
+        "title": "Planting a better future with smallholder farmers",
+        "organization": "Acorn",
+        "url": "https://www.acorn.earth/"
+      },
+      {
+        "title": "Frequently Asked Questions",
+        "organization": "Acorn",
+        "url": "https://www.acorn.earth/faqs"
+      },
+      {
+        "title": "Acorn Projects",
+        "organization": "Acorn",
+        "url": "https://acorn.earth/projects"
+      },
+      {
+        "title": "The Acorn Framework for Voluntary, Ex-Post, Agroforestry Carbon Removal Units v2.0",
+        "organization": "Acorn",
+        "url": "https://assets.ctfassets.net/9vhdnop8eg9t/3WZPMdnQCTlgerVGDIR5bh/39c555180882dd1ac49a47527e442752/The_Acorn_Framework_for_Voluntary__Ex-Post__Agroforestry_Carbon_Removal_Units_v2.0__UNDER_REVIEW_.pdf"
+      },
+      {
+        "title": "FSD Africa and Rabobank ACORN/Rabo Foundation to fund sustainable farming for African small-scale farmers with loans for carbon credits",
+        "organization": "FSD Africa",
+        "url": "https://fsdafrica.org/fsd-africa-and-rabobank-acorn-rabo-foundation-to-fund-sustainable-farming-for-african-small-scale-farmers-with-loans-for-carbon-credits/"
+      },
+      {
+        "title": "Acorn agroforestry",
+        "organization": "Farm Africa",
+        "url": "https://www.farmafrica.org/programme/acorn-agroforestry/"
+      },
+      {
+        "title": "Spotlight on Solidaridad Colombia",
+        "organization": "Acorn",
+        "url": "https://acorn.rabobank.com/en/spotlight-on-solidaridad-colombia/"
+      },
+      {
+        "title": "Solidaridad Colombia Acorn Design Document",
+        "organization": "Acorn / Solidaridad Colombia",
+        "url": "https://assets.ctfassets.net/9vhdnop8eg9t/5WD0UFg3xtCByLXwG84LNs/482fe5cb64002e146a053e01f906fc27/Colombia_Solidaridad_ADD.pdf"
+      },
+      {
+        "title": "Acorn",
+        "organization": "Satelligence",
+        "url": "https://satelligence.com/acorn/"
+      }
+    ]
   },
   {
     "name": "PUR",

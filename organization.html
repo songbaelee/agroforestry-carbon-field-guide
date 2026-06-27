@@ -462,9 +462,13 @@
         if (typeof source === "string") {
           return `<div class="source-card"><span>${escapeHtml(source)}</span></div>`;
         }
+
+        const title = source.title || source.label || source.url;
+        const organization = source.organization ? ` · ${source.organization}` : "";
+
         return `
           <a class="source-card" href="${escapeHtml(source.url)}" target="_blank" rel="noopener">
-            <span>${escapeHtml(source.label || source.url)}</span>
+            <span>${escapeHtml(title)}${escapeHtml(organization)}</span>
             <span>Open →</span>
           </a>
         `;
