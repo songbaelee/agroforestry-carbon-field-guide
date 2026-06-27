@@ -895,7 +895,7 @@
     "hq": "United States",
     "geography": "Global",
     "strategy": "Market infrastructure",
-    "description": "Operates carbon standards and registry infrastructure used by many voluntary carbon market projects, including nature-based solutions.",
+    "description": "Develops and manages standards, methodologies, validation and verification rules, and registry infrastructure for voluntary carbon and sustainable development markets. In agroforestry carbon, Verra matters because many nature-based projects use its VCS Program, AFOLU methodologies, CCB Standards, and registry infrastructure to issue and track credits.",
     "examples": [
       "VCS",
       "Registry",
@@ -904,7 +904,7 @@
     "featured": true,
     "website": "https://verra.org/",
     "slug": "verra",
-    "overview": "Operates carbon standards and registry infrastructure used by many voluntary carbon market projects, including nature-based solutions.",
+    "overview": "Verra is a nonprofit standards body that develops and manages programs for climate action and sustainable development, including the Verified Carbon Standard (VCS), Climate, Community & Biodiversity Standards (CCB), Sustainable Development Verified Impact Standard (SD VISta), and registry infrastructure. For agroforestry carbon, Verra is most relevant as market infrastructure: it sets crediting rules, approves methodologies, oversees validation and verification requirements, and provides registry systems that allow verified units to be issued, transferred, and retired.",
     "similarityScores": {
       "carbonFirst": 1,
       "supplyChainFocus": 1,
@@ -914,11 +914,11 @@
       "capitalProvision": 1,
       "standardSetting": 5,
       "corporateDemand": 4,
-      "restorationFocus": 2,
+      "restorationFocus": 3,
       "smallholderFocus": 1
     },
-    "researchStatus": "preliminary",
-    "researchConfidence": "Low",
+    "researchStatus": "complete",
+    "researchConfidence": "High",
     "lastReviewed": "2026-06-27",
     "methodologyVersion": "v0.1",
     "relationships": {
@@ -928,11 +928,144 @@
       ],
       "collaborators": [
         "developers",
+        "project-proponents",
         "validators-and-verifiers",
-        "carbon-registries"
+        "carbon-registries",
+        "carbon-buyers",
+        "icvcm"
       ]
     },
-    "featuredComparison": "gold-standard"
+    "featuredComparison": "gold-standard",
+    "businessModel": "Standards and registry infrastructure. Verra does not develop agroforestry projects or finance farmer implementation directly. Its role is to operate standards, methodologies, validation and verification processes, and registry systems that allow eligible projects to generate verified credits and related claims. Project developers and proponents use Verra programs to structure projects, undergo third-party validation and verification, and issue units that can be sold or retired in voluntary markets.",
+    "representativeProjects": [
+      "Verified Carbon Standard (VCS) Program",
+      "Agriculture, Forestry, and Other Land Use (AFOLU) methodologies and tools",
+      "VM0047 Afforestation, Reforestation, and Revegetation methodology",
+      "Climate, Community & Biodiversity Standards",
+      "Sustainable Development Verified Impact Standard (SD VISta)",
+      "Verra Registry"
+    ],
+    "partners": [
+      "Project proponents",
+      "Validation/Verification Bodies",
+      "Carbon credit buyers",
+      "Registry account holders",
+      "Methodology developers",
+      "ICVCM"
+    ],
+    "standards": [
+      "Verified Carbon Standard (VCS)",
+      "Climate, Community & Biodiversity Standards (CCB)",
+      "Sustainable Development Verified Impact Standard (SD VISta)",
+      "Verra Registry",
+      "VM0047 Afforestation, Reforestation, and Revegetation"
+    ],
+    "financingApproach": "Verra is not a project financier. Its financing relevance is indirect: by defining standards, methodologies, registry procedures, and validation/verification requirements, it creates infrastructure that allows project proponents to issue verified units and access carbon-market revenue. For agroforestry and other AFOLU projects, the relevant financing pathway typically runs from project developer or sponsor to validation, verification, issuance, sale, and retirement of credits, rather than through Verra as a lender or investor.",
+    "comparison": {
+      "customer": "Project proponents, developers, VVBs, registry account holders, and market participants",
+      "primaryRevenue": "Program administration, registry, and standards-related market infrastructure",
+      "mainOffering": "Carbon standards, methodologies, validation/verification rules, and registry infrastructure",
+      "carbonRole": "Market infrastructure and standard-setting",
+      "financing": "Enables credit issuance and market access; does not directly finance projects",
+      "typicalClient": "Project developers, project proponents, validation/verification bodies, registry users, and carbon-market participants"
+    },
+    "sources": [
+      {
+        "title": "Verra",
+        "organization": "Verra",
+        "url": "https://verra.org/",
+        "type": "Company",
+        "sections": [
+          "overview",
+          "businessModel"
+        ]
+      },
+      {
+        "title": "Verified Carbon Standard",
+        "organization": "Verra",
+        "url": "https://verra.org/programs/verified-carbon-standard/",
+        "type": "Standard",
+        "sections": [
+          "overview",
+          "businessModel",
+          "standards",
+          "financingApproach"
+        ]
+      },
+      {
+        "title": "Agriculture, Forestry, and Other Land Use",
+        "organization": "Verra",
+        "url": "https://verra.org/programs/verified-carbon-standard/area-of-focus-agriculture-forestry-land-use/",
+        "type": "Program area",
+        "sections": [
+          "representativeProjects",
+          "standards"
+        ]
+      },
+      {
+        "title": "VM0047 Afforestation, Reforestation, and Revegetation, v1.1",
+        "organization": "Verra",
+        "url": "https://verra.org/methodologies/vm0047-afforestation-reforestation-and-revegetation-v1-1/",
+        "type": "Methodology",
+        "sections": [
+          "representativeProjects",
+          "standards"
+        ]
+      },
+      {
+        "title": "Validation and Verification",
+        "organization": "Verra",
+        "url": "https://verra.org/validation-verification/",
+        "type": "Program process",
+        "sections": [
+          "businessModel",
+          "partners",
+          "financingApproach"
+        ]
+      },
+      {
+        "title": "Verra Registry Overview",
+        "organization": "Verra",
+        "url": "https://verra.org/registry/overview/",
+        "type": "Registry",
+        "sections": [
+          "overview",
+          "businessModel",
+          "representativeProjects"
+        ]
+      },
+      {
+        "title": "Climate, Community & Biodiversity Standards",
+        "organization": "Verra",
+        "url": "https://verra.org/programs/ccbs/",
+        "type": "Standard",
+        "sections": [
+          "representativeProjects",
+          "standards"
+        ]
+      },
+      {
+        "title": "SD VISta Program Details",
+        "organization": "Verra",
+        "url": "https://verra.org/programs/sd-verified-impact-standard/sd-program-details/",
+        "type": "Standard",
+        "sections": [
+          "representativeProjects",
+          "standards"
+        ]
+      },
+      {
+        "title": "ICVCM Approves Verra's Afforestation, Reforestation, and Revegetation Methodology",
+        "organization": "Verra",
+        "url": "https://verra.org/icvcm-approves-verras-afforestation-reforestation-and-revegetation-methodology/",
+        "type": "Methodology approval",
+        "sections": [
+          "representativeProjects",
+          "standards",
+          "partners"
+        ]
+      }
+    ]
   },
   {
     "name": "Gold Standard",
