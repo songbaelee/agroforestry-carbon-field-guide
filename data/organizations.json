@@ -6,7 +6,7 @@
     "type": "Smallholder carbon platform",
     "hq": "Netherlands",
     "geography": "Africa, Asia, Latin America",
-    "strategy": "Carbon as the core business",
+    "strategy": "Core business",
     "description": "Connects local partners and smallholder farmers to carbon markets through agroforestry project support, remote-sensing-enabled MRV, certification, and commercialization.",
     "examples": [
       "Smallholder agroforestry",
@@ -128,9 +128,21 @@
       "customer": "Carbon credit buyers and local implementation partners",
       "primaryRevenue": "Carbon credit commercialization and platform administration share",
       "mainOffering": "Smallholder agroforestry carbon platform",
-      "carbonRole": "Carbon is the core product",
+      "carbonRole": "Core product",
       "financing": "Revenue sharing, ex-post carbon sales, and partner/project finance",
       "typicalClient": "Local partners, farmer groups, and carbon credit buyers"
+    },
+    "similarityScores": {
+      "carbonFirst": 5,
+      "supplyChainFocus": 2,
+      "technicalAssistance": 3,
+      "farmerImplementation": 4,
+      "technologyMRV": 5,
+      "capitalProvision": 2,
+      "standardSetting": 2,
+      "corporateDemand": 3,
+      "restorationFocus": 3,
+      "smallholderFocus": 5
     }
   },
   {
@@ -140,7 +152,7 @@
     "type": "Nature-based project developer",
     "hq": "France",
     "geography": "Global",
-    "strategy": "Carbon inside supply chains",
+    "strategy": "Supply chains",
     "description": "Develops agroforestry, restoration, and insetting programs for companies, often linked to corporate supply chains, Scope 3 emissions strategies, and long-term farmer and landscape resilience.",
     "examples": [
       "Insetting",
@@ -308,9 +320,21 @@
       "customer": "Corporations with supply-chain, Scope 3, and nature goals",
       "primaryRevenue": "Project development, implementation, monitoring, and carbon/nature program services",
       "mainOffering": "Corporate insetting and nature-based project development",
-      "carbonRole": "Carbon is one outcome inside supply-chain programs",
+      "carbonRole": "One outcome inside supply-chain programs",
       "financing": "Corporate-funded supply-chain programs and carbon-credit-oriented project finance",
       "typicalClient": "Nespresso, Cocoa Life, food and beverage companies, and corporate sustainability teams"
+    },
+    "similarityScores": {
+      "carbonFirst": 3,
+      "supplyChainFocus": 5,
+      "technicalAssistance": 4,
+      "farmerImplementation": 4,
+      "technologyMRV": 3,
+      "capitalProvision": 2,
+      "standardSetting": 2,
+      "corporateDemand": 5,
+      "restorationFocus": 4,
+      "smallholderFocus": 4
     }
   },
   {
@@ -320,7 +344,7 @@
     "type": "Restoration developer",
     "hq": "Brazil",
     "geography": "Brazil",
-    "strategy": "Carbon as the core business",
+    "strategy": "Core business",
     "description": "Develops large-scale ecological restoration projects with carbon revenue, biodiversity, and native ecosystem recovery at the center of the model.",
     "examples": [
       "Restoration",
@@ -330,7 +354,19 @@
     "featured": false,
     "website": "https://www.re.green/",
     "slug": "re-green",
-    "overview": "Develops large-scale ecological restoration projects with carbon revenue, biodiversity, and native ecosystem recovery at the center of the model."
+    "overview": "Develops large-scale ecological restoration projects with carbon revenue, biodiversity, and native ecosystem recovery at the center of the model.",
+    "similarityScores": {
+      "carbonFirst": 5,
+      "supplyChainFocus": 1,
+      "technicalAssistance": 1,
+      "farmerImplementation": 1,
+      "technologyMRV": 4,
+      "capitalProvision": 3,
+      "standardSetting": 1,
+      "corporateDemand": 4,
+      "restorationFocus": 5,
+      "smallholderFocus": 1
+    }
   },
   {
     "name": "Taking Root",
@@ -339,7 +375,7 @@
     "type": "Smallholder reforestation developer",
     "hq": "Canada",
     "geography": "Latin America and beyond",
-    "strategy": "Carbon as the core business",
+    "strategy": "Core business",
     "description": "Builds farmer-centered reforestation and agroforestry carbon programs with technology, local implementation, and long-term monitoring.",
     "examples": [
       "Smallholders",
@@ -349,7 +385,19 @@
     "featured": false,
     "website": "https://takingroot.com/",
     "slug": "taking-root",
-    "overview": "Builds farmer-centered reforestation and agroforestry carbon programs with technology, local implementation, and long-term monitoring."
+    "overview": "Builds farmer-centered reforestation and agroforestry carbon programs with technology, local implementation, and long-term monitoring.",
+    "similarityScores": {
+      "carbonFirst": 5,
+      "supplyChainFocus": 2,
+      "technicalAssistance": 4,
+      "farmerImplementation": 5,
+      "technologyMRV": 4,
+      "capitalProvision": 2,
+      "standardSetting": 2,
+      "corporateDemand": 3,
+      "restorationFocus": 4,
+      "smallholderFocus": 5
+    }
   },
   {
     "name": "Solidaridad",
@@ -358,7 +406,7 @@
     "type": "International NGO",
     "hq": "Netherlands",
     "geography": "Global",
-    "strategy": "Carbon as development finance",
+    "strategy": "Enabling service",
     "description": "Works with producers, supply chains, and landscapes. In agroforestry carbon, Solidaridad often plays the field implementation role: organizing farmers, delivering training, supporting agroforestry adoption, and connecting smallholders to carbon finance through partners and platforms.",
     "examples": [
       "Farmer programs",
@@ -505,7 +553,27 @@
           "financingApproach"
         ]
       }
-    ]
+    ],
+    "similarityScores": {
+      "carbonFirst": 2,
+      "supplyChainFocus": 5,
+      "technicalAssistance": 5,
+      "farmerImplementation": 5,
+      "technologyMRV": 2,
+      "capitalProvision": 2,
+      "standardSetting": 1,
+      "corporateDemand": 4,
+      "restorationFocus": 3,
+      "smallholderFocus": 5
+    },
+    "comparison": {
+      "customer": "Donors, brands, platforms, and producer organizations",
+      "primaryRevenue": "Program funding, corporate partnerships, and implementation grants",
+      "mainOffering": "Farmer organization and field implementation",
+      "carbonRole": "Enabling service for farmer and supply-chain programs",
+      "financing": "Program funding plus carbon-market incentives for farmers",
+      "typicalClient": "Acorn, Rabobank, UK PACT, producer organizations, and commodity supply-chain partners"
+    }
   },
   {
     "name": "TechnoServe",
@@ -514,7 +582,7 @@
     "type": "International NGO",
     "hq": "United States",
     "geography": "Africa, Latin America, Asia",
-    "strategy": "Carbon as development finance",
+    "strategy": "Enabling service",
     "description": "Provides technical assistance and market systems support. Agroforestry carbon may become a financing layer for farmer livelihoods and resilient supply chains.",
     "examples": [
       "Technical assistance",
@@ -524,7 +592,27 @@
     "featured": true,
     "website": "https://www.technoserve.org/",
     "slug": "technoserve",
-    "overview": "Provides technical assistance and market systems support. Agroforestry carbon may become a financing layer for farmer livelihoods and resilient supply chains."
+    "overview": "Provides technical assistance and market systems support. Agroforestry carbon may become a financing layer for farmer livelihoods and resilient supply chains.",
+    "similarityScores": {
+      "carbonFirst": 1,
+      "supplyChainFocus": 4,
+      "technicalAssistance": 5,
+      "farmerImplementation": 5,
+      "technologyMRV": 2,
+      "capitalProvision": 2,
+      "standardSetting": 1,
+      "corporateDemand": 3,
+      "restorationFocus": 2,
+      "smallholderFocus": 5
+    },
+    "comparison": {
+      "customer": "Donors, agribusinesses, and market-system partners",
+      "primaryRevenue": "Donor-funded and partner-funded technical assistance programs",
+      "mainOffering": "Enterprise development, agribusiness advisory, and farmer livelihoods support",
+      "carbonRole": "Potential enabling service for climate-smart agriculture",
+      "financing": "Donor funding, corporate partnerships, and blended program finance",
+      "typicalClient": "Donors, agribusinesses, farmer groups, and market-system partners"
+    }
   },
   {
     "name": "Catholic Relief Services",
@@ -533,7 +621,7 @@
     "type": "International NGO",
     "hq": "United States",
     "geography": "Global",
-    "strategy": "Carbon as development finance",
+    "strategy": "Enabling service",
     "description": "Potentially relevant as a field implementation and livelihoods partner where carbon can finance restoration, resilience, and farmer support.",
     "examples": [
       "Livelihoods",
@@ -543,7 +631,19 @@
     "featured": false,
     "website": "https://www.crs.org/",
     "slug": "catholic-relief-services",
-    "overview": "Potentially relevant as a field implementation and livelihoods partner where carbon can finance restoration, resilience, and farmer support."
+    "overview": "Potentially relevant as a field implementation and livelihoods partner where carbon can finance restoration, resilience, and farmer support.",
+    "similarityScores": {
+      "carbonFirst": 1,
+      "supplyChainFocus": 2,
+      "technicalAssistance": 5,
+      "farmerImplementation": 5,
+      "technologyMRV": 1,
+      "capitalProvision": 2,
+      "standardSetting": 1,
+      "corporateDemand": 2,
+      "restorationFocus": 3,
+      "smallholderFocus": 5
+    }
   },
   {
     "name": "Verra",
@@ -562,7 +662,19 @@
     "featured": true,
     "website": "https://verra.org/",
     "slug": "verra",
-    "overview": "Operates carbon standards and registry infrastructure used by many voluntary carbon market projects, including nature-based solutions."
+    "overview": "Operates carbon standards and registry infrastructure used by many voluntary carbon market projects, including nature-based solutions.",
+    "similarityScores": {
+      "carbonFirst": 1,
+      "supplyChainFocus": 1,
+      "technicalAssistance": 1,
+      "farmerImplementation": 1,
+      "technologyMRV": 2,
+      "capitalProvision": 1,
+      "standardSetting": 5,
+      "corporateDemand": 4,
+      "restorationFocus": 2,
+      "smallholderFocus": 1
+    }
   },
   {
     "name": "Gold Standard",
@@ -581,7 +693,19 @@
     "featured": false,
     "website": "https://www.goldstandard.org/",
     "slug": "gold-standard",
-    "overview": "Certifies climate and sustainable development outcomes, including land-use and nature-based activities where methodology requirements are met."
+    "overview": "Certifies climate and sustainable development outcomes, including land-use and nature-based activities where methodology requirements are met.",
+    "similarityScores": {
+      "carbonFirst": 1,
+      "supplyChainFocus": 2,
+      "technicalAssistance": 1,
+      "farmerImplementation": 1,
+      "technologyMRV": 2,
+      "capitalProvision": 1,
+      "standardSetting": 5,
+      "corporateDemand": 4,
+      "restorationFocus": 2,
+      "smallholderFocus": 2
+    }
   },
   {
     "name": "Plan Vivo",
@@ -600,7 +724,19 @@
     "featured": false,
     "website": "https://www.planvivo.org/",
     "slug": "plan-vivo",
-    "overview": "Focuses on community-led land-use and ecosystem service projects with strong emphasis on local participation and benefit sharing."
+    "overview": "Focuses on community-led land-use and ecosystem service projects with strong emphasis on local participation and benefit sharing.",
+    "similarityScores": {
+      "carbonFirst": 1,
+      "supplyChainFocus": 2,
+      "technicalAssistance": 2,
+      "farmerImplementation": 3,
+      "technologyMRV": 2,
+      "capitalProvision": 1,
+      "standardSetting": 5,
+      "corporateDemand": 3,
+      "restorationFocus": 3,
+      "smallholderFocus": 5
+    }
   },
   {
     "name": "Pachama",
@@ -619,7 +755,19 @@
     "featured": true,
     "website": "https://pachama.com/",
     "slug": "pachama",
-    "overview": "Uses remote sensing, software, and data tools to assess and monitor forest carbon projects and connect buyers with nature-based credits."
+    "overview": "Uses remote sensing, software, and data tools to assess and monitor forest carbon projects and connect buyers with nature-based credits.",
+    "similarityScores": {
+      "carbonFirst": 3,
+      "supplyChainFocus": 1,
+      "technicalAssistance": 1,
+      "farmerImplementation": 1,
+      "technologyMRV": 5,
+      "capitalProvision": 1,
+      "standardSetting": 2,
+      "corporateDemand": 5,
+      "restorationFocus": 4,
+      "smallholderFocus": 1
+    }
   },
   {
     "name": "Open Forest Protocol",
@@ -638,7 +786,19 @@
     "featured": false,
     "website": "https://www.openforestprotocol.org/",
     "slug": "open-forest-protocol",
-    "overview": "Provides digital monitoring, reporting, and verification infrastructure intended to make forest and restoration projects more transparent and accessible."
+    "overview": "Provides digital monitoring, reporting, and verification infrastructure intended to make forest and restoration projects more transparent and accessible.",
+    "similarityScores": {
+      "carbonFirst": 2,
+      "supplyChainFocus": 1,
+      "technicalAssistance": 2,
+      "farmerImplementation": 2,
+      "technologyMRV": 5,
+      "capitalProvision": 1,
+      "standardSetting": 2,
+      "corporateDemand": 2,
+      "restorationFocus": 4,
+      "smallholderFocus": 3
+    }
   },
   {
     "name": "Chloris Geospatial",
@@ -657,7 +817,19 @@
     "featured": false,
     "website": "https://chloris.earth/",
     "slug": "chloris-geospatial",
-    "overview": "Uses satellite-based methods to estimate aboveground biomass and help assess forest carbon stocks and change over time."
+    "overview": "Uses satellite-based methods to estimate aboveground biomass and help assess forest carbon stocks and change over time.",
+    "similarityScores": {
+      "carbonFirst": 2,
+      "supplyChainFocus": 1,
+      "technicalAssistance": 1,
+      "farmerImplementation": 1,
+      "technologyMRV": 5,
+      "capitalProvision": 1,
+      "standardSetting": 1,
+      "corporateDemand": 4,
+      "restorationFocus": 4,
+      "smallholderFocus": 1
+    }
   },
   {
     "name": "Climate Asset Management",
@@ -676,7 +848,19 @@
     "featured": false,
     "website": "https://climateassetmanagement.com/",
     "slug": "climate-asset-management",
-    "overview": "Invests in natural capital strategies, including land-based assets where carbon, biodiversity, and sustainable production can form part of the return story."
+    "overview": "Invests in natural capital strategies, including land-based assets where carbon, biodiversity, and sustainable production can form part of the return story.",
+    "similarityScores": {
+      "carbonFirst": 3,
+      "supplyChainFocus": 2,
+      "technicalAssistance": 1,
+      "farmerImplementation": 1,
+      "technologyMRV": 2,
+      "capitalProvision": 5,
+      "standardSetting": 1,
+      "corporateDemand": 3,
+      "restorationFocus": 4,
+      "smallholderFocus": 1
+    }
   },
   {
     "name": "FMO",
@@ -695,7 +879,19 @@
     "featured": false,
     "website": "https://www.fmo.nl/",
     "slug": "fmo",
-    "overview": "Provides development finance that can support climate, agriculture, and forestry-related investment where projects fit mandate and risk appetite."
+    "overview": "Provides development finance that can support climate, agriculture, and forestry-related investment where projects fit mandate and risk appetite.",
+    "similarityScores": {
+      "carbonFirst": 1,
+      "supplyChainFocus": 2,
+      "technicalAssistance": 2,
+      "farmerImplementation": 1,
+      "technologyMRV": 1,
+      "capitalProvision": 5,
+      "standardSetting": 1,
+      "corporateDemand": 1,
+      "restorationFocus": 3,
+      "smallholderFocus": 2
+    }
   },
   {
     "name": "Microsoft",
@@ -714,7 +910,19 @@
     "featured": true,
     "website": "https://www.microsoft.com/en-us/corporate-responsibility/sustainability",
     "slug": "microsoft",
-    "overview": "A major corporate buyer whose carbon removal procurement helps shape expectations for quality, durability, monitoring, and delivery risk."
+    "overview": "A major corporate buyer whose carbon removal procurement helps shape expectations for quality, durability, monitoring, and delivery risk.",
+    "similarityScores": {
+      "carbonFirst": 1,
+      "supplyChainFocus": 1,
+      "technicalAssistance": 1,
+      "farmerImplementation": 1,
+      "technologyMRV": 3,
+      "capitalProvision": 3,
+      "standardSetting": 1,
+      "corporateDemand": 5,
+      "restorationFocus": 3,
+      "smallholderFocus": 1
+    }
   },
   {
     "name": "Salesforce",
@@ -733,7 +941,19 @@
     "featured": false,
     "website": "https://www.salesforce.com/company/sustainability/",
     "slug": "salesforce",
-    "overview": "Corporate buyer and climate actor involved in voluntary carbon market demand, including support for higher-quality nature and removal credits."
+    "overview": "Corporate buyer and climate actor involved in voluntary carbon market demand, including support for higher-quality nature and removal credits.",
+    "similarityScores": {
+      "carbonFirst": 1,
+      "supplyChainFocus": 1,
+      "technicalAssistance": 1,
+      "farmerImplementation": 1,
+      "technologyMRV": 2,
+      "capitalProvision": 3,
+      "standardSetting": 1,
+      "corporateDemand": 5,
+      "restorationFocus": 3,
+      "smallholderFocus": 1
+    }
   },
   {
     "name": "Nestlé",
@@ -742,7 +962,7 @@
     "type": "Agrifood supply-chain company",
     "hq": "Switzerland",
     "geography": "Global supply chains",
-    "strategy": "Carbon inside supply chains",
+    "strategy": "Supply chains",
     "description": "Relevant as a supply-chain actor where agroforestry can connect climate goals, sourcing, farmer resilience, and landscape outcomes.",
     "examples": [
       "Supply chains",
@@ -752,7 +972,19 @@
     "featured": false,
     "website": "https://www.nestle.com/sustainability",
     "slug": "nestl",
-    "overview": "Relevant as a supply-chain actor where agroforestry can connect climate goals, sourcing, farmer resilience, and landscape outcomes."
+    "overview": "Relevant as a supply-chain actor where agroforestry can connect climate goals, sourcing, farmer resilience, and landscape outcomes.",
+    "similarityScores": {
+      "carbonFirst": 1,
+      "supplyChainFocus": 5,
+      "technicalAssistance": 2,
+      "farmerImplementation": 3,
+      "technologyMRV": 2,
+      "capitalProvision": 3,
+      "standardSetting": 1,
+      "corporateDemand": 5,
+      "restorationFocus": 3,
+      "smallholderFocus": 4
+    }
   },
   {
     "name": "Mars",
@@ -761,7 +993,7 @@
     "type": "Agrifood supply-chain company",
     "hq": "United States",
     "geography": "Global supply chains",
-    "strategy": "Carbon inside supply chains",
+    "strategy": "Supply chains",
     "description": "Relevant as a cocoa and agrifood supply-chain company where agroforestry carbon can connect climate, sourcing, and farmer livelihoods.",
     "examples": [
       "Cocoa",
@@ -771,6 +1003,18 @@
     "featured": false,
     "website": "https://www.mars.com/sustainability-plan",
     "slug": "mars",
-    "overview": "Relevant as a cocoa and agrifood supply-chain company where agroforestry carbon can connect climate, sourcing, and farmer livelihoods."
+    "overview": "Relevant as a cocoa and agrifood supply-chain company where agroforestry carbon can connect climate, sourcing, and farmer livelihoods.",
+    "similarityScores": {
+      "carbonFirst": 1,
+      "supplyChainFocus": 5,
+      "technicalAssistance": 2,
+      "farmerImplementation": 3,
+      "technologyMRV": 2,
+      "capitalProvision": 3,
+      "standardSetting": 1,
+      "corporateDemand": 5,
+      "restorationFocus": 3,
+      "smallholderFocus": 4
+    }
   }
 ]

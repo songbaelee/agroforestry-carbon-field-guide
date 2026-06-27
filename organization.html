@@ -458,6 +458,77 @@
       letter-spacing: -0.02em;
     }
 
+
+    .similarity {
+      margin-top: 18px;
+      border-radius: 34px;
+      background: rgba(255, 250, 240, 0.72);
+      border: 1px solid rgba(20, 34, 26, 0.1);
+      box-shadow: 0 16px 46px rgba(28, 43, 31, 0.08);
+      padding: 24px;
+    }
+
+    .similarity-head {
+      display: flex;
+      align-items: end;
+      justify-content: space-between;
+      gap: 18px;
+      margin-bottom: 16px;
+    }
+
+    .similarity-head h2 {
+      margin: 0;
+      font-size: clamp(28px, 4vw, 44px);
+      line-height: 0.95;
+      letter-spacing: -0.06em;
+    }
+
+    .similarity-head a {
+      color: var(--clay);
+      font-size: 13px;
+      font-weight: 900;
+      white-space: nowrap;
+    }
+
+    .similarity-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 12px;
+    }
+
+    .similarity-card {
+      padding: 16px;
+      border-radius: 22px;
+      background: rgba(255, 250, 240, 0.56);
+      border: 1px solid rgba(20, 34, 26, 0.08);
+    }
+
+    .similarity-card strong {
+      display: block;
+      margin-bottom: 6px;
+      color: var(--ink);
+      font-size: 20px;
+      letter-spacing: -0.04em;
+    }
+
+    .similarity-score {
+      display: inline-flex;
+      margin-bottom: 10px;
+      padding: 5px 8px;
+      border-radius: 999px;
+      background: rgba(185, 240, 107, 0.28);
+      color: var(--green);
+      font-size: 12px;
+      font-weight: 900;
+    }
+
+    .similarity-card p {
+      margin: 0;
+      color: var(--muted);
+      font-size: 13px;
+      line-height: 1.35;
+    }
+
     .related { margin-top: 18px; }
 
     .related-head {
@@ -534,7 +605,8 @@
       .section-card.wide,
       .section-card.full { grid-column: auto; }
       .side-card { position: static; }
-      .related-grid { grid-template-columns: repeat(2, 1fr); }
+      .related-grid,
+      .similarity-grid { grid-template-columns: repeat(2, 1fr); }
       .comparison-row { grid-template-columns: 1fr; }
       .comparison-row > div:first-child { border-bottom: 1px solid var(--line); }
     }
@@ -544,7 +616,8 @@
       .nav-links { display: none; }
       .hero-card { min-height: auto; padding: 26px; }
       .section-stack { column-count: 1; }
-      .related-grid { grid-template-columns: 1fr; }
+      .related-grid,
+      .similarity-grid { grid-template-columns: 1fr; }
       .source-card { align-items: flex-start; flex-direction: column; }
     }
   </style>
@@ -558,6 +631,7 @@
       </a>
       <div class="nav-links" aria-label="Profile navigation">
         <a class="active" href="organizations.html">Organizations</a>
+        <a href="compare.html">Compare</a>
       </div>
     </div>
   </nav>
@@ -847,7 +921,7 @@
         ["Customer", "customer"],
         ["Primary revenue", "primaryRevenue"],
         ["Main offering", "mainOffering"],
-        ["Carbon role", "carbonRole"],
+        ["Carbon model", "carbonRole"],
         ["Financing", "financing"],
         ["Typical client", "typicalClient"]
       ];
@@ -856,7 +930,7 @@
         <section class="comparison" aria-label="Organization comparison">
           <div class="comparison-head">
             <h2>${escapeHtml(org.name)} vs ${escapeHtml(other.name)}</h2>
-            <p>A quick comparison to show why both organizations sit in the same role while using different carbon business models.</p>
+            <p>A quick comparison to show why both organizations sit in the same role while showing where they are similar and where they diverge.</p>
           </div>
           <div class="comparison-table">
             <div class="comparison-row">
@@ -875,6 +949,77 @@
         </section>
       `;
     }
+
+
+    const similarityDimensions = {
+      carbonFirst: "Carbon-first",
+      supplyChainFocus: "Supply-chain focus",
+      technicalAssistance: "Technical assistance",
+      farmerImplementation: "Farmer implementation",
+      technologyMRV: "Technology / MRV",
+      capitalProvision: "Capital provision",
+      standardSetting: "Standard-setting",
+      corporateDemand: "Corporate demand",
+      restorationFocus: "Restoration focus",
+      smallholderFocus: "Smallholder focus"
+    };
+
+    function similarityScore(org, other) {
+      if (!org.similarityScores || !other.similarityScores) return null;
+      const keys = Object.keys(similarityDimensions).filter(key =>
+        typeof org.similarityScores[key] === "number" && typeof other.similarityScores[key] === "number"
+      );
+      if (!keys.length) return null;
+
+      const maxDistance = Math.sqrt(keys.length * Math.pow(4, 2));
+      const distance = Math.sqrt(keys.reduce((sum, key) =>
+        sum + Math.pow(org.similarityScores[key] - other.similarityScores[key], 2), 0
+      ));
+      return Math.max(0, Math.round((1 - distance / maxDistance) * 100));
+    }
+
+    function topSimilarOrganizations(org, allOrganizations, count = 3) {
+      return allOrganizations
+        .filter(item => item.name !== org.name && item.similarityScores)
+        .map(item => ({ ...item, score: similarityScore(org, item) }))
+        .filter(item => item.score !== null)
+        .sort((a, b) => b.score - a.score)
+        .slice(0, count);
+    }
+
+    function strongestSharedTraits(org, other) {
+      if (!org.similarityScores || !other.similarityScores) return "";
+      return Object.keys(similarityDimensions)
+        .filter(key => Math.abs(org.similarityScores[key] - other.similarityScores[key]) <= 1)
+        .sort((a, b) => Math.max(other.similarityScores[b], org.similarityScores[b]) - Math.max(other.similarityScores[a], org.similarityScores[a]))
+        .slice(0, 2)
+        .map(key => similarityDimensions[key])
+        .join(" + ");
+    }
+
+    function renderSimilarity(org, allOrganizations) {
+      const similar = topSimilarOrganizations(org, allOrganizations, 3);
+      if (!similar.length) return "";
+
+      return `
+        <section class="similarity" aria-label="Most similar organizations">
+          <div class="similarity-head">
+            <h2>Most similar organizations</h2>
+            <a href="compare.html?id=${escapeHtml(org.slug || slugify(org.name))}">Open Compare →</a>
+          </div>
+          <div class="similarity-grid">
+            ${similar.map(item => `
+              <a class="similarity-card" href="${profileUrl(item)}">
+                <strong>${escapeHtml(item.name)}</strong>
+                <span class="similarity-score">${item.score}% similar</span>
+                <p>${escapeHtml(strongestSharedTraits(org, item) || item.type || "Similar profile pattern")}</p>
+              </a>
+            `).join("")}
+          </div>
+        </section>
+      `;
+    }
+
 
     function renderRelated(org, allOrganizations) {
       const related = allOrganizations
@@ -924,7 +1069,7 @@
               <div class="fact"><b>Organization type</b><span>${escapeHtml(org.type)}</span></div>
               <div class="fact"><b>Headquarters</b><span>${escapeHtml(org.hq)}</span></div>
               <div class="fact"><b>Footprint</b><span>${escapeHtml(org.geography)}</span></div>
-              <div class="fact"><b>Carbon strategy</b><span>${escapeHtml(org.strategy)}</span></div>
+              <div class="fact"><b>Carbon model</b><span>${escapeHtml(org.strategy)}</span></div>
             </div>
           </aside>
         </section>
@@ -934,6 +1079,7 @@
         </section>
 
         ${renderComparison(org, allOrganizations)}
+        ${renderSimilarity(org, allOrganizations)}
         ${renderRelated(org, allOrganizations)}
         ${referencesSection(org, usedSourceKeys)}
       `;

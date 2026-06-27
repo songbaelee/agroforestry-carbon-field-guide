@@ -1,0 +1,593 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Compare Organizations | Agroforestry Carbon Field Guide</title>
+  <style>
+    :root {
+      --bg: #f6f1e6;
+      --bg-soft: #fbf7ee;
+      --ink: #14221a;
+      --muted: #667365;
+      --green: #123b2a;
+      --green-2: #1f6a46;
+      --lime: #b9f06b;
+      --clay: #c56f47;
+      --cream: #fffaf0;
+      --line: rgba(20, 34, 26, 0.13);
+      --card: rgba(255, 250, 240, 0.72);
+      --shadow: 0 24px 80px rgba(28, 43, 31, 0.14);
+      --radius-lg: 26px;
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+
+    body {
+      margin: 0;
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      color: var(--ink);
+      background:
+        radial-gradient(circle at 8% -8%, rgba(185, 240, 107, 0.42), transparent 36rem),
+        radial-gradient(circle at 96% 8%, rgba(197, 111, 71, 0.18), transparent 34rem),
+        linear-gradient(180deg, var(--bg-soft), var(--bg));
+      min-height: 100vh;
+    }
+
+    a { color: inherit; text-decoration: none; }
+
+    .nav {
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      background: rgba(246, 241, 230, 0.76);
+      backdrop-filter: blur(18px);
+      border-bottom: 1px solid var(--line);
+    }
+
+    .nav-inner {
+      max-width: 1180px;
+      margin: 0 auto;
+      padding: 16px 24px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 22px;
+    }
+
+    .brand {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      font-weight: 820;
+      letter-spacing: -0.035em;
+    }
+
+    .brand-mark {
+      width: 36px;
+      height: 36px;
+      border-radius: 13px;
+      background:
+        radial-gradient(circle at 34% 28%, var(--lime), transparent 28%),
+        conic-gradient(from 150deg, var(--green), var(--green-2), #74ad55, var(--green));
+      box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.48), 0 10px 24px rgba(18, 59, 42, 0.22);
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 18px;
+      color: var(--muted);
+      font-size: 14px;
+      font-weight: 650;
+    }
+
+    .nav-links a:hover,
+    .nav-links a.active { color: var(--ink); }
+
+    main {
+      max-width: 1180px;
+      margin: 0 auto;
+      padding: 64px 24px 96px;
+    }
+
+    .hero {
+      display: grid;
+      grid-template-columns: minmax(0, 0.95fr) minmax(320px, 0.45fr);
+      gap: 18px;
+      align-items: stretch;
+    }
+
+    .hero-card,
+    .control-card,
+    .panel {
+      border-radius: 34px;
+      background: var(--card);
+      border: 1px solid rgba(20, 34, 26, 0.1);
+      box-shadow: 0 16px 46px rgba(28, 43, 31, 0.08);
+    }
+
+    .hero-card {
+      padding: 34px;
+      min-height: 320px;
+      background:
+        radial-gradient(circle at 82% 12%, rgba(185, 240, 107, 0.26), transparent 18rem),
+        linear-gradient(145deg, rgba(18, 59, 42, 0.98), rgba(28, 82, 52, 0.94));
+      color: var(--cream);
+      box-shadow: var(--shadow);
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      padding: 8px 12px;
+      border-radius: 999px;
+      background: rgba(255, 250, 240, 0.11);
+      border: 1px solid rgba(255, 250, 240, 0.16);
+      color: var(--lime);
+      font-size: 13px;
+      font-weight: 820;
+    }
+
+    h1 {
+      margin: 24px 0 18px;
+      max-width: 760px;
+      font-size: clamp(48px, 7.2vw, 86px);
+      line-height: 0.88;
+      letter-spacing: -0.075em;
+    }
+
+    .hero-card p {
+      margin: 0;
+      max-width: 720px;
+      color: rgba(255, 250, 240, 0.72);
+      font-size: clamp(18px, 2vw, 22px);
+      line-height: 1.45;
+    }
+
+    .control-card {
+      padding: 24px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      gap: 12px;
+    }
+
+    label {
+      color: var(--green);
+      font-size: 12px;
+      font-weight: 900;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+    }
+
+    select {
+      width: 100%;
+      min-height: 48px;
+      padding: 0 14px;
+      border-radius: 999px;
+      border: 1px solid var(--line);
+      background: rgba(255, 250, 240, 0.76);
+      color: var(--ink);
+      font: inherit;
+      font-weight: 780;
+    }
+
+    .layout {
+      margin-top: 18px;
+      display: grid;
+      grid-template-columns: minmax(0, 0.72fr) minmax(420px, 1.28fr);
+      gap: 18px;
+      align-items: start;
+    }
+
+    .panel {
+      padding: 24px;
+    }
+
+    .panel h2 {
+      margin: 0 0 14px;
+      font-size: clamp(28px, 4vw, 44px);
+      line-height: 0.95;
+      letter-spacing: -0.06em;
+    }
+
+    .rank-list {
+      display: grid;
+      gap: 10px;
+    }
+
+    .rank-card {
+      display: grid;
+      grid-template-columns: 1fr auto;
+      gap: 14px;
+      align-items: center;
+      padding: 16px;
+      border-radius: 22px;
+      background: rgba(255, 250, 240, 0.56);
+      border: 1px solid rgba(20, 34, 26, 0.08);
+      transition: transform 160ms ease, background 160ms ease;
+      cursor: pointer;
+    }
+
+    .rank-card:hover,
+    .rank-card.active {
+      transform: translateY(-2px);
+      background: rgba(255, 250, 240, 0.92);
+    }
+
+    .rank-card strong {
+      display: block;
+      margin-bottom: 4px;
+      font-size: 20px;
+      letter-spacing: -0.04em;
+    }
+
+    .rank-card span {
+      color: var(--muted);
+      font-size: 13px;
+      font-weight: 720;
+      line-height: 1.3;
+    }
+
+    .score {
+      display: inline-flex;
+      min-width: 68px;
+      justify-content: center;
+      padding: 8px 10px;
+      border-radius: 999px;
+      background: rgba(185, 240, 107, 0.3);
+      color: var(--green);
+      font-size: 13px;
+      font-weight: 900;
+    }
+
+    .compare-table {
+      overflow: hidden;
+      border-radius: 26px;
+      border: 1px solid var(--line);
+      background: rgba(255, 250, 240, 0.44);
+    }
+
+    .compare-row {
+      display: grid;
+      grid-template-columns: 190px repeat(2, minmax(0, 1fr));
+      border-bottom: 1px solid var(--line);
+    }
+
+    .compare-row:last-child { border-bottom: 0; }
+
+    .compare-row > div {
+      padding: 15px 16px;
+      color: var(--muted);
+      font-size: 14px;
+      line-height: 1.35;
+    }
+
+    .compare-row > div:first-child {
+      background: rgba(20, 34, 26, 0.035);
+      color: var(--green);
+      font-size: 12px;
+      font-weight: 900;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+    }
+
+    .compare-row .name {
+      color: var(--ink);
+      font-size: 18px;
+      font-weight: 900;
+      letter-spacing: -0.04em;
+    }
+
+    .bars {
+      display: grid;
+      gap: 10px;
+      margin-top: 18px;
+    }
+
+    .bar-row {
+      display: grid;
+      grid-template-columns: 170px 1fr 1fr;
+      gap: 12px;
+      align-items: center;
+      color: var(--muted);
+      font-size: 13px;
+      font-weight: 760;
+    }
+
+    .bar-label {
+      color: var(--green);
+      font-size: 12px;
+      font-weight: 900;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+    }
+
+    .bar-track {
+      height: 10px;
+      border-radius: 999px;
+      background: rgba(20, 34, 26, 0.08);
+      overflow: hidden;
+    }
+
+    .bar-fill {
+      height: 100%;
+      border-radius: 999px;
+      background: var(--green);
+    }
+
+    .bar-fill.other {
+      background: var(--clay);
+    }
+
+    .profile-link {
+      display: inline-flex;
+      margin-top: 18px;
+      min-height: 42px;
+      align-items: center;
+      padding: 0 14px;
+      border-radius: 999px;
+      background: var(--green);
+      color: var(--cream);
+      font-size: 13px;
+      font-weight: 900;
+    }
+
+    .method {
+      margin-top: 18px;
+      color: var(--muted);
+      font-size: 13px;
+      line-height: 1.45;
+    }
+
+    footer {
+      max-width: 1180px;
+      margin: 0 auto;
+      padding: 0 24px 42px;
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    @media (max-width: 980px) {
+      .hero,
+      .layout { grid-template-columns: 1fr; }
+      .compare-row,
+      .bar-row { grid-template-columns: 1fr; }
+      .compare-row > div:first-child { border-bottom: 1px solid var(--line); }
+    }
+
+    @media (max-width: 720px) {
+      main { padding-top: 36px; }
+      .nav-links { display: none; }
+      .hero-card { min-height: auto; padding: 26px; }
+    }
+  </style>
+</head>
+<body>
+  <nav class="nav">
+    <div class="nav-inner">
+      <a class="brand" href="index.html" aria-label="Agroforestry Carbon Field Guide home">
+        <span class="brand-mark" aria-hidden="true"></span>
+        <span>Agroforestry Carbon Field Guide</span>
+      </a>
+      <div class="nav-links" aria-label="Compare navigation">
+        <a href="organizations.html">Organizations</a>
+        <a class="active" href="compare.html">Compare</a>
+      </div>
+    </div>
+  </nav>
+
+  <main id="app">
+    <div class="hero">
+      <section class="hero-card">
+        <span class="eyebrow">Similarity engine</span>
+        <h1>Who actually looks like whom?</h1>
+        <p>
+          Compare organizations using explicit, editable scores across carbon model, farmer delivery,
+          supply-chain orientation, technology, capital, standards, and demand.
+        </p>
+      </section>
+
+      <aside class="control-card">
+        <label for="organizationSelect">Start with an organization</label>
+        <select id="organizationSelect"></select>
+      </aside>
+    </div>
+
+    <section class="layout">
+      <aside class="panel">
+        <h2>Most similar</h2>
+        <div class="rank-list" id="rankList"></div>
+        <p class="method">
+          Similarity is calculated from 1-5 scores in <code>data/organizations.json</code>.
+          The score is directional only: useful for exploration, not a scientific claim.
+        </p>
+      </aside>
+
+      <section class="panel">
+        <h2 id="comparisonTitle">Comparison</h2>
+        <div class="compare-table" id="compareTable"></div>
+        <div class="bars" id="dimensionBars"></div>
+        <a class="profile-link" id="profileLink" href="#">Open profile →</a>
+      </section>
+    </section>
+  </main>
+
+  <footer>
+    Compare is generated from <code>data/organizations.json</code>. Scores are transparent and editable.
+  </footer>
+
+  <script>
+    const dimensionLabels = {
+      carbonFirst: "Carbon-first",
+      supplyChainFocus: "Supply-chain focus",
+      technicalAssistance: "Technical assistance",
+      farmerImplementation: "Farmer implementation",
+      technologyMRV: "Technology / MRV",
+      capitalProvision: "Capital provision",
+      standardSetting: "Standard-setting",
+      corporateDemand: "Corporate demand",
+      restorationFocus: "Restoration focus",
+      smallholderFocus: "Smallholder focus"
+    };
+
+    const comparisonRows = [
+      ["Role", org => org.roleLabel],
+      ["Type", org => org.type],
+      ["Carbon model", org => org.strategy],
+      ["Business model", org => org.businessModel || org.description],
+      ["Financing", org => org.financingApproach || "Not yet documented"],
+      ["Typical partners", org => (org.partners || []).slice(0, 4).join(", ") || "Not yet documented"]
+    ];
+
+    const params = new URLSearchParams(window.location.search);
+    const requestedId = params.get("id") || "acorn";
+
+    const select = document.getElementById("organizationSelect");
+    const rankList = document.getElementById("rankList");
+    const comparisonTitle = document.getElementById("comparisonTitle");
+    const compareTable = document.getElementById("compareTable");
+    const dimensionBars = document.getElementById("dimensionBars");
+    const profileLink = document.getElementById("profileLink");
+
+    function slugify(value) {
+      return value.toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/^-|-$/g, "");
+    }
+
+    function escapeHtml(value) {
+      return String(value || "").replace(/[&<>'"]/g, character => ({
+        "&": "&amp;",
+        "<": "&lt;",
+        ">": "&gt;",
+        "'": "&#039;",
+        '"': "&quot;"
+      }[character]));
+    }
+
+    function profileUrl(org) {
+      return `organization.html?id=${org.slug || slugify(org.name)}`;
+    }
+
+    function similarityScore(org, other) {
+      if (!org.similarityScores || !other.similarityScores) return null;
+      const keys = Object.keys(dimensionLabels).filter(key =>
+        typeof org.similarityScores[key] === "number" && typeof other.similarityScores[key] === "number"
+      );
+      if (!keys.length) return null;
+
+      const maxDistance = Math.sqrt(keys.length * Math.pow(4, 2));
+      const distance = Math.sqrt(keys.reduce((sum, key) =>
+        sum + Math.pow(org.similarityScores[key] - other.similarityScores[key], 2), 0
+      ));
+      return Math.max(0, Math.round((1 - distance / maxDistance) * 100));
+    }
+
+    function strongestSharedTraits(org, other) {
+      if (!org.similarityScores || !other.similarityScores) return "";
+      return Object.keys(dimensionLabels)
+        .filter(key => Math.abs(org.similarityScores[key] - other.similarityScores[key]) <= 1)
+        .sort((a, b) => Math.max(other.similarityScores[b], org.similarityScores[b]) - Math.max(other.similarityScores[a], org.similarityScores[a]))
+        .slice(0, 2)
+        .map(key => dimensionLabels[key])
+        .join(" + ");
+    }
+
+    function rankedSimilar(org, organizations) {
+      return organizations
+        .filter(item => item.name !== org.name && item.similarityScores)
+        .map(item => ({ ...item, score: similarityScore(org, item) }))
+        .filter(item => item.score !== null)
+        .sort((a, b) => b.score - a.score);
+    }
+
+    function renderRankList(org, ranked, selectedOther) {
+      rankList.innerHTML = ranked.slice(0, 8).map(item => `
+        <button class="rank-card ${item.name === selectedOther.name ? "active" : ""}" data-slug="${escapeHtml(item.slug || slugify(item.name))}">
+          <span>
+            <strong>${escapeHtml(item.name)}</strong>
+            <span>${escapeHtml(strongestSharedTraits(org, item) || item.type)}</span>
+          </span>
+          <span class="score">${item.score}%</span>
+        </button>
+      `).join("");
+    }
+
+    function renderComparison(org, other) {
+      comparisonTitle.textContent = `${org.name} vs ${other.name}`;
+      compareTable.innerHTML = `
+        <div class="compare-row">
+          <div></div>
+          <div class="name">${escapeHtml(org.name)}</div>
+          <div class="name">${escapeHtml(other.name)}</div>
+        </div>
+        ${comparisonRows.map(([label, getter]) => `
+          <div class="compare-row">
+            <div>${escapeHtml(label)}</div>
+            <div>${escapeHtml(getter(org))}</div>
+            <div>${escapeHtml(getter(other))}</div>
+          </div>
+        `).join("")}
+      `;
+
+      dimensionBars.innerHTML = Object.entries(dimensionLabels).map(([key, label]) => {
+        const first = org.similarityScores[key] || 0;
+        const second = other.similarityScores[key] || 0;
+        return `
+          <div class="bar-row">
+            <div class="bar-label">${escapeHtml(label)}</div>
+            <div title="${escapeHtml(org.name)}: ${first}/5">
+              <div class="bar-track"><div class="bar-fill" style="width:${first * 20}%"></div></div>
+            </div>
+            <div title="${escapeHtml(other.name)}: ${second}/5">
+              <div class="bar-track"><div class="bar-fill other" style="width:${second * 20}%"></div></div>
+            </div>
+          </div>
+        `;
+      }).join("");
+
+      profileLink.href = profileUrl(org);
+      profileLink.textContent = `Open ${org.name} profile →`;
+    }
+
+    function updateUrl(org) {
+      const url = new URL(window.location.href);
+      url.searchParams.set("id", org.slug || slugify(org.name));
+      window.history.replaceState({}, "", url);
+    }
+
+    function init(organizations) {
+      const scored = organizations.filter(org => org.similarityScores);
+      select.innerHTML = scored.map(org => `
+        <option value="${escapeHtml(org.slug || slugify(org.name))}">${escapeHtml(org.name)}</option>
+      `).join("");
+
+      function render(selectedSlug, otherSlug = "") {
+        const org = scored.find(item => (item.slug || slugify(item.name)) === selectedSlug) || scored[0];
+        const ranked = rankedSimilar(org, scored);
+        const other = scored.find(item => (item.slug || slugify(item.name)) === otherSlug) || ranked[0];
+
+        select.value = org.slug || slugify(org.name);
+        updateUrl(org);
+        renderRankList(org, ranked, other);
+        renderComparison(org, other);
+
+        rankList.querySelectorAll(".rank-card").forEach(button => {
+          button.addEventListener("click", () => render(org.slug || slugify(org.name), button.dataset.slug));
+        });
+      }
+
+      select.addEventListener("change", event => render(event.target.value));
+      render(requestedId);
+    }
+
+    fetch("data/organizations.json")
+      .then(response => response.json())
+      .then(init)
+      .catch(error => {
+        console.error("Could not load organizations.json", error);
+        document.getElementById("app").innerHTML = "<section class='panel'><h1>Could not load comparison data.</h1></section>";
+      });
+  </script>
+</body>
+</html>
