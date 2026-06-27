@@ -994,11 +994,17 @@
     }
 
     function comparisonPartner(org, allOrganizations) {
+      const featured = org.featuredComparison
+        ? findOrgBySlug(org.featuredComparison, allOrganizations)
+        : null;
+      if (featured && featured.name !== org.name && featured.role === org.role) return featured;
+
       const comparableSlugs = relationshipSlugs(org, "comparable", allOrganizations);
       const editorialMatch = comparableSlugs
         .map(slug => findOrgBySlug(slug, allOrganizations))
         .find(item => item && item.name !== org.name && item.role === org.role);
       if (editorialMatch) return editorialMatch;
+
       return allOrganizations.find(item => item.name !== org.name && item.role === org.role);
     }
 
@@ -1016,10 +1022,10 @@
       ];
 
       return `
-        <section class="comparison" aria-label="Organization comparison">
+        <section class="comparison" aria-label="Featured comparison">
           <div class="comparison-head">
-            <h2>${escapeHtml(org.name)} vs ${escapeHtml(other.name)}</h2>
-            <p>A quick comparison with the first listed comparable organization in the same primary role.</p>
+            <h2>Featured comparison</h2>
+            <p>${escapeHtml(org.name)} vs ${escapeHtml(other.name)}. This is a curated comparison chosen for reader usefulness, not automatically the highest similarity score.</p>
           </div>
           <div class="comparison-table">
             <div class="comparison-row">

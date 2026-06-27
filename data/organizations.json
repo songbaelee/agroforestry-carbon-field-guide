@@ -164,7 +164,8 @@
         "fsd-africa",
         "satelligence"
       ]
-    }
+    },
+    "featuredComparison": "pur"
   },
   {
     "name": "PUR",
@@ -377,7 +378,8 @@
         "cocoa-life",
         "sustaincert"
       ]
-    }
+    },
+    "featuredComparison": "acorn"
   },
   {
     "name": "re.green",
@@ -424,7 +426,8 @@
         "landowners",
         "investors"
       ]
-    }
+    },
+    "featuredComparison": "acorn"
   },
   {
     "name": "Taking Root",
@@ -471,7 +474,8 @@
         "farmer-groups",
         "carbon-buyers"
       ]
-    }
+    },
+    "featuredComparison": "acorn"
   },
   {
     "name": "Solidaridad",
@@ -665,7 +669,8 @@
         "uk-pact",
         "postcode-lottery-group"
       ]
-    }
+    },
+    "featuredComparison": "technoserve"
   },
   {
     "name": "TechnoServe",
@@ -719,7 +724,8 @@
         "agribusinesses",
         "farmer-groups"
       ]
-    }
+    },
+    "featuredComparison": "solidaridad"
   },
   {
     "name": "Catholic Relief Services",
@@ -765,7 +771,8 @@
         "donors",
         "farmer-groups"
       ]
-    }
+    },
+    "featuredComparison": "solidaridad"
   },
   {
     "name": "Verra",
@@ -811,7 +818,8 @@
         "validators-and-verifiers",
         "carbon-registries"
       ]
-    }
+    },
+    "featuredComparison": "gold-standard"
   },
   {
     "name": "Gold Standard",
@@ -857,7 +865,8 @@
         "validators-and-verifiers",
         "buyers"
       ]
-    }
+    },
+    "featuredComparison": "verra"
   },
   {
     "name": "Plan Vivo",
@@ -904,7 +913,8 @@
         "community-projects",
         "developers"
       ]
-    }
+    },
+    "featuredComparison": "verra"
   },
   {
     "name": "Pachama",
@@ -949,7 +959,8 @@
         "carbon-buyers",
         "project-developers"
       ]
-    }
+    },
+    "featuredComparison": "open-forest-protocol"
   },
   {
     "name": "Open Forest Protocol",
@@ -994,7 +1005,8 @@
         "project-developers",
         "field-partners"
       ]
-    }
+    },
+    "featuredComparison": "pachama"
   },
   {
     "name": "Chloris Geospatial",
@@ -1040,7 +1052,8 @@
         "investors",
         "buyers"
       ]
-    }
+    },
+    "featuredComparison": "pachama"
   },
   {
     "name": "Climate Asset Management",
@@ -1085,7 +1098,8 @@
         "land-managers",
         "developers"
       ]
-    }
+    },
+    "featuredComparison": "fmo"
   },
   {
     "name": "FMO",
@@ -1130,7 +1144,8 @@
         "funds",
         "dfis"
       ]
-    }
+    },
+    "featuredComparison": "climate-asset-management"
   },
   {
     "name": "Microsoft",
@@ -1177,7 +1192,8 @@
         "standards",
         "developers"
       ]
-    }
+    },
+    "featuredComparison": "salesforce"
   },
   {
     "name": "Salesforce",
@@ -1224,7 +1240,8 @@
         "standards",
         "developers"
       ]
-    }
+    },
+    "featuredComparison": "microsoft"
   },
   {
     "name": "Nestlé",
@@ -1271,7 +1288,8 @@
         "suppliers",
         "farmer-groups"
       ]
-    }
+    },
+    "featuredComparison": "mars"
   },
   {
     "name": "Mars",
@@ -1318,6 +1336,7 @@
         "suppliers",
         "farmer-groups"
       ]
-    }
+    },
+    "featuredComparison": "nestl"
   }
 ]
