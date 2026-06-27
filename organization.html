@@ -711,7 +711,7 @@
   </main>
 
   <footer>
-    Profiles and comparison dimensions are generated from <code>data/organizations.json</code>.
+    Profiles, comparison dimensions, and relationship links are generated from <code>data/organizations.json</code>.
   </footer>
 
   <script>
@@ -977,9 +977,28 @@
       return fallbacks[key] || fallback;
     }
 
+    function relationshipSlugs(org, kind, allOrganizations) {
+      const ownSlug = org.slug || slugify(org.name);
+      const explicit = org.relationships && Array.isArray(org.relationships[kind])
+        ? org.relationships[kind]
+        : [];
+      const reciprocal = allOrganizations
+        .filter(item => item.name !== org.name && item.relationships && Array.isArray(item.relationships[kind]))
+        .filter(item => item.relationships[kind].includes(ownSlug))
+        .map(item => item.slug || slugify(item.name));
+      return [...new Set([...explicit, ...reciprocal])];
+    }
+
+    function findOrgBySlug(slug, allOrganizations) {
+      return allOrganizations.find(item => (item.slug || slugify(item.name)) === slug);
+    }
+
     function comparisonPartner(org, allOrganizations) {
-      if (org.slug === "acorn") return allOrganizations.find(item => item.slug === "pur");
-      if (org.slug === "pur") return allOrganizations.find(item => item.slug === "acorn");
+      const comparableSlugs = relationshipSlugs(org, "comparable", allOrganizations);
+      const editorialMatch = comparableSlugs
+        .map(slug => findOrgBySlug(slug, allOrganizations))
+        .find(item => item && item.name !== org.name && item.role === org.role && item.comparison);
+      if (editorialMatch) return editorialMatch;
       return allOrganizations.find(item => item.name !== org.name && item.role === org.role && item.comparison);
     }
 
@@ -1049,11 +1068,18 @@
     }
 
     function topSimilarOrganizations(org, allOrganizations, count = 3) {
-      return allOrganizations
+      const comparableSlugs = relationshipSlugs(org, "comparable", allOrganizations);
+      const editorial = comparableSlugs
+        .map(slug => findOrgBySlug(slug, allOrganizations))
+        .filter(item => item && item.name !== org.name && item.role === org.role && item.similarityScores);
+
+      const roleFallback = allOrganizations
         .filter(item => item.name !== org.name && item.role === org.role && item.similarityScores)
+        .filter(item => !editorial.some(existing => existing.name === item.name));
+
+      return [...editorial, ...roleFallback]
         .map(item => ({ ...item, score: similarityScore(org, item) }))
         .filter(item => item.score !== null)
-        .sort((a, b) => b.score - a.score)
         .slice(0, count);
     }
 
@@ -1091,10 +1117,6 @@
     }
 
 
-    function findOrgBySlug(slug, allOrganizations) {
-      return allOrganizations.find(item => (item.slug || slugify(item.name)) === slug);
-    }
-
     function labelForExternalSlug(slug) {
       return String(slug || "")
         .replace(/-/g, " ")
@@ -1102,9 +1124,7 @@
     }
 
     function renderCollaborators(org, allOrganizations) {
-      const collaboratorSlugs = org.relationships && Array.isArray(org.relationships.collaborators)
-        ? org.relationships.collaborators.slice(0, 8)
-        : [];
+      const collaboratorSlugs = relationshipSlugs(org, "collaborators", allOrganizations).slice(0, 8);
       if (!collaboratorSlugs.length) return "";
 
       return `

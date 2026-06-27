@@ -566,15 +566,43 @@
         .join(" + ");
     }
 
+    function relationshipSlugs(org, kind, organizations) {
+      const ownSlug = org.slug || slugify(org.name);
+      const explicit = org.relationships && Array.isArray(org.relationships[kind])
+        ? org.relationships[kind]
+        : [];
+      const reciprocal = organizations
+        .filter(item => item.name !== org.name && item.relationships && Array.isArray(item.relationships[kind]))
+        .filter(item => item.relationships[kind].includes(ownSlug))
+        .map(item => item.slug || slugify(item.name));
+      return [...new Set([...explicit, ...reciprocal])];
+    }
+
+    function findOrgBySlug(slug, organizations) {
+      return organizations.find(item => (item.slug || slugify(item.name)) === slug);
+    }
+
     function rankedSimilar(org, organizations) {
-      return organizations
+      const comparableSlugs = relationshipSlugs(org, "comparable", organizations);
+      const editorial = comparableSlugs
+        .map(slug => findOrgBySlug(slug, organizations))
+        .filter(item => item && item.name !== org.name && item.role === org.role && item.similarityScores);
+
+      const roleFallback = organizations
         .filter(item => item.name !== org.name && item.role === org.role && item.similarityScores)
+        .filter(item => !editorial.some(existing => existing.name === item.name));
+
+      return [...editorial, ...roleFallback]
         .map(item => ({ ...item, score: similarityScore(org, item) }))
-        .filter(item => item.score !== null)
-        .sort((a, b) => b.score - a.score);
+        .filter(item => item.score !== null);
     }
 
     function renderRankList(org, ranked, selectedOther) {
+      if (!ranked.length || !selectedOther) {
+        rankList.innerHTML = "<div class=\"rank-card\"><span><strong>No same-role comparables yet</strong><span>Add comparable organizations in data/organizations.json.</span></span></div>";
+        return;
+      }
+
       rankList.innerHTML = ranked.slice(0, 8).map(item => `
         <button class="rank-card ${item.name === selectedOther.name ? "active" : ""}" data-slug="${escapeHtml(item.slug || slugify(item.name))}">
           <span>
@@ -639,12 +667,21 @@
       function render(selectedSlug, otherSlug = "") {
         const org = scored.find(item => (item.slug || slugify(item.name)) === selectedSlug) || scored[0];
         const ranked = rankedSimilar(org, scored);
-        const other = scored.find(item => (item.slug || slugify(item.name)) === otherSlug) || ranked[0];
+        const requestedOther = scored.find(item => (item.slug || slugify(item.name)) === otherSlug);
+        const other = requestedOther && requestedOther.role === org.role ? requestedOther : ranked[0];
 
         select.value = org.slug || slugify(org.name);
         updateUrl(org);
         renderRankList(org, ranked, other);
-        renderComparison(org, other);
+        if (other) {
+          renderComparison(org, other);
+        } else {
+          comparisonTitle.textContent = `${org.name}`;
+          compareTable.innerHTML = "";
+          dimensionBars.innerHTML = "";
+          profileLink.href = profileUrl(org);
+          profileLink.textContent = `Open ${org.name} profile →`;
+        }
 
         rankList.querySelectorAll(".rank-card").forEach(button => {
           button.addEventListener("click", () => render(org.slug || slugify(org.name), button.dataset.slug));
