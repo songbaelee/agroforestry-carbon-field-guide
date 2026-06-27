@@ -284,6 +284,22 @@
 
     .pill-link:hover { background: rgba(18, 59, 42, 0.12); }
 
+    .project-list {
+      margin-top: 18px;
+      display: grid;
+      gap: 9px;
+    }
+
+    .project-item {
+      padding: 12px 14px;
+      border-radius: 18px;
+      background: rgba(20, 34, 26, 0.06);
+      color: var(--green);
+      font-size: 13px;
+      font-weight: 820;
+      line-height: 1.25;
+    }
+
     .source-list {
       display: grid;
       gap: 10px;
@@ -317,6 +333,17 @@
       font-size: 11px;
       font-weight: 820;
       line-height: 1.2;
+    }
+
+    .resource-kind {
+      display: inline-flex;
+      align-items: center;
+      margin-left: 6px;
+      color: var(--muted);
+      font-size: 10px;
+      font-weight: 900;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
     }
 
     .source-card {
@@ -459,7 +486,6 @@
       </a>
       <div class="nav-links" aria-label="Profile navigation">
         <a class="active" href="organizations.html">Organizations</a>
-        <span>Profiles</span>
       </div>
     </div>
   </nav>
@@ -523,10 +549,27 @@
       const text = [sourceTitle(source), sourceOrg(source), sourceUrl(source)].join(" ").toLowerCase();
       if (text.includes("framework") || text.includes("methodolog")) return "Methodology";
       if (text.includes("faq")) return "Company FAQ";
-      if (text.includes("project") || text.includes("design document") || text.includes("farm africa") || text.includes("solidaridad")) return "Project";
+      if (text.includes("design document") || text.endsWith(".pdf")) return "PDF";
+      if (text.includes("project") || text.includes("farm africa") || text.includes("solidaridad")) return "Project";
       if (text.includes("fsd africa") || text.includes("rabo foundation")) return "Finance";
       if (text.includes("satelligence")) return "Technology";
-      return "Reference";
+      return "Website";
+    }
+
+    function resourceKind(source) {
+      const text = [sourceTitle(source), sourceUrl(source)].join(" ").toLowerCase();
+      if (text.includes(".pdf") || text.includes("framework") || text.includes("design document")) return "PDF";
+      if (text.includes("registry")) return "Registry";
+      return "Web";
+    }
+
+    function sourceLabel(source) {
+      const title = sourceTitle(source);
+      return `${escapeHtml(title)} <span class="resource-kind">${escapeHtml(resourceKind(source))}</span>`;
+    }
+
+    function projectList(items) {
+      return (items || []).map(item => `<div class="project-item">${escapeHtml(item)}</div>`).join("");
     }
 
     function chipList(items) {
@@ -534,11 +577,12 @@
     }
 
     function findOrganizationByName(name, organizations) {
-      const normalized = String(name || "").toLowerCase();
-      return organizations.find(item => {
-        const itemName = String(item.name || "").toLowerCase();
-        return normalized === itemName || normalized.includes(itemName) || itemName.includes(normalized);
-      });
+      const normalize = value => String(value || "")
+        .toLowerCase()
+        .replace(/[^a-z0-9]+/g, " ")
+        .trim();
+      const normalized = normalize(name);
+      return organizations.find(item => normalize(item.name) === normalized);
     }
 
     function pillList(items, organizations = []) {
@@ -577,8 +621,8 @@
           ${sourceItems.map(source => {
             const title = sourceTitle(source);
             const url = sourceUrl(source);
-            if (!url) return `<span>${escapeHtml(title)}</span>`;
-            return `<a href="${escapeHtml(url)}" target="_blank" rel="noopener">${escapeHtml(title)}</a>`;
+            if (!url) return `<span>${sourceLabel(source)}</span>`;
+            return `<a href="${escapeHtml(url)}" target="_blank" rel="noopener">${sourceLabel(source)}</a>`;
           }).join("")}
         </div>
       `;
@@ -635,8 +679,8 @@
         sections.push(`
           <article class="section-card">
             <h2>Representative projects</h2>
-            <p>Named projects or project types connected to this organization.</p>
-            <div class="list-pills">${pillList(org.representativeProjects, allOrganizations)}</div>
+            <p>Named projects or project types connected to this organization. These are shown as project records, not organization links.</p>
+            <div class="project-list">${projectList(org.representativeProjects)}</div>
             ${inlineSources(sources)}
           </article>
         `);
