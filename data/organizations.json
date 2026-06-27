@@ -1284,7 +1284,7 @@
     "featured": false,
     "website": "https://www.planvivo.org/",
     "slug": "plan-vivo",
-    "overview": "Focuses on community-led land-use and ecosystem service projects with strong emphasis on local participation and benefit sharing.",
+    "overview": "Plan Vivo Foundation is an Edinburgh-based NGO and registered Scottish charity that operates certification systems for high-integrity community-led climate and nature projects. Its PV Climate carbon standard focuses on community-led forestry, agroforestry, ecosystem restoration, avoided deforestation, and other land-use projects that combine verified climate benefits with livelihood and ecosystem outcomes.",
     "similarityScores": {
       "carbonFirst": 1,
       "supplyChainFocus": 2,
@@ -1297,8 +1297,8 @@
       "restorationFocus": 3,
       "smallholderFocus": 5
     },
-    "researchStatus": "preliminary",
-    "researchConfidence": "Low",
+    "researchStatus": "complete",
+    "researchConfidence": "High",
     "lastReviewed": "2026-06-27",
     "methodologyVersion": "v0.1",
     "relationships": {
@@ -1313,7 +1313,154 @@
         "developers"
       ]
     },
-    "featuredComparison": "verra"
+    "featuredComparison": "verra",
+    "businessModel": "Community-centered carbon and nature certification infrastructure. Plan Vivo does not develop agroforestry projects or finance farmer implementation directly. It sets standards and requirements, reviews project documentation, approves methodologies, oversees validation and verification, operates registry infrastructure, and certifies Plan Vivo Certificates for eligible community-led projects. Its distinctive role is to keep local people and benefit sharing at the center of land-use carbon finance.",
+    "representativeProjects": [
+      "PV Climate carbon standard",
+      "Plan Vivo project network",
+      "Plan Vivo Registry",
+      "Mikoko Pamoja blue carbon project in Kenya",
+      "Acorn agroforestry certification partnership",
+      "PV Nature biodiversity standard development"
+    ],
+    "partners": [
+      "Community-led project organizations",
+      "Smallholder farmers and local communities",
+      "Project coordinators and developers",
+      "Independent Experts and Validation/Verification Bodies",
+      "Carbon credit buyers and funders",
+      "Acorn",
+      "Climate Impact Partners"
+    ],
+    "standards": [
+      "PV Climate",
+      "Plan Vivo Standard",
+      "Plan Vivo Certificates",
+      "Plan Vivo Registry",
+      "PV Nature"
+    ],
+    "financingApproach": "Plan Vivo enables community-led land-use projects to access long-term funding through climate and nature markets. Certified PV Climate projects can issue and sell Plan Vivo Certificates, with income from certificate sales used to finance project activities and community benefits. Plan Vivo's public materials emphasize a revenue-sharing requirement under which at least 60% of income generated from the sale of Plan Vivo Certificates goes back to communities on the ground.",
+    "comparison": {
+      "customer": "Community-led land-use projects, project coordinators, developers, buyers, and funders",
+      "primaryRevenue": "Certification, standards administration, and registry-related services",
+      "mainOffering": "Community-led carbon and nature certification",
+      "carbonRole": "Market infrastructure for community-based land-use carbon projects",
+      "financing": "Enables certificate sales and requires strong community benefit sharing; does not directly finance projects",
+      "typicalClient": "Community forestry, agroforestry, restoration, blue carbon, and smallholder land-use project developers",
+      "featuredComparison": "Compared with Verra, Plan Vivo is narrower and more community-centered. Verra is broad voluntary carbon market infrastructure across many sectors and project types, while Plan Vivo is especially focused on community-led land-use and ecosystem projects with explicit participation and revenue-sharing requirements.",
+      "philosophy": "Plan Vivo puts community ownership, local participation, livelihoods, and benefit sharing at the center of its standard. Verra also includes social and environmental safeguards and optional co-benefit standards, but its VCS program is broader and more general-purpose.",
+      "methodologies": "Both standards require approved methodologies and independent validation and verification. Plan Vivo's methodology universe is more specialized around community-led land use, forestry, agroforestry, and nature projects.",
+      "registryRole": "Both provide registry transparency for certified units, project documents, issuance, transfers, and retirements.",
+      "commonProjectTypes": "Plan Vivo is most associated with community forestry, agroforestry, restoration, avoided deforestation, blue carbon, and smallholder ecosystem-service projects."
+    },
+    "sources": [
+      {
+        "title": "Setting the standard for community led projects",
+        "organization": "Plan Vivo",
+        "url": "https://www.planvivo.org/",
+        "type": "Company",
+        "sections": [
+          "overview",
+          "businessModel"
+        ]
+      },
+      {
+        "title": "About us",
+        "organization": "Plan Vivo",
+        "url": "https://www.planvivo.org/about-us",
+        "type": "Company",
+        "sections": [
+          "overview",
+          "partners"
+        ]
+      },
+      {
+        "title": "PV Climate - Certify a carbon project",
+        "organization": "Plan Vivo",
+        "url": "https://www.planvivo.org/projects/certify-a-project/pvclimate",
+        "type": "Standard",
+        "sections": [
+          "businessModel",
+          "standards",
+          "financingApproach",
+          "representativeProjects"
+        ]
+      },
+      {
+        "title": "Certify a project",
+        "organization": "Plan Vivo",
+        "url": "https://www.planvivo.org/projects/certify-a-project",
+        "type": "Certification process",
+        "sections": [
+          "businessModel",
+          "standards",
+          "financingApproach"
+        ]
+      },
+      {
+        "title": "Registry",
+        "organization": "Plan Vivo",
+        "url": "https://www.planvivo.org/buy-credits/pv-climate-registry",
+        "type": "Registry",
+        "sections": [
+          "businessModel",
+          "standards",
+          "financingApproach"
+        ]
+      },
+      {
+        "title": "Projects",
+        "organization": "Plan Vivo",
+        "url": "https://www.planvivo.org/projects",
+        "type": "Project network",
+        "sections": [
+          "representativeProjects",
+          "financingApproach"
+        ]
+      },
+      {
+        "title": "Participatory Toolkit",
+        "organization": "Plan Vivo",
+        "url": "https://www.planvivo.org/participatory-toolkit",
+        "type": "Guidance",
+        "sections": [
+          "businessModel",
+          "standards",
+          "partners"
+        ]
+      },
+      {
+        "title": "Plan Vivo projects migrate to updated carbon Standard",
+        "organization": "Plan Vivo",
+        "url": "https://www.planvivo.org/news-insights/plan-vivo-projects-migrate-to-updated-carbon-standard",
+        "type": "Standard update",
+        "sections": [
+          "standards",
+          "businessModel"
+        ]
+      },
+      {
+        "title": "Statement in response to Follow the Money article",
+        "organization": "Plan Vivo",
+        "url": "https://www.planvivo.org/news-insights/statement-in-response-to-follow-the-money-article",
+        "type": "Partnership clarification",
+        "sections": [
+          "partners",
+          "standards",
+          "comparison"
+        ]
+      },
+      {
+        "title": "Approved Modules",
+        "organization": "Plan Vivo",
+        "url": "https://www.planvivo.org/projects/certify-a-project/pvclimate/methodologies/approved-modules",
+        "type": "Methodology",
+        "sections": [
+          "standards",
+          "partners"
+        ]
+      }
+    ]
   },
   {
     "name": "Pachama",
