@@ -914,7 +914,7 @@
     "hq": "United States",
     "geography": "Global",
     "strategy": "Enabling service",
-    "description": "Potentially relevant as a field implementation and livelihoods partner where carbon can finance restoration, resilience, and farmer support.",
+    "description": "International NGO implementing agriculture, livelihoods, climate resilience, and landscape restoration programs. In agroforestry carbon, CRS is most relevant as a field implementation and resilience partner where carbon finance can support broader restoration, adaptation, food security, and farmer livelihood objectives.",
     "examples": [
       "Livelihoods",
       "Local partners",
@@ -923,7 +923,7 @@
     "featured": false,
     "website": "https://www.crs.org/",
     "slug": "catholic-relief-services",
-    "overview": "Potentially relevant as a field implementation and livelihoods partner where carbon can finance restoration, resilience, and farmer support.",
+    "overview": "Catholic Relief Services (CRS) is the official international humanitarian agency of the Catholic community in the United States and works globally across emergency response, agriculture, livelihoods, climate resilience, and development programming. In the agroforestry carbon field, CRS is most relevant as an implementation and climate-resilience partner: helping vulnerable farmers and communities restore degraded landscapes, adopt agroforestry and nature-based solutions, strengthen livelihoods, and explore carbon finance as one layer of support for adaptation and resilience.",
     "similarityScores": {
       "carbonFirst": 1,
       "supplyChainFocus": 2,
@@ -936,8 +936,8 @@
       "restorationFocus": 3,
       "smallholderFocus": 5
     },
-    "researchStatus": "preliminary",
-    "researchConfidence": "Low",
+    "researchStatus": "complete",
+    "researchConfidence": "High",
     "lastReviewed": "2026-06-27",
     "methodologyVersion": "v0.1",
     "relationships": {
@@ -951,7 +951,142 @@
         "farmer-groups"
       ]
     },
-    "featuredComparison": "solidaridad"
+    "featuredComparison": "solidaridad",
+    "businessModel": "Donor-, government-, philanthropic-, and program-funded implementation model. CRS designs and implements agriculture, livelihoods, watershed restoration, nature-based solutions, and climate resilience programs through local partners and community institutions. Carbon is not CRS's core product; it is a potential financing mechanism that can help fund landscape restoration, agroforestry, drylands regreening, and farmer resilience when project design, safeguards, benefit sharing, and market requirements are credible.",
+    "representativeProjects": [
+      "Advancing Climate Resilience Through High-Integrity Carbon Finance strategy",
+      "Transforming Rural Lives Through Adaptation and Carbon Capture (TRACC) in Timor-Leste",
+      "Nature-based Solutions for disaster risk reduction, adaptation, and mitigation",
+      "Transforming Livelihoods and Landscapes Initiative",
+      "Water Smart Agriculture programming",
+      "Farmer Managed Natural Regeneration and landscape restoration approaches"
+    ],
+    "partners": [
+      "Local implementing partners",
+      "Farmer groups and community institutions",
+      "Caritas Internationalis network",
+      "Government partners",
+      "Local civil society organizations",
+      "Australian Government / DFAT",
+      "Climate finance providers and donors"
+    ],
+    "standards": [
+      "Not a carbon standard",
+      "Project-specific carbon standards may apply where carbon finance projects are developed"
+    ],
+    "financingApproach": "CRS primarily uses donor, government, philanthropic, and climate-program funding to support agriculture, livelihoods, restoration, and resilience work. Its carbon-finance materials frame carbon markets as a way to help smallholder farmers and vulnerable communities finance nature-based solutions such as agroforestry, watershed restoration, and drylands regreening. In this model, carbon revenue is a supporting finance layer for development outcomes rather than the organization’s core business.",
+    "comparison": {
+      "customer": "Donors, governments, climate finance providers, local partners, and vulnerable communities",
+      "primaryRevenue": "Grants, donor funding, government-funded programs, philanthropic support, and climate finance",
+      "mainOffering": "Community-based implementation for livelihoods, resilience, agriculture, and landscape restoration",
+      "carbonRole": "Supporting finance layer for resilience and restoration programs",
+      "financing": "Program funding and climate finance, with carbon finance explored where it can support farmer-centered restoration",
+      "typicalClient": "Donors, governments, local civil society partners, farmer groups, and vulnerable rural communities",
+      "implementationComparison": "Compared with TechnoServe, CRS is less focused on agribusiness competitiveness and market systems and more focused on resilience, food security, community institutions, and humanitarian-development outcomes. Compared with Solidaridad, CRS is less centered on commodity supply chains and more centered on vulnerable communities, landscape restoration, and adaptation."
+    },
+    "sources": [
+      {
+        "title": "About CRS",
+        "organization": "Catholic Relief Services",
+        "url": "https://www.crs.org/about",
+        "type": "Organization",
+        "sections": [
+          "overview",
+          "businessModel"
+        ]
+      },
+      {
+        "title": "Advancing Climate Resilience Through High-Integrity Carbon Finance",
+        "organization": "Catholic Relief Services",
+        "url": "https://www.crs.org/our-work/research-publications/advancing-climate-resilience-through-high-integrity-carbon-finance",
+        "type": "Report",
+        "sections": [
+          "overview",
+          "businessModel",
+          "financingApproach",
+          "representativeProjects"
+        ]
+      },
+      {
+        "title": "Nature-based Solutions",
+        "organization": "Catholic Relief Services",
+        "url": "https://www.crs.org/our-work/program-areas/agriculture-livelihoods/building-climate-resilience-today/nature-based-solutions",
+        "type": "Program area",
+        "sections": [
+          "overview",
+          "representativeProjects",
+          "financingApproach"
+        ]
+      },
+      {
+        "title": "Climate Finance",
+        "organization": "Catholic Relief Services",
+        "url": "https://www.crs.org/our-work/program-areas/agriculture-livelihoods/building-climate-resilience-today/climate-finance",
+        "type": "Program area",
+        "sections": [
+          "businessModel",
+          "financingApproach",
+          "partners"
+        ]
+      },
+      {
+        "title": "Agriculture and Livelihoods in a Changing Climate",
+        "organization": "Catholic Relief Services",
+        "url": "https://www.crs.org/our-work/program-areas/agriculture-livelihoods/building-climate-resilience-today/agriculture-and-livelihoods-changing-climate",
+        "type": "Program area",
+        "sections": [
+          "representativeProjects",
+          "partners",
+          "financingApproach"
+        ]
+      },
+      {
+        "title": "Restoring the Land in Timor-Leste",
+        "organization": "Catholic Relief Services",
+        "url": "https://catholicreliefservices.exposure.co/reforestation-timor-leste",
+        "type": "Project story",
+        "sections": [
+          "representativeProjects",
+          "partners",
+          "financingApproach"
+        ]
+      },
+      {
+        "title": "Landscape Restoration, Food Security and Global Climate Change",
+        "organization": "Catholic Relief Services",
+        "url": "https://www.crs.org/sites/default/files/2025-04/2023_9.11_landscape_restoration_food_security_and_cc_policy.pdf",
+        "type": "Policy brief",
+        "kind": "PDF",
+        "sections": [
+          "representativeProjects",
+          "businessModel",
+          "financingApproach"
+        ]
+      },
+      {
+        "title": "Transforming Livelihoods and Landscapes Initiative",
+        "organization": "Catholic Relief Services",
+        "url": "https://www.crs.org/sites/default/files/2025-05/livelihoods_and_landscapes_tech_brief_final.pdf",
+        "type": "Technical brief",
+        "kind": "PDF",
+        "sections": [
+          "representativeProjects",
+          "businessModel",
+          "financingApproach"
+        ]
+      },
+      {
+        "title": "Catholic Relief Services",
+        "organization": "AFR100",
+        "url": "https://afr100.org/content/catholic-relief-services",
+        "type": "Partner profile",
+        "sections": [
+          "overview",
+          "representativeProjects",
+          "partners"
+        ]
+      }
+    ]
   },
   {
     "name": "Verra",
