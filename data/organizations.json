@@ -2294,7 +2294,7 @@
     "hq": "United Kingdom",
     "geography": "Global",
     "strategy": "Investment capital",
-    "description": "Invests in natural capital strategies, including land-based assets where carbon, biodiversity, and sustainable production can form part of the return story.",
+    "description": "Climate Asset Management is a specialist investment manager formed by HSBC Asset Management and Pollination. It deploys institutional and corporate capital through a Natural Capital Fund focused on regenerative agriculture, sustainable forestry, and environmental assets in developed markets; a Nature Based Carbon Fund financing restoration and conservation in emerging markets; and a fund for Apple's Restore Fund. Its strategies seek financial returns, carbon credits, and measurable benefits for biodiversity, water, climate resilience, and communities, working with local operators and project developers rather than implementing every activity directly.",
     "examples": [
       "Natural capital",
       "Investment",
@@ -2303,7 +2303,207 @@
     "featured": false,
     "website": "https://climateassetmanagement.com/",
     "slug": "climate-asset-management",
-    "overview": "Invests in natural capital strategies, including land-based assets where carbon, biodiversity, and sustainable production can form part of the return story.",
+    "overview": "Climate Asset Management (CAM) is a London-headquartered natural-capital investment manager established in 2020 as a joint venture between HSBC Asset Management and Pollination. Its platform uses dedicated funds to channel institutional and corporate capital into land-based assets and nature-based projects. The Natural Capital Fund invests in regenerative agriculture, sustainable forestry, and environmental assets in developed markets, seeking commercial long-term returns from productive assets, land appreciation, and ecosystem-service revenues. The Nature Based Carbon Fund finances landscape-scale restoration and conservation in emerging markets, with independently verified carbon credits forming a central investor return. CAM also manages a fund within Apple's Restore Fund, combining regenerative land management with ecosystem conservation and restoration. Publicly announced investments span Africa, Europe, Australia, New Zealand, and the United States, and CAM relies on experienced local operating partners and project developers for implementation.",
+    "businessModel": "Specialist natural-capital fund manager and real-assets investment platform. CAM raises commitments from institutional investors and corporations, selects and structures investments, oversees portfolios, and appoints local operators or project developers to manage assets and deliver projects. Its Natural Capital Fund targets commercial returns from agriculture, forestry, land value, and additional ecosystem-service income such as carbon or conservation. Its Nature Based Carbon Fund provides capital to restoration and conservation projects, particularly at early stages, in exchange for expected high-integrity carbon-credit flows. CAM also manages a dedicated fund for Apple's Restore Fund, where corporate capital is pooled across regenerative agriculture, sustainable forestry, conservation, and restoration investments.",
+    "representativeProjects": [
+      "Restore Africa — a Global EverGreening Alliance-led, farmer-centered restoration programme across Kenya, Ethiopia, Malawi, Tanzania, Uganda, and Zambia; CAM announced a US$150 million financing package and the programme aims to restore about 1.9 million hectares and support 1.5 million smallholder farming families",
+      "Iberian regenerative agriculture portfolio — includes a 1,900-hectare aggregation of almond, walnut, and pistachio orchards in Spain and Portugal transitioning to regenerative management with more than 10% of the land reserved for nature",
+      "Queensland macadamia project — conversion of about 1,800 hectares of former sugar-cane land into a regeneratively managed native macadamia orchard with native-habitat restoration",
+      "Project Olympic Rainforest, Washington State — 68,000 acres transitioning from industrial timber management to FSC-certified climate-smart forestry, with EFM as operating partner and long-term carbon offtakes with Meta and Microsoft",
+      "Apple Restore Fund projects in Australia and New Zealand — regenerative macadamia production in Queensland and protection, restoration, and sustainable management of 8,600 hectares of New Zealand forestland"
+    ],
+    "partners": [
+      "HSBC Asset Management",
+      "Pollination",
+      "Global EverGreening Alliance",
+      "Apple",
+      "TSMC",
+      "Murata Manufacturing",
+      "EFM",
+      "Microsoft",
+      "Meta",
+      "Bolschare Agriculture",
+      "Local operating partners and project developers"
+    ],
+    "standards": [
+      "Forest Stewardship Council (FSC) certification or management standards for identified forestry assets, including Project Olympic Rainforest and the New Zealand Restore Fund project",
+      "Independent third-party verification for carbon credits targeted by the Nature Based Carbon Fund; CAM does not operate a carbon standard or registry"
+    ],
+    "financingApproach": "CAM raises dedicated pools of institutional and corporate capital and deploys them through fund structures rather than lending from a development-bank balance sheet. At the September 2024 final closes, its Natural Capital Fund and Nature Based Carbon Fund, together with the Apple Restore Fund mandate, had raised more than US$1 billion. The Natural Capital Fund acquires or co-invests in productive land and forestry assets, seeking diversified returns from crops or timber, land value, carbon credits, conservation easements, and other ecosystem services. Project Olympic Rainforest illustrates this revenue-stacking approach: co-investment financed the acquisition, while long-term Meta and Microsoft carbon offtakes reduced carbon-price and cash-flow risk. The Nature Based Carbon Fund finances early-stage, landscape-scale restoration and conservation against expected carbon-credit generation; Restore Africa was structured around forward credit volumes, with investors receiving generated credits as return. For the CAM-managed phase of Apple's Restore Fund, Apple committed up to US$200 million, joined by up to US$50 million from TSMC and US$30 million from Murata.",
+    "ecosystemFit": "Climate Asset Management supplies dedicated investment capital to natural-capital assets and nature-based carbon projects, often through local operators and developers. In an agroforestry carbon ecosystem, it can fund land acquisition, regenerative production, restoration, and long-duration carbon development, but it is not itself a farmer aggregator, MRV provider, carbon standard, or registry. Its closest role is a specialist capital manager that packages nature-based opportunities for institutional and corporate investors.",
+    "sources": [
+      {
+        "title": "Climate Asset Management home",
+        "organization": "Climate Asset Management",
+        "url": "https://climateassetmanagement.com/",
+        "type": "Company",
+        "sections": [
+          "overview",
+          "businessModel",
+          "partners"
+        ]
+      },
+      {
+        "title": "Our story",
+        "organization": "Climate Asset Management",
+        "url": "https://climateassetmanagement.com/about/",
+        "type": "Company",
+        "sections": [
+          "overview",
+          "businessModel",
+          "ecosystemFit"
+        ]
+      },
+      {
+        "title": "Climate Asset Management - Initial Closings",
+        "organization": "HSBC Asset Management",
+        "url": "https://no.assetmanagement.hsbc.com/en/institutional-and-professional-investor/news-and-insights/cam-initial-closings",
+        "type": "Fund announcement",
+        "sections": [
+          "overview",
+          "representativeProjects",
+          "financingApproach"
+        ]
+      },
+      {
+        "title": "Real Assets",
+        "organization": "Pollination",
+        "url": "https://pollinationgroup.com/real-assets/",
+        "type": "Company",
+        "sections": [
+          "overview",
+          "businessModel",
+          "partners"
+        ]
+      },
+      {
+        "title": "Climate Asset Management secures commitments in excess of $1 billion for natural capital projects",
+        "organization": "Climate Asset Management",
+        "url": "https://climateassetmanagement.com/insight/climate-asset-management-secures-commitments-in-excess-of-1-billion-for-natural-capital-projects/",
+        "type": "Fund announcement",
+        "sections": [
+          "overview",
+          "businessModel",
+          "financingApproach",
+          "standards"
+        ]
+      },
+      {
+        "title": "Climate Asset Management closes over $650 million for Natural Capital projects",
+        "organization": "Climate Asset Management",
+        "url": "https://climateassetmanagement.com/insight/climate-asset-management-closes-over-650-million-for-natural-capital-projects/",
+        "type": "Fund announcement",
+        "sections": [
+          "representativeProjects",
+          "financingApproach",
+          "partners"
+        ]
+      },
+      {
+        "title": "Climate Asset Management confirms the first tranche of a US$150m financing package for Restore Africa",
+        "organization": "Climate Asset Management",
+        "url": "https://climateassetmanagement.com/insight/climate-asset-management-confirms-the-first-tranche-of-a-us150m-financing-package-to-kick-off-the-global-evergreening-alliances-nature-based-carbon-programme-in-africa/",
+        "type": "Project announcement",
+        "sections": [
+          "representativeProjects",
+          "partners",
+          "financingApproach"
+        ]
+      },
+      {
+        "title": "Climate Asset Management signs agreements for the acquisition of 1,900 Ha of Iberian farmland",
+        "organization": "Climate Asset Management",
+        "url": "https://climateassetmanagement.com/insight/climate-asset-management-signs-agreements-for-the-acquisition-of-1900-ha-of-iberian-farmland/",
+        "type": "Project announcement",
+        "sections": [
+          "representativeProjects",
+          "partners",
+          "businessModel"
+        ]
+      },
+      {
+        "title": "Climate Asset Management completes c.1,800Ha Macadamia project acquisition in Queensland",
+        "organization": "Climate Asset Management",
+        "url": "https://climateassetmanagement.com/insight/climate-asset-management-completes-c-1800ha-macadamia-project-acquisition-in-queensland/",
+        "type": "Project announcement",
+        "sections": [
+          "representativeProjects",
+          "businessModel"
+        ]
+      },
+      {
+        "title": "Climate Asset Management makes first U.S. forestry investment with acquisition of 68,000 acre timberland asset",
+        "organization": "Climate Asset Management",
+        "url": "https://climateassetmanagement.com/insight/climate-asset-management-makes-first-u-s-forestry-investment-with-acquisition-of-68000-acre-timberland-asset-in-pacific-northwest-alongside-co-investors/",
+        "type": "Project announcement",
+        "sections": [
+          "representativeProjects",
+          "partners",
+          "financingApproach"
+        ]
+      },
+      {
+        "title": "Fulfilling the Rising Demand for High-Integrity Carbon Credits: Long-Term Offtakes with Meta and Microsoft",
+        "organization": "Climate Asset Management",
+        "url": "https://climateassetmanagement.com/insight/demand-for-high-integrity-carbon-credits-long-term-offtakes/",
+        "type": "Project case study",
+        "sections": [
+          "representativeProjects",
+          "partners",
+          "standards",
+          "financingApproach"
+        ]
+      },
+      {
+        "title": "Apple announces new renewable energy and conservation projects in Australia and New Zealand",
+        "organization": "Apple",
+        "url": "https://www.apple.com/au/newsroom/2025/11/apple-expands-renewable-energy-and-conservation-efforts-in-australia-new-zealand/",
+        "type": "Official announcement",
+        "sections": [
+          "representativeProjects",
+          "partners",
+          "standards",
+          "financingApproach"
+        ]
+      },
+      {
+        "title": "Apple expands innovative Restore Fund with TSMC and Murata",
+        "organization": "Apple",
+        "url": "https://www.apple.com/li/newsroom/2024/03/apple-expands-innovative-restore-fund-with-tsmc-and-murata/",
+        "type": "Fund announcement",
+        "sections": [
+          "partners",
+          "financingApproach"
+        ]
+      },
+      {
+        "title": "Profile",
+        "organization": "FMO",
+        "url": "https://www.fmo.nl/profile",
+        "type": "Institution",
+        "sections": [
+          "comparison"
+        ]
+      },
+      {
+        "title": "Products and Services",
+        "organization": "FMO",
+        "url": "https://www.fmo.nl/products-and-services",
+        "type": "Institution",
+        "sections": [
+          "comparison"
+        ]
+      }
+    ],
+    "comparison": {
+      "customer": "Institutional investors and corporations seeking natural-capital exposure, financial returns, carbon credits, or nature and climate outcomes",
+      "primaryRevenue": "Fund-level returns from productive-land income, asset value, ecosystem services, and carbon credits; public sources do not disclose CAM's fee terms",
+      "mainOffering": "Dedicated natural-capital investment funds and corporate mandates",
+      "carbonRole": "Central to the Nature Based Carbon Fund and selected real assets; one component of a broader natural-capital platform",
+      "financing": "Committed fund capital, co-investment, corporate mandates, project finance against expected credits, and long-term carbon offtakes",
+      "typicalClient": "Pension funds, insurers, financial institutions, and corporations such as Apple and its suppliers",
+      "platformComparison": "Climate Asset Management and FMO both occupy the capital role, but they are different kinds of capital provider. CAM is an investment manager and fund platform focused specifically on natural capital, carbon, and nature-based assets; it manages dedicated strategies for regenerative agriculture, sustainable forestry, ecosystem restoration, conservation, and carbon-credit generation. FMO is a broader development finance institution that provides development-oriented loans, equity, guarantees, and other capital to private-sector businesses, projects, funds, and financial intermediaries in developing and emerging markets. The comparison helps readers distinguish a specialist natural-capital manager from a DFI lender and investor; it is not a ranking of either organization."
+    },
     "similarityScores": {
       "carbonFirst": 3,
       "supplyChainFocus": 2,
@@ -2316,9 +2516,9 @@
       "restorationFocus": 4,
       "smallholderFocus": 1
     },
-    "researchStatus": "preliminary",
-    "researchConfidence": "Low",
-    "lastReviewed": "2026-06-27",
+    "researchStatus": "complete",
+    "researchConfidence": "High",
+    "lastReviewed": "2026-06-28",
     "methodologyVersion": "v0.1",
     "relationships": {
       "comparable": [
