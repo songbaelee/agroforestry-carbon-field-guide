@@ -1782,7 +1782,121 @@
     "featured": true,
     "website": "https://pachama.com/",
     "slug": "pachama",
-    "overview": "Uses remote sensing, software, and data tools to assess and monitor forest carbon projects and connect buyers with nature-based credits.",
+    "overview": "Pachama developed a technology platform for forest carbon that uses satellite data, artificial intelligence, and remote sensing to support land screening, project evaluation, monitoring, reporting, and verification (MRV), and access to forest conservation and restoration credits. Its marketplace included Pachama Verified projects, which were existing projects vetted through Pachama's evaluation process, and Pachama Originals, which supported new reforestation projects. Carbon Direct acquired Pachama in November 2025 and is integrating Pachama's forest-carbon digital MRV platform and data capabilities into its science-based carbon management services.",
+    "representativeProjects": [
+      "Forest carbon project evaluation and due diligence using remote sensing, scientific research, and project-level quality criteria",
+      "Ongoing monitoring of planting progress, deforestation risk, carbon outcomes, and community impacts",
+      "Land Suitability screening for reforestation potential, expansion potential, and early registry-requirement checks",
+      "Pachama Verified marketplace access to evaluated forest conservation and restoration projects",
+      "Pachama Originals support for developing and financing new reforestation projects",
+      "Digital MRV pilot with Verra for remote-sensing-based forest carbon measurement and reporting"
+    ],
+    "partners": [
+      "Carbon Direct",
+      "Verra",
+      "Boston Consulting Group",
+      "Shopify",
+      "Mercado Libre",
+      "Ducks Unlimited",
+      "PERENfra"
+    ],
+    "standards": [
+      "Not a carbon standard",
+      "Supports evaluation and monitoring of projects registered under standards such as Verra, Gold Standard, Climate Action Reserve, and American Carbon Registry"
+    ],
+    "financingApproach": "Pachama served corporate buyers and project developers through technology-enabled project evaluation, portfolio sourcing, marketplace access, and monitoring. Pachama Verified provided access to existing vetted forest projects, while Pachama Originals sought catalytic and upfront corporate investment for new reforestation projects. Public examples include Shopify and Mercado Libre funding reforestation in Brazil and a $12 million Lower Mississippi River Valley reforestation collaboration with Ducks Unlimited and PERENfra. Following the November 2025 acquisition, Pachama's technology is being integrated into Carbon Direct's carbon management and project diligence offerings.",
+    "sources": [
+      {
+        "title": "Carbon Direct Acquires Pachama, Marking Major Milestone for Science-Driven Carbon Management",
+        "organization": "Carbon Direct",
+        "url": "https://www.carbon-direct.com/press/carbon-direct-acquires-pachama",
+        "type": "Acquisition announcement",
+        "sections": [
+          "overview",
+          "businessModel",
+          "partners",
+          "financingApproach"
+        ]
+      },
+      {
+        "title": "The Pachama Marketplace",
+        "organization": "Pachama",
+        "url": "https://app.pachama.com/projects",
+        "type": "Product",
+        "sections": [
+          "businessModel",
+          "representativeProjects",
+          "standards",
+          "financingApproach"
+        ]
+      },
+      {
+        "title": "Land Suitability",
+        "organization": "Pachama",
+        "url": "https://pachama.com/insight-tag/suitability/",
+        "type": "Product",
+        "sections": [
+          "representativeProjects",
+          "businessModel"
+        ]
+      },
+      {
+        "title": "Build your nature strategy",
+        "organization": "Pachama",
+        "url": "https://hello.pachama.com/nature-based",
+        "type": "Product",
+        "sections": [
+          "overview",
+          "businessModel",
+          "representativeProjects",
+          "partners"
+        ]
+      },
+      {
+        "title": "World's Largest Carbon Program Pilots Digital Measuring of Forest Carbon",
+        "organization": "Pachama / Verra",
+        "url": "https://pachama.com/blog/worlds-largest-carbon-program-pilots-digital-measuring-of-forest-carbon/?download_pdf=1422",
+        "type": "Partnership announcement",
+        "kind": "PDF",
+        "sections": [
+          "representativeProjects",
+          "partners",
+          "standards"
+        ]
+      },
+      {
+        "title": "Pachama and Shopify Pioneer Reforestation Initiative in Brazil",
+        "organization": "Pachama",
+        "url": "https://pachama.com/blog/customer-success-story-boston-consulting-group/?download_pdf=3644",
+        "type": "Project announcement",
+        "kind": "PDF",
+        "sections": [
+          "partners",
+          "financingApproach"
+        ]
+      },
+      {
+        "title": "Pachama Increases Series B to $64 Million",
+        "organization": "Pachama",
+        "url": "https://pachama.com/blog/pachama-increases-series-b-to-64-million/?download_pdf=1172",
+        "type": "Company announcement",
+        "kind": "PDF",
+        "sections": [
+          "partners",
+          "financingApproach"
+        ]
+      }
+    ],
+    "businessModel": "Forest carbon technology and MRV platform, now owned by Carbon Direct. Pachama provided software and data products for land screening, project evaluation and due diligence, ongoing monitoring, and digital MRV; it also connected corporate buyers with evaluated existing credits and opportunities to finance new reforestation projects. Its role was primarily technology, data, diligence, and market access rather than farmer aggregation or direct field implementation.",
+    "comparison": {
+      "customer": "Carbon buyers and project developers",
+      "primaryRevenue": "Technology, diligence, and market access",
+      "mainOffering": "Forest carbon technology and MRV platform",
+      "carbonRole": "Measurement, evaluation, and monitoring",
+      "financing": "Buyer and project-finance connections",
+      "typicalClient": "Corporate climate teams and project developers"
+    },
+    "platformComparison": "Pachama is a technology and MRV platform, while Acorn is a project development and farmer aggregation platform. Both operate in forest carbon but occupy different parts of the value chain: Pachama provides measurement, evaluation, monitoring, and market infrastructure; Acorn works through local partners to organize farmers and generate agroforestry carbon removals. This comparison is intended to educate readers about ecosystem roles, not compare quality or score either organization.",
     "similarityScores": {
       "carbonFirst": 3,
       "supplyChainFocus": 1,
@@ -1795,8 +1909,8 @@
       "restorationFocus": 4,
       "smallholderFocus": 1
     },
-    "researchStatus": "preliminary",
-    "researchConfidence": "Low",
+    "researchStatus": "complete",
+    "researchConfidence": "High",
     "lastReviewed": "2026-06-27",
     "methodologyVersion": "v0.1",
     "relationships": {
@@ -1809,7 +1923,7 @@
         "project-developers"
       ]
     },
-    "featuredComparison": "open-forest-protocol"
+    "featuredComparison": "acorn"
   },
   {
     "name": "Open Forest Protocol",
