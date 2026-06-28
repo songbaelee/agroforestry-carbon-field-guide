@@ -2137,7 +2137,126 @@
     "featured": false,
     "website": "https://chloris.earth/",
     "slug": "chloris-geospatial",
-    "overview": "Uses satellite-based methods to estimate aboveground biomass and help assess forest carbon stocks and change over time.",
+    "overview": "Chloris Geospatial is a commercial forest-carbon data and analytics company. Its platform uses Earth-observation data, sensor fusion, LiDAR-informed machine learning, and Bayesian time-series analysis to estimate above-ground live woody biomass stock and change, related carbon emissions and removals, and forest-cover dynamics. Chloris provides annual, wall-to-wall data from 2000 onward at 30-meter resolution and from 2017 onward at 10-meter resolution, with quantified uncertainty for each pixel. Customers use the data for carbon-project screening, development, due diligence, and portfolio monitoring, as well as forest-risk supply-chain accounting and reporting. Chloris supplies the measurement layer; it does not operate a carbon standard or registry, issue credits, sell a project marketplace, or implement forestry activities on the ground.",
+    "businessModel": "Commercial forest-carbon data and analytics delivered through the Chloris platform, geospatial data downloads, an API, and customized calibration, validation, and analytical services. Chloris serves carbon-project developers, standards and ratings organizations, investors, governments, and companies managing forest-risk supply chains. Its carbon-market product supports ARR, REDD+, and IFM project screening, due diligence, development, and project or portfolio monitoring; its supply-chain offering supports historical baselines, emissions and removals monitoring, and reporting. Chloris also distributes data through partner platforms. Its official carbon-markets page states that direct data access starts at USD 5,000 per year and that partner platforms may offer pay-as-you-go or subscription plans.",
+    "representativeProjects": [
+      "Trove Research integrity assessments — Chloris biomass-dynamics data supports consistent assessment of more than 550 REDD+, ARR, and IFM projects across the voluntary carbon market",
+      "Equitable Earth forest carbon standard — Chloris was selected as the coalition's exclusive provider of digital MRV forest-carbon data, including measurement of deforestation, degradation, and carbon-stock improvement",
+      "Ecosystem Restoration Standard — Chloris supplies above-ground biomass and forest-growth monitoring within ERS's restoration-project certification process",
+      "BeZero Carbon ratings — BeZero integrates Chloris biomass datasets into its multi-source geospatial analysis, while providing ground-plot data to support further validation of Chloris models",
+      "Upstream Tech Lens integration — Chloris forest-carbon stock, change, and forest-cover data are made available in a landscape-monitoring workflow for conservation and restoration users",
+      "Chloris Biomass Viewer — a public exploration tool for viewing biomass stocks and changes from project sites to national scales before using enterprise data products"
+    ],
+    "partners": [
+      "Trove Research",
+      "BeZero Carbon",
+      "Equitable Earth",
+      "Ecosystem Restoration Standard",
+      "Upstream Tech",
+      "Permian Global",
+      "Biometrio",
+      "Cecil",
+      "Earth Blox",
+      "Remote Sensing Solutions"
+    ],
+    "standards": [
+      "Not a carbon standard, registry, or credit issuer",
+      "Exclusive digital MRV forest-carbon data provider for the Equitable Earth forest carbon standard",
+      "Above-ground biomass and forest-growth monitoring partner for the Ecosystem Restoration Standard",
+      "Products are marketed for project development and monitoring across ARR, REDD+, and IFM activities and for jurisdictional programs",
+      "Supply-chain products are designed to support accounting and disclosure workflows including the GHG Protocol Land Sector and Removals Standard, SBTi FLAG, CSRD, TNFD, and EUDR; Chloris does not itself certify compliance with these frameworks"
+    ],
+    "financingApproach": "Chloris enables carbon finance and corporate climate accounting by selling measurement data and analytics rather than financing projects, issuing credits, or operating a marketplace. Customers can purchase direct platform and API access, volume-based access, customized services, or access through partner platforms; the official carbon-markets page lists direct access starting at USD 5,000 per year. At the company level, Chloris announced an $8.5 million Series A in July 2025 led by Future Energy Ventures, with participation from AXA IM Alts, At One Ventures, Cisco Foundation, Counteract, and Orbia Ventures. Chloris said the funding would support product development, commercial and technical hiring, partnerships, and European expansion.",
+    "comparison": {
+      "customer": "Carbon-project developers, standards and ratings organizations, investors, governments, and companies with forest-risk supply chains",
+      "primaryRevenue": "Subscriptions and paid access to forest-carbon data, platform and API products, partner distribution, and customized analytical services",
+      "mainOffering": "Global satellite-based above-ground biomass stock and change, carbon-flow, and forest-cover data",
+      "carbonRole": "Independent measurement and monitoring data for project assessment, digital MRV, portfolio analysis, and corporate land-sector accounting",
+      "financing": "Enables diligence, monitoring, and reporting for carbon finance but does not finance projects or issue or sell credits",
+      "typicalClient": "Organizations that need consistent, spatially explicit biomass and carbon measurements across projects, portfolios, jurisdictions, or supply chains",
+      "platformComparison": "Chloris Geospatial is the most measurement-specialized of these three organizations: it focuses on producing satellite-based above-ground biomass and carbon-stock data and tracking changes over time. Pachama has a broader forest-carbon role spanning project diligence, portfolio sourcing and marketplace access, and MRV infrastructure. Open Forest Protocol provides open digital MRV, registry, validation, credit-issuance, and carbon-standard infrastructure. Chloris can provide a measurement input to standards, ratings, project-development, or monitoring workflows, but it does not itself operate the broader diligence marketplace associated with Pachama or the open standard and registry infrastructure operated by Open Forest Protocol. This comparison describes different roles in the forest-carbon ecosystem, not relative quality."
+    },
+    "ecosystemFit": "Chloris Geospatial specializes in satellite-based biomass and carbon-stock measurement. Pachama has a broader role in forest-carbon diligence, project sourcing, marketplace access, and MRV. Open Forest Protocol provides open digital MRV, registry, and carbon-standard infrastructure. These organizations occupy different, sometimes complementary, roles in the forest-carbon ecosystem; this distinction is not a quality score.",
+    "sources": [
+      {
+        "title": "Forest carbon data, anywhere on Earth",
+        "organization": "Chloris Geospatial",
+        "url": "https://www.chloris.earth/",
+        "type": "Organization and product overview",
+        "sections": ["overview", "businessModel", "partners", "comparison"]
+      },
+      {
+        "title": "Data",
+        "organization": "Chloris Geospatial",
+        "url": "https://www.chloris.earth/data/",
+        "type": "Product and technology documentation",
+        "sections": ["overview", "businessModel", "standards", "comparison"]
+      },
+      {
+        "title": "The Chloris Geospatial Technology: Direct Above-Ground Biomass Stock and Change Measurements over Long Time Series and at Planetary Scale",
+        "organization": "Chloris Geospatial",
+        "url": "https://www.chloris.earth/s/Chloris-Geospatial-Methodology_2024.pdf",
+        "type": "Methodology white paper",
+        "kind": "PDF",
+        "sections": ["overview", "standards", "comparison"]
+      },
+      {
+        "title": "Carbon Markets",
+        "organization": "Chloris Geospatial",
+        "url": "https://www.chloris.earth/carbonmarkets",
+        "type": "Product and pricing page",
+        "sections": ["businessModel", "representativeProjects", "partners", "standards", "financingApproach", "comparison"]
+      },
+      {
+        "title": "Supply Chains",
+        "organization": "Chloris Geospatial",
+        "url": "https://www.chloris.earth/supplychains",
+        "type": "Product page",
+        "sections": ["overview", "businessModel", "partners", "standards", "financingApproach"]
+      },
+      {
+        "title": "Chloris Geospatial and Trove Research announce partnership to bring unprecedented transparency to forest carbon projects at a global scale",
+        "organization": "Chloris Geospatial",
+        "url": "https://www.chloris.earth/resources/chloris-geospatial-and-trove-research-announce-partnership-as2at",
+        "type": "Official partnership announcement",
+        "sections": ["representativeProjects", "partners", "comparison"]
+      },
+      {
+        "title": "Equitable Earth Coalition Establishes Partnership with Chloris Geospatial in Digital Monitoring, Reporting and Verification",
+        "organization": "Chloris Geospatial",
+        "url": "https://www.chloris.earth/resources/chloris-geospatial-partners-equitable-earth-coalition-hah5h",
+        "type": "Official partnership announcement",
+        "sections": ["representativeProjects", "partners", "standards"]
+      },
+      {
+        "title": "Ecosystem Restoration Standard and Chloris Geospatial announce partnership to assess and certify restoration projects",
+        "organization": "Chloris Geospatial",
+        "url": "https://www.chloris.earth/resources/ecosystem-restoration-standard-and-chloris-geospatial-announce-partnership-to-assess-and-certify-restoration-projects-h2hez",
+        "type": "Official partnership announcement",
+        "sections": ["representativeProjects", "partners", "standards"]
+      },
+      {
+        "title": "Chloris Geospatial partners with BeZero Carbon to strengthen global forest carbon measurement",
+        "organization": "Chloris Geospatial",
+        "url": "https://www.chloris.earth/resources/chloris-geospatial-partners-bezero-carbon",
+        "type": "Official partnership announcement",
+        "sections": ["overview", "representativeProjects", "partners"]
+      },
+      {
+        "title": "Upstream Tech and Chloris Geospatial Partner to Accelerate Access to Forest Carbon Data",
+        "organization": "Chloris Geospatial",
+        "url": "https://www.chloris.earth/resources/chlorispartnerswithupstreamtech",
+        "type": "Official partnership announcement",
+        "sections": ["businessModel", "representativeProjects", "partners"]
+      },
+      {
+        "title": "Chloris Geospatial Raises $8.5 Million Series A to Scale Satellite-Based Forest Carbon Monitoring",
+        "organization": "Chloris Geospatial",
+        "url": "https://www.chloris.earth/resources/chlorisraisesseriesafunding",
+        "type": "Company financing announcement",
+        "sections": ["businessModel", "partners", "financingApproach"]
+      }
+    ],
     "similarityScores": {
       "carbonFirst": 2,
       "supplyChainFocus": 1,
@@ -2150,9 +2269,9 @@
       "restorationFocus": 4,
       "smallholderFocus": 1
     },
-    "researchStatus": "preliminary",
-    "researchConfidence": "Low",
-    "lastReviewed": "2026-06-27",
+    "researchStatus": "complete",
+    "researchConfidence": "High",
+    "lastReviewed": "2026-06-28",
     "methodologyVersion": "v0.1",
     "relationships": {
       "comparable": [
