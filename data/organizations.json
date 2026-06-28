@@ -2540,7 +2540,7 @@
     "hq": "Netherlands",
     "geography": "Emerging markets",
     "strategy": "Development finance",
-    "description": "Provides development finance that can support climate, agriculture, and forestry-related investment where projects fit mandate and risk appetite.",
+    "description": "FMO is the Dutch entrepreneurial development bank, a public-private development finance institution that invests in commercially viable businesses, projects, and financial institutions across developing and emerging markets. It provides long-term loans, direct and fund equity, guarantees, syndications, and capacity development across Agribusiness, Food & Forestry, Energy, and Financial Institutions. In forestry and nature-based solutions, FMO combines its own balance sheet with concessional public programs to address long development periods and risks that can deter commercial investors. Its role is to make impactful private-sector investments bankable, strengthen environmental and social practices, and mobilize additional capital.",
     "examples": [
       "DFI",
       "Emerging markets",
@@ -2549,7 +2549,126 @@
     "featured": false,
     "website": "https://www.fmo.nl/",
     "slug": "fmo",
-    "overview": "Provides development finance that can support climate, agriculture, and forestry-related investment where projects fit mandate and risk appetite.",
+    "overview": "FMO is the Dutch entrepreneurial development bank, founded in 1970 as a public-private development finance institution with the Dutch State holding 51 percent of its shares. It supports sustainable private-sector growth in developing and emerging markets through investments in Agribusiness, Food & Forestry, Energy, and Financial Institutions. FMO finances commercially viable companies and projects with debt, equity, guarantees, and mobilized capital, while capacity development and environmental, social, and governance engagement support customers beyond financing. Forestry is a strategic climate area: FMO invests directly, through debt and equity funds, and through blended-finance programs intended to reduce risk and attract commercial investment.",
+    "businessModel": "Public-private development finance institution investing its own balance sheet and administering public and blended-finance programs. FMO provides medium- and long-term loans, syndicated loans, direct and indirect equity, co-investments, and guarantees to commercially viable private-sector businesses and projects where its financing is intended to be additional to what the market provides. It also mobilizes third-party investors and offers capacity development and ESG support. In forestry, FMO can lend directly, invest in debt or equity funds, and co-invest alongside them, using public concessional resources where risks or long time horizons constrain commercial capital.",
+    "representativeProjects": [
+      "Mobilising Finance for Forests — blended-finance program established by FMO and the UK government in 2021, joined by the Netherlands' Ministry of Foreign Affairs in 2024, to mobilize private investment in tropical forests and sustainable land use",
+      "Responsible Commodities Facility, Brazil — US$10 million MFF-funded debt supporting lower-interest seasonal credit for Cerrado soy farmers committed to zero deforestation and no conversion of native vegetation",
+      "The Reforestation Fund I — equity commitment to a Timberland Investment Group fund targeting degraded land in Brazil, Uruguay, and Chile for FSC-certified commercial forestry and native-forest restoration",
+      "SA Impact Forestry Fund, Paraguay — limited-partner equity investment in a forestry and conservation fund reserving at least 25 percent of managed area for conservation and restoration",
+      "Ecua America Teak, Ecuador — approved long-tenor loan for plantation expansion, sawmill upgrades, and machinery at an Arbaro Fund portfolio company",
+      "Arbaro Fund — forestry fund investment focused on sustainable plantation projects in emerging markets in Latin America and Sub-Saharan Africa"
+    ],
+    "partners": [
+      "Dutch State",
+      "Netherlands Ministry of Foreign Affairs",
+      "UK Foreign, Commonwealth & Development Office",
+      "European Commission",
+      "Green Climate Fund",
+      "FMO Investment Management",
+      "Timberland Investment Group",
+      "Conservation International",
+      "Criterion Africa Partners",
+      "Commercial lenders and institutional co-investors"
+    ],
+    "standards": [
+      "FMO Sustainability Policy Universe, including its exclusion list and position statements",
+      "IFC Performance Standards (2012)",
+      "World Bank Group Environmental, Health and Safety Guidelines",
+      "United Nations Guiding Principles on Business and Human Rights",
+      "DFI Enhanced Blended Concessional Finance Principles for Private Sector Projects",
+      "Forest Stewardship Council (FSC) certification where specified for individual forestry investments; FMO is not a carbon standard or registry"
+    ],
+    "financingApproach": "FMO deploys capital from its own balance sheet through medium- and long-term loans, direct and fund equity, co-investments, and guarantees. It also arranges syndications and mobilizes investors so customers can access larger or more diversified financing packages.\n\nFor higher-risk markets and sectors, FMO blends commercial capital with concessional public funding and risk-sharing from partners including the Dutch and UK governments, the European Commission, and the Green Climate Fund. Public programs can also fund technical assistance and market creation to address barriers before or alongside investment.\n\nIn forestry, patient capital addresses long development periods and limited early cash flow. FMO invests directly and through debt- and equity-oriented funds, using programs such as Building Prospects, the Dutch Fund for Climate and Development, and Mobilising Finance for Forests to de-risk projects and demonstrate models that may attract commercial investors.",
+    "ecosystemFit": "FMO can provide patient, risk-tolerant capital to emerging-market agriculture, forestry, restoration, and nature-based businesses when they meet its development mandate and investment criteria. It may finance companies or funds and mobilize co-investors, but it is not a project developer, farmer aggregator, MRV provider, carbon standard, or registry. Its distinctive role is development finance and market creation across sectors, with forestry forming one part of a broader portfolio.",
+    "sources": [
+      {
+        "title": "Profile",
+        "organization": "FMO",
+        "url": "https://www.fmo.nl/profile",
+        "type": "Institution",
+        "sections": ["overview", "businessModel", "partners", "comparison"]
+      },
+      {
+        "title": "Products and Services",
+        "organization": "FMO",
+        "url": "https://www.fmo.nl/products-and-services",
+        "type": "Institution",
+        "sections": ["overview", "businessModel", "financingApproach", "ecosystemFit", "comparison"]
+      },
+      {
+        "title": "Blended finance",
+        "organization": "FMO",
+        "url": "https://www.fmo.nl/blended-finance",
+        "type": "Finance",
+        "sections": ["businessModel", "partners", "standards", "financingApproach"]
+      },
+      {
+        "title": "Financing Forests",
+        "organization": "FMO",
+        "url": "https://www.fmo.nl/forestry",
+        "type": "Strategy",
+        "sections": ["overview", "businessModel", "financingApproach", "ecosystemFit"]
+      },
+      {
+        "title": "Annual Report 2025 — Performance against our strategy",
+        "organization": "FMO",
+        "url": "https://annualreport.fmo.nl/2025/annual-report-2025/report-of-the-management-board/performance-against-our-strategy",
+        "type": "Annual report",
+        "sections": ["overview", "representativeProjects", "businessModel", "financingApproach"]
+      },
+      {
+        "title": "Annual Report 2025 — Impact and sustainability management",
+        "organization": "FMO",
+        "url": "https://annualreport.fmo.nl/2025/annual-report-2025/sustainability-statement/esrs-2-general-information/esrs-2-iro-management",
+        "type": "Annual report",
+        "sections": ["standards", "businessModel"]
+      },
+      {
+        "title": "Mobilising Finance for Forests Annual Report 2025",
+        "organization": "FMO",
+        "url": "https://mff.fmo.nl/2025/performance-on-our-strategy/highlights",
+        "type": "Program report",
+        "sections": ["representativeProjects", "partners", "financingApproach"]
+      },
+      {
+        "title": "Project detail — The Reforestation Fund I, LP",
+        "organization": "FMO",
+        "url": "https://www.fmo.nl/project-detail/61633",
+        "type": "Investment disclosure",
+        "sections": ["representativeProjects", "partners", "standards"]
+      },
+      {
+        "title": "Project detail — SA Impact Forestry Fund L.P",
+        "organization": "FMO",
+        "url": "https://www.fmo.nl/project-detail/63472",
+        "type": "Investment disclosure",
+        "sections": ["representativeProjects", "standards"]
+      },
+      {
+        "title": "Project detail — Ecua America Teak S.A.S.",
+        "organization": "FMO",
+        "url": "https://www.fmo.nl/project-detail/63929",
+        "type": "Investment disclosure",
+        "sections": ["representativeProjects", "financingApproach", "standards"]
+      },
+      {
+        "title": "Project detail — Arbaro Fund SLP",
+        "organization": "FMO",
+        "url": "https://www.fmo.nl/project-detail/58450",
+        "type": "Investment disclosure",
+        "sections": ["representativeProjects", "financingApproach"]
+      }
+    ],
+    "comparison": {
+      "customer": "Private-sector companies, projects, financial institutions, and investment funds in developing and emerging markets",
+      "primaryRevenue": "Returns from debt and equity investments across a diversified development-finance portfolio",
+      "mainOffering": "Long-term development finance, risk sharing, capital mobilization, and capacity development",
+      "carbonRole": "Climate action spans the portfolio; forestry and nature-based solutions are strategic investment areas rather than a dedicated carbon fund",
+      "financing": "Debt, equity, guarantees, syndications, public funds, and blended finance",
+      "typicalClient": "Emerging-market businesses, project sponsors, banks, and fund managers seeking long-term capital",
+      "platformComparison": "FMO is a development finance institution investing across emerging-market sectors with debt, equity, guarantees, and blended finance, while Climate Asset Management raises dedicated natural-capital funds from institutional and corporate investors. Both finance climate and nature, but FMO acts as a development bank and catalytic capital provider whereas CAM acts as a specialist investment manager; the distinction is about their roles, not their quality."
+    },
     "similarityScores": {
       "carbonFirst": 1,
       "supplyChainFocus": 2,
@@ -2562,9 +2681,9 @@
       "restorationFocus": 3,
       "smallholderFocus": 2
     },
-    "researchStatus": "preliminary",
-    "researchConfidence": "Low",
-    "lastReviewed": "2026-06-27",
+    "researchStatus": "complete",
+    "researchConfidence": "High",
+    "lastReviewed": "2026-06-28",
     "methodologyVersion": "v0.1",
     "relationships": {
       "comparable": [
