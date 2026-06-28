@@ -997,15 +997,13 @@
       const featured = org.featuredComparison
         ? findOrgBySlug(org.featuredComparison, allOrganizations)
         : null;
-      if (featured && featured.name !== org.name && featured.role === org.role) return featured;
+      if (featured && featured.name !== org.name) return featured;
 
-      const comparableSlugs = relationshipSlugs(org, "comparable", allOrganizations);
-      const editorialMatch = comparableSlugs
-        .map(slug => findOrgBySlug(slug, allOrganizations))
-        .find(item => item && item.name !== org.name && item.role === org.role);
-      if (editorialMatch) return editorialMatch;
-
-      return allOrganizations.find(item => item.name !== org.name && item.role === org.role);
+      const fallbackSlug = org.relationships && Array.isArray(org.relationships.comparable)
+        ? org.relationships.comparable[0]
+        : null;
+      const fallback = fallbackSlug ? findOrgBySlug(fallbackSlug, allOrganizations) : null;
+      return fallback && fallback.name !== org.name ? fallback : null;
     }
 
     function renderComparison(org, allOrganizations) {
