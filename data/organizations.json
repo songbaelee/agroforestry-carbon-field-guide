@@ -2898,35 +2898,172 @@
     "name": "Salesforce",
     "role": "buyers",
     "roleLabel": "Buyer",
-    "type": "Corporate carbon buyer",
+    "type": "Corporate carbon buyer and market builder",
     "hq": "United States",
     "geography": "Global procurement",
-    "strategy": "Carbon procurement",
-    "description": "Corporate buyer and climate actor involved in voluntary carbon market demand, including support for higher-quality nature and removal credits.",
+    "strategy": "Procurement, coalitions, and market infrastructure",
+    "description": "Salesforce is a corporate carbon buyer and market-building climate actor. It purchases credits equivalent to annual residual scope 1, 2, and 3 emissions while separately reducing its own footprint, and plans to transition that annual compensation to durable removals by 2040. Its distinct ecosystem role combines procurement with coalitions that aggregate demand, longer-term commitments for engineered and nature-based removals, and marketplace infrastructure that exposes projects, prices, and ratings to more buyers. For developers, these channels can translate corporate commitments into clearer demand signals and contracted future revenue. Salesforce does not develop or certify projects; it influences which solutions scale through purchasing, quality expectations, and lower barriers to buyer participation.",
     "examples": [
-      "Corporate demand",
-      "Climate commitments",
-      "Nature-based credits"
+      "Annual residual-emissions compensation",
+      "Advance market commitments",
+      "Carbon marketplace infrastructure"
     ],
     "featured": false,
     "website": "https://www.salesforce.com/company/sustainability/",
     "slug": "salesforce",
-    "overview": "Corporate buyer and climate actor involved in voluntary carbon market demand, including support for higher-quality nature and removal credits.",
+    "overview": "Salesforce sits on the demand side of the carbon ecosystem: it buys credits for its own residual emissions and works with other companies to create larger, clearer demand for high-integrity climate solutions. It also uses its software-platform capabilities to make project information, third-party ratings, pricing, and purchasing more accessible, but it is not a developer, registry, standard, implementation organization, or natural-capital fund manager.",
+    "representativeProjects": [
+      "Annual carbon-credit portfolio — Salesforce purchases high-quality credits equivalent to the scope 1, 2, and 3 emissions it cannot yet reduce; its current portfolio mixes avoidance and removal, with a target to use only durable removals for annual residual emissions by 2040",
+      "Frontier — Salesforce joined the advance market commitment in 2024 with a $25 million commitment toward permanent carbon removal; its FY26 report identifies new portfolio deals with Planetary, Arbor Energy, and Reverion",
+      "Symbiosis Coalition — Salesforce, Google, Meta, and Microsoft collectively aim to contract for up to 20 million tonnes of high-quality nature-based removals by 2030; the coalition's first joint request for proposals focused on reforestation and agroforestry and streamlines access to multiple buyers",
+      "Net Zero Marketplace — a Salesforce Commerce Cloud marketplace that connects organizations with carbon-credit providers and publishes project information, pricing, and third-party ratings, illustrating how software infrastructure can broaden participation beyond large bilateral buyers",
+      "Blue carbon commitment — a goal to contract for 1 million tonnes of high-quality blue carbon credits by 2030, using buyer demand and market initiatives to support mangrove and other coastal-ecosystem solutions"
+    ],
+    "partners": [
+      "Frontier",
+      "Symbiosis Coalition",
+      "Planetary",
+      "Arbor Energy",
+      "Reverion",
+      "Pachama",
+      "Sylvera",
+      "Calyx Global"
+    ],
+    "standards": [
+      "Credits issued under ICVCM Core Carbon Principles-eligible standards",
+      "Low climate-integrity risk rating from at least one independent carbon-credit ratings agency",
+      "Project assessment that also considers community rights, biodiversity, ecosystem health, adaptation, and resilience",
+      "Symbiosis Quality Pillars and pathway-specific criteria for nature-based removal procurement",
+      "Transparent project information, pricing, and third-party ratings in Net Zero Marketplace"
+    ],
+    "financingApproach": "Salesforce primarily affects carbon finance by creating demand, not by lending to or developing projects. It purchases credits for annual residual-emissions compensation and has committed to contract for $100 million in high-durability carbon dioxide removal through long-term offtakes by 2030. A purchase commitment can give a supplier evidence of future revenue, but the supplier still raises and manages the separate capital needed to build and operate its project.\n\nCoalitions amplify that mechanism. Frontier pools corporate commitments for permanent removal, while Symbiosis aggregates demand from Salesforce, Google, Meta, and Microsoft for nature-based removals. Symbiosis's joint diligence and request-for-proposals process gives developers one route to multiple potential buyers; long-term member offtakes and willingness to pay the cost of high-quality restoration are intended to reduce demand uncertainty and help qualifying projects attract financing.\n\nMarketplace infrastructure works at a different scale. Net Zero Marketplace lowers search and participation costs by presenting projects, prices, and third-party ratings to organizations that may lack a large in-house procurement team. Together with buyer education and support for integrity criteria, that can build confidence and widen demand. These are indirect financing effects: Salesforce can improve revenue visibility and market access, but it is not thereby acting as a project lender, fund manager, registry, or developer.",
+    "businessModel": "Salesforce is a software company whose relevant ecosystem role combines corporate carbon procurement with market-building. Corporate funds pay for credits and advance purchase commitments; coalitions aggregate its demand with that of peer buyers; and Salesforce's Commerce Cloud supports marketplace infrastructure connecting outside buyers with credit providers. The carbon-market activity supports Salesforce's climate strategy and platform ecosystem rather than making Salesforce a project developer, farmer aggregator, registry, carbon standard, implementation organization, or natural-capital fund manager.",
+    "sources": [
+      {
+        "title": "FY26 Stakeholder Impact Report",
+        "organization": "Salesforce",
+        "url": "https://www.salesforce.com/en-us/wp-content/uploads/sites/4/documents/white-papers/salesforce-fy26-stakeholder-impact-report.pdf",
+        "type": "Annual report",
+        "kind": "PDF",
+        "sections": [
+          "overview",
+          "representativeProjects",
+          "partners",
+          "standards",
+          "financingApproach",
+          "businessModel",
+          "comparison"
+        ]
+      },
+      {
+        "title": "Salesforce on Carbon Credits",
+        "organization": "Salesforce",
+        "url": "https://www.salesforce.com/en-us/wp-content/uploads/sites/4/assets/pdf/reports/carbon-markets.pdf",
+        "type": "Strategy report",
+        "kind": "PDF",
+        "sections": [
+          "overview",
+          "representativeProjects",
+          "standards",
+          "financingApproach",
+          "businessModel"
+        ]
+      },
+      {
+        "title": "Salesforce Accelerates Energy Transition with New Climate Investments",
+        "organization": "Salesforce",
+        "url": "https://www.salesforce.com/news/stories/energy-transition-investments/",
+        "type": "Official announcement",
+        "sections": [
+          "representativeProjects",
+          "partners",
+          "financingApproach"
+        ]
+      },
+      {
+        "title": "Salesforce Commits to Investing $100 Million to Scale and Commercialize Carbon Removal Technologies",
+        "organization": "Salesforce",
+        "url": "https://www.salesforce.com/news/stories/salesforce-carbon-removal-commitment-first-movers-coalition/",
+        "type": "Official announcement",
+        "sections": [
+          "representativeProjects",
+          "financingApproach",
+          "businessModel"
+        ]
+      },
+      {
+        "title": "Salesforce Announces Carbon Credit Marketplace",
+        "organization": "Salesforce",
+        "url": "https://www.salesforce.com/news/press-releases/2022/09/20/salesforce-announces-carbon-credit-marketplace/",
+        "type": "Official announcement",
+        "sections": [
+          "overview",
+          "representativeProjects",
+          "partners",
+          "standards",
+          "financingApproach",
+          "businessModel",
+          "comparison"
+        ]
+      },
+      {
+        "title": "Symbiosis Coalition Launch Press Release",
+        "organization": "Symbiosis Coalition",
+        "url": "https://www.symbiosiscoalition.org/perspectives/launch-press-release",
+        "type": "Coalition announcement",
+        "sections": [
+          "representativeProjects",
+          "partners",
+          "standards",
+          "financingApproach",
+          "comparison"
+        ]
+      },
+      {
+        "title": "Symbiosis Coalition Launches First Joint RFP, Focusing on Reforestation and Agroforestry Projects",
+        "organization": "Symbiosis Coalition",
+        "url": "https://www.symbiosiscoalition.org/perspectives/rfp-launch",
+        "type": "Procurement announcement",
+        "sections": [
+          "representativeProjects",
+          "standards",
+          "financingApproach"
+        ]
+      },
+      {
+        "title": "Carbon Removal Program",
+        "organization": "Microsoft",
+        "url": "https://www.microsoft.com/en-us/corporate-responsibility/sustainability/carbon-removal-program",
+        "type": "Program guidance",
+        "sections": [
+          "comparison"
+        ]
+      }
+    ],
+    "comparison": {
+      "customer": "Salesforce's internal sustainability program is the buyer for its own portfolio; Net Zero Marketplace also serves outside organizations seeking access to carbon-credit providers and project information",
+      "primaryRevenue": "Salesforce earns primarily from enterprise software; carbon procurement is a corporate climate expense, while its relevant market offering is software-based marketplace infrastructure rather than revenue from developing or issuing credits",
+      "mainOffering": "Corporate demand combined with advance market commitments, coalition participation, buyer education, quality advocacy, and marketplace infrastructure",
+      "carbonRole": "Purchaser and eventual retiree of credits for annual residual emissions, coalition member supporting new removal supply, and platform provider connecting other buyers with credit providers",
+      "financing": "Purchases, long-term offtake commitments, and pooled demand can create future revenue signals for suppliers; marketplace access can broaden demand, but Salesforce does not ordinarily provide project loans or manage project capital",
+      "typicalClient": "Procurement counterparties include credit providers and engineered- and nature-based removal suppliers; marketplace users are organizations seeking accessible project information, ratings, pricing, and purchasing",
+      "platformComparison": "Salesforce and Microsoft are both sophisticated corporate carbon buyers and members of the Symbiosis Coalition, but they make different market functions especially visible. Microsoft's program is known for very large, project-specific, long-term bilateral offtakes that can anchor individual suppliers and projects. Salesforce is more useful for understanding ecosystem building: it combines its own portfolio and durable-removal commitments with coalitions, aggregated demand, buyer education, quality advocacy, and marketplace infrastructure intended to bring more organizations into the market. Both create demand; Microsoft more visibly demonstrates bilateral scale, while Salesforce demonstrates how procurement can be paired with shared market infrastructure and collective action."
+    },
     "similarityScores": {
-      "carbonFirst": 1,
+      "carbonFirst": 2,
       "supplyChainFocus": 1,
       "technicalAssistance": 1,
       "farmerImplementation": 1,
       "technologyMRV": 2,
       "capitalProvision": 3,
-      "standardSetting": 1,
+      "standardSetting": 2,
       "corporateDemand": 5,
-      "restorationFocus": 3,
+      "restorationFocus": 4,
       "smallholderFocus": 1
     },
-    "researchStatus": "preliminary",
-    "researchConfidence": "Low",
-    "lastReviewed": "2026-06-27",
+    "researchStatus": "complete",
+    "researchConfidence": "High",
+    "lastReviewed": "2026-06-28",
     "methodologyVersion": "v0.1",
     "relationships": {
       "comparable": [
@@ -2935,9 +3072,10 @@
         "mars"
       ],
       "collaborators": [
+        "microsoft",
+        "pachama",
         "carbon-removal-suppliers",
-        "standards",
-        "developers"
+        "standards"
       ]
     },
     "featuredComparison": "microsoft"
