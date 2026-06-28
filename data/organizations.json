@@ -398,7 +398,166 @@
     "featured": false,
     "website": "https://www.re.green/",
     "slug": "re-green",
-    "overview": "Develops large-scale ecological restoration projects with carbon revenue, biodiversity, and native ecosystem recovery at the center of the model.",
+    "overview": "re.green is a Brazilian ecological landscape restoration company that develops and manages native-forest projects in the Amazon and Atlantic Forest. Its Total Forest Stewardship model combines active restoration, assisted natural regeneration, conservation of forest remnants, science-led land selection and design, technology-enabled monitoring, and local community engagement. The company commercializes verified carbon removals and other forest products and services to make large-scale, biodiverse restoration financially durable.",
+    "businessModel": "Vertically integrated ecological restoration developer and forest manager. re.green identifies and secures degraded land through acquisitions and partnerships, designs and implements restoration with native species, manages seed and seedling supply through Bioflora and partner nurseries, monitors ecological and carbon outcomes, and sells high-integrity carbon removals through long-term corporate offtakes and public procurement programs. Its public materials also describe sustainable native-timber and other biological products as complementary revenue streams in suitable projects.",
+    "representativeProjects": [
+      "Ouro Verde, Eunápolis, Bahia — Atlantic Forest restoration and part of re.green's first Verra-certified carbon-credit issuance",
+      "Belo Horizonte, Potiraguá, Bahia — Atlantic Forest restoration and part of re.green's first Verra-certified carbon-credit issuance",
+      "Entre Rios, Maracaçumé, Maranhão — large-scale Amazon restoration project",
+      "Ipê, Paragominas, Pará — re.green's first property-based restoration project in Pará",
+      "Gameleira, Mascote, Bahia — Atlantic Forest restoration in southern Bahia",
+      "Microsoft carbon-removal program — restoration across the Amazon and Atlantic Forest under two long-term offtake agreements",
+      "ProFloresta+ Amazon restoration project — more than 4,800 hectares and approximately 1 million carbon credits contracted for Petrobras over 25 years"
+    ],
+    "partners": [
+      "Microsoft",
+      "Nestlé",
+      "Vivo/Telefônica",
+      "Petrobras",
+      "BNDES",
+      "Bradesco",
+      "Agro Penido",
+      "Bioflora",
+      "Public and private landowners",
+      "Local nurseries and communities"
+    ],
+    "standards": [
+      "Verra Verified Carbon Standard (VCS)",
+      "Climate, Community & Biodiversity Standards (CCB)",
+      "ICVCM Core Carbon Principles (CCP) label required for ProFloresta+ credits"
+    ],
+    "financingApproach": "re.green blends long-term carbon purchase commitments, project-level debt, corporate restoration contracts, and land partnerships. Microsoft signed two carbon-removal offtakes covering restoration in the Amazon and Atlantic Forest; the first calls for about 3 million tonnes of removals over 15 years, and the second adds nearly 3.5 million tonnes. In 2025, re.green secured R$80 million from BNDES's Climate Fund, backed by a Bradesco guarantee and biodiversity labeling, for restoration across more than 16,000 hectares. In 2026, ProFloresta+ selected re.green to supply Petrobras with 1 million Amazon restoration credits over 25 years, providing long-term contracted demand. Verified credit sales, sustainable native-timber and other forest products, and agreements with corporate clients and landowners form additional parts of the model.",
+    "sources": [
+      {
+        "title": "re.green home",
+        "organization": "re.green",
+        "url": "https://re.green/en/",
+        "type": "Company",
+        "sections": [
+          "overview",
+          "businessModel"
+        ]
+      },
+      {
+        "title": "Total Forest Stewardship",
+        "organization": "re.green",
+        "url": "https://re.green/en/total-forest-stewardship/",
+        "type": "Company",
+        "sections": [
+          "overview",
+          "businessModel"
+        ]
+      },
+      {
+        "title": "How we do it",
+        "organization": "re.green",
+        "url": "https://re.green/en/how-we-do-it/",
+        "type": "Project",
+        "sections": [
+          "businessModel",
+          "representativeProjects",
+          "standards",
+          "partners"
+        ]
+      },
+      {
+        "title": "re.green issues landmark carbon credits from native-species restoration in the Atlantic Forest",
+        "organization": "re.green",
+        "url": "https://re.green/en/noticias/re-green-issues-landmark-carbon-credits-from-native-species-restoration-in-the-atlantic-forest/",
+        "type": "Official announcement",
+        "sections": [
+          "representativeProjects",
+          "standards",
+          "financingApproach"
+        ]
+      },
+      {
+        "title": "re.green signs a landmark forest restoration project with Microsoft",
+        "organization": "re.green",
+        "url": "https://re.green/en/historias/re-green-signs-a-landmark-forest-restoration-project-with-microsoft/",
+        "type": "Official announcement",
+        "sections": [
+          "representativeProjects",
+          "partners",
+          "financingApproach"
+        ]
+      },
+      {
+        "title": "re.green + Microsoft: a landmark agreement",
+        "organization": "re.green",
+        "url": "https://re.green/en/historias/re-green-microsoft-a-landmark-agreement/",
+        "type": "Official announcement",
+        "sections": [
+          "representativeProjects",
+          "partners",
+          "financingApproach"
+        ]
+      },
+      {
+        "title": "re.green secures R$ 80 million from Brazil's Climate Fund in landmark biodiversity-labeled transaction",
+        "organization": "re.green",
+        "url": "https://re.green/en/historias/re-green-secures-r-80-million-from-brazils-climate-fund-in-landmark-biodiversity-labeled-transaction/",
+        "type": "Finance",
+        "sections": [
+          "partners",
+          "financingApproach"
+        ]
+      },
+      {
+        "title": "re.green is selected for ProFloresta+ to restore the Amazon alongside Petrobras and BNDES",
+        "organization": "re.green",
+        "url": "https://re.green/en/noticias/re-green-is-selected-for-profloresta-to-restore-the-amazon-alongside-petrobras-and-bndes/",
+        "type": "Official announcement",
+        "sections": [
+          "representativeProjects",
+          "partners",
+          "standards",
+          "financingApproach"
+        ]
+      },
+      {
+        "title": "Petrobras and BNDES announce winners of the first ProFloresta+ auction",
+        "organization": "Petrobras",
+        "url": "https://agencia.petrobras.com.br/w/sustentabilidade/petrobras-e-bndes-anunciam-vencedores-do-primeiro-leil%C3%A3o-do-profloresta-",
+        "type": "Official announcement",
+        "sections": [
+          "representativeProjects",
+          "partners",
+          "financingApproach"
+        ]
+      },
+      {
+        "title": "Nestlé and re.green partner to restore cocoa and coffee landscapes in Southern Bahia",
+        "organization": "re.green",
+        "url": "https://re.green/historias/nestle-e-re-green-firmam-parceria-para-restaurar-paisagens-produtoras-de-cacau-e-cafe-no-sul-da-bahia/",
+        "type": "Official announcement",
+        "sections": [
+          "representativeProjects",
+          "partners",
+          "financingApproach"
+        ]
+      },
+      {
+        "title": "re.green and Vivo/Telefônica sign 30-year partnership to restore a critical area in the Amazon",
+        "organization": "re.green",
+        "url": "https://re.green/en/historias/re-green-and-vivo-telefonica-sign-30-year-partnership-to-restore-a-critical-area-in-the-amazon/",
+        "type": "Official announcement",
+        "sections": [
+          "representativeProjects",
+          "partners",
+          "financingApproach"
+        ]
+      }
+    ],
+    "comparison": {
+      "customer": "Corporate carbon-removal buyers, companies funding landscape restoration, public credit purchasers, and landowners",
+      "primaryRevenue": "Long-term carbon-removal sales and forest products and services",
+      "mainOffering": "Vertically integrated, large-scale native-forest restoration and stewardship",
+      "carbonRole": "Core product and principal restoration-finance mechanism",
+      "financing": "Corporate offtakes and restoration contracts, public carbon procurement, project debt, land partnerships, and forest-product revenue",
+      "typicalClient": "Microsoft, Nestlé, Vivo/Telefônica, Petrobras, and public or private landowners",
+      "platformComparison": "Compared with Acorn, re.green is a vertically integrated developer focused on large contiguous native-ecosystem restoration projects in Brazil, including land access, nursery supply, implementation, long-term forest management, and carbon commercialization. Acorn instead operates primarily as a platform working through local partners to aggregate smallholder agroforestry projects across multiple countries and share carbon revenue with participating farmers."
+    },
     "similarityScores": {
       "carbonFirst": 5,
       "supplyChainFocus": 1,
@@ -411,8 +570,8 @@
       "restorationFocus": 5,
       "smallholderFocus": 1
     },
-    "researchStatus": "preliminary",
-    "researchConfidence": "Low",
+    "researchStatus": "complete",
+    "researchConfidence": "High",
     "lastReviewed": "2026-06-27",
     "methodologyVersion": "v0.1",
     "relationships": {
