@@ -48,7 +48,7 @@
     }
 
     .nav-inner {
-      max-width: 1180px;
+      max-width: 1400px;
       margin: 0 auto;
       padding: 16px 24px;
       display: flex;
@@ -88,16 +88,16 @@
     .nav-links a.active { color: var(--ink); }
 
     main {
-      max-width: 1180px;
+      max-width: 1400px;
       margin: 0 auto;
-      padding: 64px 24px 96px;
+      padding: 34px 24px 88px;
     }
 
     .hero {
       display: grid;
-      grid-template-columns: minmax(0, 0.95fr) minmax(320px, 0.45fr);
-      gap: 18px;
-      align-items: stretch;
+      grid-template-columns: minmax(0, 1fr) minmax(280px, 340px);
+      gap: 14px;
+      align-items: center;
     }
 
     .hero-card,
@@ -110,8 +110,8 @@
     }
 
     .hero-card {
-      padding: 34px;
-      min-height: 320px;
+      padding: 26px 30px 28px;
+      min-height: 0;
       background:
         radial-gradient(circle at 82% 12%, rgba(185, 240, 107, 0.26), transparent 18rem),
         linear-gradient(145deg, rgba(18, 59, 42, 0.98), rgba(28, 82, 52, 0.94));
@@ -121,7 +121,7 @@
 
     .eyebrow {
       display: inline-flex;
-      padding: 8px 12px;
+      padding: 6px 10px;
       border-radius: 999px;
       background: rgba(255, 250, 240, 0.11);
       border: 1px solid rgba(255, 250, 240, 0.16);
@@ -131,27 +131,28 @@
     }
 
     h1 {
-      margin: 24px 0 18px;
+      margin: 14px 0 10px;
       max-width: 760px;
-      font-size: clamp(48px, 7.2vw, 86px);
-      line-height: 0.88;
-      letter-spacing: -0.075em;
+      font-size: clamp(38px, 4.35vw, 52px);
+      line-height: 0.94;
+      letter-spacing: -0.065em;
     }
 
     .hero-card p {
       margin: 0;
       max-width: 720px;
       color: rgba(255, 250, 240, 0.72);
-      font-size: clamp(18px, 2vw, 22px);
-      line-height: 1.45;
+      font-size: 16px;
+      line-height: 1.5;
     }
 
     .control-card {
-      padding: 24px;
+      padding: 18px 20px;
       display: flex;
       flex-direction: column;
       justify-content: center;
       gap: 12px;
+      min-height: 112px;
     }
 
     label {
@@ -175,22 +176,27 @@
     }
 
     .layout {
-      margin-top: 18px;
+      margin-top: 14px;
       display: grid;
-      grid-template-columns: minmax(0, 0.72fr) minmax(420px, 1.28fr);
-      gap: 18px;
+      grid-template-columns: minmax(250px, 290px) minmax(0, 1fr);
+      gap: 14px;
       align-items: start;
     }
 
+    .layout > aside {
+      position: sticky;
+      top: 86px;
+    }
+
     .panel {
-      padding: 24px;
+      padding: 22px;
     }
 
     .panel h2 {
       margin: 0 0 14px;
-      font-size: clamp(28px, 4vw, 44px);
-      line-height: 0.95;
-      letter-spacing: -0.06em;
+      font-size: clamp(26px, 3vw, 38px);
+      line-height: 1;
+      letter-spacing: -0.05em;
     }
 
     .rank-list {
@@ -203,8 +209,8 @@
       grid-template-columns: 1fr auto;
       gap: 14px;
       align-items: center;
-      padding: 16px;
-      border-radius: 22px;
+      padding: 12px;
+      border-radius: 17px;
       background: rgba(255, 250, 240, 0.56);
       border: 1px solid rgba(20, 34, 26, 0.08);
       transition: transform 160ms ease, background 160ms ease;
@@ -220,7 +226,7 @@
     .rank-card strong {
       display: block;
       margin-bottom: 4px;
-      font-size: 20px;
+      font-size: 17px;
       letter-spacing: -0.04em;
     }
 
@@ -233,9 +239,9 @@
 
     .score {
       display: inline-flex;
-      min-width: 68px;
+      min-width: 56px;
       justify-content: center;
-      padding: 8px 10px;
+      padding: 7px 9px;
       border-radius: 999px;
       background: rgba(185, 240, 107, 0.3);
       color: var(--green);
@@ -252,21 +258,29 @@
 
     .compare-row {
       display: grid;
-      grid-template-columns: 190px repeat(2, minmax(0, 1fr));
+      grid-template-columns: minmax(120px, 150px) repeat(2, minmax(0, 1fr));
       border-bottom: 1px solid var(--line);
     }
 
     .compare-row:last-child { border-bottom: 0; }
 
     .compare-row > div {
-      padding: 15px 16px;
+      padding: 12px 14px;
       color: var(--muted);
       font-size: 14px;
-      line-height: 1.35;
+      line-height: 1.4;
+      min-width: 0;
+      overflow-wrap: anywhere;
+    }
+
+    .compare-row.long-copy > div {
+      padding-top: 17px;
+      padding-bottom: 18px;
+      line-height: 1.55;
     }
 
     .table-cell-paragraphs p {
-      margin: 0.8em 0 0;
+      margin: 1em 0 0;
     }
 
     .table-cell-paragraphs p:first-child {
@@ -347,7 +361,7 @@
       margin-top: 18px;
       color: var(--muted);
       font-size: 13px;
-      line-height: 1.45;
+      line-height: 1.5;
     }
 
     .status-badge {
@@ -405,7 +419,7 @@
     }
 
     footer {
-      max-width: 1180px;
+      max-width: 1400px;
       margin: 0 auto;
       padding: 0 24px 42px;
       color: var(--muted);
@@ -413,17 +427,24 @@
     }
 
     @media (max-width: 980px) {
-      .hero,
-      .layout { grid-template-columns: 1fr; }
-      .compare-row,
-      .bar-row { grid-template-columns: 1fr; }
-      .compare-row > div:first-child { border-bottom: 1px solid var(--line); }
+      .hero { grid-template-columns: minmax(0, 1fr) minmax(250px, 300px); }
+      .layout { grid-template-columns: 230px minmax(0, 1fr); }
+      .layout > aside { position: static; }
+      .panel { padding: 18px; }
+      .compare-row { grid-template-columns: 112px repeat(2, minmax(0, 1fr)); }
+      .compare-row > div { padding-right: 11px; padding-left: 11px; }
+      .bar-row { grid-template-columns: 130px 1fr 1fr; }
     }
 
     @media (max-width: 720px) {
       main { padding-top: 36px; }
       .nav-links { display: none; }
-      .hero-card { min-height: auto; padding: 26px; }
+      .hero,
+      .layout { grid-template-columns: 1fr; }
+      .hero-card { min-height: auto; padding: 24px; }
+      .compare-row,
+      .bar-row { grid-template-columns: 1fr; }
+      .compare-row > div:first-child { border-bottom: 1px solid var(--line); }
     }
   </style>
 </head>
@@ -654,7 +675,7 @@
           <div class="name">${escapeHtml(other.name)}</div>
         </div>
         ${comparisonRows.map(([label, getter, useParagraphs]) => `
-          <div class="compare-row">
+          <div class="compare-row${useParagraphs ? " long-copy" : ""}">
             <div>${escapeHtml(label)}</div>
             <div>${useParagraphs ? longTextParagraphs(getter(org)) : escapeHtml(getter(org))}</div>
             <div>${useParagraphs ? longTextParagraphs(getter(other)) : escapeHtml(getter(other))}</div>
