@@ -2704,32 +2704,181 @@
     "type": "Corporate carbon buyer",
     "hq": "United States",
     "geography": "Global procurement",
-    "strategy": "Carbon procurement",
-    "description": "A major corporate buyer whose carbon removal procurement helps shape expectations for quality, durability, monitoring, and delivery risk.",
+    "strategy": "Portfolio carbon-removal procurement",
+    "description": "Microsoft is a demand-side participant in the carbon-removal market: it buys removals to address residual emissions on the way to becoming carbon negative by 2030 and, by 2050, to counterbalance its historical operational emissions. Its significance to developers comes from the scale, duration, and selectivity of its procurement. By signing forward offtake agreements across forest restoration, improved forest management, soils, biochar, mineralization, and other pathways, Microsoft can give suppliers predictable future revenue while signaling expectations for additionality, lifecycle net negativity, durability, monitoring, safeguards, and remedies if delivery fails.",
     "examples": [
-      "Carbon removals",
-      "Corporate demand",
-      "Quality signals"
+      "Long-term removal offtakes",
+      "Nature-based and engineered portfolio",
+      "Demand-side quality signals"
     ],
     "featured": true,
-    "website": "https://www.microsoft.com/en-us/corporate-responsibility/sustainability",
+    "website": "https://www.microsoft.com/en-us/corporate-responsibility/sustainability/carbon-removal-program",
     "slug": "microsoft",
-    "overview": "A major corporate buyer whose carbon removal procurement helps shape expectations for quality, durability, monitoring, and delivery risk.",
+    "overview": "Microsoft sits between its corporate climate commitments and a global network of carbon-removal suppliers: it purchases and retires future removals but does not develop or certify the underlying projects. Developers care because a large, long-dated purchase commitment can validate demand, establish a future revenue stream, and help a project attract the separate debt or equity needed to build and operate.",
+    "representativeProjects": [
+      "re.green, Brazil — two long-term offtakes totaling nearly 6.5 million tonnes from restoration of 33,000 hectares in the Amazon and Atlantic Forest, illustrating large-scale native-ecosystem restoration procurement",
+      "Project Olympic Rainforest, Washington State — up to 700,000 improved-forest-management credits through 2035 from a 68,000-acre Climate Asset Management asset operated by EFM; long-term Microsoft and Meta contracts cover substantially all projected carbon removals",
+      "Chestnut Carbon, United States — more than 7 million afforestation, reforestation, and revegetation credits under forward-starting 25-year terms, supporting expansion of restoration across former agricultural land",
+      "BTG Pactual Timberland Investment Group, Latin America — up to 8 million nature-based removal credits through 2043 from a $1 billion reforestation and restoration strategy",
+      "Living Carbon, Appalachia — 1.4 million Isometric-verified credits from reforesting 25,000 acres of degraded and formerly mined land",
+      "neustark, Europe — 27,600 tonnes over six years from mineralizing biogenic carbon dioxide in demolished concrete, demonstrating procurement of smaller-volume, highly durable engineered removal"
+    ],
+    "partners": [
+      "re.green",
+      "Climate Asset Management",
+      "EFM",
+      "Chestnut Carbon",
+      "BTG Pactual Timberland Investment Group",
+      "Living Carbon",
+      "neustark",
+      "Symbiosis Coalition"
+    ],
+    "standards": [
+      "Microsoft Criteria for High-Quality Carbon Dioxide Removal",
+      "Independent scientific review and third-party verification",
+      "Verra Verified Carbon Standard (project-specific)",
+      "Isometric Standard (project-specific)",
+      "Forest Stewardship Council certification (project-specific)"
+    ],
+    "financingApproach": "Microsoft primarily provides demand through carbon-removal purchase agreements rather than lending to, managing, or implementing projects. Its procurement includes delivered-credit purchases and long-term forward offtakes under which a supplier commits to deliver verified removals over future years. Microsoft reported signing agreements for 45 million tonnes with 21 companies in FY25, across both nature-based and engineered pathways.\n\nFor a developer, a credible long-term buyer reduces uncertainty about whether future credits will sell and creates more predictable contracted revenue. That revenue visibility can improve bankability and help the developer or asset owner raise separate construction capital, project debt, or equity. Project Olympic Rainforest makes the mechanism concrete: Microsoft and Meta offtakes secured commitments for substantially all projected removals, while Climate Asset Management said the contracts reduced carbon-revenue risk and supported the asset's investment case.\n\nThe financing effect is indirect but consequential. Microsoft does not become the project developer merely by signing an offtake, and an offtake is not automatically a loan. Instead, its contractual demand can give capital providers greater confidence that a new restoration, forestry, or engineered-removal facility will have customers after it begins delivering. Portfolio diversification across durability, geography, technology, and delivery timing also manages the buyer's own under-delivery and reversal risks while supporting multiple forms of new supply.",
+    "businessModel": "Corporate carbon-removal procurement. Microsoft uses corporate funds to buy independently reviewed and verified removals from third-party suppliers, then retires delivered credits against its residual and historical-emissions commitments. It creates demand and sets contractual quality requirements, but it is not the project developer, implementation organization, registry, carbon standard, or fund manager.",
+    "sources": [
+      {
+        "title": "Carbon Removal Program",
+        "organization": "Microsoft",
+        "url": "https://www.microsoft.com/en-us/corporate-responsibility/sustainability/carbon-removal-program",
+        "type": "Program guidance",
+        "sections": [
+          "overview",
+          "standards",
+          "businessModel",
+          "financingApproach"
+        ]
+      },
+      {
+        "title": "From farms to oceans: How Microsoft is working to scale carbon dioxide removal",
+        "organization": "Microsoft",
+        "url": "https://news.microsoft.com/source/features/sustainability/from-farms-to-oceans-how-microsoft-is-working-to-scale-carbon-dioxide-removal/",
+        "type": "Portfolio update",
+        "sections": [
+          "overview",
+          "representativeProjects",
+          "partners",
+          "financingApproach"
+        ]
+      },
+      {
+        "title": "Our 2025 Environmental Sustainability Report",
+        "organization": "Microsoft",
+        "url": "https://blogs.microsoft.com/on-the-issues/2025/05/29/environmental-sustainability-report/",
+        "type": "Annual report",
+        "sections": [
+          "overview",
+          "businessModel",
+          "financingApproach"
+        ]
+      },
+      {
+        "title": "re.green + Microsoft: a landmark agreement",
+        "organization": "re.green",
+        "url": "https://re.green/en/historias/re-green-microsoft-a-landmark-agreement/",
+        "type": "Official announcement",
+        "sections": [
+          "representativeProjects",
+          "partners",
+          "standards"
+        ]
+      },
+      {
+        "title": "Climate Asset Management's U.S. Forestry Project Secures Long-Term Carbon Credit Offtake Agreement with Microsoft",
+        "organization": "Climate Asset Management",
+        "url": "https://climateassetmanagement.com/insight/climate-asset-managements-u-s-forestry-project-secures-long-term-carbon-credit-offtake-agreement-with-microsoft/",
+        "type": "Official announcement",
+        "sections": [
+          "representativeProjects",
+          "partners",
+          "financingApproach"
+        ]
+      },
+      {
+        "title": "Chestnut Carbon Inks Deal with Microsoft for Groundbreaking New Carbon Removal Project",
+        "organization": "Chestnut Carbon",
+        "url": "https://chestnutcarbon.com/news-resources/chestnut-carbon-inks-deal-with-microsoft-for-groundbreaking-new-carbon-removal-project/",
+        "type": "Official announcement",
+        "sections": [
+          "representativeProjects",
+          "partners",
+          "financingApproach"
+        ]
+      },
+      {
+        "title": "BTG Pactual Timberland Investment Group to provide Microsoft with 8 million carbon removal credits",
+        "organization": "BTG Pactual",
+        "url": "https://content.btgpactual.com/blog/institucional/btg-pactual-timberland-investment-group-fornecera-8-milhoes-de-creditos-de-carbono-a-microsoft",
+        "type": "Official announcement",
+        "sections": [
+          "representativeProjects",
+          "partners",
+          "financingApproach"
+        ]
+      },
+      {
+        "title": "Living Carbon Announces Agreement with Microsoft for 1.4 Million Tonnes of Carbon Removal",
+        "organization": "Living Carbon",
+        "url": "https://www.livingcarbon.com/press-releases/living-carbon-announces-agreement-with-microsoft",
+        "type": "Official announcement",
+        "sections": [
+          "representativeProjects",
+          "partners",
+          "standards"
+        ]
+      },
+      {
+        "title": "neustark to deliver high-quality carbon removal in a multi-year offtake agreement with Microsoft",
+        "organization": "Microsoft",
+        "url": "https://news.microsoft.com/source/emea/2024/02/neustark-to-deliver-high-quality-carbon-removal-in-a-multi-year-offtake-agreement-with-microsoft/",
+        "type": "Official announcement",
+        "sections": [
+          "representativeProjects",
+          "partners",
+          "standards"
+        ]
+      },
+      {
+        "title": "FY26 Stakeholder Impact Report",
+        "organization": "Salesforce",
+        "url": "https://www.salesforce.com/en-us/wp-content/uploads/sites/4/documents/white-papers/salesforce-fy26-stakeholder-impact-report.pdf",
+        "type": "Annual report",
+        "kind": "PDF",
+        "sections": [
+          "comparison"
+        ]
+      }
+    ],
+    "comparison": {
+      "customer": "Microsoft's internal corporate climate program is the buyer; project developers and removal suppliers are counterparties rather than customers of a Microsoft carbon product",
+      "primaryRevenue": "Microsoft's carbon-removal activity is a procurement expense funded by the corporation, not a carbon-credit revenue business",
+      "mainOffering": "Large-scale demand for independently reviewed and verified future carbon removals across a diversified portfolio",
+      "carbonRole": "Corporate purchaser and eventual retiree of removal credits for residual and historical emissions",
+      "financing": "Long-term offtakes create contracted future revenue that can reduce market risk and support suppliers in raising separate debt or equity; Microsoft does not ordinarily act as the project lender",
+      "typicalClient": "Counterparties include restoration and forestry developers, soil-carbon programs, biochar and mineralization companies, direct-air-capture and biomass-removal suppliers, and project aggregators",
+      "platformComparison": "Microsoft and Salesforce are both sophisticated corporate buyers and participate together in the Symbiosis Coalition, but their procurement programs emphasize different functions. Microsoft has built an unusually large, project-specific portfolio of long-term removal offtakes intended to supply its carbon-negative and historical-emissions commitments. Salesforce currently uses a disclosed mix of avoidance and removal credits to compensate for 100% of annual residual emissions, while committing $100 million to high-durability removal offtakes by 2030 and a transition to durable removals for annual residual emissions by 2040. Salesforce also uses coalitions, nature initiatives, and its marketplace platform to broaden participation; Microsoft more visibly demonstrates how very large bilateral forward purchases can anchor new supply."
+    },
     "similarityScores": {
-      "carbonFirst": 1,
-      "supplyChainFocus": 1,
+      "carbonFirst": 2,
+      "supplyChainFocus": 2,
       "technicalAssistance": 1,
       "farmerImplementation": 1,
       "technologyMRV": 3,
-      "capitalProvision": 3,
-      "standardSetting": 1,
+      "capitalProvision": 4,
+      "standardSetting": 3,
       "corporateDemand": 5,
-      "restorationFocus": 3,
+      "restorationFocus": 4,
       "smallholderFocus": 1
     },
-    "researchStatus": "preliminary",
-    "researchConfidence": "Low",
-    "lastReviewed": "2026-06-27",
+    "researchStatus": "complete",
+    "researchConfidence": "High",
+    "lastReviewed": "2026-06-28",
     "methodologyVersion": "v0.1",
     "relationships": {
       "comparable": [
@@ -2738,9 +2887,9 @@
         "mars"
       ],
       "collaborators": [
-        "carbon-removal-suppliers",
-        "standards",
-        "developers"
+        "re-green",
+        "climate-asset-management",
+        "verra"
       ]
     },
     "featuredComparison": "salesforce"
