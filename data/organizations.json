@@ -923,7 +923,7 @@
     "featured": false,
     "website": "https://www.crs.org/",
     "slug": "catholic-relief-services",
-    "overview": "Catholic Relief Services (CRS) is the official international humanitarian agency of the Catholic community in the United States and works globally across emergency response, agriculture, livelihoods, climate resilience, and development programming. In the agroforestry carbon field, CRS is most relevant as an implementation and climate-resilience partner: helping vulnerable farmers and communities restore degraded landscapes, adopt agroforestry and nature-based solutions, strengthen livelihoods, and explore carbon finance as one layer of support for adaptation and resilience.",
+    "overview": "Catholic Relief Services (CRS) is the official international humanitarian agency of the Catholic community in the United States. Its fiscal 2024 annual report describes work in 134 countries with 1,978 local partners, including 113 agriculture projects in 47 countries. CRS implements nearly all of its programming with local organizations and combines agriculture, livelihoods, humanitarian response, institutional strengthening, and climate resilience. In agroforestry carbon, CRS is most relevant as a community-centered implementation partner that can organize restoration, farmer support, local governance, and safeguards while linking carbon finance to adaptation, food security, and durable livelihood outcomes.",
     "similarityScores": {
       "carbonFirst": 1,
       "supplyChainFocus": 2,
@@ -951,15 +951,18 @@
         "farmer-groups"
       ]
     },
-    "featuredComparison": "solidaridad",
-    "businessModel": "Donor-, government-, philanthropic-, and program-funded implementation model. CRS designs and implements agriculture, livelihoods, watershed restoration, nature-based solutions, and climate resilience programs through local partners and community institutions. Carbon is not CRS's core product; it is a potential financing mechanism that can help fund landscape restoration, agroforestry, drylands regreening, and farmer resilience when project design, safeguards, benefit sharing, and market requirements are credible.",
+    "featuredComparison": "technoserve",
+    "businessModel": "CRS is a nonprofit implementer funded through public awards, institutional donors, philanthropy, private contributions, and project-specific climate and development finance. It designs and manages multi-year programs while delivering nearly all programming with local organizations, including civil-society, Church, government, farmer, and community institutions. Its agriculture model combines resilient production, land restoration, farmer organization, market and financial-service links, and local capacity strengthening. Carbon is not a standalone CRS product: CRS positions itself as a value-aligned implementer for project developers and investors, using carbon finance to support community-led agroforestry, watershed restoration, and drylands regreening where integrity and community benefits are credible.",
     "representativeProjects": [
       "Advancing Climate Resilience Through High-Integrity Carbon Finance strategy",
+      "Restore Africa community-led carbon removal program in Ethiopia, Kenya, Malawi, Tanzania, Uganda, and Zambia",
       "Transforming Rural Lives Through Adaptation and Carbon Capture (TRACC) in Timor-Leste",
+      "SPICES mixed-agroforestry and nature-based value-chain program",
       "Nature-based Solutions for disaster risk reduction, adaptation, and mitigation",
       "Transforming Livelihoods and Landscapes Initiative",
       "Water Smart Agriculture programming",
-      "Farmer Managed Natural Regeneration and landscape restoration approaches"
+      "Farmer Managed Natural Regeneration and landscape restoration approaches",
+      "Sierra Leone Water Fund payment-for-environmental-services model"
     ],
     "partners": [
       "Local implementing partners",
@@ -968,13 +971,19 @@
       "Government partners",
       "Local civil society organizations",
       "Australian Government / DFAT",
-      "Climate finance providers and donors"
+      "Climate finance providers and donors",
+      "Global EverGreening Alliance",
+      "Climate Asset Management and Temasek",
+      "Caritas Australia, WWF-Australia, Aboriginal Carbon Foundation, and Caritas Diocesana de Baucau",
+      "Private-sector businesses, farmer organizations, and business service providers"
     ],
     "standards": [
       "Not a carbon standard",
-      "Project-specific carbon standards may apply where carbon finance projects are developed"
+      "Project-specific carbon standards may apply where carbon finance projects are developed",
+      "CRS states that its carbon projects align with the Integrity Council for the Voluntary Carbon Market Core Carbon Principles",
+      "CRS states that its projects go beyond national and carbon-certification requirements for community consultation and buy-in"
     ],
-    "financingApproach": "CRS primarily uses donor, government, philanthropic, and climate-program funding to support agriculture, livelihoods, restoration, and resilience work. Its carbon-finance materials frame carbon markets as a way to help smallholder farmers and vulnerable communities finance nature-based solutions such as agroforestry, watershed restoration, and drylands regreening. In this model, carbon revenue is a supporting finance layer for development outcomes rather than the organization’s core business.",
+    "financingApproach": "CRS blends public-donor awards, philanthropy, private contributions, and climate-program funding for agriculture, livelihoods, restoration, and resilience. It also helps governments and local civil society pursue national and international climate finance. Its carbon strategy uses investment and future carbon-market value to fund community-led nature-based solutions: Restore Africa, for example, expanded through a US$150 million investment from Climate Asset Management after a Kenya pilot with Temasek. CRS also uses other mechanisms where appropriate, including payments for environmental services through water funds, debt-for-nature finance, and catalytic impact-investment instruments. Carbon revenue is therefore one financing layer within a broader development and resilience model, not CRS's core product.",
     "comparison": {
       "customer": "Donors, governments, climate finance providers, local partners, and vulnerable communities",
       "primaryRevenue": "Grants, donor funding, government-funded programs, philanthropic support, and climate finance",
@@ -982,7 +991,7 @@
       "carbonRole": "Supporting finance layer for resilience and restoration programs",
       "financing": "Program funding and climate finance, with carbon finance explored where it can support farmer-centered restoration",
       "typicalClient": "Donors, governments, local civil society partners, farmer groups, and vulnerable rural communities",
-      "implementationComparison": "Compared with TechnoServe, CRS is less focused on agribusiness competitiveness and market systems and more focused on resilience, food security, community institutions, and humanitarian-development outcomes. Compared with Solidaridad, CRS is less centered on commodity supply chains and more centered on vulnerable communities, landscape restoration, and adaptation."
+      "implementationComparison": "CRS and TechnoServe can both train farmers, work through local partners, and implement regenerative agriculture. The practical distinction is emphasis. CRS is the more natural fit when a program begins with vulnerable communities, food security, humanitarian-development links, local-institution strengthening, landscape restoration, and adaptation; it can then layer carbon or other climate finance onto those outcomes. TechnoServe is the more natural fit when the implementation engine is business and markets: improving farm or agribusiness competitiveness, strengthening a crop value chain, connecting producers to buyers and finance, and making regenerative practices commercially durable. This is not a difference in capability so much as the organizing logic of the engagement: community resilience and multi-sector development for CRS, versus enterprise performance and inclusive market systems for TechnoServe."
     },
     "sources": [
       {
