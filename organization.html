@@ -395,6 +395,53 @@
       white-space: nowrap;
     }
 
+    .primary-role {
+      margin-top: 18px;
+      padding: 24px;
+      border-radius: 34px;
+      background: rgba(255, 250, 240, 0.72);
+      border: 1px solid rgba(20, 34, 26, 0.1);
+      box-shadow: 0 16px 46px rgba(28, 43, 31, 0.08);
+    }
+
+    .primary-role h2 {
+      margin: 0 0 16px;
+      font-size: clamp(28px, 4vw, 44px);
+      line-height: 0.95;
+      letter-spacing: -0.06em;
+    }
+
+    .primary-role-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 16px;
+    }
+
+    .primary-role-item b {
+      display: block;
+      margin-bottom: 5px;
+      color: var(--green);
+      font-size: 11px;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+    }
+
+    .primary-role-item span,
+    .primary-role-summary,
+    .ecosystem-fit {
+      color: var(--muted);
+      line-height: 1.4;
+      font-size: 14px;
+    }
+
+    .primary-role-summary,
+    .ecosystem-fit {
+      margin: 16px 0 0;
+      padding-top: 14px;
+      border-top: 1px solid var(--line);
+    }
+
+    .ecosystem-fit b { color: var(--green); }
     .reference-card {
       display: grid;
       grid-template-columns: 1fr auto;
@@ -485,6 +532,50 @@
     }
 
 
+    .adjacent-table { display: grid; }
+
+    .adjacent-row {
+      display: grid;
+      grid-template-columns: minmax(180px, 0.7fr) minmax(180px, 0.8fr) minmax(280px, 1.5fr);
+      border-bottom: 1px solid var(--line);
+    }
+
+    .adjacent-row:last-child { border-bottom: 0; }
+
+    .adjacent-row > div,
+    .adjacent-row > a {
+      padding: 16px 18px;
+      color: var(--muted);
+      font-size: 14px;
+      line-height: 1.4;
+    }
+
+    .adjacent-row > a {
+      color: var(--ink);
+      font-size: 16px;
+      font-weight: 880;
+      letter-spacing: -0.02em;
+    }
+
+    .adjacent-row > a:hover { color: var(--clay); }
+
+    .adjacent-header > div {
+      color: var(--green);
+      font-size: 11px;
+      font-weight: 900;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      background: rgba(20, 34, 26, 0.035);
+    }
+
+    .organization-profile { margin-top: 18px; }
+
+    .organization-profile > h2 {
+      margin: 0;
+      font-size: clamp(28px, 4vw, 44px);
+      line-height: 0.95;
+      letter-spacing: -0.06em;
+    }
     .similarity {
       margin-top: 18px;
       border-radius: 34px;
@@ -677,6 +768,10 @@
       .collaborator-grid { grid-template-columns: repeat(2, 1fr); }
       .comparison-row { grid-template-columns: 1fr; }
       .comparison-row > div:first-child { border-bottom: 1px solid var(--line); }
+      .adjacent-row { grid-template-columns: 1fr; }
+      .adjacent-header { display: none; }
+      .adjacent-row > a { padding-bottom: 6px; }
+      .adjacent-row > div { padding-top: 6px; }
     }
 
     @media (max-width: 720px) {
@@ -688,6 +783,7 @@
       .similarity-grid,
       .collaborator-grid { grid-template-columns: 1fr; }
       .source-card { align-items: flex-start; flex-direction: column; }
+      .primary-role-grid { grid-template-columns: 1fr; }
     }
   </style>
 </head>
@@ -964,6 +1060,61 @@
     }
 
 
+    function roleOrientationSentence(org) {
+      const role = String(org.roleLabel || org.role || "organization").toLowerCase();
+      const type = String(org.type || "organization").toLowerCase();
+      const strategy = String(org.strategy || "its documented approach").toLowerCase();
+      return `${org.name} fills the ${role} role in this ecosystem, its organizational type is ${type}, with a focus on ${strategy}.`;
+    }
+
+    function renderPrimaryRole(org) {
+      return `
+        <section class="primary-role" aria-label="Primary role">
+          <h2>Primary Role</h2>
+          <div class="primary-role-grid">
+            <div class="primary-role-item"><b>Role</b><span>${escapeHtml(org.roleLabel || org.role)}</span></div>
+            <div class="primary-role-item"><b>Organization type</b><span>${escapeHtml(org.type)}</span></div>
+            <div class="primary-role-item"><b>What they do</b><span>${escapeHtml(org.strategy)}</span></div>
+          </div>
+          ${hasText(org.ecosystemFit) ? `<p class="ecosystem-fit"><b>Ecosystem fit:</b> ${escapeHtml(org.ecosystemFit)}</p>` : ""}
+          <p class="primary-role-summary">${escapeHtml(roleOrientationSentence(org))}</p>
+        </section>
+      `;
+    }
+
+    function comparisonSummaryFields(org) {
+      if (!org.comparison) return [];
+      return ["platformComparison", "implementationComparison", "featuredComparison"]
+        .map(key => org.comparison[key])
+        .filter(hasText);
+    }
+
+    function summaryMentionsOrganization(summary, org) {
+      const normalizedSummary = String(summary || "").toLowerCase();
+      const fullName = String(org.name || "");
+      const acronym = fullName.split(/[^A-Za-z0-9]+/).filter(Boolean).map(word => word[0]).join("");
+      const names = [fullName, org.slug && String(org.slug).replace(/-/g, " "), acronym.length > 1 ? acronym : ""].filter(Boolean);
+      return names.some(name => normalizedSummary.includes(String(name).toLowerCase()));
+    }
+
+    function adjacentDifference(org, other) {
+      if (hasText(org.ecosystemFit) && hasText(other.ecosystemFit)) {
+        if (summaryMentionsOrganization(org.ecosystemFit, other)) return org.ecosystemFit;
+        if (summaryMentionsOrganization(other.ecosystemFit, org)) return other.ecosystemFit;
+        return other.ecosystemFit;
+      }
+
+      const summaries = [...comparisonSummaryFields(org), ...comparisonSummaryFields(other)];
+      const matchedSummary = summaries.find(summary =>
+        summaryMentionsOrganization(summary, org) && summaryMentionsOrganization(summary, other)
+      );
+      if (matchedSummary) return matchedSummary;
+
+      const theirOffering = comparisonValue(other, "mainOffering", other.strategy || other.type || "Not yet documented");
+      const currentOffering = comparisonValue(org, "mainOffering", org.strategy || org.type || "Not yet documented");
+      return `${other.name}'s main offering is ${theirOffering}; ${org.name}'s is ${currentOffering}.`;
+    }
+
     function comparisonValue(org, key, fallback = "") {
       if (org.comparison && org.comparison[key]) return org.comparison[key];
       const fallbacks = {
@@ -1097,23 +1248,43 @@
         .join(" + ");
     }
 
-    function renderSimilarity(org, allOrganizations) {
-      const similar = topSimilarOrganizations(org, allOrganizations, 3);
-      if (!similar.length) return "";
+    function renderAdjacentOrganizations(org, allOrganizations) {
+      const comparableSlugs = relationshipSlugs(org, "comparable", allOrganizations);
+      const featuredSlug = org.featuredComparison || "";
+      const featured = featuredSlug ? findOrgBySlug(featuredSlug, allOrganizations) : null;
+      const featuredIsAppropriate = featured && featured.name !== org.name && featured.role === org.role;
+      const orderedSlugs = featuredIsAppropriate && comparableSlugs.includes(featuredSlug)
+        ? [featuredSlug, ...comparableSlugs.filter(slug => slug !== featuredSlug)]
+        : [...comparableSlugs];
+
+      if (featuredIsAppropriate && !orderedSlugs.includes(featuredSlug)) {
+        orderedSlugs.push(featuredSlug);
+      }
+
+      const adjacent = orderedSlugs
+        .map(slug => findOrgBySlug(slug, allOrganizations))
+        .filter(item => item && item.name !== org.name);
+
+      if (!adjacent.length) return "";
 
       return `
-        <section class="similarity" aria-label="Comparable organizations">
-          <div class="similarity-head">
-            <h2>Comparable organizations</h2>
-            <a href="compare.html?id=${escapeHtml(org.slug || slugify(org.name))}">Open Compare →</a>
+        <section class="comparison" aria-label="Closest adjacent organizations">
+          <div class="comparison-head">
+            <h2>Closest Adjacent Organizations</h2>
+            <p>Organizations people most commonly confuse with this one.</p>
           </div>
-          <div class="similarity-grid">
-            ${similar.map(item => `
-              <a class="similarity-card" href="${profileUrl(item)}">
-                <strong>${escapeHtml(item.name)}</strong>
-                <span class="similarity-score">${item.score}% similar</span>
-                <p>${escapeHtml(strongestSharedTraits(org, item) || item.type || "Similar profile pattern")}</p>
-              </a>
+          <div class="adjacent-table">
+            <div class="adjacent-row adjacent-header">
+              <div>Organization</div>
+              <div>Their job</div>
+              <div>How they're different</div>
+            </div>
+            ${adjacent.map(item => `
+              <div class="adjacent-row">
+                <a href="${profileUrl(item)}">${escapeHtml(item.name)}</a>
+                <div>${escapeHtml(item.roleLabel || item.role || "Organization")} &middot; ${escapeHtml(item.strategy || item.type || "Not yet documented")}</div>
+                <div>${escapeHtml(adjacentDifference(org, item))}</div>
+              </div>
             `).join("")}
           </div>
         </section>
@@ -1221,12 +1392,17 @@
           </aside>
         </section>
 
-        <section class="section-stack" aria-label="Research profile sections">
-          ${researchSections(org, allOrganizations, usedSourceKeys)}
+        ${renderPrimaryRole(org)}
+        ${renderAdjacentOrganizations(org, allOrganizations)}
+        ${renderComparison(org, allOrganizations)}
+
+        <section class="organization-profile" aria-label="Organization profile">
+          <h2>Organization Profile</h2>
+          <div class="section-stack" aria-label="Research profile sections">
+            ${researchSections(org, allOrganizations, usedSourceKeys)}
+          </div>
         </section>
 
-        ${renderComparison(org, allOrganizations)}
-        ${renderSimilarity(org, allOrganizations)}
         ${renderCollaborators(org, allOrganizations)}
         ${referencesSection(org, usedSourceKeys)}
       `;
