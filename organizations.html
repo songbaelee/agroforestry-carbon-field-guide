@@ -452,7 +452,9 @@
 
     @media (max-width: 720px) {
       main { padding-top: 44px; }
-      .nav-links { display: none; }
+      .nav-inner { flex-wrap: wrap; gap: 12px; padding: 12px 16px; }
+      .brand { width: 100%; }
+      .nav-links { width: 100%; gap: 16px; font-size: 13px; }
       .grid, .stats, .role-lens { grid-template-columns: 1fr; }
       .toolbar { position: static; }
       .directory-head { display: block; }
@@ -469,11 +471,8 @@
       </a>
       <div class="nav-links" aria-label="Primary navigation">
         <a class="active" href="organizations.html">Organizations</a>
-        <span aria-disabled="true">Projects</span>
-        <span aria-disabled="true">Business Models</span>
-        <span aria-disabled="true">Landscape</span>
-        <span aria-disabled="true">Resources</span>
-        <span aria-disabled="true">About</span>
+        <a href="ecosystem.html">Ecosystem</a>
+        <a href="compare.html">Compare</a>
       </div>
     </div>
   </nav>
