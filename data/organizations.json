@@ -1942,7 +1942,156 @@
     "featured": false,
     "website": "https://www.openforestprotocol.org/",
     "slug": "open-forest-protocol",
-    "overview": "Provides digital monitoring, reporting, and verification infrastructure intended to make forest and restoration projects more transparent and accessible.",
+    "overview": "Open Forest Protocol (OFP) provides open digital infrastructure for forest and agroforestry monitoring, verification, carbon-credit issuance, and public disclosure. Project operators collect georeferenced field data with an offline-capable mobile app and manage projects through a dashboard; independent validator organizations review monitoring submissions, while project and credit information is displayed through the public Atlas and recorded using blockchain infrastructure. OFP also operates its own fully digital carbon standard, initially for afforestation, reforestation, and revegetation (ARR). It is infrastructure for project operators, validators, buyers, and builders rather than an organization that plants or manages forests on their behalf.",
+    "businessModel": "Digital MRV, registry, and carbon-standard infrastructure for forest project operators. OFP supplies project registration, field-data collection, monitoring workflows, distributed validation, credit issuance, and public traceability from project inception through retirement. Its website says eligible projects can access the end-to-end platform with no up-front cost and that projects as small as 0.3 hectares may apply. The project operator remains responsible for land rights, project design, implementation, monitoring submissions, and compliance; OFP provides the digital and standards layer. Public materials reviewed do not disclose a complete fee or revenue schedule, so the profile does not infer one.",
+    "representativeProjects": [
+      "ReverdeC, Colombia — Celsia's participatory ecological-restoration program generated OFP's first Open Carbon Credits in January 2024 from pilot plots in Valle del Cauca",
+      "Gorké Forest, Côte d'Ivoire — OFP agreed with the Ministry of Water and Forests and local developer Agro-Map to provide MRV infrastructure for a 5,067-hectare restoration initiative managed on the ground by Agro-Map with local communities",
+      "Fundo Exuberante, Peru — INARSAC's Lush-supported agroforestry and regeneration project in Madre de Dios uses OFP tools for field monitoring, remote-sensing integration, and impact reporting",
+      "Amrit Mahal Community Forest, India — a community-led restoration initiative using OFP digital MRV to document planting and seek carbon finance",
+      "OFP Atlas — public explorer showing registered projects, monitoring records, validation activity, and carbon data"
+    ],
+    "partners": [
+      "Celsia and Fundación ReverdeC",
+      "Government of Côte d'Ivoire and Agro-Map",
+      "INARSAC and Lush Cosmetics",
+      "Kanop",
+      "Gaia Gives",
+      "Neutral",
+      "NEAR Foundation",
+      "Independent validator organizations and forest project operators"
+    ],
+    "standards": [
+      "Open Forest Protocol Afforestation / Reforestation / Revegetation (ARR) Carbon Standard and Methodology, version 1.0",
+      "OFP is a carbon standard and digital registry framework, not a verifier under Verra or another third-party carbon program",
+      "The ARR methodology uses ex-post crediting after monitoring and validation, a protocol-wide buffer pool for reversal risk, and public project and credit records",
+      "The ARR methodology draws on IPCC land-use guidance and Clean Development Mechanism afforestation/reforestation tools"
+    ],
+    "financingApproach": "OFP seeks to reduce the cost and administrative barriers between restoration projects and carbon finance by offering registration, monitoring, validation, issuance, and traceability in one digital system with no up-front platform cost for eligible project developers. Credits are issued ex post after monitoring data has been validated, and issued credits go to the project operator's wallet; OFP therefore enables financing and market access but does not itself finance or implement the underlying restoration. At the company level, Open Forest AG announced a 2024 pre-seed round led by Übermorgen Ventures with participation from Backbone Ventures, GS Futures, Bloom Foundation, NEAR Foundation, Fondation Valery, and other supporters. Public materials reviewed do not provide a complete operating-revenue or fee model.",
+    "sources": [
+      {
+        "title": "Open Forest Protocol home",
+        "organization": "Open Forest Protocol",
+        "url": "https://www.openforestprotocol.org/",
+        "type": "Organization",
+        "sections": [
+          "overview",
+          "businessModel",
+          "standards",
+          "comparison"
+        ]
+      },
+      {
+        "title": "Open Forest Protocol for Project Developers",
+        "organization": "Open Forest Protocol",
+        "url": "https://www.openforestprotocol.org/project-developers",
+        "type": "Product and process documentation",
+        "sections": [
+          "overview",
+          "businessModel",
+          "representativeProjects",
+          "standards",
+          "financingApproach",
+          "comparison"
+        ]
+      },
+      {
+        "title": "OFP Reforestation Methodology: Built for Integrity and Transparency",
+        "organization": "Open Forest Protocol",
+        "url": "https://www.openforestprotocol.org/blog/ofp-carbon-methodology-built-for-integrity-and-transparency",
+        "type": "Methodology overview",
+        "sections": [
+          "businessModel",
+          "standards",
+          "financingApproach"
+        ]
+      },
+      {
+        "title": "The First Open Carbon Credit Has Been Created on Open Forest Protocol",
+        "organization": "Open Forest Protocol",
+        "url": "https://www.openforestprotocol.org/blog/the-first-open-carbon-credit-has-been-created-on-open-forest-protocol",
+        "type": "Official project announcement",
+        "sections": [
+          "representativeProjects",
+          "standards",
+          "financingApproach"
+        ]
+      },
+      {
+        "title": "ReverdeC: The Roots of the World's First Fully Digital Carbon Credits in Colombia",
+        "organization": "Open Forest Protocol",
+        "url": "https://www.openforestprotocol.org/blog/reverdec-the-roots-of-the-worlds-first-fully-digital-carbon-credits-in-colombia",
+        "type": "Official project profile",
+        "sections": [
+          "representativeProjects",
+          "partners",
+          "financingApproach"
+        ]
+      },
+      {
+        "title": "OFP formalizes partnership with Ivory Coast to restore 20% of forest cover by 2030",
+        "organization": "Open Forest Protocol",
+        "url": "https://www.openforestprotocol.org/blog/ofp-formalizes-partnership-with-ivory-coast-to-restore-20-of-forest-cover-by-2030",
+        "type": "Official partnership announcement",
+        "sections": [
+          "representativeProjects",
+          "partners",
+          "comparison"
+        ]
+      },
+      {
+        "title": "Enhancing Agroforestry in Peru with Lush Cosmetics and INARSAC",
+        "organization": "Open Forest Protocol",
+        "url": "https://www.openforestprotocol.org/blog/enhancing-agroforestry-in-peru-with-lush-cosmetics-and-inarsac",
+        "type": "Official partnership announcement",
+        "sections": [
+          "representativeProjects",
+          "partners"
+        ]
+      },
+      {
+        "title": "Open Forest Protocol and Kanop Unite to Set New Standards for Carbon Project Verification",
+        "organization": "Open Forest Protocol",
+        "url": "https://www.openforestprotocol.org/blog/open-forest-protocol-and-kanop-unite-to-set-new-standards-for-carbon-project-verification",
+        "type": "Official partnership announcement",
+        "sections": [
+          "overview",
+          "partners",
+          "standards"
+        ]
+      },
+      {
+        "title": "Open Forest Protocol, High Integrity Carbon Credits Innovator, Closes Pre-Seed Round",
+        "organization": "Open Forest Protocol",
+        "url": "https://www.openforestprotocol.org/blog/pre-seed-round",
+        "type": "Financing announcement",
+        "sections": [
+          "businessModel",
+          "partners",
+          "financingApproach"
+        ]
+      },
+      {
+        "title": "Open Forest Protocol Atlas",
+        "organization": "Open Forest Protocol",
+        "url": "https://atlas.openforestprotocol.org/",
+        "type": "Public registry and project explorer",
+        "sections": [
+          "overview",
+          "representativeProjects",
+          "standards"
+        ]
+      }
+    ],
+    "comparison": {
+      "customer": "Forest and agroforestry project operators, validators, carbon-credit buyers, and developers building environmental-market applications",
+      "primaryRevenue": "Not fully disclosed; digital MRV, registry, standards, and credit-market infrastructure",
+      "mainOffering": "Open digital infrastructure for forest monitoring, distributed validation, carbon-credit issuance, and public traceability",
+      "carbonRole": "Operates a digital carbon standard and registry framework and supplies the MRV and issuance workflow",
+      "financing": "Enables projects to reach carbon finance without an up-front platform charge; company development has also been supported by venture and foundation funding",
+      "typicalClient": "Project operators seeking accessible MRV and issuance, independent validators, and buyers seeking traceable forest-removal credits",
+      "platformComparison": "Open Forest Protocol is infrastructure rather than a traditional project developer: it does not acquire land, plant trees, aggregate farmers, or manage restoration in the field. Those duties remain with project operators and local partners, while OFP provides the standard, data-collection tools, validation workflow, registry, and credit-issuance rails. Compared with a forest-carbon technology provider such as Pachama, OFP places greater emphasis on an open protocol and end-to-end digital standard and registry, including distributed third-party validation and on-chain issuance; it is not primarily a proprietary project-rating, portfolio-sourcing, or direct project-development service. This comparison describes different ecosystem roles, not relative quality."
+    },
     "similarityScores": {
       "carbonFirst": 2,
       "supplyChainFocus": 1,
@@ -1955,8 +2104,8 @@
       "restorationFocus": 4,
       "smallholderFocus": 3
     },
-    "researchStatus": "preliminary",
-    "researchConfidence": "Low",
+    "researchStatus": "complete",
+    "researchConfidence": "High",
     "lastReviewed": "2026-06-27",
     "methodologyVersion": "v0.1",
     "relationships": {
