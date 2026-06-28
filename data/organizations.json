@@ -123,13 +123,13 @@
         ]
       }
     ],
-    "businessModel": "Smallholder agroforestry carbon platform. Acorn works through local partners to enroll farmers, measure biomass growth, certify ex-post carbon removal units, commercialize credits, and share carbon revenue with farmers and implementation partners.",
+    "businessModel": "Smallholder agroforestry carbon platform. Acorn works through local partners to enroll farmers, measure biomass growth, certify ex-post carbon removal units, commercialize credits, and share carbon revenue with farmers and implementation partners. Carbon removals are its primary product and carbon revenue is the model's central financing mechanism.",
     "comparison": {
       "customer": "Carbon credit buyers and local implementation partners",
       "primaryRevenue": "Carbon credit commercialization and platform administration share",
       "mainOffering": "Smallholder agroforestry carbon platform",
-      "carbonRole": "Core product",
-      "financing": "Revenue sharing, ex-post carbon sales, and partner/project finance",
+      "carbonRole": "Primary product and central financing mechanism",
+      "financing": "Buyers pay for ex-post removals; revenue is shared among farmers, local partners, and Acorn, with selected transition loans repaid from credit proceeds",
       "typicalClient": "Local partners, farmer groups, and carbon credit buyers"
     },
     "similarityScores": {
@@ -185,7 +185,7 @@
     "website": "https://www.pur.co/",
     "slug": "pur",
     "overview": "PUR is a France-headquartered nature-based solutions developer that helps companies build resilient supply chains, develop high-integrity nature-based carbon removal projects, and scale measurable climate and nature impact through locally embedded project teams.",
-    "businessModel": "Corporate-funded nature-based project development and implementation. PUR works with companies to design, implement, monitor, and scale insetting, agroforestry, restoration, and carbon removal programs that generate supply-chain resilience, Scope 3 emissions outcomes, carbon assets, and wider nature benefits.",
+    "businessModel": "Corporate-funded nature-based project development and implementation. PUR works with companies to design, implement, monitor, and scale insetting, agroforestry, restoration, and carbon removal programs that generate supply-chain resilience, Scope 3 emissions outcomes, carbon assets, and wider nature benefits. Carbon is usually an outcome or financing layer within a broader corporate nature program rather than the only product.",
     "representativeProjects": [
       "Nespresso agroforestry program across coffee sourcing regions",
       "Cocoa agroforestry and community benefit activities in Côte d'Ivoire",
@@ -342,8 +342,8 @@
       "customer": "Corporations with supply-chain, Scope 3, and nature goals",
       "primaryRevenue": "Project development, implementation, monitoring, and carbon/nature program services",
       "mainOffering": "Corporate insetting and nature-based project development",
-      "carbonRole": "One outcome inside supply-chain programs",
-      "financing": "Corporate-funded supply-chain programs and carbon-credit-oriented project finance",
+      "carbonRole": "Outcome and financing mechanism within broader corporate supply-chain and nature programs",
+      "financing": "Corporate clients fund PUR and local implementation; selected credit-oriented projects can also receive funding linked to future verified-unit sales",
       "typicalClient": "Nespresso, Cocoa Life, food and beverage companies, and corporate sustainability teams"
     },
     "similarityScores": {
@@ -399,7 +399,7 @@
     "website": "https://www.re.green/",
     "slug": "re-green",
     "overview": "re.green is a Brazilian ecological landscape restoration company that develops and manages native-forest projects in the Amazon and Atlantic Forest. Its Total Forest Stewardship model combines active restoration, assisted natural regeneration, conservation of forest remnants, science-led land selection and design, technology-enabled monitoring, and local community engagement. The company commercializes verified carbon removals and other forest products and services to make large-scale, biodiverse restoration financially durable.",
-    "businessModel": "Vertically integrated ecological restoration developer and forest manager. re.green identifies and secures degraded land through acquisitions and partnerships, designs and implements restoration with native species, manages seed and seedling supply through Bioflora and partner nurseries, monitors ecological and carbon outcomes, and sells high-integrity carbon removals through long-term corporate offtakes and public procurement programs. Its public materials also describe sustainable native-timber and other biological products as complementary revenue streams in suitable projects.",
+    "businessModel": "Vertically integrated ecological restoration developer and forest manager. re.green identifies and secures degraded land through acquisitions and partnerships, designs and implements restoration with native species, manages seed and seedling supply through Bioflora and partner nurseries, monitors ecological and carbon outcomes, and sells high-integrity carbon removals through long-term corporate offtakes and public procurement programs. Carbon removals are a primary product and restoration-finance mechanism, complemented in suitable projects by sustainable native-timber and other biological products.",
     "representativeProjects": [
       "Ouro Verde, Eunápolis, Bahia — Atlantic Forest restoration and part of re.green's first Verra-certified carbon-credit issuance",
       "Belo Horizonte, Potiraguá, Bahia — Atlantic Forest restoration and part of re.green's first Verra-certified carbon-credit issuance",
@@ -553,10 +553,10 @@
       "customer": "Corporate carbon-removal buyers, companies funding landscape restoration, public credit purchasers, and landowners",
       "primaryRevenue": "Long-term carbon-removal sales and forest products and services",
       "mainOffering": "Vertically integrated, large-scale native-forest restoration and stewardship",
-      "carbonRole": "Core product and principal restoration-finance mechanism",
-      "financing": "Corporate offtakes and restoration contracts, public carbon procurement, project debt, land partnerships, and forest-product revenue",
+      "carbonRole": "Primary product and principal restoration-finance mechanism",
+      "financing": "Corporate and public buyers provide contracted carbon revenue; lenders, clients, and land partners support project development, complemented by forest-product revenue",
       "typicalClient": "Microsoft, Nestlé, Vivo/Telefônica, Petrobras, and public or private landowners",
-      "platformComparison": "Compared with Acorn, re.green is a vertically integrated developer focused on large contiguous native-ecosystem restoration projects in Brazil, including land access, nursery supply, implementation, long-term forest management, and carbon commercialization. Acorn instead operates primarily as a platform working through local partners to aggregate smallholder agroforestry projects across multiple countries and share carbon revenue with participating farmers."
+      "platformComparison": "re.green and Acorn are both carbon-focused developers that coordinate implementation, MRV, certification, and sales, so readers may encounter both as suppliers of nature-based removals. Their operating and financing models differ: re.green vertically integrates land access, native-forest restoration, stewardship, and long-term offtakes for large Brazilian landscapes, while Acorn aggregates smallholder agroforestry through local partners and shares ex-post credit revenue with farmers. The lesson is scale and control: integrated landscape ownership and management versus a distributed farmer platform."
     },
     "similarityScores": {
       "carbonFirst": 5,
@@ -635,11 +635,10 @@
       ]
     },
     "featuredComparison": "acorn",
-    "businessModel": "Taking Root develops and operates forest restoration and agroforestry carbon projects, working with local partners and smallholder landholders. The company combines project development, digital MRV technology through its FARM-TRACE platform, long-term monitoring, carbon certification, and commercialization of verified carbon credits to fund restoration.",
+    "businessModel": "Taking Root develops and operates forest restoration and agroforestry carbon projects, working with local partners and smallholder landholders. The company combines project development, digital MRV technology through its FARM-TRACE platform, long-term monitoring, carbon certification, and commercialization of verified carbon credits to fund restoration. Carbon credits are its primary product and financing mechanism.",
     "representativeProjects": [
-      "CommuniTree reforestation program in Nicaragua",
-      "FARM-TRACE digital MRV platform",
-      "Community-based restoration projects in Nicaragua"
+      "CommuniTree in Nicaragua — community-based reforestation financed through verified carbon credits",
+      "FARM-TRACE — digital MRV supporting project development and long-term monitoring"
     ],
     "partners": [
       "Plan Vivo",
@@ -655,10 +654,10 @@
       "customer": "Corporate carbon buyers and climate investors",
       "primaryRevenue": "Verified carbon credit development and sales",
       "mainOffering": "Smallholder reforestation and agroforestry project development",
-      "carbonRole": "Core product",
-      "financing": "Carbon-credit-backed restoration",
+      "carbonRole": "Primary product and central restoration-finance mechanism",
+      "financing": "Credit buyers fund restoration revenue that supports project operations, long-term monitoring, and participating landholders",
       "typicalClient": "Corporate buyers and restoration partners",
-      "platformComparison": "Compared with Acorn, Taking Root is more vertically integrated around its own restoration programs and FARM-TRACE technology, while Acorn primarily operates as a platform connecting implementation partners to carbon markets."
+      "platformComparison": "Taking Root and Acorn both use local partners, digital MRV, certification, and credit sales to finance smallholder tree-growing, which makes them close comparators. Taking Root is more vertically integrated around community restoration programs it develops and operates, with FARM-TRACE supporting long-term monitoring; Acorn is a broader aggregation platform through which local partners enroll farmers and share ex-post removal revenue. Remember the distinction as developer-led programs versus partner-led platform aggregation."
     },
     "sources": [
       {
@@ -720,7 +719,7 @@
     "website": "https://www.solidaridadnetwork.org/",
     "slug": "solidaridad",
     "overview": "Solidaridad is an international civil society organization that works with smallholder producers and commodity supply chains. In agroforestry carbon, it is most relevant as an implementation partner: helping farmers adopt climate-smart agroforestry systems, access training, and participate in carbon finance programs such as Acorn-linked carbon removal projects.",
-    "businessModel": "Program implementation and development partnership model. Solidaridad earns and deploys funding through donor, corporate, foundation, and platform partnerships to deliver farmer training, technical assistance, supply-chain sustainability programs, and carbon-market readiness. Carbon is not the core product; it is a financing layer that can reward farmers and help scale climate-smart agriculture.",
+    "businessModel": "Program implementation and development partnership model. Solidaridad earns and deploys funding through donor, corporate, foundation, and platform partnerships to deliver farmer training, technical assistance, supply-chain sustainability programs, and carbon-market readiness. It connects funders, brands, carbon platforms, producer organizations, and farmers, but does not act as the standard, registry, or corporate buyer. Carbon is not the core product; it is a financing mechanism and farmer incentive within broader supply-chain and rural-development programs.",
     "representativeProjects": [
       "Asómbrate programme for coffee and cocoa agroforestry and carbon payments in Latin America",
       "Solidaridad Colombia agroforestry project connected to Acorn carbon finance",
@@ -873,8 +872,8 @@
       "customer": "Donors, brands, platforms, and producer organizations",
       "primaryRevenue": "Program funding, corporate partnerships, and implementation grants",
       "mainOffering": "Farmer organization and field implementation",
-      "carbonRole": "Enabling service for farmer and supply-chain programs",
-      "financing": "Program funding plus carbon-market incentives for farmers",
+      "carbonRole": "Farmer incentive and financing mechanism within broader implementation programs; not the core product",
+      "financing": "Donors, brands, and platform partners fund implementation; verified carbon payments can then reward participating farmers",
       "typicalClient": "Acorn, Rabobank, UK PACT, producer organizations, and commodity supply-chain partners"
     },
     "researchStatus": "complete",
@@ -931,8 +930,8 @@
       "customer": "Donors, foundations, agribusinesses, and market-system partners",
       "primaryRevenue": "Donor-funded, philanthropic, and corporate-funded technical assistance programs",
       "mainOffering": "Farmer training, agribusiness advisory, market systems support, and regenerative agriculture implementation",
-      "carbonRole": "Enabling service for climate-smart agriculture and potential carbon-finance readiness",
-      "financing": "Program funding, corporate partnerships, philanthropic support, and sector-level investment cases",
+      "carbonRole": "Potential financing mechanism and outcome within broader technical-assistance programs; not the core product",
+      "financing": "Donors, foundations, and companies fund advisory and implementation services; carbon may strengthen a program investment case but does not primarily fund TechnoServe",
       "typicalClient": "Donors, foundations, agribusinesses, coffee companies, farmer groups, and market-system partners"
     },
     "researchStatus": "complete",
@@ -956,7 +955,7 @@
       ]
     },
     "featuredComparison": "solidaridad",
-    "businessModel": "Donor-, foundation-, and corporate-funded technical assistance and market systems implementation. TechnoServe designs and delivers farmer training, agribusiness advisory, supply-chain upgrading, and sector transformation programs. Carbon is not TechnoServe's core product; it is a potential financing layer for regenerative agriculture, agroforestry, and smallholder resilience programs.",
+    "businessModel": "Donor-, foundation-, and corporate-funded technical assistance and market systems implementation. TechnoServe designs and delivers farmer training, agribusiness advisory, supply-chain upgrading, and sector transformation programs that connect producers with more competitive markets and finance. It does not operate a carbon standard or registry or ordinarily develop and sell credits. Carbon is not TechnoServe's core product; it is a potential financing mechanism and measured outcome within broader regenerative agriculture, agroforestry, and smallholder resilience programs.",
     "representativeProjects": [
       "Regenerative Coffee Investment Case across nine leading coffee-producing countries",
       "Carbon Finance for Smallholder Farmers and Agribusinesses analytical briefing on agroforestry solutions",
@@ -1147,8 +1146,8 @@
       "customer": "Donors, governments, climate finance providers, local partners, and vulnerable communities",
       "primaryRevenue": "Grants, donor funding, government-funded programs, philanthropic support, and climate finance",
       "mainOffering": "Community-based implementation for livelihoods, resilience, agriculture, and landscape restoration",
-      "carbonRole": "Supporting finance layer for resilience and restoration programs",
-      "financing": "Program funding and climate finance, with carbon finance explored where it can support farmer-centered restoration",
+      "carbonRole": "Financing mechanism for broader resilience and restoration programs; not a standalone product",
+      "financing": "Public donors, philanthropy, and climate investors fund CRS and local partners; future carbon value may support community restoration alongside other finance",
       "typicalClient": "Donors, governments, local civil society partners, farmer groups, and vulnerable rural communities",
       "implementationComparison": "CRS and TechnoServe can both train farmers, work through local partners, and implement regenerative agriculture. The practical distinction is emphasis. CRS is the more natural fit when a program begins with vulnerable communities, food security, humanitarian-development links, local-institution strengthening, landscape restoration, and adaptation; it can then layer carbon or other climate finance onto those outcomes. TechnoServe is the more natural fit when the implementation engine is business and markets: improving farm or agribusiness competitiveness, strengthening a crop value chain, connecting producers to buyers and finance, and making regenerative practices commercially durable. This is not a difference in capability so much as the organizing logic of the engagement: community resilience and multi-sector development for CRS, versus enterprise performance and inclusive market systems for TechnoServe."
     },
@@ -1334,8 +1333,8 @@
       "customer": "Project proponents, developers, VVBs, registry account holders, and market participants",
       "primaryRevenue": "Program administration, registry, and standards-related market infrastructure",
       "mainOffering": "Carbon standards, methodologies, validation/verification rules, and registry infrastructure",
-      "carbonRole": "Market infrastructure and standard-setting",
-      "financing": "Enables credit issuance and market access; does not directly finance projects",
+      "carbonRole": "Enabling market infrastructure; not a project product or source of capital",
+      "financing": "Project sponsors fund development and assurance, then monetize issued credits through outside buyers; Verra sets the rules and registry pathway but provides no project capital",
       "typicalClient": "Project developers, project proponents, validation/verification bodies, registry users, and carbon-market participants"
     },
     "sources": [
@@ -1509,8 +1508,8 @@
       "customer": "Project developers, project proponents, VVBs, registry users, and impact buyers",
       "primaryRevenue": "Standards administration, certification, and registry services",
       "mainOffering": "Certification emphasizing both climate impact and Sustainable Development Goals",
-      "carbonRole": "Market infrastructure with explicit sustainable development focus",
-      "financing": "Enables market access rather than providing capital",
+      "carbonRole": "Enabling market infrastructure with explicit sustainable-development requirements",
+      "financing": "Project sponsors fund development and assurance, then monetize certified outcomes through outside buyers; Gold Standard enables market access but provides no project capital",
       "typicalClient": "Developers seeking certification with strong SDG claims alongside carbon credits",
       "philosophy": "Compared with Verra, Gold Standard places stronger emphasis on demonstrating sustainable development outcomes alongside climate benefits while both rely on third-party validation and verification.",
       "methodologies": "Both maintain approved methodologies; Verra has broader methodology coverage while Gold Standard has historically emphasized high-integrity SDG-linked approaches.",
@@ -1647,8 +1646,8 @@
       "customer": "Community-led land-use projects, project coordinators, developers, buyers, and funders",
       "primaryRevenue": "Certification, standards administration, and registry-related services",
       "mainOffering": "Community-led carbon and nature certification",
-      "carbonRole": "Market infrastructure for community-based land-use carbon projects",
-      "financing": "Enables certificate sales and requires strong community benefit sharing; does not directly finance projects",
+      "carbonRole": "Enabling market infrastructure for community-based land-use carbon projects",
+      "financing": "Outside buyers purchase project certificates and at least 60% of sales income returns to communities; Plan Vivo certifies and records outcomes but does not directly finance projects",
       "typicalClient": "Community forestry, agroforestry, restoration, blue carbon, and smallholder land-use project developers",
       "featuredComparison": "Compared with Verra, Plan Vivo is narrower and more community-centered. Verra is broad voluntary carbon market infrastructure across many sectors and project types, while Plan Vivo is especially focused on community-led land-use and ecosystem projects with explicit participation and revenue-sharing requirements.",
       "philosophy": "Plan Vivo puts community ownership, local participation, livelihoods, and benefit sharing at the center of its standard. Verra also includes social and environmental safeguards and optional co-benefit standards, but its VCS program is broader and more general-purpose.",
@@ -1892,11 +1891,11 @@
       "customer": "Carbon buyers and project developers",
       "primaryRevenue": "Technology, diligence, and market access",
       "mainOffering": "Forest carbon technology and MRV platform",
-      "carbonRole": "Measurement, evaluation, and monitoring",
-      "financing": "Buyer and project-finance connections",
+      "carbonRole": "Enabling service for project screening, diligence, monitoring, and market access",
+      "financing": "Corporate buyers and upfront investors fund third-party projects; Pachama supplied diligence, monitoring, and connections rather than project capital or field implementation",
       "typicalClient": "Corporate climate teams and project developers"
     },
-    "platformComparison": "Pachama is a technology and MRV platform, while Acorn is a project development and farmer aggregation platform. Both operate in forest carbon but occupy different parts of the value chain: Pachama provides measurement, evaluation, monitoring, and market infrastructure; Acorn works through local partners to organize farmers and generate agroforestry carbon removals. This comparison is intended to educate readers about ecosystem roles, not compare quality or score either organization.",
+    "platformComparison": "Pachama and Acorn are both described as forest-carbon platforms and both connect projects with corporate demand, which can obscure their different roles. Pachama primarily sold technology, project diligence, monitoring, and market access, helping buyers evaluate projects and helping developers attract outside funding; it did not aggregate farmers or perform field implementation. Acorn develops smallholder agroforestry programs through local partners and commercializes the resulting removals under a revenue-sharing model. The lesson is enabling technology and diligence versus carbon-project development and farmer aggregation.",
     "similarityScores": {
       "carbonFirst": 3,
       "supplyChainFocus": 1,
@@ -2087,10 +2086,10 @@
       "customer": "Forest and agroforestry project operators, validators, carbon-credit buyers, and developers building environmental-market applications",
       "primaryRevenue": "Not fully disclosed; digital MRV, registry, standards, and credit-market infrastructure",
       "mainOffering": "Open digital infrastructure for forest monitoring, distributed validation, carbon-credit issuance, and public traceability",
-      "carbonRole": "Operates a digital carbon standard and registry framework and supplies the MRV and issuance workflow",
-      "financing": "Enables projects to reach carbon finance without an up-front platform charge; company development has also been supported by venture and foundation funding",
+      "carbonRole": "Enabling infrastructure through a digital standard, MRV workflow, registry, and issuance system",
+      "financing": "Project operators receive issued credits and pursue outside buyers; OFP removes the up-front platform charge but does not fund field implementation, while venture and foundation capital has supported the company",
       "typicalClient": "Project operators seeking accessible MRV and issuance, independent validators, and buyers seeking traceable forest-removal credits",
-      "platformComparison": "Open Forest Protocol is infrastructure rather than a traditional project developer: it does not acquire land, plant trees, aggregate farmers, or manage restoration in the field. Those duties remain with project operators and local partners, while OFP provides the standard, data-collection tools, validation workflow, registry, and credit-issuance rails. Compared with a forest-carbon technology provider such as Pachama, OFP places greater emphasis on an open protocol and end-to-end digital standard and registry, including distributed third-party validation and on-chain issuance; it is not primarily a proprietary project-rating, portfolio-sourcing, or direct project-development service. This comparison describes different ecosystem roles, not relative quality."
+      "platformComparison": "Open Forest Protocol and Pachama both use technology to lower forest-carbon transaction costs, but neither is the field project operator. OFP provides an open, end-to-end standard, data-collection workflow, distributed validation process, registry, and issuance rails; project operators retain the credits and seek outside buyers. Pachama provided proprietary screening, diligence, monitoring, portfolio sourcing, and market access, connecting corporate funding with third-party projects. The lesson is digital certification and issuance infrastructure versus commercial diligence, MRV, and buyer access."
     },
     "similarityScores": {
       "carbonFirst": 2,
@@ -2171,8 +2170,8 @@
       "customer": "Carbon-project developers, standards and ratings organizations, investors, governments, and companies with forest-risk supply chains",
       "primaryRevenue": "Subscriptions and paid access to forest-carbon data, platform and API products, partner distribution, and customized analytical services",
       "mainOffering": "Global satellite-based above-ground biomass stock and change, carbon-flow, and forest-cover data",
-      "carbonRole": "Independent measurement and monitoring data for project assessment, digital MRV, portfolio analysis, and corporate land-sector accounting",
-      "financing": "Enables diligence, monitoring, and reporting for carbon finance but does not finance projects or issue or sell credits",
+      "carbonRole": "Enabling measurement service for project assessment, digital MRV, portfolio analysis, and corporate land-sector accounting",
+      "financing": "Customers pay Chloris for data and analytics that support outside investment, diligence, and reporting; Chloris does not finance projects or issue or sell credits",
       "typicalClient": "Organizations that need consistent, spatially explicit biomass and carbon measurements across projects, portfolios, jurisdictions, or supply chains",
       "platformComparison": "Chloris Geospatial is the most measurement-specialized of these three organizations: it focuses on producing satellite-based above-ground biomass and carbon-stock data and tracking changes over time. Pachama has a broader forest-carbon role spanning project diligence, portfolio sourcing and marketplace access, and MRV infrastructure. Open Forest Protocol provides open digital MRV, registry, validation, credit-issuance, and carbon-standard infrastructure. Chloris can provide a measurement input to standards, ratings, project-development, or monitoring workflows, but it does not itself operate the broader diligence marketplace associated with Pachama or the open standard and registry infrastructure operated by Open Forest Protocol. This comparison describes different roles in the forest-carbon ecosystem, not relative quality."
     },
@@ -2499,10 +2498,10 @@
       "customer": "Institutional investors and corporations seeking natural-capital exposure, financial returns, carbon credits, or nature and climate outcomes",
       "primaryRevenue": "Fund-level returns from productive-land income, asset value, ecosystem services, and carbon credits; public sources do not disclose CAM's fee terms",
       "mainOffering": "Dedicated natural-capital investment funds and corporate mandates",
-      "carbonRole": "Central to the Nature Based Carbon Fund and selected real assets; one component of a broader natural-capital platform",
-      "financing": "Committed fund capital, co-investment, corporate mandates, project finance against expected credits, and long-term carbon offtakes",
+      "carbonRole": "Investment product and return stream in dedicated strategies; one component of a broader natural-capital platform",
+      "financing": "Institutional and corporate investors commit capital to CAM-managed funds and mandates, which finance assets and operators; returns can combine asset cash flows, carbon revenue, and long-term offtakes",
       "typicalClient": "Pension funds, insurers, financial institutions, and corporations such as Apple and its suppliers",
-      "platformComparison": "CAM is a specialist investment manager with dedicated natural-capital and carbon funds. FMO is a broader development finance institution providing loans, equity, guarantees, and other capital across emerging markets; this comparison distinguishes their roles rather than ranking them."
+      "platformComparison": "Climate Asset Management and FMO both channel institutional capital into nature-related assets, but they raise and deploy it under different mandates. CAM is a specialist investment manager: investors commit to dedicated natural-capital funds and mandates, which finance assets and operators seeking financial returns from land, commodities, ecosystem services, and carbon. FMO is a development finance institution using its balance sheet, public programs, guarantees, and blended finance to support additionality and market creation across emerging-market sectors. Remember specialist fund management versus catalytic development banking."
     },
     "similarityScores": {
       "carbonFirst": 3,
@@ -2664,10 +2663,10 @@
       "customer": "Private-sector companies, projects, financial institutions, and investment funds in developing and emerging markets",
       "primaryRevenue": "Returns from debt and equity investments across a diversified development-finance portfolio",
       "mainOffering": "Long-term development finance, risk sharing, capital mobilization, and capacity development",
-      "carbonRole": "Climate action spans the portfolio; forestry and nature-based solutions are strategic investment areas rather than a dedicated carbon fund",
-      "financing": "Debt, equity, guarantees, syndications, public funds, and blended finance",
+      "carbonRole": "Potential project revenue and climate outcome within a broader development-finance portfolio; not FMO's primary product",
+      "financing": "FMO and public or private co-investors provide debt, equity, guarantees, and blended capital to companies, projects, and funds; carbon revenue may support underlying economics",
       "typicalClient": "Emerging-market businesses, project sponsors, banks, and fund managers seeking long-term capital",
-      "platformComparison": "FMO is a development finance institution investing across emerging-market sectors with debt, equity, guarantees, and blended finance, while Climate Asset Management raises dedicated natural-capital funds from institutional and corporate investors. Both finance climate and nature, but FMO acts as a development bank and catalytic capital provider whereas CAM acts as a specialist investment manager; the distinction is about their roles, not their quality."
+      "platformComparison": "FMO and Climate Asset Management both finance nature-related businesses and projects, but the source and purpose of their capital differ. FMO combines its balance sheet with public and mobilized capital to provide loans, equity, guarantees, and blended finance where development impact and additionality justify intervention. CAM raises dedicated natural-capital funds and corporate mandates and invests for strategy-specific financial and environmental returns. The teaching distinction is catalytic development finance versus specialist investment management."
     },
     "similarityScores": {
       "carbonFirst": 1,
@@ -2859,8 +2858,8 @@
       "customer": "Microsoft's internal corporate climate program is the buyer; project developers and removal suppliers are counterparties rather than customers of a Microsoft carbon product",
       "primaryRevenue": "Microsoft's carbon-removal activity is a procurement expense funded by the corporation, not a carbon-credit revenue business",
       "mainOffering": "Large-scale demand for independently reviewed and verified future carbon removals across a diversified portfolio",
-      "carbonRole": "Corporate purchaser and eventual retiree of removal credits for residual and historical emissions",
-      "financing": "Long-term offtakes create contracted future revenue that can reduce market risk and support suppliers in raising separate debt or equity; Microsoft does not ordinarily act as the project lender",
+      "carbonRole": "Procurement expense and climate-accounting instrument for residual and historical emissions; not a revenue product",
+      "financing": "Microsoft pays removal suppliers through purchases and long-term offtakes; contracted revenue can help suppliers raise separate debt or equity, but Microsoft does not ordinarily act as project lender",
       "typicalClient": "Counterparties include restoration and forestry developers, soil-carbon programs, biochar and mineralization companies, direct-air-capture and biomass-removal suppliers, and project aggregators",
       "platformComparison": "Microsoft and Salesforce are both sophisticated corporate buyers and participate together in the Symbiosis Coalition, but their procurement programs emphasize different functions. Microsoft has built an unusually large, project-specific portfolio of long-term removal offtakes intended to supply its carbon-negative and historical-emissions commitments. Salesforce currently uses a disclosed mix of avoidance and removal credits to compensate for 100% of annual residual emissions, while committing $100 million to high-durability removal offtakes by 2030 and a transition to durable removals for annual residual emissions by 2040. Salesforce also uses coalitions, nature initiatives, and its marketplace platform to broaden participation; Microsoft more visibly demonstrates how very large bilateral forward purchases can anchor new supply."
     },
@@ -3044,8 +3043,8 @@
       "customer": "Salesforce's internal sustainability program is the buyer for its own portfolio; Net Zero Marketplace also serves outside organizations seeking access to carbon-credit providers and project information",
       "primaryRevenue": "Salesforce earns primarily from enterprise software; carbon procurement is a corporate climate expense, while its relevant market offering is software-based marketplace infrastructure rather than revenue from developing or issuing credits",
       "mainOffering": "Corporate demand combined with advance market commitments, coalition participation, buyer education, quality advocacy, and marketplace infrastructure",
-      "carbonRole": "Purchaser and eventual retiree of credits for annual residual emissions, coalition member supporting new removal supply, and platform provider connecting other buyers with credit providers",
-      "financing": "Purchases, long-term offtake commitments, and pooled demand can create future revenue signals for suppliers; marketplace access can broaden demand, but Salesforce does not ordinarily provide project loans or manage project capital",
+      "carbonRole": "Procurement expense and climate-accounting instrument, plus an enabling marketplace service; not a project product",
+      "financing": "Salesforce and coalition partners pay suppliers through purchases and long-term offtakes, while marketplace users create additional demand; Salesforce does not ordinarily provide project loans or manage project capital",
       "typicalClient": "Procurement counterparties include credit providers and engineered- and nature-based removal suppliers; marketplace users are organizations seeking accessible project information, ratings, pricing, and purchasing",
       "platformComparison": "Salesforce and Microsoft are both sophisticated corporate carbon buyers and members of the Symbiosis Coalition, but they make different market functions especially visible. Microsoft's program is known for very large, project-specific, long-term bilateral offtakes that can anchor individual suppliers and projects. Salesforce is more useful for understanding ecosystem building: it combines its own portfolio and durable-removal commitments with coalitions, aggregated demand, buyer education, quality advocacy, and marketplace infrastructure intended to bring more organizations into the market. Both create demand; Microsoft more visibly demonstrates bilateral scale, while Salesforce demonstrates how procurement can be paired with shared market infrastructure and collective action."
     },
@@ -3217,10 +3216,10 @@
       "customer": "Consumers, retailers, and food-service customers buying branded food, beverage, nutrition, and pet-care products",
       "primaryRevenue": "Sales of branded agrifood and pet-care products rather than carbon credits",
       "mainOffering": "Consumer products supported by resilient global agricultural supply chains",
-      "carbonRole": "Scope 3 emissions reduction and removals inside sourcing landscapes; carbon supports regenerative sourcing rather than serving as the primary product",
-      "financing": "Direct corporate investment, supplier partnerships, farmer incentives and premiums, technical assistance, and monitored in-chain climate projects",
+      "carbonRole": "Outcome of broader procurement and resilience objectives and an input to Scope 3 accounting; not the primary product",
+      "financing": "Nestlé and its brands fund suppliers, cooperatives, implementers, and farmer incentives through corporate budgets and procurement relationships; project economics rest on resilient sourcing, not credit sales",
       "typicalClient": "Downstream consumers and trade customers; sustainability counterparties include suppliers, cooperatives, farmers, NGOs, implementers, and assurance partners",
-      "platformComparison": "Nestlé and Mars are both multinational agrifood companies that use agroforestry to strengthen agricultural supply chains while improving climate and livelihood outcomes. Nestlé's portfolio is especially broad across coffee, cocoa, dairy, and other ingredients, with regenerative agriculture tied to enterprise-wide climate targets. Mars has been especially visible in cocoa transformation through Cocoa for Generations, farmer livelihoods, and commodity-specific sourcing programs. Both integrate carbon into wider procurement strategies rather than treating carbon credits as the primary objective; the comparison explains different emphases, not a ranking."
+      "platformComparison": "Nestlé and Mars are easily confused in this ecosystem because both fund agroforestry through commodity procurement, supplier programs, farmer support, and Scope 3 strategies rather than selling carbon credits. Nestlé demonstrates a broad, enterprise-wide regenerative agriculture portfolio across coffee, cocoa, dairy, and other ingredients, with brand programs, premiums, and direct farmer incentives. Mars offers a more concentrated teaching example around cocoa transformation, supplier co-investment, livelihoods, traceability, and blended partnerships, alongside a growing multi-crop portfolio. The lesson is not a different ecosystem role but a different strategic emphasis within agrifood supply-chain finance."
     },
     "similarityScores": {
       "carbonFirst": 1,
@@ -3391,10 +3390,10 @@
       "customer": "Consumers, retailers, and food-service customers buying branded snacking, food, and pet-care products and services",
       "primaryRevenue": "Sales of branded agrifood and pet-care products and services rather than carbon credits",
       "mainOffering": "Consumer and pet-care products supported by resilient global agricultural supply chains",
-      "carbonRole": "Primarily Scope 3 emissions reduction and removals within sourcing landscapes; external removal credits are a future tool for residual emissions, not the core sourcing proposition",
-      "financing": "Direct corporate investment, supplier co-investment, premiums and farmer incentives, technical assistance, implementation partnerships, and selected blended-finance or carbon-outcome mechanisms",
+      "carbonRole": "Outcome of broader procurement and resilience objectives and an input to Scope 3 accounting; external credits address future residual emissions",
+      "financing": "Mars, suppliers, and selected public or philanthropic partners fund implementers, services, premiums, and farmer incentives; project economics rest on resilient sourcing, not credit sales",
       "typicalClient": "Downstream consumers and trade customers; sustainability counterparties include suppliers, farmer organizations, governments, NGOs, implementers, and assurance partners",
-      "platformComparison": "Mars and Nestlé occupy nearly the same ecosystem role: both are multinational agrifood companies that use agroforestry and regenerative agriculture to strengthen sourcing, improve farmer resilience, and deliver value-chain climate goals. Nestlé demonstrates a more diversified portfolio across coffee, cocoa, dairy, grains, and other commodities, while Mars provides a more concentrated teaching example around cocoa, farmer livelihoods, traceability, and commodity-specific transformation, alongside a growing multi-crop regenerative agriculture portfolio. Neither treats agroforestry carbon credits as the primary business; the difference is strategic emphasis, not relative quality."
+      "platformComparison": "Mars and Nestlé occupy nearly the same ecosystem role: both fund agroforestry through commodity procurement, supplier programs, farmer support, and Scope 3 strategies rather than selling carbon credits. Mars is the more concentrated teaching example around cocoa transformation, supplier co-investment, livelihoods, traceability, and blended partnerships, alongside a growing multi-crop portfolio. Nestlé demonstrates a broader enterprise-wide regenerative agriculture portfolio across coffee, cocoa, dairy, and other ingredients, with brand programs, premiums, and direct farmer incentives. The lesson is a difference in strategic emphasis within agrifood supply-chain finance, not a difference in role or quality."
     },
     "similarityScores": {
       "carbonFirst": 1,
