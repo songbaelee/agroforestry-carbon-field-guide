@@ -265,6 +265,14 @@
       line-height: 1.35;
     }
 
+    .table-cell-paragraphs p {
+      margin: 0.8em 0 0;
+    }
+
+    .table-cell-paragraphs p:first-child {
+      margin-top: 0;
+    }
+
     .compare-row > div:first-child {
       background: rgba(20, 34, 26, 0.035);
       color: var(--green);
@@ -502,8 +510,8 @@
       ["Role", org => org.roleLabel],
       ["Type", org => org.type],
       ["Carbon model", org => org.strategy],
-      ["Business model", org => org.businessModel || org.description],
-      ["Financing", org => org.financingApproach || "Not yet documented"],
+      ["Business model", org => org.businessModel || org.description, true],
+      ["Financing", org => org.financingApproach || "Not yet documented", true],
       ["Typical partners", org => (org.partners || []).slice(0, 4).join(", ") || "Not yet documented"]
     ];
 
@@ -529,6 +537,28 @@
         "'": "&#039;",
         '"': "&quot;"
       }[character]));
+    }
+
+    function longTextParagraphs(value) {
+      const paragraphs = String(value || "")
+        .trim()
+        .split(/\r?\n\s*\r?\n/)
+        .filter(Boolean)
+        .flatMap(paragraph => {
+          if (paragraph.length < 120) return [paragraph];
+          const sentences = paragraph.split(/(?<=;)\s+|(?<=[.!?])\s+(?=[A-Z0-9])/);
+          if (sentences.length < 2) return [paragraph];
+          return sentences.reduce((groups, sentence) => {
+            const current = groups[groups.length - 1];
+            if (current && `${current} ${sentence}`.length <= 150) {
+              groups[groups.length - 1] = `${current} ${sentence}`;
+            } else {
+              groups.push(sentence);
+            }
+            return groups;
+          }, []);
+        });
+      return `<div class="table-cell-paragraphs">${paragraphs.map(paragraph => `<p>${escapeHtml(paragraph.trim())}</p>`).join("")}</div>`;
     }
 
     function profileUrl(org) {
@@ -623,11 +653,11 @@
           <div class="name">${escapeHtml(org.name)}</div>
           <div class="name">${escapeHtml(other.name)}</div>
         </div>
-        ${comparisonRows.map(([label, getter]) => `
+        ${comparisonRows.map(([label, getter, useParagraphs]) => `
           <div class="compare-row">
             <div>${escapeHtml(label)}</div>
-            <div>${escapeHtml(getter(org))}</div>
-            <div>${escapeHtml(getter(other))}</div>
+            <div>${useParagraphs ? longTextParagraphs(getter(org)) : escapeHtml(getter(org))}</div>
+            <div>${useParagraphs ? longTextParagraphs(getter(other)) : escapeHtml(getter(other))}</div>
           </div>
         `).join("")}
       `;

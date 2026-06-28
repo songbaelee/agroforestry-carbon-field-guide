@@ -517,6 +517,14 @@
       font-size: 14px;
     }
 
+    .table-cell-paragraphs p {
+      margin: 0.8em 0 0;
+    }
+
+    .table-cell-paragraphs p:first-child {
+      margin-top: 0;
+    }
+
     .comparison-row > div:first-child {
       color: var(--green);
       font-size: 12px;
@@ -855,14 +863,39 @@
       }[character]));
     }
 
-    function narrativeParagraphs(value, className = "", firstPrefix = "") {
+    function narrativeParagraphs(value, className = "", firstPrefix = "", splitLong = false) {
       const classAttribute = className ? ` class="${className}"` : "";
-      return String(value || "")
+      const paragraphs = String(value || "")
         .trim()
         .split(/\r?\n\s*\r?\n/)
-        .filter(Boolean)
+        .filter(Boolean);
+      const readableParagraphs = splitLong
+        ? paragraphs.flatMap(paragraph => {
+            if (paragraph.length < 120) return [paragraph];
+            const sentences = paragraph.split(/(?<=;)\s+|(?<=[.!?])\s+(?=[A-Z0-9])/);
+            if (sentences.length < 2) return [paragraph];
+            return sentences.reduce((groups, sentence) => {
+              const current = groups[groups.length - 1];
+              if (current && `${current} ${sentence}`.length <= 150) {
+                groups[groups.length - 1] = `${current} ${sentence}`;
+              } else {
+                groups.push(sentence);
+              }
+              return groups;
+            }, []);
+          })
+        : paragraphs;
+      return readableParagraphs
         .map((paragraph, index) => `<p${classAttribute}>${index === 0 ? firstPrefix : ""}${escapeHtml(paragraph.trim())}</p>`)
         .join("");
+    }
+
+    function tableCellText(value) {
+      const text = String(value || "").trim();
+      const needsParagraphs = text.length >= 120 || /\r?\n\s*\r?\n/.test(text);
+      return needsParagraphs
+        ? `<div class="table-cell-paragraphs">${narrativeParagraphs(text, "", "", true)}</div>`
+        : escapeHtml(text);
     }
 
     function hasText(value) {
@@ -1221,8 +1254,8 @@
             ${rows.map(([label, key]) => `
               <div class="comparison-row">
                 <div>${escapeHtml(label)}</div>
-                <div><span class="comparison-mobile-name">${escapeHtml(org.name)}</span>${escapeHtml(comparisonValue(org, key, "Not yet documented"))}</div>
-                <div><span class="comparison-mobile-name">${escapeHtml(other.name)}</span>${escapeHtml(comparisonValue(other, key, "Not yet documented"))}</div>
+                <div><span class="comparison-mobile-name">${escapeHtml(org.name)}</span>${tableCellText(comparisonValue(org, key, "Not yet documented"))}</div>
+                <div><span class="comparison-mobile-name">${escapeHtml(other.name)}</span>${tableCellText(comparisonValue(other, key, "Not yet documented"))}</div>
               </div>
             `).join("")}
           </div>
@@ -1319,7 +1352,7 @@
               <div class="adjacent-row">
                 <a href="${profileUrl(item)}">${escapeHtml(item.name)}</a>
                 <div>${escapeHtml(item.roleLabel || item.role || "Organization")} &middot; ${escapeHtml(item.strategy || item.type || "Not yet documented")}</div>
-                <div>${escapeHtml(adjacentDifference(org, item))}</div>
+                <div>${tableCellText(adjacentDifference(org, item))}</div>
               </div>
             `).join("")}
           </div>
