@@ -303,6 +303,10 @@
       letter-spacing: -0.04em;
     }
 
+    .mobile-org-name {
+      display: none;
+    }
+
     .bars {
       display: grid;
       gap: 10px;
@@ -446,9 +450,64 @@
       .hero,
       .layout { grid-template-columns: 1fr; }
       .hero-card { min-height: auto; padding: 24px; }
-      .compare-row,
+      .compare-table {
+        display: grid;
+        gap: 10px;
+        overflow: visible;
+        border: 0;
+        border-radius: 0;
+        background: transparent;
+      }
+      .compare-row {
+        grid-template-columns: 1fr;
+        overflow: hidden;
+        border: 1px solid var(--line);
+        border-radius: 18px;
+        background: rgba(255, 250, 240, 0.58);
+      }
+      .compare-row:last-child { border-bottom: 1px solid var(--line); }
+      .compare-header { display: none; }
+      .compare-row > div {
+        padding: 10px 14px;
+        line-height: 1.45;
+      }
+      .compare-row > div:first-child {
+        padding-top: 9px;
+        padding-bottom: 9px;
+        border-bottom: 1px solid var(--line);
+      }
+      .compare-value + .compare-value {
+        border-top: 1px solid var(--line);
+      }
+      .mobile-org-name {
+        display: block;
+        margin-bottom: 4px;
+        color: var(--ink);
+        font-size: 13px;
+        font-weight: 900;
+        line-height: 1.25;
+        letter-spacing: -0.02em;
+      }
+      .compare-row.long-copy > div {
+        padding: 9px 16px;
+      }
+      .compare-row.long-copy > .compare-value {
+        padding-top: 15px;
+        padding-bottom: 17px;
+        font-size: 15px;
+        line-height: 1.6;
+      }
+      .compare-row.long-copy .mobile-org-name {
+        margin-bottom: 9px;
+        font-size: 14px;
+      }
+      .compare-row.long-copy .table-cell-paragraphs p {
+        margin-top: 0.85em;
+      }
+      .compare-row.long-copy .table-cell-paragraphs p:first-child {
+        margin-top: 0;
+      }
       .bar-row { grid-template-columns: 1fr; }
-      .compare-row > div:first-child { border-bottom: 1px solid var(--line); }
       .methodology { margin-left: 0; }
     }
   </style>
@@ -674,7 +733,7 @@
     function renderComparison(org, other) {
       comparisonTitle.textContent = `${org.name} vs ${other.name}`;
       compareTable.innerHTML = `
-        <div class="compare-row">
+        <div class="compare-row compare-header">
           <div></div>
           <div class="name">${escapeHtml(org.name)}</div>
           <div class="name">${escapeHtml(other.name)}</div>
@@ -682,8 +741,8 @@
         ${comparisonRows.map(([label, getter, useParagraphs]) => `
           <div class="compare-row${useParagraphs ? " long-copy" : ""}">
             <div>${escapeHtml(label)}</div>
-            <div>${useParagraphs ? longTextParagraphs(getter(org)) : escapeHtml(getter(org))}</div>
-            <div>${useParagraphs ? longTextParagraphs(getter(other)) : escapeHtml(getter(other))}</div>
+            <div class="compare-value"><span class="mobile-org-name">${escapeHtml(org.name)}</span>${useParagraphs ? longTextParagraphs(getter(org)) : escapeHtml(getter(org))}</div>
+            <div class="compare-value"><span class="mobile-org-name">${escapeHtml(other.name)}</span>${useParagraphs ? longTextParagraphs(getter(other)) : escapeHtml(getter(other))}</div>
           </div>
         `).join("")}
       `;
