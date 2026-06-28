@@ -3261,42 +3261,170 @@
     "hq": "United States",
     "geography": "Global supply chains",
     "strategy": "Supply chains",
-    "description": "Relevant as a cocoa and agrifood supply-chain company where agroforestry carbon can connect climate, sourcing, and farmer livelihoods.",
+    "description": "Mars is a multinational agrifood and pet-care company that buys agricultural commodities and invests in agroforestry and regenerative agriculture to make those supply chains more resilient. Its most concentrated example is cocoa: supplier programs combine traceability, forest protection, shade trees, agronomy, farmer-income support, and climate-smart production. Mars also funds regenerative practices in grains, rice, dairy, mint, and other ingredients. These interventions can reduce emissions and increase removals inside its value chain, but carbon is an enabling mechanism rather than the product. Mars is fundamentally a commodity purchaser and corporate sustainability actor, not a carbon project developer or carbon-credit buyer first.",
     "examples": [
       "Cocoa",
-      "Supply chains",
-      "Insetting"
+      "Regenerative sourcing",
+      "Farmer livelihoods"
     ],
     "featured": false,
     "website": "https://www.mars.com/sustainability-plan",
     "slug": "mars",
-    "overview": "Relevant as a cocoa and agrifood supply-chain company where agroforestry carbon can connect climate, sourcing, and farmer livelihoods.",
+    "overview": "Mars is a United States-headquartered, family-owned multinational whose food, snacking, and pet-care businesses depend on agricultural ingredients. Raw materials dominate the climate footprint of its snacking business, and agricultural ingredients account for nearly 60% of its wider value-chain emissions, making farm-level change important to both dependable sourcing and its Scope 3 strategy. Mars works through suppliers, farmer organizations, governments, and implementation partners rather than owning most farms or developing carbon projects itself. In cocoa, its Cocoa for Generations strategy links responsible sourcing, traceability, farmer livelihoods, deforestation prevention, agroforestry, biodiversity, productivity, and climate resilience. Across other ingredients, climate-smart agriculture programs use locally appropriate practices such as cover crops, reduced tillage, crop diversification, lower-carbon inputs, and farmer training. Mars counts value-chain emissions reductions and carbon sequestration toward decarbonization; it treats high-quality removal credits outside the value chain as a later tool for residual emissions, not as the main purpose of its sourcing programs.",
+    "businessModel": "Multinational agrifood, snacking, and pet-care company and purchaser of agricultural commodities. Mars earns revenue from consumer products, pet-care products and services, and veterinary businesses, not from developing or selling carbon credits. It invests in responsible sourcing and regenerative agriculture to secure future ingredient supply, improve productivity and farmer resilience, manage deforestation and human-rights risks, and reduce Scope 3 emissions. Agroforestry is especially relevant in cocoa, where shade and diversified tree systems can support yields, biodiversity, adaptation, household income, emissions reduction, and carbon removal at the same time.",
+    "representativeProjects": [
+      "Cocoa for Generations — a $1 billion, 10-year strategy launched in 2018 that funds supplier and partner programs for a more modern, inclusive, and sustainable cocoa supply chain; its Responsibly Sourced Cocoa Program combines farm-level traceability, third-party verification, forest safeguards, and livelihood interventions",
+      "Mars and ofi cocoa collaboration in Ecuador — a five-year shared-supply-chain program whose first phase is expected to help more than 960 farmers adopt regenerative practices across more than 9,000 hectares, including transition from full-sun monoculture to multistrata agroforestry, lower-carbon fertilizer, crop-residue management, and biochar",
+      "ACTIVE in Indonesia — a $7.2 million Global Development Alliance with USAID and the Institute for Development Impact that advances diversified cocoa agroforestry, crop insurance and access to finance, farm productivity, income diversification, and community-led implementation in Sulawesi",
+      "Cocoa & Forests Initiative in Côte d'Ivoire and Ghana — Mars works through suppliers and the industry-government framework on farm mapping, deforestation-risk assessment, farmer training, forest protection, restoration, and shade-tree distribution; its 2024 cocoa report recorded 1.8 million non-cocoa trees distributed for on-farm planting",
+      "Enterprise climate-smart agriculture portfolio — approximately 77 projects across 26 countries and 12 crops in 2025, supporting Mars' ambition to help deliver more than one million acres of regenerative agriculture practices by 2030; projects span cocoa, grains, rice, dairy, mint, and other ingredients"
+    ],
+    "partners": [
+      "Farmers, farmer organizations, cocoa suppliers, and local implementation partners",
+      "ofi (Olam Food Ingredients)",
+      "Sucden (General Cocoa)",
+      "Institute for Development Impact (I4DI)",
+      "U.S. Agency for International Development (USAID)",
+      "World Cocoa Foundation and Cocoa & Forests Initiative participants",
+      "CARE",
+      "Rainforest Alliance and Fairtrade",
+      "Cargill, ADM, Soil Capital, Agreena, Biospheres, and Horta"
+    ],
+    "standards": [
+      "Mars Responsibly Sourced Cocoa Program and Responsibly Sourced Cocoa Specification",
+      "Accountability Framework definitions for deforestation- and conversion-free sourcing and Cocoa & Forests Initiative country frameworks",
+      "Rainforest Alliance, Fairtrade, or other Mars-approved third-party certification and verification where used",
+      "Science Based Targets initiative-validated near- and long-term climate targets, including Forest, Land and Agriculture emissions",
+      "GHG Protocol and land-sector accounting methods for value-chain emissions reductions and removals",
+      "Gold Standard, Verified Carbon Standard, and American Carbon Registry for external removal credits where used; Mars is not itself a carbon standard or registry"
+    ],
+    "financingApproach": "Mars finances agroforestry primarily as a supply-chain and business-resilience investment. Corporate sustainability, procurement, and brand budgets fund multi-year strategies such as the $1 billion Cocoa for Generations commitment and the Net Zero Roadmap's investment program. Capital and implementation typically flow through cocoa traders, ingredient suppliers, farmer organizations, NGOs, agronomy providers, and public-private partnerships; the 2025–2029 Ecuador collaboration with ofi, for example, is structured as co-investment in their shared cocoa supply chain.\n\nSupport reaching farmers can include training, planting material, farm rehabilitation, traceability systems, crop insurance, savings groups, access to finance, and payments or incentives for adopting practices. Mars supports cocoa certification and premium transparency, backs the Living Income Differential in Côte d'Ivoire and Ghana, and has used direct cash incentives in other commodities: its five-year Farmer Forward dairy program with Fonterra combines funded tools and technology with annual performance payments for participating farmers. Blended arrangements can add public or philanthropic capital, as in the $7.2 million ACTIVE alliance with USAID and I4DI.\n\nCarbon value is secondary and takes two distinct forms. Within Mars' supply chains, avoided land-use emissions, lower farm emissions, and increased sequestration can contribute to Scope 3 and net-zero performance; some supplier programs also compensate farmers for measured carbon outcomes. Separately, Mars says it expects to use high-quality removal credits for residual emissions at net zero in 2050 and has invested in Livelihoods Carbon Fund 3 to build future supply. That external-credit strategy should not be confused with its dominant model: financing farm and supplier transitions to secure commodities, livelihoods, resilience, biodiversity, and in-chain climate benefits.",
+    "ecosystemFit": "Mars creates demand and funding for agroforestry by embedding it in commodity sourcing, supplier programs, farmer-livelihood initiatives, and Scope 3 delivery. Suppliers and specialist partners perform much of the farm implementation, monitoring, certification, and landscape coordination; Mars is not a carbon project developer, registry, standard setter, MRV provider, or natural-capital fund manager. Carbon reductions, removals, and insetting-like outcomes support the broader commercial objective of resilient farms and reliable agricultural supply, while external removal credits are reserved for residual emissions rather than driving the sourcing model.",
+    "sources": [
+      {
+        "title": "2025 Sustainable in a Generation Report",
+        "organization": "Mars",
+        "url": "https://www.mars.com/sustainability-plan/sustainability-report-progress",
+        "type": "Sustainability report",
+        "sections": ["overview", "businessModel", "representativeProjects", "financingApproach"]
+      },
+      {
+        "title": "Achieving Net Zero emissions by 2050",
+        "organization": "Mars",
+        "url": "https://www.mars.com/sustainability-plan/healthy-planet/net-zero-2050",
+        "type": "Climate strategy",
+        "sections": ["overview", "businessModel", "financingApproach", "ecosystemFit", "standards"]
+      },
+      {
+        "title": "Climate Action Position Statement",
+        "organization": "Mars",
+        "url": "https://www.mars.com/about/policies-and-practices/climate-action",
+        "type": "Policy statement",
+        "sections": ["overview", "financingApproach", "ecosystemFit", "standards"]
+      },
+      {
+        "title": "Cocoa for Generations 2024 Progress Report",
+        "organization": "Mars",
+        "url": "https://www.mars.com/sites/g/files/dfsbuz106/files/2025-12/Mars-Cocoa-for-Generations-2024-Progress-Report.pdf",
+        "type": "Program report",
+        "kind": "PDF",
+        "sections": ["overview", "businessModel", "representativeProjects", "partners", "financingApproach"]
+      },
+      {
+        "title": "Sustainable Cocoa",
+        "organization": "Mars",
+        "url": "https://www.mars.com/sustainability-plan/cocoa-for-generations/sustainable",
+        "type": "Cocoa strategy",
+        "sections": ["overview", "representativeProjects", "partners", "ecosystemFit", "comparison"]
+      },
+      {
+        "title": "Cocoa and Forests Action Plan",
+        "organization": "Mars",
+        "url": "https://www.mars.com/about/policies-and-practices/cocoa-and-forests-policy",
+        "type": "Responsible sourcing policy",
+        "sections": ["overview", "representativeProjects", "partners", "standards"]
+      },
+      {
+        "title": "Farmer Income Position Statement",
+        "organization": "Mars",
+        "url": "https://www.mars.com/about/policies-and-practices/farmer-income",
+        "type": "Livelihoods strategy",
+        "sections": ["businessModel", "representativeProjects", "financingApproach", "partners"]
+      },
+      {
+        "title": "Mars and ofi Announce Strategic Collaboration to Accelerate Net Zero Cocoa in Ecuador",
+        "organization": "ofi",
+        "url": "https://www.ofi.com/news-and-events/press-release/mars-and-ofi-announce-strategic-collaboration",
+        "type": "Supplier announcement",
+        "sections": ["representativeProjects", "financingApproach", "partners", "ecosystemFit"]
+      },
+      {
+        "title": "Global Development Alliance to Improve Farmer Livelihoods and Support a Sustainable, Climate-Resilient Cocoa Industry in Indonesia",
+        "organization": "Institute for Development Impact",
+        "url": "https://i4di.org/publications-view/i4di-announces-7-2-million-global-development-alliance-to-improve-farmer-livelihoods-and-support-a-sustainable-climate-resilient-cocoa-industry-in-indonesia/",
+        "type": "Implementation partner",
+        "sections": ["representativeProjects", "financingApproach", "partners"]
+      },
+      {
+        "title": "Mars announces partnerships supporting regenerative agriculture transition across its European pet food supply chain",
+        "organization": "Mars",
+        "url": "https://www.mars.com/news-and-stories/press-releases-statements/mars-partnerships-support-regenerative-agriculture-transition-europe",
+        "type": "Program announcement",
+        "sections": ["representativeProjects", "financingApproach", "partners"]
+      },
+      {
+        "title": "Mars pledges $27M for tools, technology and cash incentives to empower dairy farmers",
+        "organization": "Mars",
+        "url": "https://www.mars.com/news-and-stories/press-releases-statements/mars-pledges-27m-usd-for-farmer-forward-program",
+        "type": "Financing example",
+        "sections": ["financingApproach"]
+      },
+      {
+        "title": "Nestlé sustainability",
+        "organization": "Nestlé",
+        "url": "https://www.nestle.com/sustainability",
+        "type": "Comparison",
+        "sections": ["comparison"]
+      }
+    ],
+    "comparison": {
+      "customer": "Consumers, retailers, and food-service customers buying branded snacking, food, and pet-care products and services",
+      "primaryRevenue": "Sales of branded agrifood and pet-care products and services rather than carbon credits",
+      "mainOffering": "Consumer and pet-care products supported by resilient global agricultural supply chains",
+      "carbonRole": "Primarily Scope 3 emissions reduction and removals within sourcing landscapes; external removal credits are a future tool for residual emissions, not the core sourcing proposition",
+      "financing": "Direct corporate investment, supplier co-investment, premiums and farmer incentives, technical assistance, implementation partnerships, and selected blended-finance or carbon-outcome mechanisms",
+      "typicalClient": "Downstream consumers and trade customers; sustainability counterparties include suppliers, farmer organizations, governments, NGOs, implementers, and assurance partners",
+      "platformComparison": "Mars and Nestlé occupy nearly the same ecosystem role: both are multinational agrifood companies that use agroforestry and regenerative agriculture to strengthen sourcing, improve farmer resilience, and deliver value-chain climate goals. Nestlé demonstrates a more diversified portfolio across coffee, cocoa, dairy, grains, and other commodities, while Mars provides a more concentrated teaching example around cocoa, farmer livelihoods, traceability, and commodity-specific transformation, alongside a growing multi-crop regenerative agriculture portfolio. Neither treats agroforestry carbon credits as the primary business; the difference is strategic emphasis, not relative quality."
+    },
     "similarityScores": {
       "carbonFirst": 1,
       "supplyChainFocus": 5,
-      "technicalAssistance": 2,
-      "farmerImplementation": 3,
+      "technicalAssistance": 3,
+      "farmerImplementation": 4,
       "technologyMRV": 2,
       "capitalProvision": 3,
       "standardSetting": 1,
-      "corporateDemand": 5,
+      "corporateDemand": 2,
       "restorationFocus": 3,
-      "smallholderFocus": 4
+      "smallholderFocus": 5
     },
-    "researchStatus": "preliminary",
-    "researchConfidence": "Low",
-    "lastReviewed": "2026-06-27",
+    "researchStatus": "complete",
+    "researchConfidence": "High",
+    "lastReviewed": "2026-06-28",
     "methodologyVersion": "v0.1",
     "relationships": {
       "comparable": [
-        "nestl",
-        "salesforce",
-        "microsoft"
+        "nestl"
       ],
       "collaborators": [
-        "pur",
-        "suppliers",
-        "farmer-groups"
+        "cocoa-suppliers",
+        "farmer-organizations",
+        "ofi",
+        "sucden",
+        "i4di",
+        "usaid",
+        "world-cocoa-foundation",
+        "care"
       ]
     },
     "featuredComparison": "nestl"
