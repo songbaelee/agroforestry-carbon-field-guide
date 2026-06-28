@@ -829,6 +829,16 @@
       }[character]));
     }
 
+    function narrativeParagraphs(value, className = "", firstPrefix = "") {
+      const classAttribute = className ? ` class="${className}"` : "";
+      return String(value || "")
+        .trim()
+        .split(/\r?\n\s*\r?\n/)
+        .filter(Boolean)
+        .map((paragraph, index) => `<p${classAttribute}>${index === 0 ? firstPrefix : ""}${escapeHtml(paragraph.trim())}</p>`)
+        .join("");
+    }
+
     function hasText(value) {
       return Boolean(String(value || "").trim());
     }
@@ -994,7 +1004,7 @@
       sections.push(`
         <article class="section-card">
           <h2>Overview</h2>
-          <p>${escapeHtml(org.description || org.overview)}</p>
+          ${narrativeParagraphs(org.description || org.overview)}
         </article>
       `);
 
@@ -1003,7 +1013,7 @@
         sections.push(`
           <article class="section-card">
             <h2>Business model</h2>
-            <p>${escapeHtml(org.businessModel)}</p>
+            ${narrativeParagraphs(org.businessModel)}
             ${inlineSources(sources)}
           </article>
         `);
@@ -1050,7 +1060,7 @@
         sections.push(`
           <article class="section-card wide">
             <h2>Financing approach</h2>
-            <p>${escapeHtml(org.financingApproach)}</p>
+            ${narrativeParagraphs(org.financingApproach)}
             ${inlineSources(sources)}
           </article>
         `);
@@ -1076,7 +1086,7 @@
             <div class="primary-role-item"><b>Organization type</b><span>${escapeHtml(org.type)}</span></div>
             <div class="primary-role-item"><b>What they do</b><span>${escapeHtml(org.strategy)}</span></div>
           </div>
-          ${hasText(org.ecosystemFit) ? `<p class="ecosystem-fit"><b>Ecosystem fit:</b> ${escapeHtml(org.ecosystemFit)}</p>` : ""}
+          ${hasText(org.ecosystemFit) ? narrativeParagraphs(org.ecosystemFit, "ecosystem-fit", "<b>Ecosystem fit:</b> ") : ""}
           <p class="primary-role-summary">${escapeHtml(roleOrientationSentence(org))}</p>
         </section>
       `;
@@ -1371,7 +1381,7 @@
             <div>
               <div class="eyebrow">${escapeHtml(org.roleLabel || "Organization profile")}</div>
               <h1>${escapeHtml(org.name)}</h1>
-              <p class="lede">${escapeHtml(org.overview || org.description)}</p>
+              ${narrativeParagraphs(org.overview || org.description, "lede")}
             </div>
             <div class="hero-actions">
               <a class="button" href="${escapeHtml(org.website)}" target="_blank" rel="noopener">Visit website →</a>
