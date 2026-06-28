@@ -294,6 +294,8 @@
       font-size: 15px;
     }
 
+    .section-card p + p { margin-top: 14px; }
+
     .chips, .list-pills {
       margin-top: 18px;
       display: flex;
@@ -531,6 +533,8 @@
       letter-spacing: -0.02em;
     }
 
+    .comparison-mobile-name { display: none; }
+
 
     .adjacent-table { display: grid; }
 
@@ -766,8 +770,29 @@
       .related-grid,
       .similarity-grid,
       .collaborator-grid { grid-template-columns: repeat(2, 1fr); }
-      .comparison-row { grid-template-columns: 1fr; }
+      .comparison-table {
+        padding: 14px;
+        gap: 12px;
+      }
+      .comparison-row {
+        grid-template-columns: 1fr;
+        overflow: hidden;
+        border: 1px solid var(--line);
+        border-radius: 18px;
+        background: rgba(255, 250, 240, 0.72);
+      }
+      .comparison-row:last-child { border-bottom: 1px solid var(--line); }
+      .comparison-header { display: none; }
+      .comparison-row > div { overflow-wrap: anywhere; }
       .comparison-row > div:first-child { border-bottom: 1px solid var(--line); }
+      .comparison-row > div:not(:first-child) + div { border-top: 1px solid var(--line); }
+      .comparison-mobile-name {
+        display: block;
+        margin-bottom: 5px;
+        color: var(--ink);
+        font-size: 12px;
+        font-weight: 880;
+      }
       .adjacent-row { grid-template-columns: 1fr; }
       .adjacent-header { display: none; }
       .adjacent-row > a { padding-bottom: 6px; }
@@ -778,6 +803,7 @@
       main { padding-top: 36px; }
       .nav-links { display: none; }
       .hero-card { min-height: auto; padding: 26px; }
+      .lede + .lede { margin-top: 14px; }
       .section-stack { column-count: 1; }
       .related-grid,
       .similarity-grid,
@@ -1187,7 +1213,7 @@
             <p>${escapeHtml(org.name)} vs ${escapeHtml(other.name)}. This is a curated comparison chosen for reader usefulness, not automatically the highest similarity score.</p>
           </div>
           <div class="comparison-table">
-            <div class="comparison-row">
+            <div class="comparison-row comparison-header">
               <div></div>
               <div class="comparison-name">${escapeHtml(org.name)}</div>
               <div class="comparison-name">${escapeHtml(other.name)}</div>
@@ -1195,8 +1221,8 @@
             ${rows.map(([label, key]) => `
               <div class="comparison-row">
                 <div>${escapeHtml(label)}</div>
-                <div>${escapeHtml(comparisonValue(org, key, "Not yet documented"))}</div>
-                <div>${escapeHtml(comparisonValue(other, key, "Not yet documented"))}</div>
+                <div><span class="comparison-mobile-name">${escapeHtml(org.name)}</span>${escapeHtml(comparisonValue(org, key, "Not yet documented"))}</div>
+                <div><span class="comparison-mobile-name">${escapeHtml(other.name)}</span>${escapeHtml(comparisonValue(other, key, "Not yet documented"))}</div>
               </div>
             `).join("")}
           </div>
