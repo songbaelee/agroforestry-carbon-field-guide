@@ -3088,7 +3088,7 @@
     "hq": "Switzerland",
     "geography": "Global supply chains",
     "strategy": "Supply chains",
-    "description": "Relevant as a supply-chain actor where agroforestry can connect climate goals, sourcing, farmer resilience, and landscape outcomes.",
+    "description": "Nestlé is a multinational agrifood company that buys agricultural commodities at global scale and invests in agroforestry primarily to protect the long-term resilience of those supply chains. Through coffee, cocoa, dairy, and other sourcing programs, it funds farmer training, incentives, planting material, and supplier-led implementation that can improve yields, diversify income, restore soils and biodiversity, and reduce climate risk. Carbon is an enabling mechanism: emissions reductions and removals inside sourcing landscapes contribute to Nestlé's Scope 3 strategy, while stronger farms and more dependable supplies remain the central business case. Nestlé is therefore a supply-chain actor, not a carbon project developer or carbon-credit buyer first.",
     "examples": [
       "Supply chains",
       "Insetting",
@@ -3097,33 +3097,158 @@
     "featured": false,
     "website": "https://www.nestle.com/sustainability",
     "slug": "nestl",
-    "overview": "Relevant as a supply-chain actor where agroforestry can connect climate goals, sourcing, farmer resilience, and landscape outcomes.",
+    "overview": "Nestlé is a Switzerland-headquartered multinational agrifood company and major purchaser of coffee, cocoa, dairy, cereals, and other agricultural ingredients. Because almost all of its greenhouse gas emissions arise in Scope 3 and agriculture accounts for nearly two-thirds of its emissions, farm and landscape change is integral to both climate delivery and reliable sourcing. Nestlé uses regenerative agriculture, including agroforestry, to improve soil, water, biodiversity, farm productivity, livelihood resilience, and carbon storage. Its programs combine procurement, direct investment, supplier partnerships, agronomy, farmer incentives, and monitoring. The company reports in-chain reductions and removals toward its climate performance; it does not use offsets disconnected from its value chain for its net-zero target and says it has not converted its removal activities into credits sold on the voluntary market.",
+    "businessModel": "Multinational agrifood and supply-chain company. Nestlé earns revenue from branded food, beverage, nutrition, and pet-care products and depends on long-term access to agricultural commodities. It uses responsible sourcing and regenerative agriculture programs to strengthen farm productivity and climate resilience, manage Scope 3 emissions and deforestation risk, and support farmer livelihoods. Agroforestry is one intervention within this sourcing model; carbon measurement supports climate accounting and investment decisions but is not Nestlé's primary product or business.",
+    "representativeProjects": [
+      "Nescafé Plan 2030 — more than CHF 1 billion committed through 2030 to help coffee farmers adopt regenerative practices; in 2025 Nescafé sourced 53% of its green coffee from farmers adopting regenerative agriculture and supported more than 100,000 farmers in 15 countries through over 1,600 agronomists and field staff",
+      "Nestlé Cocoa Plan and Income Accelerator Program — cash incentives, in addition to certified-cocoa premiums, reward school enrollment, good agricultural practices, agroforestry, and income diversification among cocoa-farming families in Côte d'Ivoire and Ghana",
+      "Cargill and ETG | Beyond Beans cocoa projects — five-year agroforestry and reforestation initiatives designed to distribute more than two million shade trees with close to 20,000 farmers and deliver an estimated 500,000 metric tonnes of supply-chain emissions reductions and removals over 20 years",
+      "Nespresso AAA agroforestry with PUR and local partners — long-term coffee-landscape programs in six countries that use shade and native trees to protect soil and water, diversify farmer income, improve biodiversity, and stabilize coffee quality and production",
+      "Enterprise-wide regenerative agriculture transition — 27.6% of key ingredient volumes came from farmers adopting regenerative agriculture practices in 2025, spanning coffee, cocoa, dairy, grains, vegetables, and other priority supply chains"
+    ],
+    "partners": [
+      "Farmers, cooperatives, suppliers, and local implementation organizations",
+      "PUR",
+      "Rainforest Alliance",
+      "TechnoServe",
+      "Cargill",
+      "ETG | Beyond Beans",
+      "Nespresso AAA Sustainable Quality Program partners",
+      "Cocoa & Forests Initiative"
+    ],
+    "standards": [
+      "Nestlé Agriculture Framework",
+      "Nestlé Responsible Sourcing Core Requirements",
+      "Rainforest Alliance certification where used in coffee and cocoa sourcing",
+      "Science Based Targets initiative-validated climate targets and Nestlé Net Zero Roadmap",
+      "GHG Protocol, IPCC guidance, and project-accounting methods for emissions and removals",
+      "Verified Carbon Standard and Gold Standard where carbon-credit certification is applied; Nestlé is not itself a carbon standard or registry"
+    ],
+    "financingApproach": "Nestlé generally finances agroforestry as a supply-chain investment. Company and brand budgets support multi-year programs such as the Nescafé Plan 2030, while procurement relationships and supplier partnerships carry funding and implementation through traders, cooperatives, agronomists, and local organizations. Support can include seedlings, farm visits, training, monitoring, subsidized services, adapted purchasing, and direct investment in landscape projects.\n\nFarmer economics are addressed through several mechanisms. Nescafé has piloted financial support for the costs and risks of transition; the Cocoa Plan offers certified-cocoa premiums; and the Income Accelerator makes traceable mobile-money payments for practices including agroforestry, in addition to those premiums. Technical assistance and income diversification help make tree-based systems useful before carbon value is realized.\n\nCarbon strengthens the investment case but does not define it. Nestlé measures farm and landscape reductions and removals inside its value chain for Scope 3 and net-zero progress, using carbon-certification standards to support monitoring and verification. Its 2025 reporting states that it does not use out-of-value-chain offsets for its net-zero target and has not sold its removal activities as voluntary-market credits. Outside credits are limited to separate brand-level claims, so the dominant model is corporate and supplier financing for resilient sourcing rather than carbon-credit purchasing or project revenue.",
+    "ecosystemFit": "Nestlé creates demand for agroforestry by embedding it in commodity procurement, regenerative agriculture programs, and Scope 3 delivery. It funds and coordinates suppliers and implementation partners but is not a carbon developer, registry, standard setter, MRV specialist, or natural-capital fund manager. Emissions reduction, in-chain removals, and insetting support a broader objective: resilient farms, farmer livelihoods, biodiversity, and dependable agricultural supply.",
+    "sources": [
+      {
+        "title": "Non-Financial Statement 2025",
+        "organization": "Nestlé",
+        "url": "https://www.nestle.com/sites/default/files/2026-02/non-financial-statement-2025.pdf",
+        "type": "Sustainability report",
+        "kind": "PDF",
+        "sections": ["overview", "businessModel", "financingApproach", "standards", "comparison"]
+      },
+      {
+        "title": "Performance and reporting",
+        "organization": "Nestlé",
+        "url": "https://www.nestle.com/sustainability/performance-reporting",
+        "type": "Performance disclosure",
+        "sections": ["overview", "representativeProjects", "businessModel"]
+      },
+      {
+        "title": "Our road to net zero",
+        "organization": "Nestlé",
+        "url": "https://www.nestle.com/sustainability/climate-change/zero-environmental-impact",
+        "type": "Climate strategy",
+        "sections": ["overview", "businessModel", "financingApproach", "ecosystemFit", "standards"]
+      },
+      {
+        "title": "Regenerative agriculture",
+        "organization": "Nestlé",
+        "url": "https://www.nestle.com/sustainability/nature-environment/regenerative-agriculture",
+        "type": "Agriculture strategy",
+        "sections": ["overview", "businessModel", "representativeProjects", "financingApproach", "ecosystemFit"]
+      },
+      {
+        "title": "Nescafé sources over 50% of its coffee supplies from farmers adopting regenerative agriculture practices in 2025",
+        "organization": "Nestlé",
+        "url": "https://www.nestle.com/media/news/nescafe-plan-2030-progress-report-2025-regenerative-agriculture",
+        "type": "Program update",
+        "sections": ["representativeProjects", "businessModel", "financingApproach"]
+      },
+      {
+        "title": "Nestlé launches Nescafé Plan 2030",
+        "organization": "Nestlé",
+        "url": "https://www.nestle.com/media/pressreleases/allpressreleases/sustainable-coffee-nescafe-plan-2030",
+        "type": "Program announcement",
+        "sections": ["representativeProjects", "financingApproach", "partners"]
+      },
+      {
+        "title": "Cocoa sourcing",
+        "organization": "Nestlé",
+        "url": "https://www.nestle.com/sustainability/responsible-sourcing/cocoa",
+        "type": "Responsible sourcing",
+        "sections": ["representativeProjects", "partners", "financingApproach"]
+      },
+      {
+        "title": "Helping cocoa farmers reach a living income",
+        "organization": "Nestlé",
+        "url": "https://www.nestle.com/sustainability/human-rights/living-income/cocoa",
+        "type": "Farmer livelihoods",
+        "sections": ["representativeProjects", "financingApproach"]
+      },
+      {
+        "title": "Nestlé collaborates with suppliers to help address climate change impact in cocoa",
+        "organization": "Nestlé",
+        "url": "https://www.nestle.com/media/news/collaboration-suppliers-climate-change-impact-cocoa",
+        "type": "Project announcement",
+        "sections": ["representativeProjects", "partners", "financingApproach", "standards"]
+      },
+      {
+        "title": "Nespresso",
+        "organization": "PUR",
+        "url": "https://www.pur.co/partner/nespresso/",
+        "type": "Implementation partner",
+        "sections": ["representativeProjects", "partners", "ecosystemFit"]
+      },
+      {
+        "title": "Partnerships for Impact: Monitoring and Evaluation with Nescafé",
+        "organization": "Rainforest Alliance",
+        "url": "https://www.rainforest-alliance.org/business/corporate-advisory-services/partnerships-for-success-monitoring-and-evaluation-with-nescafe/",
+        "type": "Implementation partner",
+        "sections": ["partners", "standards", "representativeProjects"]
+      },
+      {
+        "title": "Sustainable Cocoa",
+        "organization": "Mars",
+        "url": "https://www.mars.com/sustainability-plan/cocoa-for-generations/sustainable",
+        "type": "Comparison",
+        "sections": ["comparison"]
+      }
+    ],
+    "comparison": {
+      "customer": "Consumers, retailers, and food-service customers buying branded food, beverage, nutrition, and pet-care products",
+      "primaryRevenue": "Sales of branded agrifood and pet-care products rather than carbon credits",
+      "mainOffering": "Consumer products supported by resilient global agricultural supply chains",
+      "carbonRole": "Scope 3 emissions reduction and removals inside sourcing landscapes; carbon supports regenerative sourcing rather than serving as the primary product",
+      "financing": "Direct corporate investment, supplier partnerships, farmer incentives and premiums, technical assistance, and monitored in-chain climate projects",
+      "typicalClient": "Downstream consumers and trade customers; sustainability counterparties include suppliers, cooperatives, farmers, NGOs, implementers, and assurance partners",
+      "platformComparison": "Nestlé and Mars are both multinational agrifood companies that use agroforestry to strengthen agricultural supply chains while improving climate and livelihood outcomes. Nestlé's portfolio is especially broad across coffee, cocoa, dairy, and other ingredients, with regenerative agriculture tied to enterprise-wide climate targets. Mars has been especially visible in cocoa transformation through Cocoa for Generations, farmer livelihoods, and commodity-specific sourcing programs. Both integrate carbon into wider procurement strategies rather than treating carbon credits as the primary objective; the comparison explains different emphases, not a ranking."
+    },
     "similarityScores": {
       "carbonFirst": 1,
       "supplyChainFocus": 5,
-      "technicalAssistance": 2,
-      "farmerImplementation": 3,
+      "technicalAssistance": 3,
+      "farmerImplementation": 4,
       "technologyMRV": 2,
       "capitalProvision": 3,
       "standardSetting": 1,
-      "corporateDemand": 5,
+      "corporateDemand": 2,
       "restorationFocus": 3,
       "smallholderFocus": 4
     },
-    "researchStatus": "preliminary",
-    "researchConfidence": "Low",
-    "lastReviewed": "2026-06-27",
+    "researchStatus": "complete",
+    "researchConfidence": "High",
+    "lastReviewed": "2026-06-28",
     "methodologyVersion": "v0.1",
     "relationships": {
       "comparable": [
-        "mars",
-        "salesforce",
-        "microsoft"
+        "mars"
       ],
       "collaborators": [
         "pur",
-        "suppliers",
-        "farmer-groups"
+        "technoserve",
+        "rainforest-alliance",
+        "cargill",
+        "etg-beyond-beans",
+        "farmer-cooperatives"
       ]
     },
     "featuredComparison": "mars"
