@@ -593,22 +593,43 @@
     function relationSlugs(org) {
       const relationships = org.relationships || {};
       const explicit = Array.isArray(relationships[mode]) ? relationships[mode] : [];
-      if (explicit.length) return explicit;
-      if (mode === "comparable") {
-        return organizations.filter(item => item.role === org.role && getSlug(item) !== getSlug(org)).slice(0, 4).map(getSlug);
-      }
-      return [];
+      return [...new Set(explicit)];
+    }
+
+    function undirectedEdge(source, target) {
+      return getSlug(source).localeCompare(getSlug(target)) <= 0
+        ? { source, target }
+        : { source: target, target: source };
+    }
+
+    function edgeKey(source, target) {
+      return [getSlug(source), getSlug(target)].sort().join("--");
+    }
+
+    function edgeIndex(source, target) {
+      return [...edgeKey(source, target)].reduce((total, character) => total + character.charCodeAt(0), 0);
     }
 
     function relationshipModel(org) {
-      const slugs = [...new Set(relationSlugs(org))];
-      const internal = slugs.map(slug => getOrg(slug)).filter(Boolean);
+      const orgSlug = getSlug(org);
+      const slugs = relationSlugs(org);
+      const outboundInternal = slugs.map(slug => getOrg(slug)).filter(Boolean);
+      const outboundSet = new Set(outboundInternal.map(getSlug));
+      const inboundOnly = organizations.filter(candidate => {
+        const candidateSlug = getSlug(candidate);
+        return candidateSlug !== orgSlug
+          && !outboundSet.has(candidateSlug)
+          && relationSlugs(candidate).includes(orgSlug);
+      });
+      const internal = [...outboundInternal, ...inboundOnly];
       const external = slugs.filter(slug => !getOrg(slug));
       return {
+        outboundInternal,
+        inboundOnly,
         internal,
         external,
         nodeSlugs: new Set([getSlug(org), ...internal.map(getSlug)]),
-        edges: internal.map(target => ({ source: org, target }))
+        edges: internal.map(target => undirectedEdge(org, target))
       };
     }
 
@@ -672,19 +693,20 @@
       const background = [];
       const seen = new Set();
 
-      organizations.forEach((org, orgIndex) => {
-        relationshipModel(org).edges.forEach(({ source, target }, edgeIndex) => {
-          const key = [getSlug(source), getSlug(target)].sort().join("--");
+      organizations.forEach(org => {
+        relationSlugs(org).map(getOrg).filter(Boolean).forEach(target => {
+          const { source, target: normalizedTarget } = undirectedEdge(org, target);
+          const key = edgeKey(source, normalizedTarget);
           if (seen.has(key)) return;
           seen.add(key);
-          background.push(`<path class="map-link ${mode === "comparable" ? "comparable" : ""}" d="${pathFor(source, target, orgIndex + edgeIndex)}"></path>`);
+          background.push(`<path class="map-link ${mode === "comparable" ? "comparable" : ""}" d="${pathFor(source, normalizedTarget, edgeIndex(source, normalizedTarget))}"></path>`);
         });
       });
 
-      const active = model.edges.map(({ source, target }, index) => `
+      const active = model.edges.map(({ source, target }) => `
         <path class="map-link active ${mode === "comparable" ? "comparable" : ""}"
           data-source="${escapeHtml(getSlug(source))}" data-target="${escapeHtml(getSlug(target))}"
-          d="${pathFor(source, target, index)}"></path>
+          d="${pathFor(source, target, edgeIndex(source, target))}"></path>
       `);
       svg.setAttribute("viewBox", "0 0 100 100");
       svg.setAttribute("preserveAspectRatio", "none");
@@ -697,12 +719,6 @@
       const description = mode === "collaborators"
         ? "Organizations and grouped actors that commonly connect through projects, finance, MRV, certification, or field delivery."
         : "Organizations useful to evaluate side by side, generally within the same primary role.";
-      const grouped = model.internal.reduce((groups, item) => {
-        const role = item.role || "other";
-        groups[role] = groups[role] || [];
-        groups[role].push(item);
-        return groups;
-      }, {});
       const total = model.internal.length + model.external.length;
 
       detailPanel.innerHTML = `
@@ -718,11 +734,11 @@
           <span class="relationship-count">${total} relationship${total === 1 ? "" : "s"}</span>
         </div>
         <p class="relationship-copy">${escapeHtml(description)}</p>
-        ${Object.entries(grouped).map(([role, items]) => `
+        ${model.outboundInternal.length ? `
           <section class="relationship-group">
-            <h4>${escapeHtml(rolePositions[role]?.label || externalLabel(role))}</h4>
+            <h4>Listed by this profile</h4>
             <div class="detail-list">
-              ${items.map(item => `
+              ${model.outboundInternal.map(item => `
                 <a class="detail-card" href="${profileUrl(item)}">
                   <strong>${escapeHtml(item.name)}</strong>
                   <span>${escapeHtml(item.roleLabel || item.role)} · ${escapeHtml(item.type || "Organization")}</span>
@@ -730,7 +746,20 @@
               `).join("")}
             </div>
           </section>
-        `).join("")}
+        ` : ""}
+        ${model.inboundOnly.length ? `
+          <section class="relationship-group">
+            <h4>Referenced by other profiles</h4>
+            <div class="detail-list">
+              ${model.inboundOnly.map(item => `
+                <a class="detail-card" href="${profileUrl(item)}">
+                  <strong>${escapeHtml(item.name)}</strong>
+                  <span>${escapeHtml(item.roleLabel || item.role)} · ${escapeHtml(item.type || "Organization")}</span>
+                </a>
+              `).join("")}
+            </div>
+          </section>
+        ` : ""}
         ${model.external.length ? `
           <section class="relationship-group">
             <h4>External or grouped relationships</h4>
