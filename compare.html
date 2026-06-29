@@ -90,13 +90,13 @@
     main {
       max-width: 1400px;
       margin: 0 auto;
-      padding: 34px 24px 88px;
+      padding: 46px 24px 96px;
     }
 
     .hero {
       display: grid;
       grid-template-columns: minmax(0, 1fr) minmax(280px, 340px);
-      gap: 14px;
+      gap: 18px;
       align-items: center;
     }
 
@@ -147,7 +147,7 @@
     }
 
     .control-card {
-      padding: 18px 20px;
+      padding: 20px 22px;
       display: flex;
       flex-direction: column;
       justify-content: center;
@@ -175,11 +175,18 @@
       font-weight: 780;
     }
 
+    select:focus-visible,
+    .rank-card:focus-visible,
+    .profile-link:focus-visible {
+      outline: 3px solid rgba(31, 106, 70, 0.28);
+      outline-offset: 3px;
+    }
+
     .layout {
-      margin-top: 14px;
+      margin-top: 18px;
       display: grid;
       grid-template-columns: minmax(250px, 290px) minmax(0, 1fr);
-      gap: 14px;
+      gap: 18px;
       align-items: start;
     }
 
@@ -189,11 +196,11 @@
     }
 
     .panel {
-      padding: 22px;
+      padding: 26px;
     }
 
     .panel h2 {
-      margin: 0 0 14px;
+      margin: 0 0 18px;
       font-size: clamp(26px, 3vw, 38px);
       line-height: 1;
       letter-spacing: -0.05em;
@@ -221,6 +228,11 @@
     .rank-card.active {
       transform: translateY(-2px);
       background: rgba(255, 250, 240, 0.92);
+    }
+
+    .rank-card.active {
+      border-color: rgba(31, 106, 70, 0.24);
+      box-shadow: inset 0 0 0 1px rgba(31, 106, 70, 0.08);
     }
 
     .rank-card strong {
@@ -265,22 +277,26 @@
     .compare-row:last-child { border-bottom: 0; }
 
     .compare-row > div {
-      padding: 12px 14px;
+      padding: 14px 16px;
       color: var(--muted);
       font-size: 14px;
-      line-height: 1.4;
+      line-height: 1.5;
       min-width: 0;
       overflow-wrap: anywhere;
     }
 
+    .compare-value + .compare-value {
+      border-left: 1px solid rgba(20, 34, 26, 0.07);
+    }
+
     .compare-row.long-copy > div {
-      padding-top: 17px;
-      padding-bottom: 18px;
-      line-height: 1.55;
+      padding-top: 20px;
+      padding-bottom: 21px;
+      line-height: 1.62;
     }
 
     .table-cell-paragraphs p {
-      margin: 1em 0 0;
+      margin: 0.9em 0 0;
     }
 
     .table-cell-paragraphs p:first-child {
@@ -307,10 +323,61 @@
       display: none;
     }
 
+    .key-distinction {
+      margin: 0 0 20px;
+      padding: 17px 18px 18px;
+      border-radius: 22px;
+      background: rgba(18, 59, 42, 0.07);
+      border: 1px solid rgba(18, 59, 42, 0.1);
+    }
+
+    .key-distinction h3 {
+      margin: 0 0 7px;
+      color: var(--clay);
+      font-size: 11px;
+      font-weight: 900;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    .key-distinction p {
+      margin: 0;
+      max-width: 88ch;
+      color: var(--ink);
+      font-size: 15px;
+      line-height: 1.58;
+    }
+
+    .key-distinction strong {
+      color: var(--green);
+      font-weight: 850;
+    }
+
+    .dimension-section {
+      margin-top: 24px;
+      padding-top: 22px;
+      border-top: 1px solid var(--line);
+    }
+
+    .dimension-section h3 {
+      margin: 0;
+      color: var(--ink);
+      font-size: 18px;
+      line-height: 1.2;
+      letter-spacing: -0.035em;
+    }
+
+    .dimension-section p {
+      margin: 5px 0 0;
+      color: var(--muted);
+      font-size: 13px;
+      line-height: 1.45;
+    }
+
     .bars {
       display: grid;
       gap: 10px;
-      margin-top: 18px;
+      margin-top: 16px;
     }
 
     .bar-row {
@@ -350,7 +417,7 @@
 
     .profile-link {
       display: inline-flex;
-      margin-top: 18px;
+      margin-top: 22px;
       min-height: 42px;
       align-items: center;
       padding: 0 14px;
@@ -362,10 +429,10 @@
     }
 
     .method {
-      margin-top: 18px;
+      margin: 20px 2px 0;
       color: var(--muted);
       font-size: 13px;
-      line-height: 1.5;
+      line-height: 1.6;
     }
 
     .status-badge {
@@ -383,9 +450,9 @@
     }
 
     .methodology {
-      margin-top: 18px;
-      margin-left: 304px;
-      padding: 26px;
+      margin-top: 22px;
+      margin-left: 308px;
+      padding: 30px;
       border-radius: 34px;
       background: rgba(255, 250, 240, 0.72);
       border: 1px solid rgba(20, 34, 26, 0.1);
@@ -393,18 +460,20 @@
     }
 
     .methodology h2 {
-      margin: 0 0 12px;
+      margin: 0 0 16px;
       font-size: clamp(28px, 4vw, 44px);
       line-height: 0.95;
       letter-spacing: -0.06em;
     }
 
     .methodology p {
-      margin: 0 0 12px;
-      max-width: 920px;
+      margin: 0 0 14px;
+      max-width: 82ch;
       color: var(--muted);
-      line-height: 1.45;
+      line-height: 1.62;
     }
+
+    .methodology p:last-child { margin-bottom: 0; }
 
     .dimension-grid {
       display: grid;
@@ -439,11 +508,11 @@
       .compare-row { grid-template-columns: 112px repeat(2, minmax(0, 1fr)); }
       .compare-row > div { padding-right: 11px; padding-left: 11px; }
       .bar-row { grid-template-columns: 130px 1fr 1fr; }
-      .methodology { margin-left: 244px; }
+      .methodology { margin-left: 248px; }
     }
 
     @media (max-width: 720px) {
-      main { padding-top: 36px; }
+      main { padding: 36px 16px 76px; }
       .nav-inner { flex-wrap: wrap; gap: 12px; padding: 12px 16px; }
       .brand { width: 100%; }
       .nav-links { width: 100%; gap: 16px; font-size: 13px; }
@@ -477,6 +546,7 @@
         border-bottom: 1px solid var(--line);
       }
       .compare-value + .compare-value {
+        border-left: 0;
         border-top: 1px solid var(--line);
       }
       .mobile-org-name {
@@ -508,7 +578,9 @@
         margin-top: 0;
       }
       .bar-row { grid-template-columns: 1fr; }
-      .methodology { margin-left: 0; }
+      .dimension-section { margin-top: 20px; padding-top: 18px; }
+      .key-distinction { padding: 15px 16px 16px; }
+      .methodology { margin-left: 0; padding: 24px; }
     }
   </style>
 </head>
@@ -551,8 +623,16 @@
 </aside>
 <section class="panel">
 <h2 id="comparisonTitle">Comparison</h2>
+<div class="key-distinction" id="keyDistinction">
+<h3>Key distinction</h3>
+<p id="keyDistinctionText"></p>
+</div>
 <div class="compare-table" id="compareTable"></div>
+<div class="dimension-section">
+<h3>Dimension profile</h3>
+<p>Relative emphasis across the Field Guide’s shared comparison dimensions.</p>
 <div class="bars" id="dimensionBars"></div>
+</div>
 <a class="profile-link" href="#" id="profileLink">Open profile →</a>
 </section>
 </section>
@@ -606,6 +686,8 @@
     const select = document.getElementById("organizationSelect");
     const rankList = document.getElementById("rankList");
     const comparisonTitle = document.getElementById("comparisonTitle");
+    const keyDistinction = document.getElementById("keyDistinction");
+    const keyDistinctionText = document.getElementById("keyDistinctionText");
     const compareTable = document.getElementById("compareTable");
     const dimensionBars = document.getElementById("dimensionBars");
     const profileLink = document.getElementById("profileLink");
@@ -648,6 +730,10 @@
 
     function profileUrl(org) {
       return `organization.html?id=${org.slug || slugify(org.name)}`;
+    }
+
+    function comparisonValue(org, key, fallback = "Not yet documented") {
+      return org.comparison && org.comparison[key] ? org.comparison[key] : fallback;
     }
 
     const dimensionGrid = document.getElementById("dimensionGrid");
@@ -732,6 +818,10 @@
 
     function renderComparison(org, other) {
       comparisonTitle.textContent = `${org.name} vs ${other.name}`;
+      const orgOffering = comparisonValue(org, "mainOffering", org.type || org.strategy);
+      const otherOffering = comparisonValue(other, "mainOffering", other.type || other.strategy);
+      keyDistinction.hidden = false;
+      keyDistinctionText.innerHTML = `<strong>${escapeHtml(org.name)}:</strong> ${escapeHtml(orgOffering)}. <strong>${escapeHtml(other.name)}:</strong> ${escapeHtml(otherOffering)}.`;
       compareTable.innerHTML = `
         <div class="compare-row compare-header">
           <div></div>
@@ -792,6 +882,7 @@
           renderComparison(org, other);
         } else {
           comparisonTitle.textContent = `${org.name}`;
+          keyDistinction.hidden = true;
           compareTable.innerHTML = "";
           dimensionBars.innerHTML = "";
           profileLink.href = profileUrl(org);
