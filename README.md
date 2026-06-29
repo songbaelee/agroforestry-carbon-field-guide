@@ -83,19 +83,24 @@ The Field Guide focuses on the ecosystem: who the actors are, how they relate to
 
 ## How this project is built
 
-This project is also an experiment in learning and building with AI.
+This repository is developed using an AI-assisted workflow that combines research, editorial review, software development, and version control.
 
-The editorial direction comes from the learning goals of the project. ChatGPT is used as a collaborative research, writing, and design partner. Codex is used to implement and refine the website, translate editorial decisions into code, and improve the user experience.
+- **GitHub** serves as the source of truth for the project and hosts the live website through GitHub Pages.
+- The repository is cloned locally, where changes are reviewed, committed, and pushed using Git.
+- **ChatGPT** is used as a collaborative partner for research, editorial discussion, project planning, and documentation.
+- **Codex** is used to implement website changes, translate editorial decisions into code, and refine the user experience.
 
-The process is iterative:
+The development process is iterative:
 
 1. define the learning question
 2. research the topic
 3. organize the material into a usable structure
 4. draft or revise content
-5. implement changes in the website
+5. implement changes locally
 6. review the result
-7. refine again
+7. commit and publish through GitHub
+
+The commit history documents not only changes to the website, but also the evolution of the ideas behind it.
 
 The goal is not to automate judgment. The goal is to use AI to accelerate a human-led learning process.
 
