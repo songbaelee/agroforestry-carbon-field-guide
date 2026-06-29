@@ -97,13 +97,10 @@
     }
 
     .hero {
-      display: grid;
-      grid-template-columns: minmax(0, 0.94fr) minmax(440px, 1.06fr);
-      gap: 34px;
-      align-items: stretch;
+      width: 100%;
     }
 
-    .hero-copy { padding: 30px 0 24px; }
+    .hero-copy { padding: 20px 0 0; }
 
     .eyebrow {
       display: inline-flex;
@@ -128,8 +125,8 @@
     }
 
     h1 {
-      margin: 24px 0 18px;
-      max-width: 760px;
+      margin: 22px 0 16px;
+      max-width: 940px;
       font-size: clamp(48px, 7.8vw, 92px);
       line-height: 0.9;
       letter-spacing: -0.078em;
@@ -144,7 +141,7 @@
     }
 
     .hero-actions {
-      margin-top: 30px;
+      margin-top: 26px;
       display: flex;
       flex-wrap: wrap;
       gap: 12px;
@@ -174,7 +171,7 @@
     .ecosystem-map {
       position: relative;
       overflow: hidden;
-      min-height: 610px;
+      min-height: 640px;
       border-radius: 42px;
       background:
         radial-gradient(circle at 50% 54%, rgba(185, 240, 107, 0.1), transparent 15rem),
@@ -259,12 +256,40 @@
       box-shadow: 0 18px 46px rgba(0,0,0,0.15);
       transition: transform 180ms ease, background 180ms ease, border-color 180ms ease;
       z-index: 2;
+      cursor: pointer;
     }
 
     .actor-node:hover {
       transform: translateY(-5px) scale(1.04);
       background: rgba(255, 250, 240, 0.2);
-      border-color: rgba(185, 240, 107, 0.45);
+      border-color: rgba(185, 240, 107, 0.72);
+    }
+
+    .actor-node:focus-visible,
+    .role-card:focus-visible,
+    .path-card:focus-visible {
+      outline: 3px solid var(--lime);
+      outline-offset: 4px;
+    }
+
+    .actor-node strong {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 10px;
+    }
+
+    .actor-node strong::after {
+      content: "\2197";
+      display: grid;
+      width: 24px;
+      height: 24px;
+      flex: 0 0 auto;
+      place-items: center;
+      border-radius: 999px;
+      background: rgba(185, 240, 107, 0.14);
+      color: var(--lime);
+      font-size: 12px;
     }
 
     .actor-node span { color: rgba(255, 250, 240, 0.67); }
@@ -287,7 +312,9 @@
     .node-technology:hover { transform: translateX(-50%) translateY(-5px) scale(1.04); }
     .node-buyers { right: 48px; bottom: 112px; }
 
-    .section { margin-top: 86px; }
+    .map-section { margin-top: 52px; }
+
+    .section { margin-top: 104px; }
 
     .section-head {
       display: flex;
@@ -394,102 +421,36 @@
       font-weight: 720;
     }
 
-    .feature {
-      display: grid;
-      grid-template-columns: 0.92fr 1.08fr;
-      gap: 18px;
-      padding: 18px;
-      border-radius: 38px;
-      background: rgba(18, 59, 42, 0.96);
-      color: var(--cream);
-      box-shadow: var(--shadow);
-    }
-
-    .feature-copy { padding: 32px; }
-    .feature-copy h2 { color: var(--cream); }
-
-    .feature-copy p {
-      margin: 18px 0 0;
-      max-width: 460px;
-      color: rgba(255, 250, 240, 0.72);
-      font-size: 18px;
-      line-height: 1.45;
-    }
-
-    .pattern-list { display: grid; gap: 12px; }
-
-    .pattern-row {
-      display: grid;
-      grid-template-columns: 1fr auto;
-      gap: 16px;
-      padding: 18px;
-      border-radius: 23px;
-      background: rgba(255, 250, 240, 0.1);
-      border: 1px solid rgba(255, 250, 240, 0.13);
-    }
-
-    .pattern-row strong {
-      display: block;
-      margin-bottom: 5px;
-      letter-spacing: -0.025em;
-    }
-
-    .pattern-row span {
-      color: rgba(255, 250, 240, 0.68);
-      font-size: 14px;
-      line-height: 1.35;
-    }
-
-    .pill {
-      align-self: start;
-      padding: 7px 10px;
-      border-radius: 999px;
-      background: rgba(185, 240, 107, 0.16);
-      color: var(--lime);
-      font-size: 12px;
-      font-weight: 820;
-      white-space: nowrap;
-    }
-
     .path-grid {
       display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 14px;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 16px;
     }
 
     .path-card {
-      min-height: 195px;
-      padding: 22px;
+      min-height: 180px;
+      padding: 24px;
       border-radius: 25px;
       background: rgba(255, 250, 240, 0.66);
       border: 1px solid var(--line);
-      transition: transform 180ms ease, background 180ms ease;
+      transition: transform 180ms ease, background 180ms ease, box-shadow 180ms ease;
     }
 
     .path-card:hover {
       transform: translateY(-3px);
       background: rgba(255, 250, 240, 0.9);
-    }
-
-    .path-card.disabled {
-      opacity: 0.56;
-      cursor: not-allowed;
-    }
-
-    .path-card.disabled:hover {
-      transform: none;
-      background: rgba(255, 250, 240, 0.66);
+      box-shadow: 0 16px 46px rgba(28, 43, 31, 0.08);
     }
 
     .path-card small {
-      color: var(--clay);
+      color: var(--green-2);
       font-weight: 900;
       letter-spacing: 0.05em;
       text-transform: uppercase;
     }
 
     .path-card h3 {
-      margin: 20px 0 8px;
+      margin: 26px 0 8px;
       font-size: 23px;
       line-height: 1;
       letter-spacing: -0.04em;
@@ -511,8 +472,7 @@
     }
 
     @media (max-width: 980px) {
-      .hero,
-      .feature { grid-template-columns: 1fr; }
+      .hero { grid-template-columns: 1fr; }
       .ecosystem-map { min-height: 560px; }
       .role-grid { grid-template-columns: repeat(2, 1fr); }
       .path-grid { grid-template-columns: repeat(2, 1fr); }
@@ -539,10 +499,9 @@
       .node-technology { bottom: 42px; }
       .node-buyers { right: 18px; bottom: 150px; }
       .core-node { width: 190px; top: 50%; }
-      .pattern-row { grid-template-columns: 1fr; }
     }
 
-    @media (max-width: 470px) {
+    @media (max-width: 520px) {
       .ecosystem-map {
         min-height: auto;
         display: grid;
@@ -590,18 +549,20 @@
         <div class="eyebrow">Field guide to the builders</div>
         <h1>Who is building the agroforestry carbon market?</h1>
         <p>
-          A visual guide to the organizations, projects, standards, buyers, finance providers,
-          technologies, and field partners shaping the global agroforestry carbon ecosystem.
+          A visual guide to the organizations, standards, buyers, finance providers, technologies,
+          and field partners shaping the global agroforestry carbon ecosystem.
         </p>
         <div class="hero-actions">
           <a class="button" href="ecosystem.html">Explore the ecosystem</a>
           <a class="button secondary" href="organizations.html">Browse organizations</a>
         </div>
       </div>
+    </section>
 
+    <section class="map-section" aria-label="Agroforestry carbon ecosystem overview">
       <div class="ecosystem-map" aria-label="Interactive agroforestry carbon ecosystem map">
         <div class="map-title">
-          <span>Interactive ecosystem map</span>
+          <span>Select a role in the ecosystem</span>
           <span>6 functional roles</span>
         </div>
 
@@ -720,77 +681,28 @@
       </div>
     </section>
 
-    <section class="section feature">
-      <div class="feature-copy">
-        <h2>Carbon strategy cuts across roles.</h2>
-        <p>
-          This field guide maps who plays which role. The companion business-model guide explains
-          why organizations use carbon: as a product, as supply-chain strategy, or as development finance.
-        </p>
-      </div>
-
-      <div class="pattern-list">
-        <a class="pattern-row" href="https://songbaelee.github.io/carbon-business-models/">
-          <div>
-            <strong>Carbon as the core business</strong>
-            <span>Developers and platforms use carbon revenue as the main product and commercial engine.</span>
-          </div>
-          <span class="pill">Developers</span>
-        </a>
-
-        <a class="pattern-row" href="https://songbaelee.github.io/carbon-business-models/">
-          <div>
-            <strong>Carbon inside supply chains</strong>
-            <span>Commodity companies use agroforestry carbon to link climate, sourcing, resilience, and farmer engagement.</span>
-          </div>
-          <span class="pill">Buyers</span>
-        </a>
-
-        <a class="pattern-row" href="https://songbaelee.github.io/carbon-business-models/">
-          <div>
-            <strong>Carbon as development finance</strong>
-            <span>NGOs and implementers use carbon to fund restoration, livelihoods, and technical assistance.</span>
-          </div>
-          <span class="pill">Implementation</span>
-        </a>
-
-        <a class="pattern-row" href="https://songbaelee.github.io/carbon-business-models/">
-          <div>
-            <strong>Risk decides the model</strong>
-            <span>Pre-sales, offtake, grants, and working capital shift who carries risk before credits are issued.</span>
-          </div>
-          <span class="pill">Capital</span>
-        </a>
-      </div>
-    </section>
-
     <section class="section">
       <div class="section-head">
-        <h2>Choose your door into the market.</h2>
-        <p>Start with organizations, projects, business models, or broader landscape patterns.</p>
+        <h2>How to use this Field Guide</h2>
+        <p>Begin with any section; each offers a different view of the same ecosystem.</p>
       </div>
 
       <div class="path-grid">
         <a class="path-card" href="organizations.html">
-          <small>01</small>
+          <small>Directory</small>
           <h3>Organizations</h3>
-          <p>Browse the searchable directory of organizations and filter by role.</p>
+          <p>Learn about individual organizations and their roles.</p>
         </a>
-        <div class="path-card disabled" aria-disabled="true">
-          <small>02</small>
-          <h3>Projects</h3>
-          <p>Project directory is next. No dead link until the page exists.</p>
-        </div>
-        <a class="path-card" href="https://songbaelee.github.io/carbon-business-models/">
-          <small>03</small>
-          <h3>Business Models</h3>
-          <p>Open the companion guide for carbon business model mechanics.</p>
+        <a class="path-card" href="ecosystem.html">
+          <small>Connections</small>
+          <h3>Ecosystem</h3>
+          <p>Understand how organizations connect across the market.</p>
         </a>
-        <div class="path-card disabled" aria-disabled="true">
-          <small>04</small>
-          <h3>Landscape</h3>
-          <p>Landscape patterns will be linked after the page is created.</p>
-        </div>
+        <a class="path-card" href="compare.html">
+          <small>Perspective</small>
+          <h3>Compare</h3>
+          <p>Explore similarities and differences between organizations.</p>
+        </a>
       </div>
     </section>
   </main>
