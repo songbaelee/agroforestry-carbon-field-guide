@@ -581,6 +581,9 @@
         "pur"
       ],
       "collaborators": [
+        "microsoft",
+        "nestl",
+        "verra",
         "carbon-buyers",
         "landowners",
         "investors"
@@ -629,6 +632,7 @@
         "pur"
       ],
       "collaborators": [
+        "plan-vivo",
         "local-partners",
         "farmer-groups",
         "carbon-buyers"
@@ -1104,6 +1108,7 @@
         "technoserve"
       ],
       "collaborators": [
+        "climate-asset-management",
         "local-partners",
         "donors",
         "farmer-groups"
@@ -1295,6 +1300,10 @@
         "plan-vivo"
       ],
       "collaborators": [
+        "acorn",
+        "pur",
+        "re-green",
+        "microsoft",
         "developers",
         "project-proponents",
         "validators-and-verifiers",
@@ -1610,6 +1619,7 @@
       ],
       "collaborators": [
         "acorn",
+        "taking-root",
         "solidaridad",
         "community-projects",
         "developers"
@@ -1918,6 +1928,8 @@
         "open-forest-protocol"
       ],
       "collaborators": [
+        "verra",
+        "salesforce",
         "carbon-buyers",
         "project-developers"
       ]
@@ -2110,7 +2122,9 @@
     "relationships": {
       "comparable": [
         "pachama",
-        "chloris-geospatial"
+        "chloris-geospatial",
+        "verra",
+        "gold-standard"
       ],
       "collaborators": [
         "project-developers",
@@ -2524,6 +2538,8 @@
         "fmo"
       ],
       "collaborators": [
+        "microsoft",
+        "catholic-relief-services",
         "investors",
         "land-managers",
         "developers"
