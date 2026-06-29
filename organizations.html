@@ -428,6 +428,13 @@
       font-size: 14px;
     }
 
+    .repository-callout { margin-top: 8px; }
+    .repository-callout a {
+      color: var(--green);
+      font-weight: 700;
+      text-underline-offset: 3px;
+    }
+
     @media (max-width: 980px) {
       .grid { grid-template-columns: repeat(2, 1fr); }
       .role-lens { grid-template-columns: repeat(2, 1fr); }
@@ -521,7 +528,8 @@
   </main>
 
   <footer>
-    Organization data is stored in <code>data/organizations.json</code>. Directory cards and profiles now read from the same source.
+    <div>Organization data is stored in <code>data/organizations.json</code>. Directory cards and profiles now read from the same source.</div>
+    <div class="repository-callout">Interested in how this Field Guide is built? <a href="https://github.com/songbaelee/agroforestry-carbon-field-guide" target="_blank" rel="noopener noreferrer">View the GitHub repository.</a></div>
   </footer>
 
   <script>
