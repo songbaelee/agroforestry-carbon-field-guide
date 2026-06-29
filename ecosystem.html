@@ -34,6 +34,14 @@
 
     a { color: inherit; text-decoration: none; }
 
+    a:focus-visible,
+    button:focus-visible,
+    input:focus-visible,
+    select:focus-visible {
+      outline: 3px solid var(--green-2);
+      outline-offset: 3px;
+    }
+
     .nav {
       position: sticky;
       top: 0;
@@ -82,6 +90,8 @@
 
     .nav-links a:hover,
     .nav-links a.active { color: var(--ink); }
+
+    .nav-links a { transition: color 160ms ease; }
 
     main {
       max-width: 1240px;
@@ -191,7 +201,9 @@
       font-size: 12px;
       font-weight: 900;
       cursor: pointer;
+      transition: background 160ms ease, color 160ms ease, border-color 160ms ease;
     }
+    .toggle:hover { border-color: rgba(18, 59, 42, 0.32); }
     .toggle.active { background: var(--green); color: var(--cream); }
 
     .layout {
@@ -391,7 +403,10 @@
       color: var(--cream);
       font-size: 13px;
       font-weight: 900;
+      transition: transform 160ms ease, background 160ms ease;
     }
+
+    .button:hover { transform: translateY(-2px); }
 
     .methodology {
       margin-top: 18px;

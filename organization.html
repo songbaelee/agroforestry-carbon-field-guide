@@ -37,6 +37,14 @@
 
     a { color: inherit; text-decoration: none; }
 
+    a:focus-visible,
+    button:focus-visible,
+    input:focus-visible,
+    select:focus-visible {
+      outline: 3px solid var(--green-2);
+      outline-offset: 3px;
+    }
+
     .nav {
       position: sticky;
       top: 0;
@@ -85,6 +93,8 @@
 
     .nav-links a:hover,
     .nav-links a.active { color: var(--ink); }
+
+    .nav-links a { transition: color 160ms ease; }
 
     main {
       max-width: 1180px;
@@ -190,7 +200,10 @@
       color: var(--green);
       font-size: 13px;
       font-weight: 900;
+      transition: transform 160ms ease, background 160ms ease;
     }
+
+    .button:hover { transform: translateY(-2px); }
 
     .button.secondary {
       background: rgba(255, 250, 240, 0.12);
@@ -255,7 +268,8 @@
     .status-dot.preliminary::before { background: rgba(102, 115, 101, 0.58); }
 
     .methodology-link {
-      display: inline-flex !important;
+      display: flex !important;
+      width: fit-content;
       margin-top: 6px;
       color: var(--clay) !important;
       font-size: 12px;
@@ -1141,7 +1155,7 @@
     function renderPrimaryRole(org) {
       return `
         <section class="primary-role" aria-label="Primary role">
-          <h2>Primary Role</h2>
+          <h2>Primary role</h2>
           <div class="primary-role-grid">
             <div class="primary-role-item"><b>Role</b><span>${escapeHtml(org.roleLabel || org.role)}</span></div>
             <div class="primary-role-item"><b>Organization type</b><span>${escapeHtml(org.type)}</span></div>
@@ -1341,7 +1355,7 @@
       return `
         <section class="comparison" aria-label="Closest adjacent organizations">
           <div class="comparison-head">
-            <h2>Closest Adjacent Organizations</h2>
+            <h2>Closest adjacent organizations</h2>
             <p>Organizations people most commonly confuse with this one.</p>
           </div>
           <div class="adjacent-table">
@@ -1468,7 +1482,7 @@
         ${renderComparison(org, allOrganizations)}
 
         <section class="organization-profile" aria-label="Organization profile">
-          <h2>Organization Profile</h2>
+          <h2>Organization profile</h2>
           <div class="section-stack" aria-label="Research profile sections">
             ${researchSections(org, allOrganizations, usedSourceKeys)}
           </div>

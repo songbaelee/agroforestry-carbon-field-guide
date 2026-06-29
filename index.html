@@ -37,6 +37,14 @@
 
     a { color: inherit; text-decoration: none; }
 
+    a:focus-visible,
+    button:focus-visible,
+    input:focus-visible,
+    select:focus-visible {
+      outline: 3px solid var(--green-2);
+      outline-offset: 3px;
+    }
+
     .nav {
       position: sticky;
       top: 0;
@@ -83,6 +91,7 @@
       font-weight: 650;
     }
 
+    .nav-links a { transition: color 160ms ease; }
     .nav-links a:hover { color: var(--ink); }
 
     .nav-links span[aria-disabled="true"] {
@@ -159,7 +168,10 @@
       color: var(--cream);
       font-weight: 820;
       box-shadow: 0 16px 38px rgba(20, 34, 26, 0.18);
+      transition: transform 160ms ease, background 160ms ease, box-shadow 160ms ease;
     }
+
+    .button:hover { transform: translateY(-2px); }
 
     .button.secondary {
       background: rgba(255, 250, 240, 0.68);
